@@ -1,5 +1,5 @@
 meanFreq <- function(fasta_file){
-  library(seqinr)
+  library(seqinr) 
   virus_basic <- read.fasta(fasta_file)
   number_of_seqs <- length(virus_basic)
   virus_align <- read.alignment(fasta_file, format = "fasta", forceToLower = T)
