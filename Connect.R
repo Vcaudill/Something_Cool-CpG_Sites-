@@ -1,8 +1,9 @@
 # your floder where all pages are saved
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
+
+
+DataSet <-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 source("MeaFreq.R")
-
-
 DF<-meanFreq("DataSet")
 DF$wtnt<-as.character(DF$wtnt)
 
