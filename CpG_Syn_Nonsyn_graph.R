@@ -8,6 +8,11 @@ library(scales)
 library(plyr)
 library(grid)
 library(gridExtra)
+# my solution for the error I was getting 
+# require(extrafont)
+# # need only do this once!
+# font_import(pattern="[A/a]rial", prompt=FALSE)
+# require(ggplot2)
 
 comparing_CpG_Syn_Nonsyn = function(data){
 
@@ -149,7 +154,7 @@ AllATCG = rbind(AllA, AllT, AllC, AllG)
 # this loop adds a small value to the 0's so they may show up on the graph
 for (i in 1:length(AllATCG$MeanFreq)){
   if (AllATCG$MeanFreq[i]==0){
-    AllATCG$MeanFreq[i]= 0.00001
+    AllATCG$MeanFreq[i]= 0.000001
   }
 }
 
@@ -185,7 +190,7 @@ ggplot(aes(factor(graphit), MeanFreq, color=graphit), data = AllATCG)+
   scale_color_manual(labels = c("CpG (syn)","Cpg (nonsyn)","nonCpG (syn)", "nonCpg (nonsyn)"), values = c("firebrick", "darkolivegreen","goldenrod3", "royalblue3")) +
   #labels X and Y axis
   labs(x="Mutation Type", y="Mutation Frquency",col=" ")+
-  theme(text=element_text(family="Garamond", size=14))+
+  #theme(text=element_text(family="Garamond", size=14))+
   annotation_logticks(sides="l") 
 
 
