@@ -1,8 +1,6 @@
 
 data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 
-comparing_CpG_Syn_Nonsyn = function(data){
-  
 library(ggplot2)
 library(dplyr)
 library(plotrix)
@@ -10,6 +8,9 @@ library(scales)
 library(plyr)
 library(grid)
 library(gridExtra)
+
+comparing_CpG_Syn_Nonsyn = function(data){
+
 
 #subset into two groups yes makes cpg and no cpg
 cpg.y<-subset(data, makesCpG==1)
@@ -184,6 +185,7 @@ ggplot(aes(factor(graphit), MeanFreq, color=graphit), data = AllATCG)+
   scale_color_manual(labels = c("CpG (syn)","Cpg (nonsyn)","nonCpG (syn)", "nonCpg (nonsyn)"), values = c("firebrick", "darkolivegreen","goldenrod3", "royalblue3")) +
   #labels X and Y axis
   labs(x="Mutation Type", y="Mutation Frquency",col=" ")+
+  theme(text=element_text(family="Garamond", size=14))+
   annotation_logticks(sides="l") 
 
 
@@ -191,7 +193,7 @@ ggplot(aes(factor(graphit), MeanFreq, color=graphit), data = AllATCG)+
 
 
 comparing_CpG_Syn_Nonsyn(data)
-
+#make sure the packages are loaded before begining 
 
 ###################
 #still testing
