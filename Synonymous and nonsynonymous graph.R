@@ -42,7 +42,7 @@ plot(nonsynonymousA$num,log10(nonsynonymousA$MeanFreq+.000001), col = "blue",xla
 abline(h=mean(log10(nonsynonymousA$MeanFreq+.000001)))
 legend("topleft",inset=c(0,-0.45), legend=c
        ("nonsynonymous A"),col="blue", horiz=TRUE, lty=1:1, cex=0.8,xpd=TRUE,bty='n')
-
+ 
 plot(synonymousT$num,log10(synonymousT$MeanFreq+.000001), col = "green",xlab="Position Number", ylab="MeanFreq",main="Synonymous T")
 abline(h=mean(log10(synonymousT$MeanFreq+.000001)))
 legend("topleft",inset=c(0,-0.45), legend=c
