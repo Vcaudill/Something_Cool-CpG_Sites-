@@ -5,14 +5,13 @@ library(ggplot2)
 library(dplyr)
 library(plotrix)
 library(scales)
-library(plyr)
 library(grid)
 library(gridExtra)
 # my solution for the error I was getting 
-# require(extrafont)
+require(extrafont)
 # # need only do this once!
-# font_import(pattern="[A/a]rial", prompt=FALSE)
-# require(ggplot2)
+font_import(pattern="[A/a]rial", prompt=FALSE)
+require(ggplot2)
 
 comparing_CpG_Syn_Nonsyn = function(data){
 
@@ -68,12 +67,12 @@ for (i in 1:length(AllA$makesCpG)) {
     AllA$sem_vals[i]<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
     }
   if (AllA$makesCpG[i] == 1 && AllA$TypeOfSite[i] == "nonsyn") {
-    AllA$graphit[i] <- "2"
+    AllA$graphit[i] <- "3"
     AllA$mean_value[i] <- mean(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
     AllA$sem_vals[i]<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
     }
   if (AllA$makesCpG[i] == 0 && AllA$TypeOfSite[i] == "syn") {
-    AllA$graphit[i] <- "3"
+    AllA$graphit[i] <- "2"
     AllA$mean_value[i] <- mean(AllA$MeanFreq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
     AllA$sem_vals[i]<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
   }
@@ -91,12 +90,12 @@ for (i in 1:length(AllT$makesCpG)) {
     AllT$sem_vals[i]<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
   }
   if (AllT$makesCpG[i] == 1 && AllT$TypeOfSite[i] == "nonsyn") {
-    AllT$graphit[i] <- "2"
+    AllT$graphit[i] <- "3"
     AllT$mean_value[i] <- mean(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
     AllT$sem_vals[i]<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
   }
   if (AllT$makesCpG[i] == 0 && AllT$TypeOfSite[i] == "syn") {
-    AllT$graphit[i] <- "3"
+    AllT$graphit[i] <- "2"
     AllT$mean_value[i] <- mean(AllT$MeanFreq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
     AllT$sem_vals[i]<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
   }
@@ -110,7 +109,7 @@ for (i in 1:length(AllT$makesCpG)) {
 for (i in 1:length(AllC$makesCpG)) {
 
   if (AllC$makesCpG[i] == 0 && AllC$TypeOfSite[i] == "syn") {
-    AllC$graphit[i] <- "3"
+    AllC$graphit[i] <- "2"
     AllC$mean_value[i] <- mean(AllC$MeanFreq[(which(AllC$makesCpG == 0 & AllC$TypeOfSite == "syn") )])
     AllC$sem_vals[i]<-sem(AllC$MeanFreq[(which(AllC$makesCpG == 0 & AllC$TypeOfSite == "syn") )])
   }
@@ -124,7 +123,7 @@ for (i in 1:length(AllC$makesCpG)) {
 for (i in 1:length(AllG$makesCpG)) {
   
   if (AllG$makesCpG[i] == 0 && AllG$TypeOfSite[i] == "syn") {
-    AllG$graphit[i] <- "3"
+    AllG$graphit[i] <- "2"
     AllG$mean_value[i] <- mean(AllG$MeanFreq[(which(AllG$makesCpG == 0 & AllG$TypeOfSite == "syn") )])
     AllG$sem_vals[i]<-sem(AllG$MeanFreq[(which(AllG$makesCpG == 0 & AllG$TypeOfSite == "syn") )])
   }
@@ -187,7 +186,7 @@ ggplot(aes(factor(graphit), MeanFreq, color=graphit), data = AllATCG)+
   geom_errorbar(data = AllG,aes(x = graphit, ymin= LCLS, ymax= UCLS, color = graphit),width=.5) +
  
    #give points new colors and lables the colors
-  scale_color_manual(labels = c("CpG (syn)","Cpg (nonsyn)","nonCpG (syn)", "nonCpg (nonsyn)"), values = c("firebrick", "darkolivegreen","goldenrod3", "royalblue3")) +
+  scale_color_manual(labels = c("CpG (syn)","nonCpG (syn)","CpG (nonsyn)", "nonCpG (nonsyn)"), values = c("firebrick", "royalblue3","goldenrod3", "darkolivegreen")) +
   #labels X and Y axis
   labs(x="Mutation Type", y="Mutation Frquency",col=" ")+
   #theme(text=element_text(family="Garamond", size=14))+
@@ -207,7 +206,7 @@ ggplot(aes(factor(graphit), MeanFreq, color=graphit), data = AllAT)+
   #log scale to make the data eaisier to see
   scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
                 labels = trans_format("log10", math_format(10^.x))) +
-  scale_x_discrete(labels=c("1" = "CpG ", "2" = "CpG ", "3" = "nonCpG ", "4"= "nonCpG "))+
+  scale_x_discrete(labels=c("1" = "CpG ", "5" = "CpG ", "3" = "nonCpG ", "4"= "nonCpG "))+
   geom_boxplot(data= AllA,aes(x = factor(graphit))) +
   #facet_wrap splits graph between a and t
   facet_wrap(~ wtnt)+
