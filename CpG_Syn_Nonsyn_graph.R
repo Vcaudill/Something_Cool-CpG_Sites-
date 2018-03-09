@@ -1,20 +1,20 @@
 
 data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 
-library(ggplot2)
-library(dplyr)
-library(plotrix)
-library(scales)
-library(grid)
-library(gridExtra)
-# my solution for the error I was getting 
-require(extrafont)
-# # need only do this once!
-font_import(pattern="[A/a]rial", prompt=FALSE)
-require(ggplot2)
+
 
 comparing_CpG_Syn_Nonsyn = function(data){
-
+  library(ggplot2)
+  library(dplyr)
+  library(plotrix)
+  library(scales)
+  library(grid)
+  library(gridExtra)
+  # my solution for the error I was getting 
+  require(extrafont)
+  # # need only do this once!
+  font_import(pattern="[A/a]rial", prompt=FALSE)
+  require(ggplot2)
 
 #subset into two groups yes makes cpg and no cpg
 cpg.y<-subset(data, makesCpG==1)
