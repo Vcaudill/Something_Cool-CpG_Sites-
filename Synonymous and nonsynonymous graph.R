@@ -57,15 +57,15 @@ nonsynonymousG<-subset(Virus2, wtnt=='g' & TypeOfSite=='nonsyn')
   
 #Plot C and G synonymous and nonsynonymous graphs
 layout(matrix(c(1,2,3,4), 2, 2, byrow = TRUE))
-plot(synonymousC$num,synonymousC$MeanFreq+.000001,log='y', col = "magenta",xlab="Position Number", ylab="MeanFreq",main="Synonymous C", pch=7)
+plot(synonymousC$num,synonymousC$MeanFreq+.000001,log='y', col = "deeppink4",xlab="Position Number", ylab="MeanFreq",main="Synonymous C", pch=7)
 abline(h=mean(synonymousC$MeanFreq+.000001))
 legend("topleft",inset=c(0,-0.45), legend=c
-       ("synonymous C"),col="magenta", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
+       ("synonymous C"),col="deeppink4", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
 
-plot(nonsynonymousC$num,nonsynonymousC$MeanFreq+.000001,log='y', col = "cyan",xlab="Position Number", ylab="MeanFreq",main="NonSynonymous C", pch = 9)
+plot(nonsynonymousC$num,nonsynonymousC$MeanFreq+.000001,log='y', col = "yellow4",xlab="Position Number", ylab="MeanFreq",main="NonSynonymous C", pch = 9)
 abline(h=mean(nonsynonymousC$MeanFreq+.000001))
 legend("topleft",inset=c(0,-0.45), legend=c
-       ("nonsynonymous C"),col="cyan", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
+       ("nonsynonymous C"),col="yellow4", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
 
 plot(synonymousG$num,synonymousG$MeanFreq+.000001,log='y', col = "palegreen4",xlab="Position Number", ylab="MeanFreq",main="Synonymous G",pch=13)
 abline(h=mean(synonymousG$MeanFreq+.000001))
