@@ -32,5 +32,5 @@ par(new=TRUE)
 plot(NoCPGT$num,log10(NoCPGT$MeanFreq+.000001), col="purple",xaxt="n", yaxt="n",xlab="Position Number", ylab="MeanFreq", pch=0)
 abline(h=mean(log10(NoCPGT$MeanFreq+.000001)),col="purple")
 }
-
+ 
 CPGNoCPGAT(Dengue)
