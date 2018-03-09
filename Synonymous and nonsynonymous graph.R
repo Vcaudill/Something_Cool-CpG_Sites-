@@ -13,14 +13,6 @@ nonsynonymous<-which(Virus$TypeOfSite=='nonsyn')
 #subset data into nonsynonymous sites and designated wildtypes
 nonsynonymousA<-subset(Virus, wtnt=='a' & TypeOfSite=='nonsyn')
 nonsynonymousT<-subset(Virus, wtnt=='t' & TypeOfSite=='nonsyn')
-#binds nonsynonymous subset data into a new dataset
-nonsynonymous<-rbind(nonsynonymousA, nonsynonymousT)
-#subset data into synonymous sites and designated wildtypes
-synonymousC<-subset(Virus, wtnt=='c' & TypeOfSite=='syn')
-synonymousG<-subset(Virus, wtnt=='g' & TypeOfSite=='syn')
-#subset data into nonsynonymous sites and designated wildtypes
-nonsynonymousC<-subset(Virus, wtnt=='c' & TypeOfSite=='nonsyn')
-nonsynonymousG<-subset(Virus, wtnt=='g' & TypeOfSite=='nonsyn')
 
 #A and T synonymous and nonsynonymous graphs
 
@@ -54,7 +46,15 @@ abline(h=mean(nonsynonymousT$MeanFreq+.000001))
 legend("topleft",inset=c(0,-0.45), legend=c
        ("nonsynonymous T"),col="purple", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
 }
-SynNonsynCG<-function(Virus){
+SynNonsynCG<-function(Virus2){
+  
+#subset data into synonymous sites and designated wildtypes
+synonymousC<-subset(Virus2, wtnt=='c' & TypeOfSite=='syn')
+synonymousG<-subset(Virus2, wtnt=='g' & TypeOfSite=='syn')
+#subset data into nonsynonymous sites and designated wildtypes
+nonsynonymousC<-subset(Virus2, wtnt=='c' & TypeOfSite=='nonsyn')
+nonsynonymousG<-subset(Virus2, wtnt=='g' & TypeOfSite=='nonsyn')
+  
 #Plot C and G synonymous and nonsynonymous graphs
 layout(matrix(c(1,2,3,4), 2, 2, byrow = TRUE))
 plot(synonymousC$num,synonymousC$MeanFreq+.000001,log='y', col = "magenta",xlab="Position Number", ylab="MeanFreq",main="Synonymous C", pch=7)
@@ -73,7 +73,7 @@ legend("topleft",inset=c(0,-0.45), legend=c
        ("synonymous G"),col="black", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
 
 plot(nonsynonymousG$num,nonsynonymousG$MeanFreq+.000001,log='y', col = "yellow",xlab="Position Number", ylab="MeanFreq",main="NonSynonymous G", pch=14)
-abline(h=mean(nonsynonymousT$MeanFreq+.000001))
+abline(h=mean(nonsynonymousG$MeanFreq+.000001))
 legend("topleft",inset=c(0,-0.45), legend=c
        ("nonsynonymous G"),col="yellow", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
 }  
