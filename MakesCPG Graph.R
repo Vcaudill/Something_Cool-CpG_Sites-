@@ -1,13 +1,13 @@
 Dengue<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
 
+CPGNoCPGAT<-function(Virus){
 #subset wildtype and if a CPG site is made
-CPGA<-subset(Dengue, wtnt=='a' & makesCpG==1)
-CPGT<-subset(Dengue, wtnt=='t' & makesCpG==1) 
+CPGA<-subset(Virus, wtnt=='a' & makesCpG==1)
+CPGT<-subset(Virus, wtnt=='t' & makesCpG==1) 
 
 #subsets wildtype and if no CPG sites are made
-NoCPGA<-subset(Dengue, wtnt=='a' & makesCpG==0)
-NoCPGT<-subset(Dengue, wtnt=='t' & makesCpG==0)
-
+NoCPGA<-subset(Virus, wtnt=='a' & makesCpG==0)
+NoCPGT<-subset(Virus, wtnt=='t' & makesCpG==0)
 
 #layout graphs take same amount of space and 2 columns
 layout(matrix(c(1,2),ncol = 2,byrow = TRUE))
@@ -31,4 +31,6 @@ legend("topleft",inset=c(0,1.01), legend=c
 par(new=TRUE)
 plot(NoCPGT$num,log10(NoCPGT$MeanFreq+.000001), col="purple",xaxt="n", yaxt="n",xlab="Position Number", ylab="MeanFreq", pch=0)
 abline(h=mean(log10(NoCPGT$MeanFreq+.000001)),col="purple")
+}
 
+CPGNoCPGAT(Dengue)
