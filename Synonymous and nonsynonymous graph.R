@@ -67,15 +67,15 @@ abline(h=mean(nonsynonymousC$MeanFreq+.000001))
 legend("topleft",inset=c(0,-0.45), legend=c
        ("nonsynonymous C"),col="cyan", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
 
-plot(synonymousG$num,synonymousG$MeanFreq+.000001,log='y', col = "black",xlab="Position Number", ylab="MeanFreq",main="Synonymous G",pch=13)
+plot(synonymousG$num,synonymousG$MeanFreq+.000001,log='y', col = "palegreen4",xlab="Position Number", ylab="MeanFreq",main="Synonymous G",pch=13)
 abline(h=mean(synonymousG$MeanFreq+.000001))
 legend("topleft",inset=c(0,-0.45), legend=c
-       ("synonymous G"),col="black", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
+       ("synonymous G"),col="palegreen4", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
 
-plot(nonsynonymousG$num,nonsynonymousG$MeanFreq+.000001,log='y', col = "yellow",xlab="Position Number", ylab="MeanFreq",main="NonSynonymous G", pch=14)
+plot(nonsynonymousG$num,nonsynonymousG$MeanFreq+.000001,log='y', col = "dodgerblue4" ,xlab="Position Number", ylab="MeanFreq",main="NonSynonymous G", pch=14)
 abline(h=mean(nonsynonymousG$MeanFreq+.000001))
 legend("topleft",inset=c(0,-0.45), legend=c
-       ("nonsynonymous G"),col="yellow", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
+       ("nonsynonymous G"),col="dodgerblue4", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
 }  
 SynNonsynAT(Dengue)
 SynNonsynCG(Dengue)
