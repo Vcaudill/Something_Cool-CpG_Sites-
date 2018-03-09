@@ -76,6 +76,6 @@ plot(nonsynonymousG$num,nonsynonymousG$MeanFreq+.000001,log='y', col = "yellow",
 abline(h=mean(nonsynonymousT$MeanFreq+.000001))
 legend("topleft",inset=c(0,-0.45), legend=c
        ("nonsynonymous G"),col="yellow", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
-} 
+}  
 SynNonsynAT(Dengue)
 SynNonsynCG(Dengue)
