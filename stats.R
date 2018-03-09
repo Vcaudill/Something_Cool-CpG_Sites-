@@ -1,5 +1,6 @@
 
 Dvirus<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
+data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 Wilcox_test = function(data){
 library(graphics)
 library(dplyr)
@@ -11,9 +12,11 @@ array2 = data$MeanFreq[data$wtnt =="a" & data$TypeOfSite == 'syn' & data$makesCp
 array3 = data$MeanFreq[data$wtnt =="a" & data$TypeOfSite == 'nonsyn' & data$makesCpG == 1]
 array4 = data$MeanFreq[data$wtnt =="a" & data$TypeOfSite == 'nonsyn' & data$makesCpG == 0]
 
-
-print(wilcox.test(array1, array2, alternative='greater'))
+print("For a: Compairng makes CpG with does not make CpG. Wilcox test less")
+print(wilcox.test(array1, array2, alternative='less'))
+print("For a: Compairng makes syn mutation to nonsyn mutation. Both makes CpG, Wilcox test greater")
 print(wilcox.test(array1, array3, alternative='greater'))
+print("For a: Compairng makes syn mutation to nonsyn mutation. No CpG made, Wilcox test greater")
 print(wilcox.test(array2, array4, alternative='greater'))
 
 
@@ -22,8 +25,12 @@ array6 = data$MeanFreq[data$wtnt =="t" & data$TypeOfSite == 'syn' & data$makesCp
 array7 = data$MeanFreq[data$wtnt =="t" & data$TypeOfSite == 'nonsyn' & data$makesCpG == 1]
 array8 = data$MeanFreq[data$wtnt =="t" & data$TypeOfSite == 'nonsyn' & data$makesCpG == 0]
 
-print(wilcox.test(array5, array6, alternative='greater'))
+
+print("For t: Compairng makes CpG with does not make CpG. Wilcox test less")
+print(wilcox.test(array5, array6, alternative='less'))
+print("For t: Compairng makes syn mutation to nonsyn mutation. Both makes CpG, Wilcox test greater")
 print(wilcox.test(array5, array7, alternative='greater'))
+print("For t: Compairng makes syn mutation to nonsyn mutation. No CpG made, Wilcox test greater")
 print(wilcox.test(array5, array8, alternative='greater'))
 
 
