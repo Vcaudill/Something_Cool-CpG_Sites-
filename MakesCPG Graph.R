@@ -12,9 +12,9 @@ NoCPGT<-subset(Virus, wtnt=='t' & makesCpG==0)
 #layout graphs take same amount of space and 2 columns
 layout(matrix(c(1,2),ncol = 2,byrow = TRUE))
 #plot position number vs mean freq
-plot(CPGA$num,log10(CPGA$MeanFreq+.000001), col = "red",xlab="Position Number", ylab="MeanFreq",main="CPG & No CPG A", pch=2)
+plot(CPGA$num,CPGA$MeanFreq+.000001, col = "red",xlab="Position Number", ylab="MeanFreq",main="CPG & No CPG A", pch=2)
 #creates a line with mean of all points
-abline(h=mean(log10(CPGA$MeanFreq+.000001)),col = "red", lwd=2)
+abline(h=mean(CPGA$MeanFreq+.000001),col = "red", lwd=2)
 #creates legend with red for CPG A and blue for No CPG A
 legend("topleft",inset=c(0,1.01), legend=c
        ("CPG A","No CPG A"),col=c("red","blue"), horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
@@ -34,3 +34,5 @@ abline(h=mean(NoCPGT$MeanFreq+.000001),col="purple",lwd=2)
 }
  
 CPGNoCPGAT(Dengue)
+
+
