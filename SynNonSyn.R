@@ -15,6 +15,7 @@ synFunction <- function(df) {
       }
     }
   }
+return(df)
 }
 
 

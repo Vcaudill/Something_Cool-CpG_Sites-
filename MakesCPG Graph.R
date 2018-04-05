@@ -1,4 +1,4 @@
-Dengue<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
+#Dengue<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
 
 CPGNoCPGAT<-function(Virus){
 #subset wildtype and if a CPG site is made

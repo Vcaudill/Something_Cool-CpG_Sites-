@@ -1,5 +1,5 @@
 #Read in CSV file
-Dengue<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
+# Dengue<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
 SynNonsynAT<-function(Virus){
 #select for only synonymous sites in Virus file
 synonymous<-which(Virus$TypeOfSite=='syn')
