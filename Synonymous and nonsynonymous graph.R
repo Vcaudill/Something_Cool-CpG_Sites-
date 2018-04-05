@@ -24,27 +24,17 @@ plot(synonymousA$num,synonymousA$MeanFreq+.000001,log='y', col = "red",
      ,xlab="Position Number", ylab="MeanFreq",main="Synonymous A", pch=2)
 #abline creates a line where the mean of all the points are located
 abline(h=mean(synonymousA$MeanFreq+.000001))
-#creates a legend:inset is coordinates where the legend lies
 
-legend("topleft",inset=c(0,-0.45), legend=c
-       ("synonymous A"),col="red", horiz=TRUE, 
-#lty is type of line used,cex is size of legend, xpd allows legend to lie outside the plot,bty is type of box around legend       
-       lty=1, cex=0.8,xpd=TRUE,bty='n')
 #plots continue 
 plot(nonsynonymousA$num,nonsynonymousA$MeanFreq+.000001,log='y', col = "blue",xlab="Position Number", ylab="MeanFreq",main="NonSynonymous A", pch = 5)
 abline(h=mean(nonsynonymousA$MeanFreq+.000001))
-legend("topleft",inset=c(0,-0.45), legend=c
-       ("nonsynonymous A"),col="blue", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
 
 plot(synonymousT$num,synonymousT$MeanFreq+.000001,log='y', col = "green",xlab="Position Number", ylab="MeanFreq",main="Synonymous T")
 abline(h=mean(synonymousT$MeanFreq+.000001))
-legend("topleft",inset=c(0,-0.45), legend=c
-       ("synonymous T"),col="green", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
 
 plot(nonsynonymousT$num,nonsynonymousT$MeanFreq+.000001,log='y', col = "purple",xlab="Position Number", ylab="MeanFreq",main="NonSynonymous T", pch=0)
 abline(h=mean(nonsynonymousT$MeanFreq+.000001))
-legend("topleft",inset=c(0,-0.45), legend=c
-       ("nonsynonymous T"),col="purple", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
+
 }
 SynNonsynCG<-function(Virus2){
   
@@ -59,23 +49,24 @@ nonsynonymousG<-subset(Virus2, wtnt=='g' & TypeOfSite=='nonsyn')
 layout(matrix(c(1,2,3,4), 2, 2, byrow = TRUE))
 plot(synonymousC$num,synonymousC$MeanFreq+.000001,log='y', col = "deeppink4",xlab="Position Number", ylab="MeanFreq",main="Synonymous C", pch=7)
 abline(h=mean(synonymousC$MeanFreq+.000001))
-legend("topleft",inset=c(0,-0.45), legend=c
-       ("synonymous C"),col="deeppink4", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
 
 plot(nonsynonymousC$num,nonsynonymousC$MeanFreq+.000001,log='y', col = "yellow4",xlab="Position Number", ylab="MeanFreq",main="NonSynonymous C", pch = 9)
 abline(h=mean(nonsynonymousC$MeanFreq+.000001))
-legend("topleft",inset=c(0,-0.45), legend=c
-       ("nonsynonymous C"),col="yellow4", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
 
 plot(synonymousG$num,synonymousG$MeanFreq+.000001,log='y', col = "palegreen4",xlab="Position Number", ylab="MeanFreq",main="Synonymous G",pch=13)
 abline(h=mean(synonymousG$MeanFreq+.000001))
-legend("topleft",inset=c(0,-0.45), legend=c
-       ("synonymous G"),col="palegreen4", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
 
 plot(nonsynonymousG$num,nonsynonymousG$MeanFreq+.000001,log='y', col = "dodgerblue4" ,xlab="Position Number", ylab="MeanFreq",main="NonSynonymous G", pch=14)
 abline(h=mean(nonsynonymousG$MeanFreq+.000001))
-legend("topleft",inset=c(0,-0.45), legend=c
-       ("nonsynonymous G"),col="dodgerblue4", horiz=TRUE, lty=1, cex=0.8,xpd=TRUE,bty='n')
+
 }  
 SynNonsynAT(Dengue)
 SynNonsynCG(Dengue)
+
+plot(1, type="n", axes=FALSE, xlab="", ylab="") 
+
+legend("center", legend=c
+       ("synonymous A","nonsynonymous A","synonymous T","nonsynonymous T","synonymous C","nonsynonymous C","synonymous G","nonsynonymous G"),
+       col= c("red","blue","green","purple","deeppink4","yellow4","palegreen4","dodgerblue4"), horiz= FALSE, 
+       #lty is type of line used,cex is size of legend, xpd allows legend to lie outside the plot,bty is type of box around legend       
+       cex=1,xpd=TRUE,bty='n', pch = c(2,5,1,0,7,9,13,14))
