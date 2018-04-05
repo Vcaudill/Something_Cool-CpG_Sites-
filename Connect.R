@@ -2,9 +2,10 @@
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
 
 
-DataSet <-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
+# DataSet <-read.fasta("DengueVirus1.fasta_pruned.mu.trim05.txt")
 source("MeaFreq.R")
-DF<-meanFreq("DataSet")
+# must place your file as a txt takes a few minutes 
+DF<-meanFreq("DengueVirus1.fasta_pruned.mu.trim05.txt")
 DF$wtnt<-as.character(DF$wtnt)
 
 source("WTAA.R")
@@ -17,21 +18,24 @@ source("Drastic_AA_Change.R")
 DF<-big_aa_change(DF)
 
 source("SynNonSyn.R")
-DF<-functionSynNonSyn(DF)
+DF<-synFunction(DF)
 
 source("CPG_Function.R")
 DF<-CPG_site(DF)
 
+# graphs 
+source("CPG_Syn_Nonsyn_graph.R")
+comparing_CpG_Syn_Nonsyn (DF)
+source("Synonymous and nonsynonymous graph.R")
+SynNonsynAT(DF)
+
+source("MakesCPG Graph.R")
+CPGNoCPGAT(DF)
+# Wilcox test
+source("stats.R")
+Wilcox_test (DF)
 
 #########
 ########
-# Plots Not on Github Yet
-# source("Plot1.R")
-# LvsF_CpG_Printer(DF)
-# 
-# source("PLot2.R")
-# plotsyn(DF)
-# 
-# source("Plot3.R")
-# Fig3(DF)
+
 

@@ -1,15 +1,15 @@
 #comment
 
-## Group # 1 ( 9am) - CPG Sites Function
+## Group # 1 ( 9am) - makesCpG Sites Function
 ## Contributior - Jacky, Sarina, Preeti, Andrea
 
 
-######## Investigating CPG sites: 
+######## Investigating makesCpG sites: 
 
 ## Note : this function assumes that wtnt column is present in the 
 ##        dataframe and your dataframe that is set as df
 
-# Runs CPG_site function which takes in the arguement/input dataframe
+# Runs makesCpG_site function which takes in the arguement/input dataframe
 CPG_site<-function(df){
   
   # Collapses wtnt vector sequence into a character string and sets to variable STRING
@@ -24,11 +24,11 @@ CPG_site<-function(df){
   BELL <- data.frame(matrix(unlist(TG)))
   BELL
   
-  # create new column name CPG with values zero
-  df$CPG<- 0
+  # create new column name makesCpG with values zero
+  df$makesCpG<- 0
   
-  # Inserting value 1 in the column "CPG" and using the values found dataframe BELL as the row #
-  df[BELL[,1],"CPG"] <- 1
+  # Inserting value 1 in the column "makesCpG" and using the values found dataframe BELL as the row #
+  df[BELL[,1],"makesCpG"] <- 1
   
   
   # For CA sites: 
@@ -41,12 +41,12 @@ CPG_site<-function(df){
   CASITES <- data.frame(matrix(unlist(CA)))
   CASITES
   
-  # Inserting value 1 in the column "CPG" and using the values found dataframe BELL as the row #
-  df[CASITES[,1]+1,"CPG"] <- 1
+  # Inserting value 1 in the column "makesCpG" and using the values found dataframe BELL as the row #
+  df[CASITES[,1]+1,"makesCpG"] <- 1
   #returns new dataframe
   return(df)
 }
 
-# Calls the CPG_site function with the dataframe as the argument Old dataframe becomes the new dataframe
-df<-CPG_site(df)
+# Calls the makesCpG_site function with the dataframe as the argument Old dataframe becomes the new dataframe
+
 
