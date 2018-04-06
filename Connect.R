@@ -28,6 +28,8 @@ source("CPG_Syn_Nonsyn_graph.R")
 comparing_CpG_Syn_Nonsyn (DF)
 source("Synonymous and nonsynonymous graph.R")
 SynNonsynAT(DF)
+SynNonsynCG(DF)
+legend()
 
 source("MakesCPG Graph.R")
 CPGNoCPGAT(DF)

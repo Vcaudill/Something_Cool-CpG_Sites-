@@ -60,9 +60,9 @@ plot(nonsynonymousG$num,nonsynonymousG$MeanFreq+.000001,log='y', col = "dodgerbl
 abline(h=mean(nonsynonymousG$MeanFreq+.000001))
 
 }  
-SynNonsynAT(Dengue)
-SynNonsynCG(Dengue)
-
+#SynNonsynAT(Dengue)
+#SynNonsynCG(Dengue)
+legend<-function(){
 plot(1, type="n", axes=FALSE, xlab="", ylab="") 
 
 legend("center", legend=c
@@ -70,3 +70,4 @@ legend("center", legend=c
        col= c("red","blue","green","purple","deeppink4","yellow4","palegreen4","dodgerblue4"), horiz= FALSE, 
        #lty is type of line used,cex is size of legend, xpd allows legend to lie outside the plot,bty is type of box around legend       
        cex=1,xpd=TRUE,bty='n', pch = c(2,5,1,0,7,9,13,14))
+}
