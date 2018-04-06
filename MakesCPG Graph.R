@@ -29,7 +29,7 @@ plot(NoCPGT$num,NoCPGT$MeanFreq+.000001,log='y', col="purple",xaxt="n", yaxt="n"
 abline(h=mean(NoCPGT$MeanFreq+.000001),col="purple",lwd=2)
 }
  
-CPGNoCPGAT(Dengue)
+CPGNoCPGAT(DF)
 
 plot(1, type="n", axes=FALSE, xlab="", ylab="") 
 #creates legend with red for CPG A and blue for No CPG A

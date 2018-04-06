@@ -24,15 +24,17 @@ source("CPG_Function.R")
 DF<-CPG_site(DF)
 
 # graphs 
-source("CPG_Syn_Nonsyn_graph.R")
-comparing_CpG_Syn_Nonsyn (DF)
+
 source("Synonymous and nonsynonymous graph.R")
 SynNonsynAT(DF)
 SynNonsynCG(DF)
-legend()
+
 
 source("MakesCPG Graph.R")
 CPGNoCPGAT(DF)
+
+source("CPG_Syn_Nonsyn_graph.R")
+comparing_CpG_Syn_Nonsyn (DF)
 # Wilcox test
 source("stats.R")
 Wilcox_test (DF)

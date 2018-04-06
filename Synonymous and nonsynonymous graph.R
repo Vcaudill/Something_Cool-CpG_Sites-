@@ -1,5 +1,6 @@
 #Read in CSV file
-# Dengue<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
+
+#Dengue<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
 SynNonsynAT<-function(Virus){
 #select for only synonymous sites in Virus file
 synonymous<-which(Virus$TypeOfSite=='syn')
@@ -36,6 +37,7 @@ plot(nonsynonymousT$num,nonsynonymousT$MeanFreq+.000001,log='y', col = "purple",
 abline(h=mean(nonsynonymousT$MeanFreq+.000001))
 
 }
+
 SynNonsynCG<-function(Virus2){
   
 #subset data into synonymous sites and designated wildtypes
@@ -59,15 +61,15 @@ abline(h=mean(synonymousG$MeanFreq+.000001))
 plot(nonsynonymousG$num,nonsynonymousG$MeanFreq+.000001,log='y', col = "dodgerblue4" ,xlab="Position Number", ylab="MeanFreq",main="NonSynonymous G", pch=14)
 abline(h=mean(nonsynonymousG$MeanFreq+.000001))
 
+
 }  
-#SynNonsynAT(Dengue)
-#SynNonsynCG(Dengue)
-legend<-function(){
+SynNonsynAT(DF)
+SynNonsynCG(DF)
+
 plot(1, type="n", axes=FALSE, xlab="", ylab="") 
 
-legend("center", legend=c
-       ("synonymous A","nonsynonymous A","synonymous T","nonsynonymous T","synonymous C","nonsynonymous C","synonymous G","nonsynonymous G"),
+legend("center", legend=c("synonymous A","nonsynonymous A","synonymous T","nonsynonymous T","synonymous C","nonsynonymous C","synonymous G","nonsynonymous G"),
        col= c("red","blue","green","purple","deeppink4","yellow4","palegreen4","dodgerblue4"), horiz= FALSE, 
        #lty is type of line used,cex is size of legend, xpd allows legend to lie outside the plot,bty is type of box around legend       
        cex=1,xpd=TRUE,bty='n', pch = c(2,5,1,0,7,9,13,14))
-}
+
