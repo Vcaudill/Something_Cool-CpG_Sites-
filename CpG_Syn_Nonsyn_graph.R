@@ -1,5 +1,5 @@
 
-data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
+#data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 
 
 
@@ -196,38 +196,38 @@ ggplot(aes(factor(graphit), MeanFreq, color=graphit), data = AllATCG)+
 }
 
 
-comparing_CpG_Syn_Nonsyn(data)
+comparing_CpG_Syn_Nonsyn(DF)
 #make sure the packages are loaded before begining 
 
 ###################
 #still testing
-
-ggplot(aes(factor(graphit), MeanFreq, color=graphit), data = AllAT)+
-  #log scale to make the data eaisier to see
-  scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
-                labels = trans_format("log10", math_format(10^.x))) +
-  scale_x_discrete(labels=c("1" = "CpG ", "5" = "CpG ", "3" = "nonCpG ", "4"= "nonCpG "))+
-  geom_boxplot(data= AllA,aes(x = factor(graphit))) +
-  #facet_wrap splits graph between a and t
-  facet_wrap(~ wtnt)+
-  geom_boxplot(data= AllT,aes(x = factor(graphit))) +
-  #give points new colors and lables the colors
-  scale_color_manual(labels = c("CpG (syn)","Cpg (nonsyn)","nonCpG (syn)", "nonCpg (nonsyn)"), values = c("firebrick", "darkolivegreen","goldenrod3", "royalblue3")) +
-  #labels X and Y axis
-  labs(x="Mutation Type", y="Mutation Frquency",col=" ")+
-  annotation_logticks(sides="l") 
-
-
-
-
-plot(MeanFreq~TypeOfSite, data=AC, log='y',yaxt='n',xaxt='n',xlab="",ylab="",col=c("#601E0033","#FF000033","#0000FF33","#FF5B0033","#00FDFF33"), border=c("#601E0080","#FF000080","#0000FF80","#FF5B00","#00FDFF"))
-par(new=TRUE)
-plot(MeanFreq~TypeOfSite, data=ANC, log='y',yaxt='n',xaxt='n',xlab="",ylab="",col=c("#0000FF33","#FF5B0033","#00FDFF33"), border=c("#0000FF80","#FF5B00","#00FDFF"))
-
-eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1)
-axis.break(2,0.00012,style="slash") 
-mtext('0', side=2, line=1.5, at=0.0001, las=1,cex=1.1)
-#mtext("Mutation type", side=1, line=8, cex=1.5)
-mtext("Mutation frequency", side=2, line=3, cex=1.1)
-
-points(MF1~Type, data=stats_s,log='y',pch=16,cex=1)
+# 
+# ggplot(aes(factor(graphit), MeanFreq, color=graphit), data = AllAT)+
+#   #log scale to make the data eaisier to see
+#   scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
+#                 labels = trans_format("log10", math_format(10^.x))) +
+#   scale_x_discrete(labels=c("1" = "CpG ", "5" = "CpG ", "3" = "nonCpG ", "4"= "nonCpG "))+
+#   geom_boxplot(data= AllA,aes(x = factor(graphit))) +
+#   #facet_wrap splits graph between a and t
+#   facet_wrap(~ wtnt)+
+#   geom_boxplot(data= AllT,aes(x = factor(graphit))) +
+#   #give points new colors and lables the colors
+#   scale_color_manual(labels = c("CpG (syn)","Cpg (nonsyn)","nonCpG (syn)", "nonCpg (nonsyn)"), values = c("firebrick", "darkolivegreen","goldenrod3", "royalblue3")) +
+#   #labels X and Y axis
+#   labs(x="Mutation Type", y="Mutation Frquency",col=" ")+
+#   annotation_logticks(sides="l") 
+# 
+# 
+# 
+# 
+# plot(MeanFreq~TypeOfSite, data=AC, log='y',yaxt='n',xaxt='n',xlab="",ylab="",col=c("#601E0033","#FF000033","#0000FF33","#FF5B0033","#00FDFF33"), border=c("#601E0080","#FF000080","#0000FF80","#FF5B00","#00FDFF"))
+# par(new=TRUE)
+# plot(MeanFreq~TypeOfSite, data=ANC, log='y',yaxt='n',xaxt='n',xlab="",ylab="",col=c("#0000FF33","#FF5B0033","#00FDFF33"), border=c("#0000FF80","#FF5B00","#00FDFF"))
+# 
+# eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1)
+# axis.break(2,0.00012,style="slash") 
+# mtext('0', side=2, line=1.5, at=0.0001, las=1,cex=1.1)
+# #mtext("Mutation type", side=1, line=8, cex=1.5)
+# mtext("Mutation frequency", side=2, line=3, cex=1.1)
+# 
+# points(MF1~Type, data=stats_s,log='y',pch=16,cex=1)

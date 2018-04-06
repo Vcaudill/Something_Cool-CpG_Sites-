@@ -35,9 +35,10 @@ CPGNoCPGAT(DF)
 
 source("CPG_Syn_Nonsyn_graph.R")
 comparing_CpG_Syn_Nonsyn (DF)
+
 # Wilcox test
 source("stats.R")
-Wilcox_test (DF)
+Wilcox_test(DF)
 
 #########
 ########
