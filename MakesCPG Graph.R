@@ -18,7 +18,7 @@ abline(h=mean(CPGA$MeanFreq+.000001),col = "red", lwd=2)
 
 par(new=TRUE)
 #plots second graph No CPG A. xaxt gets rid of x axis label yaxt gets rid of y
-plot(NoCPGA$num,NoCPGA$MeanFreq+.000001,log='y', col=c("red","blue"),xaxt="n", yaxt="n",xlab="Position Number", ylab="MeanFreq", pch=5)
+plot(NoCPGA$num,NoCPGA$MeanFreq+.000001,log='y', col="blue",xaxt="n", yaxt="n",xlab="Position Number", ylab="MeanFreq", pch=5)
 abline(h=mean(NoCPGA$MeanFreq+.000001),col="blue",lwd=2)
 
 plot(CPGT$num,CPGT$MeanFreq+.000001,log='y', col = "green",xlab="Position Number", ylab="MeanFreq",main="CPG & No CPG T")
