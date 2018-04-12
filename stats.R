@@ -65,7 +65,7 @@ print(wilcox.test(synt, nonsynt, alternative='greater'))
 # print(wilcox.test(syng, nonsyng, alternative='greater'))
 
 }
-Wilcox_test(data)
+#Wilcox_test(data)
 
 # low <- c(1,1,2,2,3,3,4,4,5,5)
 # high <- c(6,6,7,7,8,8,9,9,10,10, 12, 78)
