@@ -1,6 +1,16 @@
 ###Get Wildtype amino acid###
+
 getWTAA<-function(df){
-  
+  check.integer <- function(N){
+    !grepl("[^[:digit:]]", format(N,  digits = 20, scientific = FALSE))
+  }
+  if (check.integer(nrow(df)/3) == FALSE){
+    df <- df[-nrow(df),]
+    if (check.integer(nrow(df)/3) == FALSE){
+      df <- df[-nrow(df),]
+    }
+    
+  }
   #Assign consensus to a variable
   cons =  df$wtnt
   

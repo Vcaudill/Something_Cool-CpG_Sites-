@@ -5,7 +5,7 @@ setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
 # DataSet <-read.fasta("DengueVirus1.fasta_pruned.mu.trim05.txt")
 source("MeaFreq.R")
 # must place your file as a txt takes a few minutes 
-DF<-meanFreq('DengueVirus2.fasta_pruned.mu.trim05.txt')
+DF<-meanFreq("EnterovirusA_VP1.fasta_pruned.mu.trim05")
 DF$wtnt<-as.character(DF$wtnt)
 
 source("WTAA.R")
@@ -24,22 +24,29 @@ source("CPG_Function.R")
 DF<-CPG_site(DF)
 
 # graphs 
-
+# pdf('Synon_Nonsyn_AT_Graph.pdf',width = 7, height = 5)
 source("Synonymous and nonsynonymous graph.R")
-SynNonsynAT(DF)
-SynNonsynCG(DF)
+# dev.off()
+#SynNonsynAT(DF)
+#SynNonsynCG(DF)
 
-
-source("MakesCPG Graph.R")
-CPGNoCPGAT(DF)
-
+#pdf('Synon_Nonsyn_CG_Graph.pdf',width = 7, height = 5)
+#source("MakesCPG Graph.R")
+#CPGNoCPGAT(DF)
+# pdf('Compare_CpG.pdf',width = 7, height = 5)
 source("CPG_Syn_Nonsyn_graph.R")
 comparing_CpG_Syn_Nonsyn (DF)
+#dev.off()
 
 # Wilcox test
 source("stats.R")
 Wilcox_test(DF)
-
+pdf('Synon_Nonsyn_AT_Graph.pdf',width = 7, height = 5)
+SynNonsynAT(DF)
+# dev.off()
+pdf('Synon_Nonsyn_CG_Graph.pdf',width = 7, height = 5)
+SynNonsynCG(DF)
+# dev.off()
 #########
 ########
 
