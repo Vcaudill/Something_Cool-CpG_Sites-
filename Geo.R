@@ -1,6 +1,6 @@
 # your floder where all pages are saved
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
-
+#good luck
 
 # DataSet <-read.fasta("DengueVirus1.fasta_pruned.mu.trim05.txt")
 source("MeaFreq.R")
