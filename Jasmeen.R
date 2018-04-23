@@ -1,11 +1,11 @@
 # your floder where all pages are saved
-setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
+setwd("yours")
 
-
+#make graphs in PDFS
 # DataSet <-read.fasta("DengueVirus1.fasta_pruned.mu.trim05.txt")
 source("MeaFreq.R")
 # must place your file as a txt takes a few minutes 
-DF<-meanFreq('DengueVirus2.fasta_pruned.mu.trim05.txt')
+DF<-meanFreq('thevirus')
 DF$wtnt<-as.character(DF$wtnt)
 
 source("WTAA.R")
