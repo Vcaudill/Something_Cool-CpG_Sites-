@@ -188,7 +188,7 @@ ggplot(aes(factor(graphit), MeanFreq, color=graphit), data = AllATCG)+
    #give points new colors and lables the colors
   scale_color_manual(labels = c("CpG (syn)","nonCpG (syn)","CpG (nonsyn)", "nonCpG (nonsyn)"), values = c("firebrick", "royalblue3","goldenrod3", "darkolivegreen")) +
   #labels X and Y axis
-  labs(x="Mutation Type", y="Mutation Frquency",col=" ")+
+  labs(x="Mutation Type", y="Mutation Frequency",col=" ")+
   #theme(text=element_text(family="Garamond", size=14))+
   annotation_logticks(sides="l") 
 
