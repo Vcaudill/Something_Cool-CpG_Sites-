@@ -1,20 +1,10 @@
 
-#data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
+#data<-read.csv("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus/DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 
 
 
 comparing_CpG_Syn_Nonsyn = function(data){
-  library(ggplot2)
-  library(dplyr)
-  library(plotrix)
-  library(scales)
-  library(grid)
-  library(gridExtra)
-  # my solution for the error I was getting 
-  require(extrafont)
-  # # need only do this once!
-  font_import(pattern="[A/a]rial", prompt=FALSE)
-  require(ggplot2)
+
   
   #subset into two groups yes makes cpg and no cpg
   cpg.y<-subset(data, makesCpG==1)
@@ -34,13 +24,6 @@ comparing_CpG_Syn_Nonsyn = function(data){
     return(sd(x,na.rm = FALSE)/sqrt(length(x)))
   }
   
-  # addinf a small value to be able to graph on a log scale
-  # AC$MeanFreq = AC$MeanFreq +.00001
-  # ANC$MeanFreq = ANC$MeanFreq +.00001
-  # TC$MeanFreq = TC$MeanFreq +.00001
-  # TNC$MeanFreq = TNC$MeanFreq +.00001
-  # CNC$MeanFreq = CNC$MeanFreq +.00001
-  # GNC$MeanFreq = GNC$MeanFreq +.00001
   
   #making the data frames with all information about a, t, c, g 
   AllA = rbind(AC, ANC)
@@ -62,22 +45,22 @@ comparing_CpG_Syn_Nonsyn = function(data){
   # for loops to caculate mean ans errorbars and 1, 2, 3, 4 for position
   for (i in 1:length(AllA$makesCpG)) {
     if (AllA$makesCpG[i] == 1 && AllA$TypeOfSite[i] == "syn") {
-      AllA$graphit[i] <- "1"
+      AllA$graphit[i] <- "2"
       AllA$mean_value[i] <- mean(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
       AllA$sem_vals[i]<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
     }
     if (AllA$makesCpG[i] == 1 && AllA$TypeOfSite[i] == "nonsyn") {
-      AllA$graphit[i] <- "3"
+      AllA$graphit[i] <- "4"
       AllA$mean_value[i] <- mean(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
       AllA$sem_vals[i]<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
     }
     if (AllA$makesCpG[i] == 0 && AllA$TypeOfSite[i] == "syn") {
-      AllA$graphit[i] <- "2"
+      AllA$graphit[i] <- "1"
       AllA$mean_value[i] <- mean(AllA$MeanFreq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
       AllA$sem_vals[i]<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
     }
     if (AllA$makesCpG[i] == 0 && AllA$TypeOfSite[i] == "nonsyn") {
-      AllA$graphit[i] <- "4"
+      AllA$graphit[i] <- "3"
       AllA$mean_value[i] <- mean(AllA$MeanFreq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
       AllA$sem_vals[i]<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
     }
@@ -85,22 +68,22 @@ comparing_CpG_Syn_Nonsyn = function(data){
   
   for (i in 1:length(AllT$makesCpG)) {
     if (AllT$makesCpG[i] == 1 && AllT$TypeOfSite[i] == "syn") {
-      AllT$graphit[i] <- "1"
+      AllT$graphit[i] <- "2"
       AllT$mean_value[i] <- mean(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
       AllT$sem_vals[i]<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
     }
     if (AllT$makesCpG[i] == 1 && AllT$TypeOfSite[i] == "nonsyn") {
-      AllT$graphit[i] <- "3"
+      AllT$graphit[i] <- "4"
       AllT$mean_value[i] <- mean(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
       AllT$sem_vals[i]<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
     }
     if (AllT$makesCpG[i] == 0 && AllT$TypeOfSite[i] == "syn") {
-      AllT$graphit[i] <- "2"
+      AllT$graphit[i] <- "1"
       AllT$mean_value[i] <- mean(AllT$MeanFreq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
       AllT$sem_vals[i]<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
     }
     if (AllT$makesCpG[i] == 0 && AllT$TypeOfSite[i] == "nonsyn") {
-      AllT$graphit[i] <- "4"
+      AllT$graphit[i] <- "3"
       AllT$mean_value[i] <- mean(AllT$MeanFreq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
       AllT$sem_vals[i]<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
     }
@@ -109,12 +92,12 @@ comparing_CpG_Syn_Nonsyn = function(data){
   for (i in 1:length(AllC$makesCpG)) {
     
     if (AllC$makesCpG[i] == 0 && AllC$TypeOfSite[i] == "syn") {
-      AllC$graphit[i] <- "2"
+      AllC$graphit[i] <- "1"
       AllC$mean_value[i] <- mean(AllC$MeanFreq[(which(AllC$makesCpG == 0 & AllC$TypeOfSite == "syn") )])
       AllC$sem_vals[i]<-sem(AllC$MeanFreq[(which(AllC$makesCpG == 0 & AllC$TypeOfSite == "syn") )])
     }
     if (AllC$makesCpG[i] == 0 && AllC$TypeOfSite[i] != "syn") {
-      AllC$graphit[i] <- "4"
+      AllC$graphit[i] <- "3"
       AllC$mean_value[i] <- mean(AllC$MeanFreq[(which(AllC$makesCpG == 0 & AllC$TypeOfSite == "nonsyn") )])
       AllC$sem_vals[i]<-sem(AllC$MeanFreq[(which(AllC$makesCpG == 0 & AllC$TypeOfSite == "nonsyn") )])
     }
@@ -123,12 +106,12 @@ comparing_CpG_Syn_Nonsyn = function(data){
   for (i in 1:length(AllG$makesCpG)) {
     
     if (AllG$makesCpG[i] == 0 && AllG$TypeOfSite[i] == "syn") {
-      AllG$graphit[i] <- "2"
+      AllG$graphit[i] <- "1"
       AllG$mean_value[i] <- mean(AllG$MeanFreq[(which(AllG$makesCpG == 0 & AllG$TypeOfSite == "syn") )])
       AllG$sem_vals[i]<-sem(AllG$MeanFreq[(which(AllG$makesCpG == 0 & AllG$TypeOfSite == "syn") )])
     }
     if (AllG$makesCpG[i] == 0 && AllG$TypeOfSite[i] != "syn") {
-      AllG$graphit[i] <- "4"
+      AllG$graphit[i] <- "3"
       AllG$mean_value[i] <- mean(AllG$MeanFreq[(which(AllG$makesCpG == 0 & AllG$TypeOfSite == "nonsyn") )])
       AllG$sem_vals[i]<-sem(AllG$MeanFreq[(which(AllG$makesCpG == 0 & AllG$TypeOfSite == "nonsyn") )])
     }
@@ -160,24 +143,23 @@ comparing_CpG_Syn_Nonsyn = function(data){
   
   ####################################################################################
   #layout(matrix(c(1,2,3,4), 2, 2, byrow = TRUE))
-  plot(AllA$makesCpG==1&AllA$TypeOfSite=="syn",AllA$MeanFreq+.000001,log='y', col = "red",xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
-  par(new=TRUE)
-  plot(AllA$makesCpG==0&AllA$TypeOfSite=="syn",AllA$MeanFreq+.000001,log='y', col = "blue",xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
-  par(new=TRUE)
-  plot(AllA$makesCpG==1&AllA$TypeOfSite!="syn",AllA$MeanFreq+.000001,log='y', col = "yellow",xlab="Mutation Type", ylab="MeanFreq",main="A")
-  par(new=TRUE)
-  plot(AllA$makesCpG==0&AllA$TypeOfSite!="syn",AllA$MeanFreq+.000001,log='y', col = "green",xlab="Mutation Type", ylab="MeanFreq",main="A")
   
-  par(new=TRUE)
-  plot(AllG$makesCpG==1&AllG$TypeOfSite=="syn",AllG$MeanFreq+.000001,log='y', col = "red",xlab="Mutation Type", ylab="MeanFreq",main="G")
-  par(new=TRUE)
-  plot(AllG$makesCpG==0&AllG$TypeOfSite=="syn",AllG$MeanFreq+.000001,log='y', col = "blue",xlab="Mutation Type", ylab="MeanFreq",main="G")
-  par(new=TRUE)
-  plot(AllG$makesCpG==1&AllG$TypeOfSite!="syn",AllG$MeanFreq+.000001,log='y', col = "yellow",xlab="Mutation Type", ylab="MeanFreq",main="G")
-  par(new=TRUE)
-  plot(AllG$makesCpG==0&AllG$TypeOfSite!="syn",AllG$MeanFreq+.000001,log='y', col = "green",xlab="Mutation Type", ylab="MeanFreq",main="G")
+  par(mfrow=c(2,2))
+  plot(AllA$graphit, AllA$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
+  
+  # color by grpahit 
+  plot(AllT$graphit, AllT$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="A")
+  plot(AllG$graphit, AllG$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
+  
+  # color by grpahit 
+  plot(AllC$graphit, AllC$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="A")
   
   
+  
+  
+  
+  col=c("red","blue","black","orange")[AllT$graphit]
+  pch=c(16:18)[AllT$graphit]
   ######################################################################################
   
   # the plot
