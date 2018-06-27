@@ -3,9 +3,9 @@
 
 
 
+
 comparing_CpG_Syn_Nonsyn = function(data){
 
-  
   #subset into two groups yes makes cpg and no cpg
   cpg.y<-subset(data, makesCpG==1)
   cpg.n<-subset(data, makesCpG==0)
@@ -23,7 +23,6 @@ comparing_CpG_Syn_Nonsyn = function(data){
   sem<-function(x){
     return(sd(x,na.rm = FALSE)/sqrt(length(x)))
   }
-  
   
   #making the data frames with all information about a, t, c, g 
   AllA = rbind(AC, ANC)
@@ -143,6 +142,7 @@ comparing_CpG_Syn_Nonsyn = function(data){
   
   ####################################################################################
   #layout(matrix(c(1,2,3,4), 2, 2, byrow = TRUE))
+
   
   par(mfrow=c(2,2))
   plot(AllA$graphit, AllA$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
@@ -160,6 +160,25 @@ comparing_CpG_Syn_Nonsyn = function(data){
   
   col=c("red","blue","black","orange")[AllT$graphit]
   pch=c(16:18)[AllT$graphit]
+
+  plot(AllA$makesCpG==1&AllA$TypeOfSite=="syn",AllA$MeanFreq+.000001,log='y', col = "red",xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
+  par(new=TRUE)
+  plot(AllA$makesCpG==0&AllA$TypeOfSite=="syn",AllA$MeanFreq+.000001,log='y', col = "blue",xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
+  par(new=TRUE)
+  plot(AllA$makesCpG==1&AllA$TypeOfSite!="syn",AllA$MeanFreq+.000001,log='y', col = "yellow",xlab="Mutation Type", ylab="MeanFreq",main="A")
+  par(new=TRUE)
+  plot(AllA$makesCpG==0&AllA$TypeOfSite!="syn",AllA$MeanFreq+.000001,log='y', col = "green",xlab="Mutation Type", ylab="MeanFreq",main="A")
+  
+  par(new=TRUE)
+  plot(AllG$makesCpG==1&AllG$TypeOfSite=="syn",AllG$MeanFreq+.000001,log='y', col = "red",xlab="Mutation Type", ylab="MeanFreq",main="G")
+  par(new=TRUE)
+  plot(AllG$makesCpG==0&AllG$TypeOfSite=="syn",AllG$MeanFreq+.000001,log='y', col = "blue",xlab="Mutation Type", ylab="MeanFreq",main="G")
+  par(new=TRUE)
+  plot(AllG$makesCpG==1&AllG$TypeOfSite!="syn",AllG$MeanFreq+.000001,log='y', col = "yellow",xlab="Mutation Type", ylab="MeanFreq",main="G")
+  par(new=TRUE)
+  plot(AllG$makesCpG==0&AllG$TypeOfSite!="syn",AllG$MeanFreq+.000001,log='y', col = "green",xlab="Mutation Type", ylab="MeanFreq",main="G")
+  
+  
   ######################################################################################
   
   # the plot
