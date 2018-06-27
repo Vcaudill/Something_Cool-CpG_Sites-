@@ -132,6 +132,9 @@ comparing_CpG_Syn_Nonsyn = function(data){
   AllAT = rbind(AllA, AllT)
   AllATCG = rbind(AllA, AllT, AllC, AllG)
   
+  A0<-subset(data,AllA$MeanFreq==0)
+  Afreq<-subset(data,AllA$MeanFreq!=0)
+  
   # this loop adds a small value to the 0's so they may show up on the graph
   for (i in 1:length(AllATCG$MeanFreq)){
     if (AllATCG$MeanFreq[i]==0){
