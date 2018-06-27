@@ -142,17 +142,22 @@ comparing_CpG_Syn_Nonsyn = function(data){
   
   ####################################################################################
   #layout(matrix(c(1,2,3,4), 2, 2, byrow = TRUE))
-
+# make 2 dataset 1 conting everything except 0's (meanfreq needs to be log)
+# datea set just for meanfreq = 0's
+  # graph it with breaks 
+  # add a key
+  # make it more like jitter
   
   par(mfrow=c(2,2))
   plot(AllA$graphit, AllA$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
+  par(new=TRUE)
+  plot(AllA$graphit, AllA$MeanFreq, log='y',col ="green",xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
+  # color by grpahit 
+  plot(AllT$graphit, AllT$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="T")
+  plot(AllG$graphit, AllG$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="G", xlim = c(-1,10))
   
   # color by grpahit 
-  plot(AllT$graphit, AllT$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="A")
-  plot(AllG$graphit, AllG$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
-  
-  # color by grpahit 
-  plot(AllC$graphit, AllC$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="A")
+  plot(AllC$graphit, AllC$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="C")
   
   
   
