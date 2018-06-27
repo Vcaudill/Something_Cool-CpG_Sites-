@@ -149,15 +149,16 @@ comparing_CpG_Syn_Nonsyn = function(data){
   # make it more like jitter
   
   par(mfrow=c(2,2))
-  plot(AllA$graphit, AllA$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
+  palette(c("#601E0080","#FF000080","#0000FF80","#FF5B0080"))
+  plot(AllA$graphit, AllA$MeanFreq, log='y',col = factor(AllT$graphit),xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
   par(new=TRUE)
   plot(AllA$graphit, AllA$MeanFreq, log='y',col ="green",xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
   # color by grpahit 
-  plot(AllT$graphit, AllT$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="T")
-  plot(AllG$graphit, AllG$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="G", xlim = c(-1,10))
+  plot(AllT$graphit, AllT$MeanFreq, log='y',col = factor(AllT$graphit),xlab="Mutation Type", ylab="MeanFreq",main="T")
+  plot(AllG$graphit, AllG$MeanFreq, log='y',col = factor(AllT$graphit),xlab="Mutation Type", ylab="MeanFreq",main="G", xlim = c(-1,10))
   
   # color by grpahit 
-  plot(AllC$graphit, AllC$MeanFreq, log='y',xlab="Mutation Type", ylab="MeanFreq",main="C")
+  plot(AllC$graphit, AllC$MeanFreq, log='y',col = factor(AllT$graphit),xlab="Mutation Type", ylab="MeanFreq",main="C")
   
   
   
