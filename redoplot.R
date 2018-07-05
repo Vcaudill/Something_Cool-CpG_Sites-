@@ -1,7 +1,7 @@
 
 #data<-read.csv("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus/DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 
-
+data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
 
 
 comparing_CpG_Syn_Nonsyn = function(data){
@@ -135,6 +135,17 @@ comparing_CpG_Syn_Nonsyn = function(data){
   A0<-subset(AllA, AllA$MeanFreq==0)
   Afreq<-subset(AllA,AllA$MeanFreq!=0)
   
+  T0<-subset(AllT, AllT$MeanFreq==0)
+  Tfreq<-subset(AllT,AllT$MeanFreq!=0)
+  
+  C0<-subset(AllC, AllC$MeanFreq==0)
+  Cfreq<-subset(AllC,AllC$MeanFreq!=0)
+  
+  G0<-subset(AllG, AllG$MeanFreq==0)
+  Gfreq<-subset(AllG,AllG$MeanFreq!=0)
+  
+
+  
   # this loop adds a small value to the 0's so they may show up on the graph
   for (i in 1:length(AllATCG$MeanFreq)){
     if (AllATCG$MeanFreq[i]==0){
@@ -150,10 +161,65 @@ comparing_CpG_Syn_Nonsyn = function(data){
   # graph it with breaks 
   # add a key
   # make it more like jitter
-  
+  install.packages(plotrix)
+  library(plotrix)
+  library(Hmisc)
   par(mfrow=c(2,2))
-  palette(c("#601E0080","#FF000080","#0000FF80","#FF5B0080"))
-  plot(AllA$graphit, AllA$MeanFreq, log='y',col = factor(AllA$graphit),xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
+  palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
+  gap.plot(A0$MeanFreq,gap=c(0.0001,2),add = TRUE)
+  plot(Afreq$graphit,Afreq$MeanFreq,log='y',col=factor(Afreq$graphit),pch=16,main="A",xlab = "Mutation Type", ylab = "Mutation Frequency")
+  axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
+  
+  
+  gap.plot(T0$MeanFreq,gap=c(0.0001,2),add = TRUE)
+  plot(Tfreq$graphit,Tfreq$MeanFreq,log='y',col=factor(Tfreq$graphit),pch=16,main="T",xlab = "Mutation Type", ylab = "Mutation Frequency")
+  axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
+  
+  gap.plot(C0$MeanFreq,gap=c(0.0001,2),add = TRUE)
+  plot(Cfreq$graphit,Cfreq$MeanFreq,log='y',col=factor(Cfreq$graphit),pch=16,main="C",xlab = "Mutation Type", ylab = "Mutation Frequency")
+  axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
+ 
+  
+  gap.plot(G0$MeanFreq,gap=c(0.0001,2),add = TRUE)
+  plot(Gfreq$graphit,Gfreq$MeanFreq,log='y',col=factor(Gfreq$graphit),pch=16,main="G",xlab = "Mutation Type", ylab = "Mutation Frequency")
+  axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
+  
+  library(Hmisc)
+  
+  errbar(G0$graphit, G0$MeanFreq, G0$UCLS, G0$LCLS)
+  
+  error.bars(x,stats=NULL, ylab = "Dependent Variable",xlab="Independent Variable",
+             main=NULL,eyes=TRUE, ylim = NULL, xlim=NULL,alpha=.05,sd=FALSE, labels = NULL, 
+             pos = NULL,  arrow.len = 0.05,arrow.col="black", add = FALSE,bars=FALSE,within=FALSE,
+             col="blue",density=-10,...)
+  
+  
+  #gap.plot(G0$MeanFreq,gap=c(0.0001,2),add = TRUE)
+  #plot(Gfreq$graphit,Gfreq$MeanFreq,log='y',col=factor(Gfreq$graphit),pch=16,main="G",xlab = "Mutation Type", ylab = "Mutation Frequency")
+  #axis.break(2,0.01,style="gap")
+  #axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
+  
+  #palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
+  #gap.plot(A0$MeanFreq,gap=c(0.0001,2),col=factor(A0$graphit),main="A",  add = TRUE)
+  #plot(Afreq$graphit,Afreq$MeanFreq,col=factor(Afreq$graphit))
+  #axis.break(2,0.001,breakcol="snow",style="gap")
+  #axis.break(2,0.0001*(1+0.02),breakcol="black",style="slash")
+  
+  #palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
+  #plot(AllA$graphit, AllA$MeanFreq, log='y',col = factor(AllA$graphit),xlab="Mutation Type", ylab="MeanFreq",main="A", pch=16)
+  #axis.break(2,0.001,style="slash") 
+  #gap.plot(A0$graphit,A0$MeanFreq, gap=c(8,16))
+  #par(new=TRUE)
+  #plot(A0$graphit, A0$MeanFreq,pch=16)
+  
+  
+  #gap.plot(A0$MeanFreq,gap=c(0.0001,2),col=factor(AllA$graphit),main="barplot with gap")
+  #axis.break(2,0.0001,breakcol="snow",style="gap")
+  #axis.break(2,0.0001*(1+0.02),breakcol="black",style="slash")
+  #axis.break(4,0.0001*(1+0.02),breakcol="black",style="slash")
+  #axis(2,at=0.0001)
+  
+  
   # color by grpahit 
   plot(AllT$graphit, AllT$MeanFreq, log='y',col = factor(AllT$graphit),xlab="Mutation Type", ylab="MeanFreq",main="T")
   plot(AllG$graphit, AllG$MeanFreq, log='y',col = factor(AllG$graphit),xlab="Mutation Type", ylab="MeanFreq",main="G", xlim = c(-1,10))
