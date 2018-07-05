@@ -8,7 +8,10 @@ source("MeaFreq.R")
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus")
 virusname = 'DengueVirus1.fasta_pruned.mu.trim05.txt'
 DF<-meanFreq(virusname)
+splitname<-unlist(strsplit(virusname,".fasta"))
+truename<-splitname[1]
 DF$wtnt<-as.character(DF$wtnt)
+DF$Virus<-(truename)
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
 source("WTAA.R")
 DF<-getWTAA(DF)
@@ -24,11 +27,19 @@ DF<-synFunction(DF)
 
 source("CPG_Function.R")
 DF<-CPG_site(DF)
+#How to save data
+truenameRda= paste(truename, ".Rda", sep="")
+save("virus" = DF,file=truenameRda)
 
-virusname= paste(virusname, ".Rda", sep="")
-virusname
-save(DF,file=virusname)
-load(virusname)
+
+#How to load data
+virusname = 'DengueVirus1.fasta_pruned.mu.trim05.txt'
+DF<-meanFreq(virusname)
+splitname<-unlist(strsplit(virusname,".fasta"))
+truename<-splitname[1]
+
+truenameRda= paste(truename, ".Rda", sep="")
+load(truenameRda)
 
 # graphs 
 
