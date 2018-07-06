@@ -13,6 +13,17 @@ truename<-splitname[1]
 DF$wtnt<-as.character(DF$wtnt)
 DF$Virus<-(truename)
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
+
+# for Ryan 
+# make sure that M is the first amino acid check all virus
+#start = 86
+#end = 979
+#DF<-DF[c(start:(nrow(DF)-end)),]
+#DF$num<-(1:nrow(DF))
+
+
+source("WTAA.R")
+
 source("WTAA.R")
 DF<-getWTAA(DF)
 
