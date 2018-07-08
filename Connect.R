@@ -45,7 +45,6 @@ save("virus" = DF,file=truenameRda)
 
 #How to load data
 virusname = 'DengueVirus1.fasta_pruned.mu.trim05.txt'
-DF<-meanFreq(virusname)
 splitname<-unlist(strsplit(virusname,".fasta"))
 truename<-splitname[1]
 
