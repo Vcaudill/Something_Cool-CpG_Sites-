@@ -91,7 +91,7 @@ for (data in my.list){
   data_points$AnonsynNC_C[count]= AllA_mean_value_nonsyn_nCpG/AllA_mean_value_nonsyn_CpG
   
   data_points$TsynNC_C[count] = AllT_mean_value_syn_nCpG/AllT_mean_value_syn_CpG
-  data_points$meanTnonsynNC_C[count] = AllT_mean_value_nonsyn_nCpG/AllT_mean_value_nonsyn_CpG
+  data_points$TnonsynNC_C[count] = AllT_mean_value_nonsyn_nCpG/AllT_mean_value_nonsyn_CpG
  
 
   data_points$AsynC_LCLS[count]= AllA_mean_value_syn_CpG - AllA_sem_vals_syn_CpG
@@ -125,7 +125,7 @@ labels <- sapply(aty,function(i)
 axis(2,at=aty,labels=labels)
 points(data_points$Count -.1, data_points$AnonsynNC_C, col= "green", pch=19)
 points(data_points$Count+.1, data_points$TsynNC_C, col= "blue", pch=19)
-points(data_points$Count+.3, data_points$TnonsynNC_C, col= "purple", pch=19)
+points(data_points$Count + .3, data_points$TnonsynNC_C, col= "purple", pch=19)
 par(new=TRUE)
 
 # hack: we draw arrows but with very special "arrowheads"
