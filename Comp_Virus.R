@@ -134,6 +134,11 @@ arrows(data_points$Count-.1, data_points$AnonsynNC_LCLS/data_points$AnonsynC_LCL
 arrows(data_points$Count+.1, data_points$TsynNC_LCLS/data_points$TsynC_LCLS, data_points$Count+.1, data_points$TsynNC_UCLS/data_points$TsynC_UCLS, length=0.05, angle=90, code=3, col= "blue")
 arrows(data_points$Count+.3, data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS, data_points$Count +.3, data_points$TnonsynNC_UCLS/data_points$TnonsynC_UCLS, length=0.05, angle=90, code=3, col= "purple")
 
+abline(h=c(1,2,5,10), col="grey", lty=c(2,2))
+abline(v=c(1.5,2.5,3.5, 4.5), col="grey", lty=c(1))
+
+
+
 
 axis(1, at=1:length(my.list), labels=data_points$Virus, las= 2)
 legend((length(my.list) + .4), 7, legend=c("A Syn", "A NonSyn", "T Syn", "T NonSyn"),
