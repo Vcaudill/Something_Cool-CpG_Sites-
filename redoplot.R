@@ -164,29 +164,36 @@ comparing_CpG_Syn_Nonsyn = function(data){
   install.packages(plotrix)
   library(plotrix)
   library(Hmisc)
+  
   par(mfrow=c(2,2))
   palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
   gap.plot(A0$MeanFreq,gap=c(0.0001,2),add = TRUE)
   plot(Afreq$graphit,Afreq$MeanFreq,log='y',col=factor(Afreq$graphit),pch=16,main="A",xlab = "Mutation Type", ylab = "Mutation Frequency")
   axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
   
+  #errbar(AllA$LCLS, AllA$UCLS, AllA$LCLS,AllA$UCLS)
+  errbar(AllA$graphit, AllA$LCLS,AllA$graphit,AllA$UCLS)
+  
+ 
+  arrows(AllA$graphit,AllA$LCLS,AllA$graphit, AllA$UCLS,length=0.05, angle=90, code=3)
+  
   
   gap.plot(T0$MeanFreq,gap=c(0.0001,2),add = TRUE)
   plot(Tfreq$graphit,Tfreq$MeanFreq,log='y',col=factor(Tfreq$graphit),pch=16,main="T",xlab = "Mutation Type", ylab = "Mutation Frequency")
   axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
   
+ 
+  
+  palette(c("#99FF99","#FF9900")) 
   gap.plot(C0$MeanFreq,gap=c(0.0001,2),add = TRUE)
   plot(Cfreq$graphit,Cfreq$MeanFreq,log='y',col=factor(Cfreq$graphit),pch=16,main="C",xlab = "Mutation Type", ylab = "Mutation Frequency")
   axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
- 
   
   gap.plot(G0$MeanFreq,gap=c(0.0001,2),add = TRUE)
   plot(Gfreq$graphit,Gfreq$MeanFreq,log='y',col=factor(Gfreq$graphit),pch=16,main="G",xlab = "Mutation Type", ylab = "Mutation Frequency")
   axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
   
-  library(Hmisc)
   
-  errbar(G0$graphit, G0$MeanFreq, G0$UCLS, G0$LCLS)
   
   error.bars(x,stats=NULL, ylab = "Dependent Variable",xlab="Independent Variable",
              main=NULL,eyes=TRUE, ylim = NULL, xlim=NULL,alpha=.05,sd=FALSE, labels = NULL, 
