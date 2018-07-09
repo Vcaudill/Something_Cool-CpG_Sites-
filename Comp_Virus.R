@@ -141,8 +141,5 @@ legend((length(my.list) + .4), 7, legend=c("A Syn", "A NonSyn", "T Syn", "T NonS
 
 
 
-# plot(data_points$Count, data_points$AnonsynNC_C,
-#      ylim=range(c(data_points$AnonsynNC_LCLS/data_points$AnonsynC_LCLS, data_points$AnonsynNC_UCLS/data_points$AnonsynC_UCLS)),
-#      pch=19, col= "green", log = 'y'
-# )
+
 
