@@ -10,7 +10,7 @@ makeTable <- function(Pvalues){
   
   
   par(xpd=F)
-  plot(1, 2, xlim=c(0,100),ylim=c(0,100), col=0, xaxt="n", yaxt="n", xlab="d", ylab="bf")
+  plot(1, 2, xlim=c(0,100),ylim=c(0,100), col=0, xaxt="n", yaxt="n", xlab="", ylab="")
   
   abline(v = 100/5)
   abline(v = 2*100/3)
@@ -24,8 +24,10 @@ makeTable <- function(Pvalues){
   text(x=100/7- 6, y= 5*100/5-3, "Mutation Type")
   text(x=3*100/7, y = 5*100/5-3, "Comparison")
   text(x= 6*100/7, y=5*100/5-3, "p-value")
-  text(x= 100/7, y= 4*100/5+1, "A-G")
-  text(x= 100/7, y = 2*100/5 - 6, "T-C")
+  rect(xleft = -4, xright = 100/5, ybottom =42, ytop =100-100/7+3 , col = "white")
+  text(x= 100/12, y= 3*100/5+1, "A-G", cex = 1.7, family = "Times")
+  rect(xleft = -4, xright = 100/5, ybottom =-4, ytop =42 , col = "white")
+  text(x= 100/12, y = 1*100/5 - 6, "T-C", cex = 1.7, family ='Times')
   text(x= 3*100/7, y = ycoor[1], labels= col2[1])
   text(x= 3*100/7, y = ycoor[2], labels= col2[2])
   text(x= 3*100/7, y = ycoor[3], labels= col2[3])
@@ -36,12 +38,14 @@ makeTable <- function(Pvalues){
   num <- 1
   print(Pvalues)
   for (i in Pvalues){
+    #i = format(i, nsmall = 6)
     print(i)
     
     
   library(scales)
   if (i < 0.05){
-    a = 0.4 
+    a = 0.4
+    #i = "Insignificant"
   }
   else if(i <0.5){
     a = 0.3
