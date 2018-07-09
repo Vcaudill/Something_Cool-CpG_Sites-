@@ -156,7 +156,7 @@ comparing_CpG_Syn_Nonsyn = function(data){
   # )
   # axis(2,at=aty,labels=labels)
   points(AllA$graphit, AllA$mean_val, col= factor(AllA$graphit), pch=19, cex = 3)
-  arrows(AllA$graphit, AllA$LCLS, AllA$graphit, AllA$UCLS, length=0.4, angle=90, code=3, col= factor(AllA$graphit))
+  arrows(AllA$graphit, AllA$LCLS, AllA$graphit, AllA$UCLS, length=0.4,lwd=0.5, angle=90, code=3, col= factor(AllA$graphit))
   library(sfsmisc)
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
@@ -168,30 +168,34 @@ comparing_CpG_Syn_Nonsyn = function(data){
   # )
   
   
-  gap.plot(T0$MeanFreq,gap=c(0.0001,2),add = TRUE)
-  plot(jitter(Tfreq$graphit),Tfreq$MeanFreq,log='y',col=factor(Tfreq$graphit),pch=16,main="T",xlab = "Mutation Type", ylab = "Mutation Frequency", yaxt="n")
-  aty <- axTicks(2)
-  labels <- sapply(aty,function(i)
-    as.expression(bquote(10^ .(i)))
-  )
-  points(Tfreq$graphit, Tfreq$mean_val, col= factor(Tfreq$graphit), pch=19, cex = 3)
-  arrows(Tfreq$graphit, Tfreq$LCLS, Tfreq$graphit, Tfreq$UCLS, length=0.4, angle=90, code=3, col= factor(Tfreq$graphit) )
-  axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
+  gap.plot(AllT$MeanFreq,gap=c(0.0001,2),add = TRUE)
+  plot(jitter(AllT$graphit),AllT$MeanFreq+ 0.0001,log='y',col=factor(AllT$graphit),pch=16,main="T",xlab = "Mutation Type", ylab = "Mutation Frequency", yaxt="n", xaxt = "n")
+  points(AllT$graphit, AllT$mean_val, col= factor(AllT$graphit), pch=19, cex = 3)
+  arrows(AllT$graphit, AllT$LCLS, AllT$graphit, AllT$UCLS, length=0.4, lwd = 5, angle=90, code=3, col= factor(AllT$graphit) )
+  eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
+  axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
+  mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
+  
   
  
   
   palette(c("#99FF99","#FF9900")) 
-  gap.plot(C0$MeanFreq,gap=c(0.0001,2),add = TRUE)
-  plot(jitter(Cfreq$graphit),Cfreq$MeanFreq,log='y',col=factor(Cfreq$graphit),pch=16,main="C",xlab = "Mutation Type", ylab = "Mutation Frequency",  xlim=c(0,4))
-  points(Cfreq$graphit, Cfreq$mean_val, col= factor(Cfreq$graphit), pch=19, cex = 3)
-  arrows(Cfreq$graphit, Cfreq$LCLS, Cfreq$graphit, Cfreq$UCLS, length=0.4, angle=90, code=3, col= factor(Cfreq$graphit) )
-  axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
+  gap.plot(AllC$MeanFreq,gap=c(0.0001,2),add = TRUE)
+  plot(jitter(AllC$graphit),AllC$MeanFreq+ 0.0001,log='y',col=factor(AllC$graphit),pch=16,main="C",xlab = "Mutation Type", ylab = "Mutation Frequency",  xlim=c(0,4),yaxt="n", xaxt = "n")
+  points(AllC$graphit, AllC$mean_val, col= factor(AllC$graphit), pch=19, cex = 3)
+  arrows(AllC$graphit, AllC$LCLS, AllC$graphit, AllC$UCLS, length=0.8,lwd = 5, angle=90, code=3, col= factor(AllC$graphit) )
+  eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
+  axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
+  mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
   
-  gap.plot(G0$MeanFreq,gap=c(0.0001,2),add = TRUE)
-  plot(jitter(Gfreq$graphit),Gfreq$MeanFreq,log='y',col=factor(Gfreq$graphit),pch=16,main="G",xlab = "Mutation Type", ylab = "Mutation Frequency",  xlim=c(0,4))
-  points(Gfreq$graphit, Gfreq$mean_val, col= factor(Gfreq$graphit), pch=19, cex = 3)
-  arrows(Gfreq$graphit, Gfreq$LCLS, Gfreq$graphit, Gfreq$UCLS, length=0.4, angle=90, code=3, col= factor(Gfreq$graphit) )
-  axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
+  
+  gap.plot(AllG$MeanFreq,gap=c(0.0001,2),add = TRUE)
+  plot(jitter(AllG$graphit),AllG$MeanFreq+ 0.0001,log='y',col=factor(AllG$graphit),pch=16,main="G",xlab = "Mutation Type", ylab = "Mutation Frequency",  xlim=c(0,4),yaxt="n", xaxt = "n")
+  points(AllG$graphit, AllG$mean_val, col= factor(AllG$graphit), pch=19, cex = 3)
+  arrows(AllG$graphit, AllG$LCLS, AllG$graphit, AllG$UCLS, length=0.8, lwd=5,angle=90, code=3, col= factor(AllG$graphit) )
+  eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
+  axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
+  mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
   
   
   
