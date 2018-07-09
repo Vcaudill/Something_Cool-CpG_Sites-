@@ -155,7 +155,6 @@ comparing_CpG_Syn_Nonsyn = function(data){
   # make it more like jitter
   install.packages(plotrix)
   library(plotrix)
-  library(Hmisc)
   
   par(mfrow=c(2,2))
   palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
@@ -166,34 +165,32 @@ comparing_CpG_Syn_Nonsyn = function(data){
   arrows(Afreq$graphit, Afreq$LCLS, Afreq$graphit, Afreq$UCLS, length=0.4, angle=90, code=3, col= factor(Afreq$graphit) )
   axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
   
-  #errbar(AllA$LCLS, AllA$UCLS, AllA$LCLS,AllA$UCLS)
-  errbar(AllA$graphit, AllA$LCLS,AllA$graphit,AllA$UCLS)
   
   # plot(data_points$Count, data_points$AnonsynNC_C,
   #      ylim=range(c(data_points$AnonsynNC_LCLS/data_points$AnonsynC_LCLS, data_points$AnonsynNC_UCLS/data_points$AnonsynC_UCLS)),
   #      pch=19, col= "green", log = 'y'
   # )
   
-  plot(AllA$graphit, AllA$mean_value, ylim=range(c(AllA$LCLS, AllA$UCLS)),pch=19, col= "green", log = 'y')
-  arrows(AllA$graphit,AllA$LCLS,AllA$graphit, AllA$UCLS,length=0.05, angle=90, code=3)
-  
-  
-  arrows(AllA$graphit,AllA$LCLS,AllA$graphit, AllA$UCLS,length=0.05, angle=90, code=3)
-  
   
   gap.plot(T0$MeanFreq,gap=c(0.0001,2),add = TRUE)
-  plot(Tfreq$graphit,Tfreq$MeanFreq,log='y',col=factor(Tfreq$graphit),pch=16,main="T",xlab = "Mutation Type", ylab = "Mutation Frequency")
+  plot(jitter(Tfreq$graphit),Tfreq$MeanFreq,log='y',col=factor(Tfreq$graphit),pch=16,main="T",xlab = "Mutation Type", ylab = "Mutation Frequency")
+  points(Tfreq$graphit, Tfreq$mean_val, col= factor(Tfreq$graphit), pch=19, cex = 3)
+  arrows(Tfreq$graphit, Tfreq$LCLS, Tfreq$graphit, Tfreq$UCLS, length=0.4, angle=90, code=3, col= factor(Tfreq$graphit) )
   axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
   
  
   
   palette(c("#99FF99","#FF9900")) 
   gap.plot(C0$MeanFreq,gap=c(0.0001,2),add = TRUE)
-  plot(Cfreq$graphit,Cfreq$MeanFreq,log='y',col=factor(Cfreq$graphit),pch=16,main="C",xlab = "Mutation Type", ylab = "Mutation Frequency")
+  plot(jitter(Cfreq$graphit),Cfreq$MeanFreq,log='y',col=factor(Cfreq$graphit),pch=16,main="C",xlab = "Mutation Type", ylab = "Mutation Frequency")
+  points(Cfreq$graphit, Cfreq$mean_val, col= factor(Cfreq$graphit), pch=19, cex = 3)
+  arrows(Cfreq$graphit, Cfreq$LCLS, Cfreq$graphit, Cfreq$UCLS, length=0.4, angle=90, code=3, col= factor(Cfreq$graphit) )
   axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
   
   gap.plot(G0$MeanFreq,gap=c(0.0001,2),add = TRUE)
-  plot(Gfreq$graphit,Gfreq$MeanFreq,log='y',col=factor(Gfreq$graphit),pch=16,main="G",xlab = "Mutation Type", ylab = "Mutation Frequency")
+  plot(jitter(Gfreq$graphit),Gfreq$MeanFreq,log='y',col=factor(Gfreq$graphit),pch=16,main="G",xlab = "Mutation Type", ylab = "Mutation Frequency")
+  points(Gfreq$graphit, Gfreq$mean_val, col= factor(Gfreq$graphit), pch=19, cex = 3)
+  arrows(Gfreq$graphit, Gfreq$LCLS, Gfreq$graphit, Gfreq$UCLS, length=0.4, angle=90, code=3, col= factor(Gfreq$graphit) )
   axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
   
   
