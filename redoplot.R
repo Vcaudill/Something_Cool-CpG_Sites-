@@ -174,7 +174,15 @@ comparing_CpG_Syn_Nonsyn = function(data){
   #errbar(AllA$LCLS, AllA$UCLS, AllA$LCLS,AllA$UCLS)
   errbar(AllA$graphit, AllA$LCLS,AllA$graphit,AllA$UCLS)
   
- 
+  # plot(data_points$Count, data_points$AnonsynNC_C,
+  #      ylim=range(c(data_points$AnonsynNC_LCLS/data_points$AnonsynC_LCLS, data_points$AnonsynNC_UCLS/data_points$AnonsynC_UCLS)),
+  #      pch=19, col= "green", log = 'y'
+  # )
+  
+  plot(AllA$graphit, AllA$mean_value, ylim=range(c(AllA$LCLS, AllA$UCLS)),pch=19, col= "green", log = 'y')
+  arrows(AllA$graphit,AllA$LCLS,AllA$graphit, AllA$UCLS,length=0.05, angle=90, code=3)
+  
+  
   arrows(AllA$graphit,AllA$LCLS,AllA$graphit, AllA$UCLS,length=0.05, angle=90, code=3)
   
   
