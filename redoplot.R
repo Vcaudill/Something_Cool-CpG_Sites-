@@ -132,17 +132,6 @@ comparing_CpG_Syn_Nonsyn = function(data){
   AllAT = rbind(AllA, AllT)
   AllATCG = rbind(AllA, AllT, AllC, AllG)
   
-  A0<-subset(AllA, AllA$MeanFreq==0)
-  Afreq<-subset(AllA,AllA$MeanFreq!=0)
-  
-  T0<-subset(AllT, AllT$MeanFreq==0)
-  Tfreq<-subset(AllT,AllT$MeanFreq!=0)
-  
-  C0<-subset(AllC, AllC$MeanFreq==0)
-  Cfreq<-subset(AllC,AllC$MeanFreq!=0)
-  
-  G0<-subset(AllG, AllG$MeanFreq==0)
-  Gfreq<-subset(AllG,AllG$MeanFreq!=0)
   
 
   
@@ -159,12 +148,19 @@ comparing_CpG_Syn_Nonsyn = function(data){
   par(mfrow=c(2,2))
   palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
   graph_color = palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
-  gap.plot(A0$MeanFreq,gap=c(0.0001,2),add = TRUE)
-  plot(jitter(Afreq$graphit),Afreq$MeanFreq,log='y',col=factor(Afreq$graphit),pch=16,main="A",xlab = "Mutation Type", ylab = "Mutation Frequency")
-  points(Afreq$graphit, Afreq$mean_val, col= factor(Afreq$graphit), pch=19, cex = 3)
-  arrows(Afreq$graphit, Afreq$LCLS, Afreq$graphit, Afreq$UCLS, length=0.4, angle=90, code=3, col= factor(Afreq$graphit) )
-  axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
-  
+ 
+  plot(jitter(AllA$graphit),AllA$MeanFreq + 0.0001,log='y',col=factor(AllA$graphit),pch=16,main="A",xlab = "Mutation Type", ylab = "Mutation Frequency", yaxt="n", xaxt="n")
+  #yaxt="n"  aty <- axTicks(8)
+  # labels <- sapply(aty,function(i)
+  #   as.expression(bquote(10^ .(i)))
+  # )
+  # axis(2,at=aty,labels=labels)
+  points(AllA$graphit, AllA$mean_val, col= factor(AllA$graphit), pch=19, cex = 3)
+  arrows(AllA$graphit, AllA$LCLS, AllA$graphit, AllA$UCLS, length=0.4, angle=90, code=3, col= factor(AllA$graphit))
+  library(sfsmisc)
+  eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
+  axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
+  mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
   
   # plot(data_points$Count, data_points$AnonsynNC_C,
   #      ylim=range(c(data_points$AnonsynNC_LCLS/data_points$AnonsynC_LCLS, data_points$AnonsynNC_UCLS/data_points$AnonsynC_UCLS)),
@@ -173,7 +169,11 @@ comparing_CpG_Syn_Nonsyn = function(data){
   
   
   gap.plot(T0$MeanFreq,gap=c(0.0001,2),add = TRUE)
-  plot(jitter(Tfreq$graphit),Tfreq$MeanFreq,log='y',col=factor(Tfreq$graphit),pch=16,main="T",xlab = "Mutation Type", ylab = "Mutation Frequency")
+  plot(jitter(Tfreq$graphit),Tfreq$MeanFreq,log='y',col=factor(Tfreq$graphit),pch=16,main="T",xlab = "Mutation Type", ylab = "Mutation Frequency", yaxt="n")
+  aty <- axTicks(2)
+  labels <- sapply(aty,function(i)
+    as.expression(bquote(10^ .(i)))
+  )
   points(Tfreq$graphit, Tfreq$mean_val, col= factor(Tfreq$graphit), pch=19, cex = 3)
   arrows(Tfreq$graphit, Tfreq$LCLS, Tfreq$graphit, Tfreq$UCLS, length=0.4, angle=90, code=3, col= factor(Tfreq$graphit) )
   axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
@@ -182,13 +182,13 @@ comparing_CpG_Syn_Nonsyn = function(data){
   
   palette(c("#99FF99","#FF9900")) 
   gap.plot(C0$MeanFreq,gap=c(0.0001,2),add = TRUE)
-  plot(jitter(Cfreq$graphit),Cfreq$MeanFreq,log='y',col=factor(Cfreq$graphit),pch=16,main="C",xlab = "Mutation Type", ylab = "Mutation Frequency")
+  plot(jitter(Cfreq$graphit),Cfreq$MeanFreq,log='y',col=factor(Cfreq$graphit),pch=16,main="C",xlab = "Mutation Type", ylab = "Mutation Frequency",  xlim=c(0,4))
   points(Cfreq$graphit, Cfreq$mean_val, col= factor(Cfreq$graphit), pch=19, cex = 3)
   arrows(Cfreq$graphit, Cfreq$LCLS, Cfreq$graphit, Cfreq$UCLS, length=0.4, angle=90, code=3, col= factor(Cfreq$graphit) )
   axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
   
   gap.plot(G0$MeanFreq,gap=c(0.0001,2),add = TRUE)
-  plot(jitter(Gfreq$graphit),Gfreq$MeanFreq,log='y',col=factor(Gfreq$graphit),pch=16,main="G",xlab = "Mutation Type", ylab = "Mutation Frequency")
+  plot(jitter(Gfreq$graphit),Gfreq$MeanFreq,log='y',col=factor(Gfreq$graphit),pch=16,main="G",xlab = "Mutation Type", ylab = "Mutation Frequency",  xlim=c(0,4))
   points(Gfreq$graphit, Gfreq$mean_val, col= factor(Gfreq$graphit), pch=19, cex = 3)
   arrows(Gfreq$graphit, Gfreq$LCLS, Gfreq$graphit, Gfreq$UCLS, length=0.4, angle=90, code=3, col= factor(Gfreq$graphit) )
   axis.break(2,0.001*(1+0.02),breakcol="black",style="slash")
