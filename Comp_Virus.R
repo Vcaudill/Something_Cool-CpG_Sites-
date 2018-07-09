@@ -117,16 +117,16 @@ for (data in my.list){
 # graphing 
 
 plot(data_points$Count-.3, data_points$AsynNC_C, main="Scatterplot Example", 
-     xlab="Virus ", ylab="Rate", pch=19, col= "red", log = 'y', yaxt="n", xaxt="n", ylim=c(1,10), xlim=c(.5, length(my.list) +1.5))
-aty <- axTicks(2)
-labels <- sapply(aty,function(i)
-  as.expression(bquote(10^ .(i)))
-)
-axis(2,at=aty,labels=labels)
+     xlab="Virus ", ylab="Costly", pch=19, col= "red", log = 'y', xaxt="n", ylim=c(1,10), xlim=c(.5, length(my.list) +1.5), las= 1)
+# aty <- axTicks(2)
+# labels <- sapply(aty,function(i)
+#   as.expression(bquote(10^ .(i)))
+# )
+# axis(2,at=aty,labels=labels)
 points(data_points$Count -.1, data_points$AnonsynNC_C, col= "green", pch=19)
 points(data_points$Count+.1, data_points$TsynNC_C, col= "blue", pch=19)
 points(data_points$Count + .3, data_points$TnonsynNC_C, col= "purple", pch=19)
-par(new=TRUE)
+# par(new=TRUE)
 
 # hack: we draw arrows but with very special "arrowheads"
 arrows(data_points$Count-.3, data_points$AsynNC_LCLS/data_points$AsynC_LCLS, data_points$Count -.3, data_points$AsynNC_UCLS/data_points$AsynC_UCLS, length=0.05, angle=90, code=3, col= "red")
@@ -138,7 +138,7 @@ arrows(data_points$Count+.3, data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCL
 axis(1, at=1:length(my.list), labels=data_points$Virus, las= 2)
 legend((length(my.list) + .4), 7, legend=c("A Syn", "A NonSyn", "T Syn", "T NonSyn"),
        col=c("red", "green", "blue", "purple"), lty=1, cex=1)
-
+# add horsontal gray lines
 
 
 
