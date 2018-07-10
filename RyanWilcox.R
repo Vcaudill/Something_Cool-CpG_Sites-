@@ -34,7 +34,6 @@ Wilcox_test = function(data){
   print("For a: Comparing  syn to nonsyn. Wilcox test greater red&blue vs yellow&green")
   print(wilcox.test(syna, nonsyna, alternative='greater'))
   print(wilcox.test(syna, nonsyna, alternative='greater')$p.value)
-  print("36")
   pVals = c(pVals,format(wilcox.test(syna, nonsyna, alternative='greater')$p.value, nsmall = 6))
   print(pVals)
   

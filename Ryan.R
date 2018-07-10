@@ -5,9 +5,8 @@
 
 setwd("C:/Users/ryanw/Desktop/codeLab/CpG/Something_Cool-CpG_Sites-")
 source("MeaFreq.R")
-
 # must place your file as a txt takes a few minutes 
-DF<-meanFreq('DengueVirus1.fasta_pruned.mu.trim05.txt')
+DF<-meanFreq('EnterovirusD_VP1.fasta_pruned.mu.trim05.txt')
 DF$wtnt<-as.character(DF$wtnt)
 #start = 86
 #end = 979
