@@ -4,7 +4,7 @@
 #place things in table
 
 Wilcox_test = function(data, truename){
-  truenameRda= paste(truename, ".Rda", sep="")
+  truenamepdf= paste(truename, ".pdf", sep="")
   library(graphics)
   library(dplyr)
   library(plyr)
@@ -80,7 +80,7 @@ Wilcox_test = function(data, truename){
   # options(digits =4)
   #if number < 0.0001 number = ">0.0001"
   source("maketable.R")
-  makeTable(Pvalues)
+  makeTable(Pvalues, truenamepdf)
   #dev.off()
   
 }

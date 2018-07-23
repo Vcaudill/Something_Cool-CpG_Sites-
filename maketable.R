@@ -1,6 +1,6 @@
 
-makeTable <- function(Pvalues){
-  pdf("pvaltable.pdf", width = 7, height= 5)
+makeTable <- function(Pvalues,truenamepdf){
+  pdf(truenamepdf, width = 7, height= 5)
   col1 <- c("A-G", "T-C")
   col2 <- c("Syn v CpG", "SynCpG v Non CpG", "NonSynCpG v NonCpG")
   ycoor <- c(4*100/5 , 3*100/5 + 4, 3*100/5 - 12, 2*100/5 -7, 1*100/5-1, 100/5-14- 4, 100)
