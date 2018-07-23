@@ -21,6 +21,7 @@ makeTable <- function(Pvalues,truenamepdf){
   abline(h= 100 -5*100/7 - 2)
   abline(h= 100 -6*100/7 - 3)
   
+  
   text(x=100/7- 6, y= 5*100/5-3, "Mutation Type")
   text(x=3*100/7, y = 5*100/5-3, "Comparison")
   text(x= 6*100/7, y=5*100/5-3, "P-Value")
@@ -53,7 +54,7 @@ makeTable <- function(Pvalues,truenamepdf){
     a = 0.1
   }
   
-  rect(xleft = 2*100/3, xright = 200, ybottom = ycoor[num]-7, ytop = ycoor[num]+8, col = alpha("firebrick", a))
+  rect(xleft = 2*100/3, xright = 200, ybottom = ycoor[num]-7, ytop = ycoor[num]+8, col = alpha("firebrick", a), border = NA)
   text(x= 6*100/7, y =ycoor[num], labels = i)
   num = num + 1 
   
