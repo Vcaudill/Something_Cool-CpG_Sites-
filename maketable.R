@@ -55,7 +55,7 @@ makeTable <- function(Pvalues){
   
   rect(xleft = 2*100/3, xright = 200, ybottom = ycoor[num]-7, ytop = ycoor[num]+8, col = alpha("firebrick", a))
   text(x= 6*100/7, y =ycoor[num], labels = i)
-  num = num + 1
+  num = num + 1 
   
   }
   print("end")
