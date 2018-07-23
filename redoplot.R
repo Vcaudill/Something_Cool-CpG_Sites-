@@ -3,15 +3,14 @@
 
 data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
 
-
 comparing_CpG_Syn_Nonsyn = function(data){
-
+  
   #subset into two groups yes makes cpg and no cpg
   cpg.y<-subset(data, makesCpG==1)
   cpg.n<-subset(data, makesCpG==0)
   #subset further into letters nuclotideCpgforming or nucotideNonGpg
   AC<-subset(cpg.y, wtnt=='a')
-  ANC<-subset(cpg.n, wtnt=='a')
+  ANC<-subset(cpg.n, wtnt=='a') edhje
   GC<-subset(cpg.y, wtnt=='g')
   GNC<-subset(cpg.n, wtnt=='g')
   TC<-subset(cpg.y, wtnt=='t')
@@ -133,12 +132,12 @@ comparing_CpG_Syn_Nonsyn = function(data){
   AllATCG = rbind(AllA, AllT, AllC, AllG)
   
   
-
+  
   
   ####################################################################################
   #layout(matrix(c(1,2,3,4), 2, 2, byrow = TRUE))
-# make 2 dataset 1 conting everything except 0's (meanfreq needs to be log)
-# datea set just for meanfreq = 0's
+  # make 2 dataset 1 conting everything except 0's (meanfreq needs to be log)
+  # datea set just for meanfreq = 0's
   # graph it with breaks 
   # add a key
   # make it more like jitter
@@ -150,14 +149,15 @@ comparing_CpG_Syn_Nonsyn = function(data){
   library(plotrix)
   library(sfsmisc)
   
-  png("Den1_jitter.png", res = 30000)
+  #png("Den1_jitter1.png", width = 405, height = 405, units = "px")
+  
   #layout(matrix(c(1,2,3,4), nrow=2, byrow = TRUE))
+  
+  png("Dengue1.png", width = 6.75, height = 6.75, units = "in", res= 300)
   par(mfrow=c(2,2)) 
-  #pdf("redoplottest.pdf", width = 6.75, height= 3)
-
   palette(alpha(c("#99FF99","#9999FF","#FF9900","#FF3300"),0.3))
   #graph_color = palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
- 
+  
   plot(jitter(AllA$graphit),AllA$MeanFreq + 0.0001,log='y',col=factor(AllA$graphit),pch=16, main="A",xlab = " ", ylab = "Mutation Frequency", yaxt="n", xaxt="n")
   #yaxt="n"  aty <- axTicks(8)
   # labels <- sapply(aty,function(i)
@@ -183,7 +183,7 @@ comparing_CpG_Syn_Nonsyn = function(data){
   axis(1, at= c(1:4),labels = NA)
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
   mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
-
+  
   
   palette(alpha(c("#99FF99","#FF9900"),0.3)) 
   plot(jitter(AllC$graphit, 0.6),AllC$MeanFreq+ 0.0001,log='y',col=factor(AllC$graphit),pch=16,main="C",xlab = "Mutation Type", ylab = "Mutation Frequency",  xlim=c(0.5,4.5),yaxt="n", xaxt = "n")
@@ -206,7 +206,7 @@ comparing_CpG_Syn_Nonsyn = function(data){
   
   dev.off()
   
-
+  
   
   
   #gap.plot(G0$MeanFreq,gap=c(0.0001,2),add = TRUE)
@@ -251,7 +251,7 @@ comparing_CpG_Syn_Nonsyn = function(data){
   
   col=c("red","blue","black","orange")[AllT$graphit]
   pch=c(16:18)[AllT$graphit]
-
+  
   plot(AllA$makesCpG==1&AllA$TypeOfSite=="syn",AllA$MeanFreq+.000001,log='y', col = "red",xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
   par(new=TRUE)
   plot(AllA$makesCpG==0&AllA$TypeOfSite=="syn",AllA$MeanFreq+.000001,log='y', col = "blue",xlab="Mutation Type", ylab="MeanFreq",main="A", xlim = c(-1,10))
