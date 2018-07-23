@@ -1,9 +1,9 @@
 
 #data<-read.csv("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus/DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 
-data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
+#data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
 
-comparing_CpG_Syn_Nonsyn = function(data){
+comparing_CpG_Syn_Nonsyn_new = function(data){
   
   #subset into two groups yes makes cpg and no cpg
   cpg.y<-subset(data, makesCpG==1)

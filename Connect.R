@@ -70,6 +70,8 @@ comparing_CpG_Syn_Nonsyn (DF)
 source("RyanWilcox.R")
 Wilcox_test(DF, truename)
 
+source("redoplot.R")
+comparing_CpG_Syn_Nonsyn_new(DF, truename)
 
 #########
 ########
