@@ -10,7 +10,7 @@ comparing_CpG_Syn_Nonsyn = function(data){
   cpg.n<-subset(data, makesCpG==0)
   #subset further into letters nuclotideCpgforming or nucotideNonGpg
   AC<-subset(cpg.y, wtnt=='a')
-  ANC<-subset(cpg.n, wtnt=='a') edhje
+  ANC<-subset(cpg.n, wtnt=='a') 
   GC<-subset(cpg.y, wtnt=='g')
   GNC<-subset(cpg.n, wtnt=='g')
   TC<-subset(cpg.y, wtnt=='t')
