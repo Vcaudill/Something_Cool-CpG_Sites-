@@ -6,7 +6,7 @@ setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
 source("MeaFreq.R")
 # must place your file as a txt takes a few minutes 
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus")
-virusname = 'DengueVirus1.fasta_pruned.mu.trim05.txt'
+virusname = 'HumanBocavirus1_NS1.fasta_pruned.mu.trim05'
 DF<-meanFreq(virusname)
 splitname<-unlist(strsplit(virusname,".fasta"))
 truename<-splitname[1]
@@ -16,13 +16,11 @@ setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
 
 # for Ryan 
 # make sure that M is the first amino acid check all virus
-#start = 86
-#end = 979
-#DF<-DF[c(start:(nrow(DF)-end)),]
-#DF$num<-(1:nrow(DF))
+start = 178
+end = 3060
+DF<-DF[c(start:(nrow(DF)-end)),]
+DF$num<-(1:nrow(DF))
 
-
-source("WTAA.R")
 
 source("WTAA.R")
 DF<-getWTAA(DF)
@@ -65,8 +63,12 @@ source("CPG_Syn_Nonsyn_graph.R")
 comparing_CpG_Syn_Nonsyn (DF)
 
 # Wilcox test
-source("stats.R")
+#source("stats.R")
+#Wilcox_test(DF)
+
+source("RyanWilcox.R")
 Wilcox_test(DF)
+dev.off()
 
 #########
 ########

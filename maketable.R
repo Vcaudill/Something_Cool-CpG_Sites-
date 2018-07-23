@@ -59,6 +59,7 @@ makeTable <- function(Pvalues){
   
   }
   print("end")
+  dev.off()
   
   
 }
