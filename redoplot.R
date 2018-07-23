@@ -3,7 +3,7 @@
 
 #data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
 
-comparing_CpG_Syn_Nonsyn_new = function(data){
+comparing_CpG_Syn_Nonsyn_new = function(data, truename){
   
   #subset into two groups yes makes cpg and no cpg
   cpg.y<-subset(data, makesCpG==1)
@@ -152,8 +152,8 @@ comparing_CpG_Syn_Nonsyn_new = function(data){
   #png("Den1_jitter1.png", width = 405, height = 405, units = "px")
   
   #layout(matrix(c(1,2,3,4), nrow=2, byrow = TRUE))
-  
-  png("Dengue1.png", width = 6.75, height = 6.75, units = "in", res= 300)
+  truenamepng = paste(truename,".png",sep="")
+  png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
   par(mfrow=c(2,2)) 
   palette(alpha(c("#99FF99","#9999FF","#FF9900","#FF3300"),0.3))
   #graph_color = palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
@@ -165,7 +165,7 @@ comparing_CpG_Syn_Nonsyn_new = function(data){
   # )
   # axis(2,at=aty,labels=labels)
   points(AllA$graphit, AllA$mean_val, col= factor(AllA$graphit), pch=19, cex = 3)
-  arrows(AllA$graphit, AllA$LCLS, AllA$graphit, AllA$UCLS, length=0.3,lwd=5, angle=90, code=3, col= factor(AllA$graphit))
+  arrows(AllA$graphit, AllA$LCLS, AllA$graphit, AllA$UCLS, length=0.15,lwd=5, angle=90, code=3, col= "black")
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
   axis(1, at= c(1:4),labels = NA)
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
@@ -178,7 +178,7 @@ comparing_CpG_Syn_Nonsyn_new = function(data){
   
   plot(jitter(AllT$graphit),AllT$MeanFreq+ 0.0001,log='y',col=factor(AllT$graphit),pch=16,main="T",xlab = " ", ylab = "Mutation Frequency", yaxt="n", xaxt = "n")
   points(AllT$graphit, AllT$mean_val, col= factor(AllT$graphit), pch=19, cex = 3)
-  arrows(AllT$graphit, AllT$LCLS, AllT$graphit, AllT$UCLS, length=0.3, lwd = 5, angle=90, code=3, col= factor(AllT$graphit) )
+  arrows(AllT$graphit, AllT$LCLS, AllT$graphit, AllT$UCLS, length=0.15, lwd = 5, angle=90, code=3, col= "black")
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
   axis(1, at= c(1:4),labels = NA)
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
@@ -189,7 +189,7 @@ comparing_CpG_Syn_Nonsyn_new = function(data){
   plot(jitter(AllC$graphit, 0.6),AllC$MeanFreq+ 0.0001,log='y',col=factor(AllC$graphit),pch=16,main="C",xlab = "Mutation Type", ylab = "Mutation Frequency",  xlim=c(0.5,4.5),yaxt="n", xaxt = "n")
   
   points(AllC$graphit, AllC$mean_val, col= factor(AllC$graphit), pch=19, cex = 3)
-  arrows(AllC$graphit, AllC$LCLS, AllC$graphit, AllC$UCLS, length=0.3,lwd = 5, angle=90, code=3, col= factor(AllC$graphit) )
+  arrows(AllC$graphit, AllC$LCLS, AllC$graphit, AllC$UCLS, length=0.15,lwd = 5, angle=90, code=3, col= "black")
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
   axis(1, at= c(1:4),labels = NA)
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
@@ -198,7 +198,7 @@ comparing_CpG_Syn_Nonsyn_new = function(data){
   
   plot(jitter(AllG$graphit, 0.6),AllG$MeanFreq+ 0.0001,log='y',col=factor(AllG$graphit),pch=16,main="G",xlab = "Mutation Type", ylab = "Mutation Frequency", xlim=c(0.5,4.5),yaxt="n", xaxt = "n")
   points(AllG$graphit, AllG$mean_val, col= factor(AllG$graphit), pch=19, cex = 3)
-  arrows(AllG$graphit, AllG$LCLS, AllG$graphit, AllG$UCLS, length=0.3, lwd=5,angle=90, code=3, col= factor(AllG$graphit) )
+  arrows(AllG$graphit, AllG$LCLS, AllG$graphit, AllG$UCLS, length=0.15, lwd=5,angle=90, code=3, col= "black")
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
   axis(1, at= c(1:4),labels = NA)
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
@@ -311,7 +311,7 @@ comparing_CpG_Syn_Nonsyn_new = function(data){
 }
 
 
-comparing_CpG_Syn_Nonsyn(DF)
+#comparing_CpG_Syn_Nonsyn(DF)
 #make sure the packages are loaded before begining 
 
 ###################
