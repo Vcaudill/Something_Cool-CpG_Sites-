@@ -54,7 +54,7 @@ makeTable <- function(Pvalues,truenamepdf){
     a = 0.1
   }
   
-  rect(xleft = 2*100/3, xright = 200, ybottom = ycoor[num]-7, ytop = ycoor[num]+8, col = alpha("firebrick", a), border = NA)
+  rect(xleft = 2*100/3, xright = 200, ybottom = ycoor[num]-7, ytop = ycoor[num]+8, col = alpha("firebrick", a), border = TRUE)
   text(x= 6*100/7, y =ycoor[num], labels = i)
   num = num + 1 
   
