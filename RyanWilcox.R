@@ -10,6 +10,7 @@ Wilcox_test = function(data, truename){
   library(plyr)
   pVals = c()
   shrtval = 0
+  options(scipen=999)
   
   array1 = data$MeanFreq[data$wtnt =="a" & data$TypeOfSite == 'syn' & data$makesCpG == 1]
   array2 = data$MeanFreq[data$wtnt =="a" & data$TypeOfSite == 'syn' & data$makesCpG == 0]
