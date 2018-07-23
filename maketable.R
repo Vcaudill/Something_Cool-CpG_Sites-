@@ -47,7 +47,7 @@ makeTable <- function(Pvalues,truenamepdf){
   library(scales)
   if (i < 0.01){
     a = 0.4
-    i = "<0.01"
+    i = "< 0.01"
   }
   else if(i <0.05){
     a = 0.3
