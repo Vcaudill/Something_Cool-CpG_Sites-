@@ -2,6 +2,7 @@
 #Dvirus<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 #data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 #place things in table
+
 Wilcox_test = function(data){
 library(graphics)
 library(dplyr)

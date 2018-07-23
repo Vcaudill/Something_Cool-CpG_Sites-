@@ -150,9 +150,11 @@ comparing_CpG_Syn_Nonsyn = function(data){
   library(plotrix)
   library(sfsmisc)
   
-  png("Den1_jitter.png", width = 6.75, height = 3)
+  png("Den1_jitter.png", res = 30000)
   #layout(matrix(c(1,2,3,4), nrow=2, byrow = TRUE))
   par(mfrow=c(2,2)) 
+  #pdf("redoplottest.pdf", width = 6.75, height= 3)
+
   palette(alpha(c("#99FF99","#9999FF","#FF9900","#FF3300"),0.3))
   #graph_color = palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
  
@@ -185,9 +187,9 @@ comparing_CpG_Syn_Nonsyn = function(data){
   
   palette(alpha(c("#99FF99","#FF9900"),0.3)) 
   plot(jitter(AllC$graphit, 0.6),AllC$MeanFreq+ 0.0001,log='y',col=factor(AllC$graphit),pch=16,main="C",xlab = "Mutation Type", ylab = "Mutation Frequency",  xlim=c(0.5,4.5),yaxt="n", xaxt = "n")
- 
+  
   points(AllC$graphit, AllC$mean_val, col= factor(AllC$graphit), pch=19, cex = 3)
-  arrows(AllC$graphit, AllC$LCLS, AllC$graphit, AllC$UCLS, length=0.4,lwd = 5, angle=90, code=3, col= factor(AllC$graphit) )
+  arrows(AllC$graphit, AllC$LCLS, AllC$graphit, AllC$UCLS, length=0.3,lwd = 5, angle=90, code=3, col= factor(AllC$graphit) )
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
   axis(1, at= c(1:4),labels = NA)
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
@@ -196,7 +198,7 @@ comparing_CpG_Syn_Nonsyn = function(data){
   
   plot(jitter(AllG$graphit, 0.6),AllG$MeanFreq+ 0.0001,log='y',col=factor(AllG$graphit),pch=16,main="G",xlab = "Mutation Type", ylab = "Mutation Frequency", xlim=c(0.5,4.5),yaxt="n", xaxt = "n")
   points(AllG$graphit, AllG$mean_val, col= factor(AllG$graphit), pch=19, cex = 3)
-  arrows(AllG$graphit, AllG$LCLS, AllG$graphit, AllG$UCLS, length=0.4, lwd=5,angle=90, code=3, col= factor(AllG$graphit) )
+  arrows(AllG$graphit, AllG$LCLS, AllG$graphit, AllG$UCLS, length=0.3, lwd=5,angle=90, code=3, col= factor(AllG$graphit) )
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
   axis(1, at= c(1:4),labels = NA)
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")

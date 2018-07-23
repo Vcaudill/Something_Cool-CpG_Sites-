@@ -3,7 +3,8 @@
 #data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 #place things in table
 
-Wilcox_test = function(data){
+Wilcox_test = function(data, truename){
+  truenameRda= paste(truename, ".Rda", sep="")
   library(graphics)
   library(dplyr)
   library(plyr)

@@ -7,6 +7,7 @@ source("MeaFreq.R")
 # must place your file as a txt takes a few minutes 
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus")
 virusname = 'HumanBocavirus1_NS1.fasta_pruned.mu.trim05'
+virusname = 'DengueVirus1.fasta_pruned.mu.trim05.txt'
 DF<-meanFreq(virusname)
 splitname<-unlist(strsplit(virusname,".fasta"))
 truename<-splitname[1]
@@ -67,7 +68,7 @@ comparing_CpG_Syn_Nonsyn (DF)
 #Wilcox_test(DF)
 
 source("RyanWilcox.R")
-Wilcox_test(DF)
+Wilcox_test(DF, truename)
 dev.off()
 
 #########

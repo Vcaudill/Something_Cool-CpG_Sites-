@@ -2,7 +2,6 @@
 #data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 
 
-
 comparing_CpG_Syn_Nonsyn = function(data){
   library(ggplot2)
   library(dplyr)
@@ -153,16 +152,45 @@ AllATCG = rbind(AllA, AllT, AllC, AllG)
 # this loop adds a small value to the 0's so they may show up on the graph
 for (i in 1:length(AllATCG$MeanFreq)){
   if (AllATCG$MeanFreq[i]==0){
-    AllATCG$MeanFreq[i]= 0.000001
+    AllATCG$MeanFreq[i] = 0.0001
   }
 }
-
+for (i in 1:length(AllA$MeanFreq)){
+  if (AllA$MeanFreq[i]==0){
+  AllA$MeanFreq[i] = 0.0001
+  }
+}
+for (i in 1:length(AllT$MeanFreq)){
+  if (AllT$MeanFreq[i]==0){
+    AllT$MeanFreq[i] = 0.0001
+  }
+}
+for (i in 1:length(AllG$MeanFreq)){
+  if (AllG$MeanFreq[i]==0){
+    AllG$MeanFreq[i] = 0.0001
+  }
+}
+for (i in 1:length(AllC$MeanFreq)){
+  if (AllC$MeanFreq[i]==0){
+    AllC$MeanFreq[i] = 0.0001
+    }
+}
 # the plot
 ggplot(aes(factor(graphit), MeanFreq, color=graphit), data = AllATCG)+
   #log scale to make the data eaisier to see
   scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
                 labels = trans_format("log10", math_format(10^.x))) +
+  
+  #expand_limits(y= c(-0.00001, 0.1))+
   #expand_limits(y = c(0.00001, 0.1)) +
+  #annotate("text", x = 1, y= log(0.000001), label = "0")+
+  #geom_text(aes(label = "0", x= 1, y= .1))+
+  # annotation_custom(
+  #   grob = textGrob(label = 0, hjust = 0, gp = gpar(cex = 1.5)),
+  #   ymin = 0,      # Vertical position of the textGrob
+  #   ymax = 0,
+  #   xmin = -1,         # Note: The grobs are positioned outside the plot area
+  #   xmax = -1)+
   # the title
   labs(title = "Transition Mutations")+
   # jitter makes the points spred out width is how far apart the points are and alpha deals with opacicty
