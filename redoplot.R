@@ -3,7 +3,7 @@
 
 #data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
 
-comparing_CpG_Syn_Nonsyn_new = function(data){
+comparing_CpG_Syn_Nonsyn_new = function(data, truename){
   
   #subset into two groups yes makes cpg and no cpg
   cpg.y<-subset(data, makesCpG==1)
@@ -152,8 +152,8 @@ comparing_CpG_Syn_Nonsyn_new = function(data){
   #png("Den1_jitter1.png", width = 405, height = 405, units = "px")
   
   #layout(matrix(c(1,2,3,4), nrow=2, byrow = TRUE))
-  
-  png("Dengue1.png", width = 6.75, height = 6.75, units = "in", res= 300)
+  truenamepng = paste(truename,".png",sep="")
+  png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
   par(mfrow=c(2,2)) 
   palette(alpha(c("#99FF99","#9999FF","#FF9900","#FF3300"),0.3))
   #graph_color = palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
@@ -311,7 +311,7 @@ comparing_CpG_Syn_Nonsyn_new = function(data){
 }
 
 
-comparing_CpG_Syn_Nonsyn(DF)
+#comparing_CpG_Syn_Nonsyn(DF)
 #make sure the packages are loaded before begining 
 
 ###################
