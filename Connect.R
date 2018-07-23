@@ -48,10 +48,11 @@ splitname<-unlist(strsplit(virusname,".fasta"))
 truename<-splitname[1]
 
 truenameRda= paste(truename, ".Rda", sep="")
-load(truenameRda)
+setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/Rda_Files")
+load('truenameRda')
 
-# graphs 
-
+# graphs/ tables 
+setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
 source("Synonymous and nonsynonymous graph.R")
 SynNonsynAT(DF)
 SynNonsynCG(DF)
