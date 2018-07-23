@@ -49,7 +49,7 @@ truename<-splitname[1]
 
 truenameRda= paste(truename, ".Rda", sep="")
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/Rda_Files")
-load('truenameRda')
+load(truenameRda)
 
 # graphs/ tables 
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
