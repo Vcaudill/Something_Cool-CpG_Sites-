@@ -3,7 +3,7 @@ makeTable <- function(Pvalues,truenamepdf){
   pdf(truenamepdf, width = 7, height= 5)
   col1 <- c("A-G", "T-C")
   col2 <- c("Syn v CpG", "SynCpG v Non CpG", "NonSynCpG v NonCpG")
-  ycoor <- c(4*100/5 , 3*100/5 + 4, 3*100/5 - 12, 2*100/5 -7, 1*100/5-1, 100/5-14- 4, 100)
+  ycoor <- c(4*100/5+.7 , 3*100/5 + 5.1, 3*100/5 - 10, 2*100/5 -6.4, 1*100/5-1.3, 100/5-14- 2.9, 100)
   df = data.frame(col1, col2, Pvalues)
   
   #layout(matrix(1:1, nrow = 1))
@@ -54,7 +54,7 @@ makeTable <- function(Pvalues,truenamepdf){
     a = 0.1
   }
   
-  rect(xleft = 2*100/3, xright = 200, ybottom = ycoor[num]-7, ytop = ycoor[num]+8, col = alpha("firebrick", a), border = col)
+  rect(xleft = 2*100/3, xright = 200, ybottom = ycoor[num]-7.3, ytop = ycoor[num]+8, col = alpha("firebrick", a), border = col)
   text(x= 6*100/7, y =ycoor[num], labels = i)
   num = num + 1 
   
