@@ -69,7 +69,7 @@ comparing_CpG_Syn_Nonsyn (DF)
 
 source("RyanWilcox.R")
 Wilcox_test(DF, truename)
-dev.off()
+
 
 #########
 ########
