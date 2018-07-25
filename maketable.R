@@ -1,5 +1,5 @@
 
-makeTable <- function(Pvalues,truenamepdf){
+makeTable <- function(Pvalues,truenamepdf, truename){
   options(scipen = 999)
   pdf(truenamepdf, width = 7, height= 5)
   col1 <- c("A-G", "T-C")
@@ -13,7 +13,7 @@ makeTable <- function(Pvalues,truenamepdf){
   
   par(xpd=F)
   plot(1, 2, xlim=c(0,100),ylim=c(0,100), col=0, xaxt="n", yaxt="n", xlab="", ylab="")
-  
+  title(main = truename, family = "Times", adj = 0.5, cex.main= 2)
   abline(v = 100/5)
   abline(v = 2*100/3)
   abline(h = 100-100/7 + 3)
