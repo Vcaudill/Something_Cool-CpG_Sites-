@@ -1,7 +1,8 @@
 
 makeTable <- function(Pvalues,truenamepdf, truename){
   options(scipen = 999)
-  pdf(truenamepdf, width = 7, height= 5)
+  outpath = "C:/Users/ryanw/Desktop/codeLab/CpG/Something_Cool-CpG_Sites-/Tables"
+  pdf(truenamepdf, width = 7, height= 5, file = outpath)
   col1 <- c("A-G", "T-C")
   col2 <- c("Syn v CpG", "SynCpG v Non CpG", "NonSynCpG v NonCpG")
   ycoor <- c(4*100/5+.7 , 3*100/5 + 5.1, 3*100/5 - 10, 2*100/5 -6.4, 1*100/5-1.3, 100/5-14- 2.9, 100)
@@ -56,7 +57,7 @@ makeTable <- function(Pvalues,truenamepdf, truename){
     a = 0.1
   }
   
-  rect(xleft = 2*100/3, xright = 200, ybottom = ycoorb[num]-7.3, ytop = ycoor[num]+8, col = alpha("firebrick", a), border = col)
+  rect(xleft = 2*100/3, xright = 200, ybottom = ycoorb[num]-7.3, ytop = ycoor[num]+8, col = alpha("deepskyblue1", a), border = col)
   text(x= 6*100/7, y =ycoor[num], labels = i)
   num = num + 1 
   
