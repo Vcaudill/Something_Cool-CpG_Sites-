@@ -154,7 +154,6 @@ comparing_CpG_Syn_Nonsyn_new = function(data, truename){
   #layout(matrix(c(1,2,3,4), nrow=2, byrow = TRUE))
   truenamepng = paste(truename,".png",sep="")
   png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
-  mtext(truename, side = 3, line = 0, outer = TRUE) ##### title
   par(mfrow=c(2,2)) 
   palette(alpha(c("#99FF99","#9999FF","#FF9900","#FF3300"),0.3))
   #graph_color = palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
@@ -171,6 +170,7 @@ comparing_CpG_Syn_Nonsyn_new = function(data, truename){
   axis(1, at= c(1:4),labels = NA)
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
   mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
+  mtext('Dengue 1', side=3, line=1.5, adj = 1.5)
   
   # plot(data_points$Count, data_points$AnonsynNC_C,
   #      ylim=range(c(data_points$AnonsynNC_LCLS/data_points$AnonsynC_LCLS, data_points$AnonsynNC_UCLS/data_points$AnonsynC_UCLS)),
