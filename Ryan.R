@@ -1,55 +1,21 @@
 # your floder where all pages are saved
+setwd("C:/Users/ryanw/Desktop/codeLab/CpG/Something_Cool-CpG_Sites-")
 
+#How to load data
+virusname = 'EnterovirusB_VP2.fasta_pruned.mu.trim05.txt'
+splitname<-unlist(strsplit(virusname,".fasta"))
+truename<-splitname[1]
 
+truenameRda= paste(truename, ".Rda", sep="")
+setwd("C:/Users/ryanw/Desktop/codeLab/CpG/Something_Cool-CpG_Sites-/Rda_Files")
+load(truenameRda)
 
 
 setwd("C:/Users/ryanw/Desktop/codeLab/CpG/Something_Cool-CpG_Sites-")
-source("MeaFreq.R")
-# must place your file as a txt takes a few minutes 
-DF<-meanFreq('EnterovirusD_VP1.fasta_pruned.mu.trim05.txt')
-DF$wtnt<-as.character(DF$wtnt)
-#start = 86
-#end = 979
-
-
-#DF<-DF[c(start:(nrow(DF)-end)),]
-DF$num<-(1:nrow(DF))
-source("WTAA.R")
-DF<-getWTAA(DF)
-
-source("MUTAA.R")
-DF<-getMUTAA(DF)
-
-source("Drastic_AA_Change.R")
-DF<-big_aa_change(DF)
-
-source("SynNonSyn.R")
-DF<-synFunction(DF)
-
-source("CPG_Function.R")
-DF<-CPG_site(DF)
-
-# graphs 
-pdf("VP1EnteroGraphsns.pdf", width = 7, height= 5)
-source("Synonymous and nonsynonymous graph.R")
-dev.off()
-SynNonsynAT(DF)
-SynNonsynCG(DF)
-
-
-
-#source("MakesCPG Graph.R")
-#CPGNoCPGAT(DF)
-
-source("CPG_Syn_Nonsyn_graph.R")
-pdf("VP1EnteroGraph2.pdf", width = 7, height= 5)
-comparing_CpG_Syn_Nonsyn (DF)
-#dev.off()
-
 # Wilcox test
 source("RyanWilcox.R")
-Wilcox_test(DF)
-dev.off()
+Wilcox_test(DF, truename)
+
 ########
 ########
 

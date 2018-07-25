@@ -81,7 +81,7 @@ Wilcox_test = function(data, truename){
   # options(digits =4)
   #if number < 0.0001 number = ">0.0001"
   source("maketable.R")
-  makeTable(Pvalues, truenamepdf)
+  makeTable(Pvalues, truenamepdf, truename)
   #dev.off()
   
 }
