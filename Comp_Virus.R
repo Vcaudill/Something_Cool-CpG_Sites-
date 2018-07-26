@@ -1,22 +1,75 @@
-virusname = 'DengueVirus1.fasta_pruned.mu.trim05.txt'
- 
-splitname<-unlist(strsplit(virusname,".fasta"))
-truename<-splitname[1]
 
-truenameRda= paste(truename, ".Rda", sep="")
-load(truenameRda)
+setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/Rda_Files")
+
+library(scales)
+library(plotrix)
+library(sfsmisc)
+
+load("DengueVirus1.Rda")
 DengueVirus1 = DF
-DengueVirusTest1= DF
-DengueVirusTest2= DF
-DengueVirusTest3= DF
-DengueVirusTest4= DF
+load("BKpolyomavirus_VP1.Rda")
+BK_polyomavirus_VP1 = DF
+load("DengueVirus2.Rda")
+DengueVirus2= DF
+load("DengueVirus3.Rda")
+DengueVirus3= DF
+load("DengueVirus4.Rda")
+DengueVirus4= DF
+load("EnterovirusA_VP1.Rda")
+EnterovirusA_VP1= DF
+load("EnterovirusA_VP2.Rda")
+EnterovirusA_VP2= DF
+load("EnterovirusB_VP1.Rda")
+EnterovirusB_VP1= DF
+load("EnterovirusB_VP2.Rda")
+EnterovirusB_VP2= DF
+load("EnterovirusC_VP1.Rda")
+EnterovirusC_VP1= DF
+load("EnterovirusD_VP1.Rda")
+EnterovirusD_VP1= DF
+load("HumanBocavirus1_NS1.Rda")
+HumanBocavirus1_NS1= DF
+load("HumanBocavirus1_VP1.Rda")
+HumanBocavirus1_VP1= DF
+load("humanparainfluenzavirus1_F.Rda")
+humanparainfluenzavirus1_F= DF
+load("humanparainfluenzavirus1_HN.Rda")
+humanparainfluenzavirus1_HN= DF
+load("InfluenzaAvirus_HA_H1N1.Rda")
+InfluenzaAvirus_HA_H1N1= DF
+load("InfluenzaAvirus_HA_H3N2.Rda")
+InfluenzaAvirus_HA_H3N2= DF
+load("InfluenzaAvirus_NA_H1N1.Rda")
+InfluenzaAvirus_NA_H1N1= DF
+load("InfluenzaBvirus_NA.Rda")
+InfluenzaBvirus_NA= DF
 
-DengueVirusTest1$Virus<-('DVT1')
-DengueVirusTest2$Virus<-('DVT2')
-DengueVirusTest3$Virus<-('DVT3')
-DengueVirusTest4$Virus<-('DVT4')
+DengueVirus1$Virus<-('DengueVirus1')
+BK_polyomavirus$Virus<-('BK_polyomavirus')
+DengueVirus3$Virus<-('DengueVirus3')
+DengueVirus4$Virus<-('DengueVirus4')
+DengueVirus2$Virus<-('DengueVirus2')
 
-my.list <- list(DengueVirus1, DengueVirusTest1, DengueVirusTest2, DengueVirusTest3, DengueVirusTest4)
+EnterovirusA_VP1$Virus<-('EnterovirusA_VP1')
+EnterovirusA_VP2$Virus<-('EnterovirusA_VP2')
+EnterovirusB_VP1$Virus<-('EnterovirusB_VP1')
+EnterovirusB_VP2$Virus<-('EnterovirusB_VP2')
+
+EnterovirusC_VP1$Virus<-('EnterovirusC_VP1')
+EnterovirusD_VP1$Virus<-('EnterovirusD_VP1')
+HumanBocavirus1_NS1$Virus<-('HumanBocavirus1_NS1')
+HumanBocavirus1_VP1$Virus<-('HumanBocavirus1_VP1')
+
+humanparainfluenzavirus1_F$Virus<-('humanparainfluenzavirus1_F')
+humanparainfluenzavirus1_HN$Virus<-('humanparainfluenzavirus1_HN')
+InfluenzaAvirus_HA_H1N1$Virus<-('InfluenzaAvirus_HA_H1N1')
+InfluenzaAvirus_HA_H3N2$Virus<-('InfluenzaAvirus_HA_H3N2')
+
+InfluenzaAvirus_NA_H1N1$Virus<-('InfluenzaAvirus_NA_H1N1')
+InfluenzaBvirus_NA$Virus<-('InfluenzaBvirus_NA')
+
+
+my.list <- list(DengueVirus1, DengueVirus2, DengueVirus3, DengueVirus4, HumanBocavirus1_NS1, HumanBocavirus1_VP1, humanparainfluenzavirus1_F, InfluenzaAvirus_HA_H1N1,InfluenzaAvirus_HA_H3N2, EnterovirusA_VP1, EnterovirusA_VP2,EnterovirusB_VP1, EnterovirusB_VP2,EnterovirusC_VP1,EnterovirusD_VP1, humanparainfluenzavirus1_HN, InfluenzaAvirus_NA_H1N1, InfluenzaBvirus_NA, BK_polyomavirus_VP1)
 data_points = data.frame("Count"= 1:length(my.list), "Virus"= 1:length(my.list))
 count = 1
 
@@ -113,11 +166,29 @@ for (data in my.list){
   data_points$TnonsynNC_UCLS[count] =AllT_mean_value_nonsyn_nCpG + AllT_sem_vals_nonsyn_nCpG
   count = count +1
 }
+data_points[5,3] =.13
+#making points that are Nah or infint = out to 0 on our graph
+for (i in row(data_points))
+  for (j in col(data_points))
+    if(data_points[i,j] == "NaN")
+      data_points[i,j] = .13
+    if(data_points[i,j] == Inf)
+      data_points[i,j] = .13
+    if(data_points[i,j] == 0)
+       data_points[i,j] = .13
+    if(data_points[i,j] < 0.000000001)
+      data_points[i,j] = .13
+    if(data_points[i,j] > 1000000000000)
+       data_points[i,j] = .13
+      
+print(data_points[5,5])
+
 
 # graphing 
-
-plot(data_points$Count-.3, data_points$AsynNC_C, main="Scatterplot Example", 
-     xlab="Virus ", ylab="Costly", pch=19, col= "red", log = 'y', xaxt="n", ylim=c(1,10), xlim=c(.5, length(my.list) +1.5), las= 1)
+png("Costly_Graph_2.png", width = 11, height = 8, units = "in", res= 500)
+par(mar=c(5,3,1,1), oma=c(8,3,1,1))
+plot(data_points$Count-.3, data_points$AsynNC_C, main="Costly", xlab=" ", yaxt = "n",
+     ylab="Costly", pch=19, col= "red", log = 'y', xaxt = "n", ylim=c(0.13, 201), xlim=c(1, length(my.list) +8.5), las= 1)
 # aty <- axTicks(2)
 # labels <- sapply(aty,function(i)
 #   as.expression(bquote(10^ .(i)))
@@ -134,15 +205,20 @@ arrows(data_points$Count-.1, data_points$AnonsynNC_LCLS/data_points$AnonsynC_LCL
 arrows(data_points$Count+.1, data_points$TsynNC_LCLS/data_points$TsynC_LCLS, data_points$Count+.1, data_points$TsynNC_UCLS/data_points$TsynC_UCLS, length=0.05, angle=90, code=3, col= "blue")
 arrows(data_points$Count+.3, data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS, data_points$Count +.3, data_points$TnonsynNC_UCLS/data_points$TnonsynC_UCLS, length=0.05, angle=90, code=3, col= "purple")
 
-abline(h=c(1,2,5,10), col="grey", lty=c(2,2))
-abline(v=c(1.5,2.5,3.5, 4.5), col="grey", lty=c(1))
+axis(2, at = c(0.5,1,2,5,10,20,50,100), labels = c(0.5,1,2,5,10,20,50,100),  las=2)
+axis.break(2,0.16,breakcol="black",style="slash")
+mtext('0', side=2, line=1.5, at=0.12, las=1.1)
+
+abline(h=c(0.5,1,2,5,10,20,50,100), col="grey", lty=c(2,2))
+abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5), col="grey", lty=c(1))
 
 
-
+# xlab="Virus "
 
 axis(1, at=1:length(my.list), labels=data_points$Virus, las= 2)
-legend((length(my.list) + .4), 7, legend=c("A Syn", "A NonSyn", "T Syn", "T NonSyn"),
+legend((length(my.list) + 1.4), 100, legend=c("A Syn", "A NonSyn", "T Syn", "T NonSyn"),
        col=c("red", "green", "blue", "purple"), lty=1, cex=1)
+dev.off()
 # add horsontal gray lines
 
 
