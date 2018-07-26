@@ -45,7 +45,7 @@ load("InfluenzaBvirus_NA.Rda")
 InfluenzaBvirus_NA= DF
 
 DengueVirus1$Virus<-('DengueVirus1')
-BK_polyomavirus$Virus<-('BK_polyomavirus')
+BK_polyomavirus_VP1$Virus<-('BK_polyomavirus_VP1')
 DengueVirus3$Virus<-('DengueVirus3')
 DengueVirus4$Virus<-('DengueVirus4')
 DengueVirus2$Virus<-('DengueVirus2')
@@ -166,29 +166,23 @@ for (data in my.list){
   data_points$TnonsynNC_UCLS[count] =AllT_mean_value_nonsyn_nCpG + AllT_sem_vals_nonsyn_nCpG
   count = count +1
 }
-data_points[5,3] =.13
-#making points that are Nah or infint = out to 0 on our graph
+
+#making points that are Nah or infint or 0 Not costly on the graph
 for (i in row(data_points))
   for (j in col(data_points))
-    if(data_points[i,j] == "NaN")
+    if(data_points[i,j] == "NaN"||data_points[i,j] == "Inf"||data_points[i,j] == "0")
       data_points[i,j] = .13
-    if(data_points[i,j] == Inf)
-      data_points[i,j] = .13
-    if(data_points[i,j] == 0)
-       data_points[i,j] = .13
-    if(data_points[i,j] < 0.000000001)
-      data_points[i,j] = .13
-    if(data_points[i,j] > 1000000000000)
-       data_points[i,j] = .13
+  
       
 print(data_points[5,5])
 
 
 # graphing 
-png("Costly_Graph_2.png", width = 11, height = 8, units = "in", res= 500)
+setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
+png("Costly_Graph_3.png", width = 11, height = 8, units = "in", res= 500)
 par(mar=c(5,3,1,1), oma=c(8,3,1,1))
 plot(data_points$Count-.3, data_points$AsynNC_C, main="Costly", xlab=" ", yaxt = "n",
-     ylab="Costly", pch=19, col= "red", log = 'y', xaxt = "n", ylim=c(0.13, 201), xlim=c(1, length(my.list) +8.5), las= 1)
+     ylab="Costly", pch=19, col= "red", log = 'y', xaxt = "n", ylim=c(0.13, 201), xlim=c(1, length(my.list) +5.5), las= 1)
 # aty <- axTicks(2)
 # labels <- sapply(aty,function(i)
 #   as.expression(bquote(10^ .(i)))
@@ -207,7 +201,7 @@ arrows(data_points$Count+.3, data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCL
 
 axis(2, at = c(0.5,1,2,5,10,20,50,100), labels = c(0.5,1,2,5,10,20,50,100),  las=2)
 axis.break(2,0.16,breakcol="black",style="slash")
-mtext('0', side=2, line=1.5, at=0.12, las=1.1)
+mtext('Not Costly', side=2, line=1.5, at=0.12, las=1.1)
 
 abline(h=c(0.5,1,2,5,10,20,50,100), col="grey", lty=c(2,2))
 abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5), col="grey", lty=c(1))
@@ -216,7 +210,7 @@ abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,
 # xlab="Virus "
 
 axis(1, at=1:length(my.list), labels=data_points$Virus, las= 2)
-legend((length(my.list) + 1.4), 100, legend=c("A Syn", "A NonSyn", "T Syn", "T NonSyn"),
+legend((length(my.list) + 1.4), 10, legend=c("A Syn", "A NonSyn", "T Syn", "T NonSyn"),
        col=c("red", "green", "blue", "purple"), lty=1, cex=1)
 dev.off()
 # add horsontal gray lines
