@@ -15,6 +15,7 @@ load("DengueVirus3.Rda")
 DengueVirus3= DF
 load("DengueVirus4.Rda")
 DengueVirus4= DF
+
 load("EnterovirusA_VP1.Rda")
 EnterovirusA_VP1= DF
 load("EnterovirusA_VP2.Rda")
@@ -23,6 +24,7 @@ load("EnterovirusB_VP1.Rda")
 EnterovirusB_VP1= DF
 load("EnterovirusB_VP2.Rda")
 EnterovirusB_VP2= DF
+
 load("EnterovirusC_VP1.Rda")
 EnterovirusC_VP1= DF
 load("EnterovirusD_VP1.Rda")
@@ -31,18 +33,29 @@ load("HumanBocavirus1_NS1.Rda")
 HumanBocavirus1_NS1= DF
 load("HumanBocavirus1_VP1.Rda")
 HumanBocavirus1_VP1= DF
+
 load("humanparainfluenzavirus1_F.Rda")
 humanparainfluenzavirus1_F= DF
 load("humanparainfluenzavirus1_HN.Rda")
 humanparainfluenzavirus1_HN= DF
+load("humanparainfluenzavirus3_HN.Rda")
+humanparainfluenzavirus3_HN= DF
 load("InfluenzaAvirus_HA_H1N1.Rda")
 InfluenzaAvirus_HA_H1N1= DF
+
 load("InfluenzaAvirus_HA_H3N2.Rda")
 InfluenzaAvirus_HA_H3N2= DF
 load("InfluenzaAvirus_NA_H1N1.Rda")
 InfluenzaAvirus_NA_H1N1= DF
+load("InfluenzaAvirus_NA_H3N2.Rda")
+InfluenzaAvirus_NA_H3N2= DF
 load("InfluenzaBvirus_NA.Rda")
 InfluenzaBvirus_NA= DF
+
+load("InfluenzaBvirus_HA.Rda")
+InfluenzaBvirus_HA= DF
+
+
 
 DengueVirus1$Virus<-('DengueVirus1')
 BK_polyomavirus_VP1$Virus<-('BK_polyomavirus_VP1')
@@ -62,14 +75,18 @@ HumanBocavirus1_VP1$Virus<-('HumanBocavirus1_VP1')
 
 humanparainfluenzavirus1_F$Virus<-('humanparainfluenzavirus1_F')
 humanparainfluenzavirus1_HN$Virus<-('humanparainfluenzavirus1_HN')
+humanparainfluenzavirus3_HN$Virus<-('humanparainfluenzavirus3_HN')
 InfluenzaAvirus_HA_H1N1$Virus<-('InfluenzaAvirus_HA_H1N1')
-InfluenzaAvirus_HA_H3N2$Virus<-('InfluenzaAvirus_HA_H3N2')
 
+InfluenzaAvirus_HA_H3N2$Virus<-('InfluenzaAvirus_HA_H3N2')
 InfluenzaAvirus_NA_H1N1$Virus<-('InfluenzaAvirus_NA_H1N1')
+InfluenzaAvirus_NA_H3N2$Virus<-('InfluenzaAvirus_NA_H3N2')
+InfluenzaBvirus_HA$Virus<-('InfluenzaBvirus_HA')
+
 InfluenzaBvirus_NA$Virus<-('InfluenzaBvirus_NA')
 
 
-my.list <- list(DengueVirus1, DengueVirus2, DengueVirus3, DengueVirus4, HumanBocavirus1_NS1, HumanBocavirus1_VP1, humanparainfluenzavirus1_F, InfluenzaAvirus_HA_H1N1,InfluenzaAvirus_HA_H3N2, EnterovirusA_VP1, EnterovirusA_VP2,EnterovirusB_VP1, EnterovirusB_VP2,EnterovirusC_VP1,EnterovirusD_VP1, humanparainfluenzavirus1_HN, InfluenzaAvirus_NA_H1N1, InfluenzaBvirus_NA, BK_polyomavirus_VP1)
+my.list <- list(DengueVirus1, DengueVirus2, DengueVirus3, DengueVirus4, humanparainfluenzavirus1_F, humanparainfluenzavirus1_HN, humanparainfluenzavirus3_HN, InfluenzaAvirus_HA_H1N1,InfluenzaAvirus_HA_H3N2, InfluenzaAvirus_NA_H1N1, InfluenzaAvirus_NA_H3N2,InfluenzaBvirus_HA, InfluenzaBvirus_NA, EnterovirusA_VP1, EnterovirusA_VP2,EnterovirusB_VP1, EnterovirusB_VP2,EnterovirusC_VP1,EnterovirusD_VP1, BK_polyomavirus_VP1, HumanBocavirus1_NS1, HumanBocavirus1_VP1)
 data_points = data.frame("Count"= 1:length(my.list), "Virus"= 1:length(my.list))
 count = 1
 
@@ -169,20 +186,21 @@ for (data in my.list){
 
 #making points that are Nah or infint or 0 Not costly on the graph
 for (i in row(data_points))
-  for (j in col(data_points))
+  for (j in 1:6)
     if(data_points[i,j] == "NaN"||data_points[i,j] == "Inf"||data_points[i,j] == "0")
-      data_points[i,j] = .13
-  
-      
-print(data_points[5,5])
+      data_points[i,j] = .005
+
+#one of the error bars is too large at 2.47 e13 so we are placing it lower, but noting it high amount  
+data_points[19,12] = data_points[19,14]/300 
 
 
+print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
 # graphing 
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
-png("Costly_Graph_3.png", width = 11, height = 8, units = "in", res= 500)
+png("Costly_Graph_6.png", width = 15, height = 8, units = "in", res= 500)
 par(mar=c(5,3,1,1), oma=c(8,3,1,1))
 plot(data_points$Count-.3, data_points$AsynNC_C, main="Costly", xlab=" ", yaxt = "n",
-     ylab="Costly", pch=19, col= "red", log = 'y', xaxt = "n", ylim=c(0.13, 201), xlim=c(1, length(my.list) +5.5), las= 1)
+     ylab="Costly", pch=19, col= "red", log = 'y', xaxt = "n", ylim=c(0.005, 260), xlim=c(1, length(my.list) +5.5), las= 1)
 # aty <- axTicks(2)
 # labels <- sapply(aty,function(i)
 #   as.expression(bquote(10^ .(i)))
@@ -199,12 +217,15 @@ arrows(data_points$Count-.1, data_points$AnonsynNC_LCLS/data_points$AnonsynC_LCL
 arrows(data_points$Count+.1, data_points$TsynNC_LCLS/data_points$TsynC_LCLS, data_points$Count+.1, data_points$TsynNC_UCLS/data_points$TsynC_UCLS, length=0.05, angle=90, code=3, col= "blue")
 arrows(data_points$Count+.3, data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS, data_points$Count +.3, data_points$TnonsynNC_UCLS/data_points$TnonsynC_UCLS, length=0.05, angle=90, code=3, col= "purple")
 
-axis(2, at = c(0.5,1,2,5,10,20,50,100), labels = c(0.5,1,2,5,10,20,50,100),  las=2)
-axis.break(2,0.16,breakcol="black",style="slash")
-mtext('Not Costly', side=2, line=1.5, at=0.12, las=1.1)
+axis(2, at = c(.01, 0.5,1,2,5,10,20,50,100), labels = c(0.01, 0.5,1,2,5,10,20,50,100),  las=2)
+axis.break(2, 0.007,breakcol="black",style="slash")
+mtext('Not Costly', side=2, line=.005, at=0.004, las=1.1)
 
-abline(h=c(0.5,1,2,5,10,20,50,100), col="grey", lty=c(2,2))
-abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5), col="grey", lty=c(1))
+axis.break(2, 200,breakcol="black",style="slash")
+mtext('2.47e+13', side=2, line=.005, at=300, las=1.1)
+
+abline(h=c(.01,0.5,1,2,5,10,20,50,100), col="grey", lty=c(2,2))
+abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5), col="grey", lty=c(1))
 
 
 # xlab="Virus "
