@@ -1,10 +1,12 @@
 
 makeTable <- function(Pvalues,truenamepdf, truename){
   options(scipen = 999)
-  outpath = "C:/Users/ryanw/Desktop/codeLab/CpG/Something_Cool-CpG_Sites-/Tables"
-  pdf(truenamepdf, width = 7, height= 5, file = outpath)
+  options(warn=-1)
+  outpath = "C:/Users/ryanw/Desktop/codeLab/CpG/Something_Cool-CpG_Sites-/Tablesblue"
+  setwd(outpath)
+  pdf(truenamepdf, width = 7, height= 5)
   col1 <- c("A-G", "T-C")
-  col2 <- c("Syn v CpG", "SynCpG v Non CpG", "NonSynCpG v NonCpG")
+  col2 <- c("Syn: CpG v NonCpG", "NonSyn: CpG v NonCpG", "Syn v NonSyn")
   ycoor <- c(4*100/5+.7 , 3*100/5 + 5.1, 3*100/5 - 10, 2*100/5 -6.4, 1*100/5-1.3, 100/5-14- 2.9, 100)
   ycoorb <- c(4*100/5+.7 , 3*100/5 + 5.1, 3*100/5 - 10.6, 2*100/5 -6.4, 1*100/5-1.3, 100/5-14- 2.9, 100)
   df = data.frame(col1, col2, Pvalues)
@@ -47,11 +49,11 @@ makeTable <- function(Pvalues,truenamepdf, truename){
     
   library(scales)
   if (i < 0.01){
-    a = 0.4
+    a = 0.45
     i = "< 0.01"
   }
   else if(i <0.05){
-    a = 0.3
+    a = 0.25
   }
   else if(i >0.05){
     a = 0.1
