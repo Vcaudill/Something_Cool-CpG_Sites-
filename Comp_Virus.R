@@ -186,10 +186,17 @@ for (data in my.list){
 
 #making points that are Nah or infint or 0 Not costly on the graph
 for (i in row(data_points))
-  for (j in 1:6)
-    if(data_points[i,j] == "NaN"||data_points[i,j] == "Inf"||data_points[i,j] == "0")
-      data_points[i,j] = .005
-
+  for (j in 1:6){
+    if(data_points[i,j] == "NaN")
+      #no nonCpG or CpG mutations
+      data_points[i,j] = 0.002
+    if(data_points[i,j] == "Inf")
+     # no CpG mutations
+      data_points[i,j] = 700
+    if(data_points[i,j] == "0")
+      #0 no nonCpG mutations
+      data_points[i,j] = .0005
+}
 #one of the error bars is too large at 2.47 e13 so we are placing it lower, but noting it high amount  
 data_points[19,12] = data_points[19,14]/300 
 
@@ -197,10 +204,10 @@ data_points[19,12] = data_points[19,14]/300
 print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
 # graphing 
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
-png("Costly_Graph_6.png", width = 15, height = 8, units = "in", res= 500)
-par(mar=c(5,3,1,1), oma=c(8,3,1,1))
-plot(data_points$Count-.3, data_points$AsynNC_C, main="Costly", xlab=" ", yaxt = "n",
-     ylab="Costly", pch=19, col= "red", log = 'y', xaxt = "n", ylim=c(0.005, 260), xlim=c(1, length(my.list) +5.5), las= 1)
+png("Costly_Graph_12.png", width = 15, height = 8, units = "in", res= 500)
+par(mar=c(5,3,3,1), oma=c(10,4,1,1))
+plot(data_points$Count-.3, data_points$AsynNC_C, main="How Costly is A CpG Mutation?", xlab=" ", yaxt = "n",
+     ylab="Costly", pch=19, col= "red", log = 'y', xaxt = "n", ylim=c(0.0005, 700), xlim=c(1.5, length(my.list) +3.5), las= 1, cex.main=3)
 # aty <- axTicks(2)
 # labels <- sapply(aty,function(i)
 #   as.expression(bquote(10^ .(i)))
@@ -219,12 +226,17 @@ arrows(data_points$Count+.3, data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCL
 
 axis(2, at = c(.01, 0.5,1,2,5,10,20,50,100), labels = c(0.01, 0.5,1,2,5,10,20,50,100),  las=2)
 axis.break(2, 0.007,breakcol="black",style="slash")
-mtext('Not Costly', side=2, line=.005, at=0.004, las=1.1)
+mtext('No nonCpG \n  or  CpG     \n    mutations  ', side=2, line=.005, at=0.002, las=1.1, cex = .7)
+mtext('No nonCpG \n   mutations   ', side=2, line=.005, at=0.0005, las=1.1, cex = .7)
 
 axis.break(2, 200,breakcol="black",style="slash")
-mtext('2.47e+13', side=2, line=.005, at=300, las=1.1)
+mtext('2.47e+13', side=2, line=.005, at=300, las=1.1, cex = .9)
 
-abline(h=c(.01,0.5,1,2,5,10,20,50,100), col="grey", lty=c(2,2))
+mtext('xTimes as Costly', side=2, line=5, at=.5, las=0, cex = 2)
+
+mtext('No CpG \n mutations ', side=2, line=.005, at=700, las=1.1, cex = .7)
+
+abline(h=c(0.002, 0.0005, .01,0.5,1,2,5,10,20,50,100, 300, 700), col="grey", lty=c(2,2))
 abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5), col="grey", lty=c(1))
 
 
@@ -232,7 +244,7 @@ abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,
 
 axis(1, at=1:length(my.list), labels=data_points$Virus, las= 2)
 legend((length(my.list) + 1.4), 10, legend=c("A Syn", "A NonSyn", "T Syn", "T NonSyn"),
-       col=c("red", "green", "blue", "purple"), lty=1, cex=1)
+       col=c("red", "green", "blue", "purple"), lty=1, lwd= 3, cex=1)
 dev.off()
 # add horsontal gray lines
 
