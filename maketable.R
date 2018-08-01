@@ -2,7 +2,7 @@
 makeTable <- function(Pvalues,truenamepdf, truename){
   options(scipen = 999)
   options(warn=-1)
-  outpath = "C:/Users/ryanw/Desktop/codeLab/CpG/Something_Cool-CpG_Sites-/Tablesblue"
+  outpath = "C:/Users/ryanw/Desktop/codeLab/CpG/Something_Cool-CpG_Sites-/allBlue"
   setwd(outpath)
   pdf(truenamepdf, width = 7, height= 5)
   col1 <- c("A-G", "T-C")
