@@ -200,7 +200,7 @@ for (i in row(data_points))
       data_points[i,j] = .0005
 }
 #one of the error bars is too large at 2.47 e13 so we are placing it lower, but noting it high amount  
-data_points[19,12] = data_points[19,14]/300 
+data_points[20,12] = data_points[20,14]/300 
 
 
 print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
@@ -239,7 +239,7 @@ mtext('xTimes as Costly', side=2, line=5, at=.5, las=0, cex = 2)
 mtext('No CpG \n mutations ', side=2, line=.005, at=700, las=1.1, cex = .7)
 
 abline(h=c(0.002, 0.0005, .01,0.5,1,2,5,10,20,50,100, 300, 700), col="grey", lty=c(2,2))
-abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5), col="grey", lty=c(1))
+abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5), col="grey", lty=c(1))
 
 
 # xlab="Virus "
