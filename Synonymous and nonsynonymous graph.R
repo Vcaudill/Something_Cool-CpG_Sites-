@@ -1,22 +1,21 @@
 #Read in CSV file
 
 #Dengue<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
-SynNonsynAT<-function(Virus){
+SynNonsynAT<-function(data, truename){
 #select for only synonymous sites in Virus file
-synonymous<-which(Virus$TypeOfSite=='syn')
+synonymous<-which(data$TypeOfSite=='syn')
 #subset data into synonymous sites and designated wildtype nucleotide
-synonymousA<-subset(Virus, wtnt=='a' & TypeOfSite=='syn')
-synonymousT<-subset(Virus, wtnt=='t' & TypeOfSite=='syn') 
+synonymousA<-subset(data, wtnt=='a' & TypeOfSite=='syn')
+synonymousT<-subset(data, wtnt=='t' & TypeOfSite=='syn') 
 #binds synonymous subset data into a new dataset
 synonymous<-rbind(synonymousA, synonymousT)
 #select for only nonsynonymous sites in Virus file
-nonsynonymous<-which(Virus$TypeOfSite=='nonsyn')
+nonsynonymous<-which(data$TypeOfSite=='nonsyn')
 #subset data into nonsynonymous sites and designated wildtypes
-nonsynonymousA<-subset(Virus, wtnt=='a' & TypeOfSite=='nonsyn')
-nonsynonymousT<-subset(Virus, wtnt=='t' & TypeOfSite=='nonsyn')
+nonsynonymousA<-subset(data, wtnt=='a' & TypeOfSite=='nonsyn')
+nonsynonymousT<-subset(data, wtnt=='t' & TypeOfSite=='nonsyn')
 
 #A and T synonymous and nonsynonymous graphs
-
 #splits the graph into 4 sections, 2 rows 2 columns 
 layout(matrix(c(1,2,3,4), nrow=2, byrow = TRUE))
 #log meanfreq to get rid of 0's and make graph easier to read
@@ -35,17 +34,19 @@ abline(h=mean(synonymousT$MeanFreq+.000001))
 
 plot(nonsynonymousT$num,nonsynonymousT$MeanFreq+.000001,log='y', col = "purple",xlab="Position Number", ylab="MeanFreq",main="NonSynonymous T", pch=0)
 abline(h=mean(nonsynonymousT$MeanFreq+.000001))
+mtext(truename, side=3, line=22,adj = 1, at= c(1,0), cex = 1.25)
+
 
 }
 
-SynNonsynCG<-function(Virus2){
-  
+SynNonsynCG<-function(data,truename){
+
 #subset data into synonymous sites and designated wildtypes
-synonymousC<-subset(Virus2, wtnt=='c' & TypeOfSite=='syn')
-synonymousG<-subset(Virus2, wtnt=='g' & TypeOfSite=='syn')
+synonymousC<-subset(data, wtnt=='c' & TypeOfSite=='syn')
+synonymousG<-subset(data, wtnt=='g' & TypeOfSite=='syn')
 #subset data into nonsynonymous sites and designated wildtypes
-nonsynonymousC<-subset(Virus2, wtnt=='c' & TypeOfSite=='nonsyn')
-nonsynonymousG<-subset(Virus2, wtnt=='g' & TypeOfSite=='nonsyn')
+nonsynonymousC<-subset(data, wtnt=='c' & TypeOfSite=='nonsyn')
+nonsynonymousG<-subset(data, wtnt=='g' & TypeOfSite=='nonsyn')
   
 #Plot C and G synonymous and nonsynonymous graphs
 layout(matrix(c(1,2,3,4), 2, 2, byrow = TRUE))
@@ -60,11 +61,12 @@ abline(h=mean(synonymousG$MeanFreq+.000001))
 
 plot(nonsynonymousG$num,nonsynonymousG$MeanFreq+.000001,log='y', col = "dodgerblue4" ,xlab="Position Number", ylab="MeanFreq",main="NonSynonymous G", pch=14)
 abline(h=mean(nonsynonymousG$MeanFreq+.000001))
+mtext(truename, side=3, line=22,adj = 1, at= c(1,0), cex = 1.25)
 
 
 }  
-SynNonsynAT(DF)
-SynNonsynCG(DF)
+SynNonsynAT(DF,truename)
+SynNonsynCG(DF,truename)
 
 plot(1, type="n", axes=FALSE, xlab="", ylab="") 
 

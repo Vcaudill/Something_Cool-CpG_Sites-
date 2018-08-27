@@ -1,13 +1,14 @@
 #Dengue<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
 
-CPGNoCPGAT<-function(Virus){
+CPGNoCPGAT<-function(data, truename){
+
 #subset wildtype and if a CPG site is made
-CPGA<-subset(Virus, wtnt=='a' & makesCpG==1)
-CPGT<-subset(Virus, wtnt=='t' & makesCpG==1) 
+CPGA<-subset(data, wtnt=='a' & makesCpG==1)
+CPGT<-subset(data, wtnt=='t' & makesCpG==1) 
 
 #subsets wildtype and if no CPG sites are made
-NoCPGA<-subset(Virus, wtnt=='a' & makesCpG==0)
-NoCPGT<-subset(Virus, wtnt=='t' & makesCpG==0)
+NoCPGA<-subset(data, wtnt=='a' & makesCpG==0)
+NoCPGT<-subset(data, wtnt=='t' & makesCpG==0)
 
 #layout graphs take same amount of space and 2 columns
 layout(matrix(c(1,2),ncol = 2,byrow = TRUE))
@@ -27,13 +28,15 @@ abline(h=mean(CPGT$MeanFreq+.000001),col = "green", lwd=2)
 par(new=TRUE)
 plot(NoCPGT$num,NoCPGT$MeanFreq+.000001,log='y', col="purple",xaxt="n", yaxt="n",xlab="Position Number", ylab="MeanFreq", pch=0)
 abline(h=mean(NoCPGT$MeanFreq+.000001),col="purple",lwd=2)
+mtext(truename, side=3, line=2,adj=1, at= c(10,10), cex = 1.25)
+
+
 }
  
-CPGNoCPGAT(DF)
+CPGNoCPGAT(DF,truename)
 
 plot(1, type="n", axes=FALSE, xlab="", ylab="") 
 #creates legend with red for CPG A and blue for No CPG A
 legend("topleft", legend=c
        ("CPG A","No CPG A","CPG T","No CPG T"),col=c("red","blue","green","purple"), horiz=FALSE, cex=1,xpd=TRUE,bty='n',pch =c(2,5,1,0))
 #overlaps second graph on top of first graph
-
