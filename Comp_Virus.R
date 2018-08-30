@@ -206,7 +206,7 @@ data_points[20,12] = data_points[20,14]/300
 print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
 # graphing 
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
-png("Costly_Graph_12.png", width = 15, height = 8, units = "in", res= 500)
+png("Costly_Graph_13.png", width = 15, height = 8, units = "in", res= 500)
 par(mar=c(5,3,3,1), oma=c(10,4,1,1))
 plot(data_points$Count-.3, data_points$AsynNC_C, main="How Costly is A CpG Mutation?", xlab=" ", yaxt = "n",
      ylab="Costly", pch=19, col= "red", log = 'y', xaxt = "n", ylim=c(0.0005, 700), xlim=c(1.5, length(my.list) +3.5), las= 1, cex.main=3)
