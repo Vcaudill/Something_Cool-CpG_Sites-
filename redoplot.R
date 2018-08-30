@@ -2,7 +2,7 @@
 #data<-read.csv("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus/DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 
 #data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
-data<-HumanBocavirus1_NS1
+#data<-HumanBocavirus1_NS1
 comparing_CpG_Syn_Nonsyn_new = function(data, truename){
   
   #subset into two groups yes makes cpg and no cpg
@@ -170,8 +170,8 @@ comparing_CpG_Syn_Nonsyn_new = function(data, truename){
   axis(1, at= c(1:4),labels = NA)
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
   mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
-  mtext(truename, side=3, line=1.5, adj = 1.5)
-  
+  #mtext(truename, side=3, line=3, adj = 3, at=  c(13.5,0))
+  mtext(truename, outer=TRUE,  cex=1, line=-1)
   # plot(data_points$Count, data_points$AnonsynNC_C,
   #      ylim=range(c(data_points$AnonsynNC_LCLS/data_points$AnonsynC_LCLS, data_points$AnonsynNC_UCLS/data_points$AnonsynC_UCLS)),
   #      pch=19, col= "green", log = 'y'
