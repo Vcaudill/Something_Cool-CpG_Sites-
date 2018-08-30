@@ -41,7 +41,7 @@ save("virus" = DF,file=truenameRda)
 
 
 #How to load data
-virusname = 'BKpolyomavirus_VP1.fasta.mu'
+virusname = 'HumanBocavirus1_VP1.fasta_pruned.mu.trim05'
 splitname<-unlist(strsplit(virusname,".fasta"))
 truename<-splitname[1]
 
