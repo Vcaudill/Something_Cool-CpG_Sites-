@@ -6,7 +6,7 @@ setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
 source("MeaFreq.R")
 # must place your file as a txt takes a few minutes 
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus")
-virusname = 'EnterovirusB_VP2.fasta.mu.trim08'
+virusname = 'HumanBocavirus1_NS1.fasta_pruned.mu.trim05'
 virusname = 'DengueVirus1.fasta_pruned.mu.trim05.txt'
 DF<-meanFreq(virusname)
 splitname<-unlist(strsplit(virusname,".fasta"))
@@ -17,8 +17,8 @@ setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
 
 # for Ryan 
 # make sure that M is the first amino acid check all virus
-start = 1
-end = 0
+start = 178
+end = 3060
 DF<-DF[c(start:(nrow(DF)-end)),]
 DF$num<-(1:nrow(DF))
 
@@ -43,7 +43,7 @@ save("virus" = DF,file=truenameRda)
 
 
 #How to load data
-virusname = 'EnterovirusB_VP2.fasta_pruned.mu.trim05.txt'
+virusname = 'DengueVirus1.fasta_pruned.mu.trim05.txt'
 splitname<-unlist(strsplit(virusname,".fasta"))
 truename<-splitname[1]
 
