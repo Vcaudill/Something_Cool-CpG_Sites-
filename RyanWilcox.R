@@ -29,19 +29,11 @@ Wilcox_test = function(data, truename){
   print(wilcox.test(array3, array4, alternative='less'))
   pVals = c(pVals,format(wilcox.test(array3, array4, alternative='less')$p.value, nsmall = 6))
   print(pVals)
-  # print("For a: Comparing makes syn mutation to nonsyn mutation. Both makes CpG, Wilcox test greater")
-  # print(wilcox.test(array1, array3, alternative='greater'))
-  # print("For a: Comparing  makes syn mutation to nonsyn mutation. No CpG made, Wilcox test greater")
-  # print(wilcox.test(array2, array4, alternative='greater'))
   print("For a: Comparing  syn to nonsyn. Wilcox test greater red&blue vs yellow&green")
   print(wilcox.test(syna, nonsyna, alternative='greater'))
   print(wilcox.test(syna, nonsyna, alternative='greater')$p.value)
   pVals = c(pVals,format(wilcox.test(syna, nonsyna, alternative='greater')$p.value, nsmall = 6))
   print(pVals)
-  
-  # print("For a: Comparing  CpG to no CpG. Wilcox test less")
-  # print(wilcox.test(CpGa, nonCpGa, alternative='less'))
-  
   
   array5 = data$MeanFreq[data$wtnt =="t" & data$TypeOfSite == 'syn' & data$makesCpG == 1]
   array6 = data$MeanFreq[data$wtnt =="t" & data$TypeOfSite == 'syn' & data$makesCpG == 0]
@@ -58,31 +50,14 @@ Wilcox_test = function(data, truename){
   print("For t: Comparing CpG with noCpG (nonsyn). Wilcox test less: yellow/green")
   print(wilcox.test(array7, array8, alternative='less'))
   pVals = c(pVals,format(wilcox.test(array7, array8, alternative='less')$p.value, nsmall = 6))
-  # print("For t: Comparing  makes syn mutation to nonsyn mutation. Both makes CpG, Wilcox test greater")
-  # print(wilcox.test(array5, array7, alternative='greater'))
-  # print("For t: Comparing  makes syn mutation to nonsyn mutation. No CpG made, Wilcox test greater")
-  # print(wilcox.test(array5, array8, alternative='greater'))
   print("For t: Comparing  syn to nonsyn. Wilcox test greater red&blue vs yellow&green")
   print(wilcox.test(synt, nonsynt, alternative='greater'))
   pVals = c(pVals,format(wilcox.test(synt, nonsynt, alternative='greater')$p.value, nsmall = 6))
   
-  #Pvalues = c()
   Pvalues= c(pVals)
-  # for (i in pVals){
-  #   if (i > 0.0001){
-  #     i = round(i, digits = 3)
-  #     Pvalues = c(Pvalues, i)
-  #   }
-  #   else{
-  #     Pvalues  = c(Pvalues, i)
-  #   }
-  # }
-  #round digit fucntions
-  # options(digits =4)
-  #if number < 0.0001 number = ">0.0001"
+  setwd("~/Desktop/Something_Cool-CpG_Sites-")
   source("maketable.R")
   makeTable(Pvalues, truenamepdf, truename)
-  #dev.off()
   
 }
 
