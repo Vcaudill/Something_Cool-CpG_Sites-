@@ -154,7 +154,7 @@ comparing_CpG_Syn_Nonsyn_new = function(data, truename){
   #layout(matrix(c(1,2,3,4), nrow=2, byrow = TRUE))
   truenamepng = paste(truename,".png",sep="")
   png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
-  par(mfrow=c(2,2)) 
+  par(mfrow=c(2,2), mar=c(3.9, 4.1, 2.1, 0.8)) 
   palette(alpha(c("#99FF99","#9999FF","#FF9900","#FF3300"),0.3))
   #graph_color = palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
   
@@ -167,11 +167,11 @@ comparing_CpG_Syn_Nonsyn_new = function(data, truename){
   points(AllA$graphit, AllA$mean_val, col= factor(AllA$graphit), pch=19, cex = 3)
   arrows(AllA$graphit, AllA$LCLS, AllA$graphit, AllA$UCLS, length=0.15,lwd=5, angle=90, code=3, col= "black")
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
-  axis(1, at= c(1:4),labels = NA)
+  axis(1, at= c(1:4),labels = c("No CpG \n Syn", " CpG \n Syn", "No CpG \n NonSyn", "CpG \n NonSyn"))
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
   mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
   #mtext(truename, side=3, line=3, adj = 3, at=  c(13.5,0))
-  mtext(truename, outer=TRUE,  cex=1, line=-1)
+  mtext(truename, outer=TRUE,  cex=2, line=-1)
   # plot(data_points$Count, data_points$AnonsynNC_C,
   #      ylim=range(c(data_points$AnonsynNC_LCLS/data_points$AnonsynC_LCLS, data_points$AnonsynNC_UCLS/data_points$AnonsynC_UCLS)),
   #      pch=19, col= "green", log = 'y'
@@ -181,27 +181,27 @@ comparing_CpG_Syn_Nonsyn_new = function(data, truename){
   points(AllT$graphit, AllT$mean_val, col= factor(AllT$graphit), pch=19, cex = 3)
   arrows(AllT$graphit, AllT$LCLS, AllT$graphit, AllT$UCLS, length=0.15, lwd = 5, angle=90, code=3, col= "black")
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
-  axis(1, at= c(1:4),labels = NA)
+  axis(1, at= c(1:4),labels = c("No CpG \n Syn", " CpG \n Syn", "No CpG \n NonSyn", "CpG \n NonSyn"), xlim = c(0.8,0.4))
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
   mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
   
   
   palette(alpha(c("#99FF99","#FF9900"),0.3)) 
-  plot(jitter(AllC$graphit, 0.6),AllC$MeanFreq+ 0.0001,log='y',col=factor(AllC$graphit),pch=16,main="C",xlab = "Mutation Type", ylab = "Mutation Frequency",  xlim=c(0.5,4.5),yaxt="n", xaxt = "n", ylim=c(0.0001, .5))
+  plot(jitter(AllC$graphit, 0.6),AllC$MeanFreq+ 0.0001,log='y',col=factor(AllC$graphit),pch=16,main="C",xlab = "Mutation Type", xlim = c(0.7,4.5), ylab = "Mutation Frequency",yaxt="n", xaxt = "n", ylim=c(0.0001, .5))
   
   points(AllC$graphit, AllC$mean_val, col= factor(AllC$graphit), pch=19, cex = 3)
   arrows(AllC$graphit, AllC$LCLS, AllC$graphit, AllC$UCLS, length=0.15,lwd = 5, angle=90, code=3, col= "black")
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
-  axis(1, at= c(1:4),labels = NA)
+  axis(1, at= c(1:4.6),labels = c("No CpG \n Syn", " CpG \n Syn", "No CpG \n NonSyn", "CpG \n NonSyn"),xlim=c(0.8,6.5))
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
   mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
   
   
-  plot(jitter(AllG$graphit, 0.6),AllG$MeanFreq+ 0.0001,log='y',col=factor(AllG$graphit),pch=16,main="G",xlab = "Mutation Type", ylab = "Mutation Frequency", xlim=c(0.5,4.5),yaxt="n", xaxt = "n", ylim=c(0.0001, .5))
+  plot(jitter(AllG$graphit, 0.6),AllG$MeanFreq+ 0.0001,log='y',col=factor(AllG$graphit),pch=16,main="G",xlab = "Mutation Type", xlim = c(0.7,4.5), ylab = "Mutation Frequency", yaxt="n", xaxt = "n", ylim=c(0.0001, .5))
   points(AllG$graphit, AllG$mean_val, col= factor(AllG$graphit), pch=19, cex = 3)
   arrows(AllG$graphit, AllG$LCLS, AllG$graphit, AllG$UCLS, length=0.15, lwd=5,angle=90, code=3, col= "black")
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
-  axis(1, at= c(1:4),labels = NA)
+  axis(1, at= c(0.7:4.6),labels = c("No CpG \n Syn", " CpG \n Syn", "No CpG \n NonSyn", "CpG \n NonSyn"),xlim=c(0.8,6.5))
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
   mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
   
