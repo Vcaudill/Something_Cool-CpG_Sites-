@@ -2,8 +2,8 @@
 makeTable <- function(Pvalues,truenamepdf, truename){
   options(scipen = 999)
   options(warn=-1)
-  #outpath = "~/Desktop/Something_Cool-CpG_Sites-/testng"
-  #setwd(outpath)
+  outpath = "C:/Users/ryanw/Desktop/codeLab/CpG/Something_Cool-CpG_Sites-/allBlue"
+  setwd(outpath)
   pdf(truenamepdf, width = 7, height= 5)
   col1 <- c("A-G", "T-C")
   col2 <- c("Syn: CpG v NonCpG", "NonSyn: CpG v NonCpG", "Syn v NonSyn")
@@ -11,6 +11,7 @@ makeTable <- function(Pvalues,truenamepdf, truename){
   ycoorb <- c(4*100/5+.7 , 3*100/5 + 5.1, 3*100/5 - 10.6, 2*100/5 -6.4, 1*100/5-1.3, 100/5-14- 2.9, 100)
   df = data.frame(col1, col2, Pvalues)
   
+  #layout(matrix(1:1, nrow = 1))
   
   
   par(xpd=F)
