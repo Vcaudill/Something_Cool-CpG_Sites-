@@ -15,12 +15,14 @@ Tables = function(truename){
 
 Wilcox_test = function(data, truename){
   truenamepdf= paste(truename, ".pdf", sep="")
+  #set output pdf file name
   library(graphics)
   library(dplyr)
   library(plyr)
   pVals = c()
   shrtval = 0
   options(scipen=999)
+  #prevents pvalues from becoming scientific notation. 
   
   array1 = data$MeanFreq[data$wtnt =="a" & data$TypeOfSite == 'syn' & data$makesCpG == 1]
   array2 = data$MeanFreq[data$wtnt =="a" & data$TypeOfSite == 'syn' & data$makesCpG == 0]
@@ -75,9 +77,12 @@ Wilcox_test = function(data, truename){
 
 makeTable <- function(Pvalues,truenamepdf, truename){
   options(scipen = 999)
+  #prevents pvalues from becoming scientific notation
   options(warn=-1)
+  #suppress warnings
   
   setwd("~/Desktop/Something_Cool-CpG_Sites-/Tables")
+  #table construct
   pdf(truenamepdf, width = 7, height= 5)
   col1 <- c("A-G", "T-C")
   col2 <- c("Syn: CpG v NonCpG", "NonSyn: CpG v NonCpG", "Syn v NonSyn")
@@ -139,6 +144,7 @@ makeTable <- function(Pvalues,truenamepdf, truename){
   dev.off()
 }
 
+#loop through namelist (all viruses)
 for(truename in namelist){
   
   Tables(truename)}
