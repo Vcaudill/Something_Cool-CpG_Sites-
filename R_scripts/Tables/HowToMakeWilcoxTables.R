@@ -2,7 +2,8 @@ namelist=c("DengueVirus1", "DengueVirus2", "DengueVirus3", "DengueVirus4", "huma
 #List of all virus names (name + .csv/Rda)
 
 Tables = function(truename){ 
-  #truename ="DengueVirus1"
+  #setwd("..")
+  truename ="DengueVirus1"
   truenamecsv= paste(truename, ".csv", sep="")
   print(truenamecsv)
   DF<- read.csv(paste("data/csv/", truenamecsv, sep=""))
@@ -14,7 +15,7 @@ Tables = function(truename){
 
 Wilcox_test = function(data, truename){
   
-  truenamepdf= paste("Tables/",truename, ".pdf", sep="")
+  truenamepdf= paste("output/Tables/",truename, ".pdf", sep="")
   print(truenamepdf)
   
   
