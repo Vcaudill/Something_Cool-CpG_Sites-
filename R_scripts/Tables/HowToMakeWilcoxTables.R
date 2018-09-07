@@ -9,14 +9,13 @@ Tables = function(truename){
   DF<- read.csv(paste("data/csv/", truenamecsv, sep=""))
   #load data as DF
   # Wilcox test
-  
-  Wilcox_test(DF, truename)
+  return(DF)
+  #Wilcox_test(DF, truename)
 }
 
 Wilcox_test = function(data, truename){
   
-  truenamepdf= paste("output/Tables/",truename, ".pdf", sep="")
-  print(truenamepdf)
+  
   
   
   #set output pdf file name
@@ -73,13 +72,16 @@ Wilcox_test = function(data, truename){
   Pvalues= c(pVals)
   #save Pvalues into list
   
-  
-  makeTable(Pvalues, truenamepdf, truename)
+  return(Pvalues)
+  #makeTable(Pvalues, truename)
   
 }
 
-makeTable <- function(Pvalues,truenamepdf, truename){
+makeTable <- function(Pvalues, truename){
   options(scipen = 999)
+  setwd("output/")
+  truenamepdf= paste(truename, ".pdf", sep="")
+  print(truenamepdf)
   #prevents pvalues from becoming scientific notation
   options(warn=-1)
   #suppress warnings
@@ -149,5 +151,8 @@ makeTable <- function(Pvalues,truenamepdf, truename){
 
 #loop through namelist (all viruses)
 for(truename in namelist){
-  
-  Tables(truename)}
+  truename = "DengueVirus1"
+  DF=Tables(truename)
+  Pvalues=Wilcox_test(DF, truename)
+  makeTable(Pvalues, truename)
+  }
