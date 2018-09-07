@@ -1,9 +1,9 @@
 # your floder where all pages are saved
-setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
+#setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
 
 
 # DataSet <-read.fasta("DengueVirus1.fasta_pruned.mu.trim05.txt")
-source("MeaFreq.R")
+source("R_scripts/BioInfo/MeaFreq.R")
 # must place your file as a txt takes a few minutes 
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus")
 virusname = 'EnterovirusB_VP2.fasta.mu.trim08'
