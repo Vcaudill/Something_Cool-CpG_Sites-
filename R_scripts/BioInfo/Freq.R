@@ -7,7 +7,7 @@ Freq <- function(fasta_file){
   virus_consensus_matrix <- seqinr :: consensus(virus_align, method = "profile")
   consensus_length <- length(virus_consensus)
   number_column <- seq(1, consensus_length)
-  virus_DF <- data.frame("num" = number_column, "Freq" = 0, "wtnt" = virus_consensus)
+  virus_DF <- data.frame("num" = number_column, "Freq" = 0, "wtnt_consensus" = virus_consensus)
   for(x in 1:consensus_length){
     current_base <- virus_consensus[x]
     current_matrix_base_count <- virus_consensus_matrix[,x]
@@ -26,7 +26,7 @@ Freq <- function(fasta_file){
     }
     virus_DF[x, 2] <- ts_count/number_of_seqs
   }
-  virus_DF$wtnt<-as.character(virus_DF$wtnt)
+  virus_DF$wtnt_consensus<-as.character(virus_DF$wtnt_consensus)
   return(virus_DF)
 }
 

@@ -12,8 +12,8 @@
 # Runs makesCpG_site function which takes in the arguement/input dataframe
 CPG_site<-function(df){
   
-  # Collapses wtnt vector sequence into a character string and sets to variable STRING
-  paste(df$wtnt, collapse = '') -> STRING
+  # Collapses wtnt_consensus vector sequence into a character string and sets to variable STRING
+  paste(df$wtnt_consensus, collapse = '') -> STRING
   STRING
   
   #Looks for pattern tg in the data STRING, return location of TG sites within the STRING and store in variable TG
