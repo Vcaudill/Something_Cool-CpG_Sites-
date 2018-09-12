@@ -9,12 +9,12 @@
 source("R_scripts/BioInfo/Freq.R")
 # must place your file as a txt takes a few minutes 
 #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus")
+viruplace = 'data/fasta/EnterovirusB_VP2.fasta.mu.trim08'
 virusname = 'EnterovirusB_VP2.fasta.mu.trim08'
-virusname = 'DengueVirus1.fasta_pruned.mu.trim05.txt'
-DF<-Freq(virusname)
+DF<-Freq(viruplace)
 splitname<-unlist(strsplit(virusname,".fasta"))
 truename<-splitname[1]
-DF$wtnt<-as.character(DF$wtnt)
+DF$wtnt_consensus<-as.character(DF$wtnt_consensus)
 DF$Virus<-(truename)
 #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
 
