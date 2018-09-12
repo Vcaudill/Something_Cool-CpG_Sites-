@@ -1,4 +1,4 @@
-meanFreq <- function(fasta_file){
+Freq <- function(fasta_file){
   library(seqinr) 
   virus_basic <- read.fasta(fasta_file)
   number_of_seqs <- length(virus_basic)
@@ -7,7 +7,7 @@ meanFreq <- function(fasta_file){
   virus_consensus_matrix <- seqinr :: consensus(virus_align, method = "profile")
   consensus_length <- length(virus_consensus)
   number_column <- seq(1, consensus_length)
-  virus_DF <- data.frame("num" = number_column, "MeanFreq" = 0, "wtnt" = virus_consensus)
+  virus_DF <- data.frame("num" = number_column, "Freq" = 0, "wtnt" = virus_consensus)
   for(x in 1:consensus_length){
     current_base <- virus_consensus[x]
     current_matrix_base_count <- virus_consensus_matrix[,x]
@@ -33,4 +33,4 @@ meanFreq <- function(fasta_file){
 #made by 11 AM dengue team
 
 #example
-#meanFreq("virusViruses/virusVirus1.fasta")
+#Freq("virusViruses/virusVirus1.fasta")
