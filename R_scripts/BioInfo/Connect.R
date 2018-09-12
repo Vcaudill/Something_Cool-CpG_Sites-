@@ -3,7 +3,7 @@
 
 
 # DataSet <-read.fasta("DengueVirus1.fasta_pruned.mu.trim05.txt")
-source("R_scripts/BioInfo/MeaFreq.R")
+source("R_scripts/BioInfo/Freq.R")
 # must place your file as a txt takes a few minutes 
 setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus")
 virusname = 'EnterovirusB_VP2.fasta.mu.trim08'
