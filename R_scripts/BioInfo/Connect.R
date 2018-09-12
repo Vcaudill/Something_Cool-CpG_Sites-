@@ -2,6 +2,9 @@
 #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
 
 
+#loop using a csv to find the file name, strating and stoping points, and readign frame
+
+
 # DataSet <-read.fasta("DengueVirus1.fasta_pruned.mu.trim05.txt")
 source("R_scripts/BioInfo/Freq.R")
 # must place your file as a txt takes a few minutes 
