@@ -47,32 +47,35 @@ virusname = 'EnterovirusB_VP2.fasta_pruned.mu.trim05.txt'
 splitname<-unlist(strsplit(virusname,".fasta"))
 truename<-splitname[1]
 
-truenameRda= paste(truename, ".Rda", sep="")
-#setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/Rda_Files")
-load(truenameRda)
+truenameRda= paste('data/Rda/', truename, ".Rda", sep="")
+truenameCSV= paste('data/Csv/', truename, ".csv", sep="")
+write.csv(DF, file = "MyData.csv")
 
+#setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/Rda_Files")
+# load(truenameRda)
+###############################################
 # graphs/ tables 
 #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
-source("R_scripts/BioInfo/Synonymous and nonsynonymous graph.R")
-SynNonsynAT(DF)
-SynNonsynCG(DF)
-
-
-source("R_scripts/BioInfo/MakesCPG Graph.R")
-CPGNoCPGAT(DF)
-
-source("R_scripts/BioInfo/CPG_Syn_Nonsyn_graph.R")
-comparing_CpG_Syn_Nonsyn (DF)
+# source("R_scripts/BioInfo/Synonymous and nonsynonymous graph.R")
+# SynNonsynAT(DF)
+# SynNonsynCG(DF)
+# 
+# 
+# source("R_scripts/BioInfo/MakesCPG Graph.R")
+# CPGNoCPGAT(DF)
+# 
+# source("R_scripts/BioInfo/CPG_Syn_Nonsyn_graph.R")
+# comparing_CpG_Syn_Nonsyn (DF)
 
 # Wilcox test
 #source("stats.R")
 #Wilcox_test(DF)
+# that tables
+#source("R_scripts/BioInfo/RyanWilcox.R")
+#Wilcox_test(DF, truename)
 
-source("R_scripts/BioInfo/RyanWilcox.R")
-Wilcox_test(DF, truename)
-
-source("R_scripts/BioInfo/redoplot.R")
-comparing_CpG_Syn_Nonsyn_new(DF, truename)
+#source("R_scripts/graphs/redoplot.R")
+#comparing_CpG_Syn_Nonsyn_new(DF, truename)
 
 #########
 ########
