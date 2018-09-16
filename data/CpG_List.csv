@@ -7,7 +7,7 @@ DengueVirus4.fasta_pruned.mu.trim05,81,361,polyprotein,RNA,YES,124,10164
 EnterovirusA_VP1.fasta_pruned.mu.trim05,187,0,VP1,RNA,YES,4640,705
 EnterovirusA_VP2.fasta.mu.trim08,1,30,VP2,RNA,YES,385,387
 EnterovirusB_VP1.fasta_pruned.mu.trim05,142,0,VP1,RNA,YES,1920,720
-EnterovirusB_VP2.fasta.mu.trim08.trim05,1,0,VP2,RNA,YES,335,285
+EnterovirusB_VP2.fasta.mu.trim08,1,0,VP2,RNA,YES,335,285
 EnterovirusC_VP1.fasta_pruned.mu.trim05,13,549,VP1,RNA,YES,2013,348
 EnterovirusC_VP2.fasta_pruned.mu.trim05,265,0,VP1,RNA,YES,306,2172
 EnterovirusD_VP1.fasta_pruned.mu.trim05,442,0,VP1,RNA,YES,128,486
