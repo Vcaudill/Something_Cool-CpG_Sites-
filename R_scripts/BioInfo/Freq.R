@@ -2,6 +2,7 @@ Freq <- function(fasta_file){
   library(seqinr) 
   virus_basic <- read.fasta(fasta_file)
   number_of_seqs <- length(virus_basic)
+  cat("number_of_seqs", number_of_seqs)
   virus_align <- read.alignment(fasta_file, format = "fasta", forceToLower = T)
   virus_consensus <- seqinr :: consensus(virus_align, method = "majority")
   virus_consensus_matrix <- seqinr :: consensus(virus_align, method = "profile")
