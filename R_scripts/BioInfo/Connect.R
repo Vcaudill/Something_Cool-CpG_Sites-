@@ -4,47 +4,52 @@
 
 #loop using a csv to find the file name, strating and stoping points, and readign frame
 
-
+Virus_info<- read.csv("data/CpG_List.csv")
+i=1
 # DataSet <-read.fasta("DengueVirus1.fasta_pruned.mu.trim05.txt")
-source("R_scripts/BioInfo/Freq.R")
-# must place your file as a txt takes a few minutes 
-#setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus")
-viruplace = 'data/fasta/EnterovirusB_VP2.fasta.mu.trim08'
-virusname = 'EnterovirusB_VP2.fasta.mu.trim08'
-DF<-Freq(viruplace)
-splitname<-unlist(strsplit(virusname,".fasta"))
-truename<-splitname[1]
-DF$wtnt_consensus<-as.character(DF$wtnt_consensus)
-DF$Virus<-(truename)
-#setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
-
-# for Ryan 
-# make sure that M is the first amino acid check all virus
-start = 1
-end = 0
-DF<-DF[c(start:(nrow(DF)-end)),]
-DF$num<-(1:nrow(DF))
-
-
-source("R_scripts/BioInfo/WTAA_consensus.R")
-DF<-getWTAA(DF)
-
-source("R_scripts/BioInfo/MUTAA.R")
-DF<-getMUTAA(DF)
-
-source("R_scripts/BioInfo/Drastic_AA_Change.R")
-DF<-big_aa_change(DF)
+for(i in 1:nrow(Virus_info)){
+  print(i)
+  source("R_scripts/BioInfo/Freq.R")
+  # must place your file as a txt takes a few minutes 
+  #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus")
+  viruplace = paste('data/fasta/', Virus_info$name[i], sep="")
+  DF<-Freq(viruplace)
+  name = as.character(Virus_info$name[i])
+  splitname<-unlist(strsplit(as.character(Virus_info$name[i]),".fasta"))
+  truename<-splitname[1]
+  DF$wtnt_consensus<-as.character(DF$wtnt_consensus)
+  DF$Virus<-(truename)
+  #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
+  
+  #  
+  # make sure that M is the first amino acid check all virus
+  start = Virus_info$start[i]
+  end = Virus_info$stop[i]
+  DF<-DF[c(start:(nrow(DF)-end)),]
+  DF$num<-(1:nrow(DF))
+  
+  
+  source("R_scripts/BioInfo/WTAA_consensus.R")
+  DF<-getWTAA(DF)
+  
+  source("R_scripts/BioInfo/MUTAA.R")
+  DF<-getMUTAA(DF)
+  
+  source("R_scripts/BioInfo/Drastic_AA_Change.R")
+  DF<-big_aa_change(DF)
+  
+  #How to save data
+  truenameRda= paste('data/Rda/', truename, ".Rda", sep="")
+  save("virus" = DF,file= truenameRda)
+  truenameCSV= paste('data/Csv/', truename, ".csv", sep="")
+  write.csv(DF, file = truenameCSV)
+}
 
 source("R_scripts/BioInfo/SynNonSyn.R")
 DF<-synFunction(DF)
 
 source("R_scripts/BioInfo/CPG_Function.R")
 DF<-CPG_site(DF)
-#How to save data
-truenameRda= paste(truename, ".Rda", sep="")
-save("virus" = DF,file=truenameRda)
-
-
 #How to load data
 virusname = 'EnterovirusB_VP2.fasta_pruned.mu.trim05.txt'
 splitname<-unlist(strsplit(virusname,".fasta"))
