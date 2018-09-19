@@ -79,7 +79,7 @@ Wilcox_test = function(data, truename){
 
 makeTable <- function(Pvalues, truename){
   options(scipen = 999)
-  setwd("output/")
+  setwd("output/Tables/")
   truenamepdf= paste(truename, ".pdf", sep="")
   print(truenamepdf)
   #prevents pvalues from becoming scientific notation
@@ -125,7 +125,6 @@ makeTable <- function(Pvalues, truename){
   num <- 1
   for (i in Pvalues){
     #i = format(i, nsmall = 6)
-    print(i)
     
     
     library(scales)
@@ -146,12 +145,13 @@ makeTable <- function(Pvalues, truename){
     
   }
   print("end")
+  
   dev.off()
+  setwd("../..")
 }
 
 #loop through namelist (all viruses)
 for(truename in namelist){
-  truename = "DengueVirus1"
   DF=Tables(truename)
   Pvalues=Wilcox_test(DF, truename)
   makeTable(Pvalues, truename)
