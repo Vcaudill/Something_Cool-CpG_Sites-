@@ -3,8 +3,9 @@
 
 #data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
 #data<-HumanBocavirus1_NS1
-comparing_CpG_Syn_Nonsyn_new = function(data, truename){
+comparing_CpG_Syn_Nonsyn_new = function(truename){
   
+  data<- read.csv(paste("data/csv/", truename,".csv", sep=""))
   #subset into two groups yes makes cpg and no cpg
   cpg.y<-subset(data, makesCpG==1)
   cpg.n<-subset(data, makesCpG==0)
