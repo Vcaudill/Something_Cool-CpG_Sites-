@@ -153,7 +153,8 @@ comparing_CpG_Syn_Nonsyn_new = function(truename){
   #png("Den1_jitter1.png", width = 405, height = 405, units = "px")
   
   #layout(matrix(c(1,2,3,4), nrow=2, byrow = TRUE))
-  truenamepng = paste(truename,".png",sep="")
+  #setwd("output/redeploy/")
+  truenamepng = paste("output/redeploy/",truename,".png",sep="")
   png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
   par(mfrow=c(2,2), mar=c(3.9, 4.1, 2.1, 0.8)) 
   palette(alpha(c("#99FF99","#9999FF","#FF9900","#FF3300"),0.3))
