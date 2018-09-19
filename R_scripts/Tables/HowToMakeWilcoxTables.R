@@ -149,8 +149,9 @@ makeTable <- function(Pvalues, truename){
 }
 
 #loop through namelist (all viruses)
-for(truename in namelist){
-  DF=Tables(truename)
-  Pvalues=Wilcox_test(DF, truename)
-  makeTable(Pvalues, truename)
-  }
+# for(truename in namelist){
+# # 
+#   DF=Tables(truename)
+#   Pvalues=Wilcox_test(DF, truename)
+#   makeTable(Pvalues, truename)
+# #   }

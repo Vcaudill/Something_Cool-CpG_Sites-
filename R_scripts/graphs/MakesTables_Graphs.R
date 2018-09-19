@@ -6,3 +6,6 @@ read.csv("data/CpG_List.csv")
   truename<-splitname[1]
   
 }
+DF=Tables(truename)
+Pvalues=Wilcox_test(DF, truename)
+makeTable(Pvalues, truename)
