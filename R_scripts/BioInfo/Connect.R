@@ -41,6 +41,9 @@ for(i in 1:nrow(Virus_info)){
   source("R_scripts/BioInfo/CPG_Function.R")
   DF<-CPG_site(DF)
   
+  source("R_scripts/BioInfo/SynNonSyn.R")
+  DF<-synFunction(DF)
+  
   #How to save data
   truenameRda= paste('data/Rda/', truename, ".Rda", sep="")
   save("virus" = DF,file= truenameRda)
