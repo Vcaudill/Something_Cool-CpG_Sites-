@@ -38,6 +38,9 @@ for(i in 1:nrow(Virus_info)){
   source("R_scripts/BioInfo/Drastic_AA_Change.R")
   DF<-big_aa_change(DF)
   
+  source("R_scripts/BioInfo/CPG_Function.R")
+  DF<-CPG_site(DF)
+  
   #How to save data
   truenameRda= paste('data/Rda/', truename, ".Rda", sep="")
   save("virus" = DF,file= truenameRda)
