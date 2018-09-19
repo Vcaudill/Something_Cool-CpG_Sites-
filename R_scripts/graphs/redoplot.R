@@ -12,7 +12,7 @@ comparing_CpG_Syn_Nonsyn_new = function(truename){
   #subset further into letters nuclotideCpgforming or nucotideNonGpg
   AC<-subset(cpg.y, wtnt_consensus=='a')
   ANC<-subset(cpg.n, wtnt_consensus=='a') 
-  GC<-subset(cpg.y, wtnt_consensus=='g')
+  GC<-subset(cpg.y, wtnt_consensus=='g') 
   GNC<-subset(cpg.n, wtnt_consensus=='g')
   TC<-subset(cpg.y, wtnt_consensus=='t')
   TNC<-subset(cpg.n, wtnt_consensus=='t')
