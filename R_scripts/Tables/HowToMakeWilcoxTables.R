@@ -77,7 +77,7 @@ Wilcox_test = function(data, truename){
 
 makeTable <- function(Pvalues, truename){
   options(scipen = 999)
-  setwd("output/Tables/")
+  setwd("output/redeploy/")
   truenamepdf= paste(truename, ".pdf", sep="")
   print(truenamepdf)
   #prevents pvalues from becoming scientific notation
