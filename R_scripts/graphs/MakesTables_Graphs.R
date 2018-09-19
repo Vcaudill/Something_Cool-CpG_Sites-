@@ -8,6 +8,8 @@ for(i in 1:nrow(Virus_info)){
   DF=Tables(truename)
   Pvalues=Wilcox_test(DF, truename)
   makeTable(Pvalues, truename)
+  source("R_scripts/graphs/redoplot.R")
+  comparing_CpG_Syn_Nonsyn_new(truename)
   
 }
 DF=Tables(truename)
