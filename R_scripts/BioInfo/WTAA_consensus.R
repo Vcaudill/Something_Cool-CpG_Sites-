@@ -15,23 +15,23 @@ getWTAA<-function(df){
   cons =  df$wtnt
   
   #Create empty vector for wildtype amino acid
-  WTAA <- c()
+  WTAA_consensus <- c()
   
   #Loop for translating consensus
   for(x in seq(1, length(cons) - 2, 3)){
     codon <- c(cons[x], cons[x+1], cons[x+2])
     new_AA <- seqinr::translate(codon)
-    WTAA[x] <- new_AA
-    WTAA[x+1] <- new_AA
-    WTAA[x+2] <- new_AA
+    WTAA_consensus [x] <- new_AA
+    WTAA_consensus [x+1] <- new_AA
+    WTAA_consensus [x+2] <- new_AA
   }
   
   #Create "WTAA" column if not already
-  if (length(which(names(df)=="WTAA"))==0){
-    df$WTAA=0}
+  if (length(which(names(df)=="WTAA_consensus "))==0){
+    df$WTAA_consensus =0}
   
   #Insert value into column
-  df$WTAA<-WTAA
+  df$WTAA_consensus <-WTAA_consensus 
   
   #Return the data frame
   return(df)

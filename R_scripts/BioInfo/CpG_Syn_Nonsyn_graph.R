@@ -19,14 +19,14 @@ comparing_CpG_Syn_Nonsyn = function(data){
 cpg.y<-subset(data, makesCpG==1)
 cpg.n<-subset(data, makesCpG==0)
 #subset further into letters nuclotideCpgforming or nucotideNonGpg
-AC<-subset(cpg.y, wtnt=='a')
-ANC<-subset(cpg.n, wtnt=='a')
-GC<-subset(cpg.y, wtnt=='g')
-GNC<-subset(cpg.n, wtnt=='g')
-TC<-subset(cpg.y, wtnt=='t')
-TNC<-subset(cpg.n, wtnt=='t')
-CC<-subset(cpg.y, wtnt=='c')
-CNC<-subset(cpg.n, wtnt=='c')
+AC<-subset(cpg.y, wtnt_consensus=='a')
+ANC<-subset(cpg.n, wtnt_consensus=='a')
+GC<-subset(cpg.y, wtnt_consensus=='g')
+GNC<-subset(cpg.n, wtnt_consensus=='g')
+TC<-subset(cpg.y, wtnt_consensus=='t')
+TNC<-subset(cpg.n, wtnt_consensus=='t')
+CC<-subset(cpg.y, wtnt_consensus=='c')
+CNC<-subset(cpg.n, wtnt_consensus=='c')
 
 #Function to help create errorbars
 sem<-function(x){
@@ -34,12 +34,12 @@ sem<-function(x){
 }
 
 # addinf a small value to be able to graph on a log scale
-# AC$MeanFreq = AC$MeanFreq +.00001
-# ANC$MeanFreq = ANC$MeanFreq +.00001
-# TC$MeanFreq = TC$MeanFreq +.00001
-# TNC$MeanFreq = TNC$MeanFreq +.00001
-# CNC$MeanFreq = CNC$MeanFreq +.00001
-# GNC$MeanFreq = GNC$MeanFreq +.00001
+# AC$Freq = AC$Freq +.00001
+# ANC$Freq = ANC$Freq +.00001
+# TC$Freq = TC$Freq +.00001
+# TNC$Freq = TNC$Freq +.00001
+# CNC$Freq = CNC$Freq +.00001
+# GNC$Freq = GNC$Freq +.00001
 
 #making the data frames with all information about a, t, c, g 
 AllA = rbind(AC, ANC)
@@ -62,46 +62,46 @@ AllG$sem_vals<- 0
 for (i in 1:length(AllA$makesCpG)) {
   if (AllA$makesCpG[i] == 1 && AllA$TypeOfSite[i] == "syn") {
     AllA$graphit[i] <- "1"
-    AllA$mean_value[i] <- mean(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
-    AllA$sem_vals[i]<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
+    AllA$mean_value[i] <- mean(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
+    AllA$sem_vals[i]<-sem(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
     }
   if (AllA$makesCpG[i] == 1 && AllA$TypeOfSite[i] == "nonsyn") {
     AllA$graphit[i] <- "3"
-    AllA$mean_value[i] <- mean(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
-    AllA$sem_vals[i]<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
+    AllA$mean_value[i] <- mean(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
+    AllA$sem_vals[i]<-sem(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
     }
   if (AllA$makesCpG[i] == 0 && AllA$TypeOfSite[i] == "syn") {
     AllA$graphit[i] <- "2"
-    AllA$mean_value[i] <- mean(AllA$MeanFreq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
-    AllA$sem_vals[i]<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
+    AllA$mean_value[i] <- mean(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
+    AllA$sem_vals[i]<-sem(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
   }
   if (AllA$makesCpG[i] == 0 && AllA$TypeOfSite[i] == "nonsyn") {
     AllA$graphit[i] <- "4"
-    AllA$mean_value[i] <- mean(AllA$MeanFreq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
-    AllA$sem_vals[i]<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
+    AllA$mean_value[i] <- mean(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
+    AllA$sem_vals[i]<-sem(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
   }
 }
 
 for (i in 1:length(AllT$makesCpG)) {
   if (AllT$makesCpG[i] == 1 && AllT$TypeOfSite[i] == "syn") {
     AllT$graphit[i] <- "1"
-    AllT$mean_value[i] <- mean(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
-    AllT$sem_vals[i]<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
+    AllT$mean_value[i] <- mean(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
+    AllT$sem_vals[i]<-sem(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
   }
   if (AllT$makesCpG[i] == 1 && AllT$TypeOfSite[i] == "nonsyn") {
     AllT$graphit[i] <- "3"
-    AllT$mean_value[i] <- mean(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
-    AllT$sem_vals[i]<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
+    AllT$mean_value[i] <- mean(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
+    AllT$sem_vals[i]<-sem(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
   }
   if (AllT$makesCpG[i] == 0 && AllT$TypeOfSite[i] == "syn") {
     AllT$graphit[i] <- "2"
-    AllT$mean_value[i] <- mean(AllT$MeanFreq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
-    AllT$sem_vals[i]<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
+    AllT$mean_value[i] <- mean(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
+    AllT$sem_vals[i]<-sem(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
   }
   if (AllT$makesCpG[i] == 0 && AllT$TypeOfSite[i] == "nonsyn") {
     AllT$graphit[i] <- "4"
-    AllT$mean_value[i] <- mean(AllT$MeanFreq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
-    AllT$sem_vals[i]<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
+    AllT$mean_value[i] <- mean(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
+    AllT$sem_vals[i]<-sem(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
   }
 }
 
@@ -109,13 +109,13 @@ for (i in 1:length(AllC$makesCpG)) {
 
   if (AllC$makesCpG[i] == 0 && AllC$TypeOfSite[i] == "syn") {
     AllC$graphit[i] <- "2"
-    AllC$mean_value[i] <- mean(AllC$MeanFreq[(which(AllC$makesCpG == 0 & AllC$TypeOfSite == "syn") )])
-    AllC$sem_vals[i]<-sem(AllC$MeanFreq[(which(AllC$makesCpG == 0 & AllC$TypeOfSite == "syn") )])
+    AllC$mean_value[i] <- mean(AllC$Freq[(which(AllC$makesCpG == 0 & AllC$TypeOfSite == "syn") )])
+    AllC$sem_vals[i]<-sem(AllC$Freq[(which(AllC$makesCpG == 0 & AllC$TypeOfSite == "syn") )])
   }
   if (AllC$makesCpG[i] == 0 && AllC$TypeOfSite[i] != "syn") {
     AllC$graphit[i] <- "4"
-    AllC$mean_value[i] <- mean(AllC$MeanFreq[(which(AllC$makesCpG == 0 & AllC$TypeOfSite == "nonsyn") )])
-    AllC$sem_vals[i]<-sem(AllC$MeanFreq[(which(AllC$makesCpG == 0 & AllC$TypeOfSite == "nonsyn") )])
+    AllC$mean_value[i] <- mean(AllC$Freq[(which(AllC$makesCpG == 0 & AllC$TypeOfSite == "nonsyn") )])
+    AllC$sem_vals[i]<-sem(AllC$Freq[(which(AllC$makesCpG == 0 & AllC$TypeOfSite == "nonsyn") )])
   }
 }
 
@@ -123,13 +123,13 @@ for (i in 1:length(AllG$makesCpG)) {
   
   if (AllG$makesCpG[i] == 0 && AllG$TypeOfSite[i] == "syn") {
     AllG$graphit[i] <- "2"
-    AllG$mean_value[i] <- mean(AllG$MeanFreq[(which(AllG$makesCpG == 0 & AllG$TypeOfSite == "syn") )])
-    AllG$sem_vals[i]<-sem(AllG$MeanFreq[(which(AllG$makesCpG == 0 & AllG$TypeOfSite == "syn") )])
+    AllG$mean_value[i] <- mean(AllG$Freq[(which(AllG$makesCpG == 0 & AllG$TypeOfSite == "syn") )])
+    AllG$sem_vals[i]<-sem(AllG$Freq[(which(AllG$makesCpG == 0 & AllG$TypeOfSite == "syn") )])
   }
   if (AllG$makesCpG[i] == 0 && AllG$TypeOfSite[i] != "syn") {
     AllG$graphit[i] <- "4"
-    AllG$mean_value[i] <- mean(AllG$MeanFreq[(which(AllG$makesCpG == 0 & AllG$TypeOfSite == "nonsyn") )])
-    AllG$sem_vals[i]<-sem(AllG$MeanFreq[(which(AllG$makesCpG == 0 & AllG$TypeOfSite == "nonsyn") )])
+    AllG$mean_value[i] <- mean(AllG$Freq[(which(AllG$makesCpG == 0 & AllG$TypeOfSite == "nonsyn") )])
+    AllG$sem_vals[i]<-sem(AllG$Freq[(which(AllG$makesCpG == 0 & AllG$TypeOfSite == "nonsyn") )])
   }
 }
 
@@ -150,33 +150,33 @@ AllAT = rbind(AllA, AllT)
 AllATCG = rbind(AllA, AllT, AllC, AllG)
 
 # this loop adds a small value to the 0's so they may show up on the graph
-for (i in 1:length(AllATCG$MeanFreq)){
-  if (AllATCG$MeanFreq[i]==0){
-    AllATCG$MeanFreq[i] = 0.0001
+for (i in 1:length(AllATCG$Freq)){
+  if (AllATCG$Freq[i]==0){
+    AllATCG$Freq[i] = 0.0001
   }
 }
-for (i in 1:length(AllA$MeanFreq)){
-  if (AllA$MeanFreq[i]==0){
-  AllA$MeanFreq[i] = 0.0001
+for (i in 1:length(AllA$Freq)){
+  if (AllA$Freq[i]==0){
+  AllA$Freq[i] = 0.0001
   }
 }
-for (i in 1:length(AllT$MeanFreq)){
-  if (AllT$MeanFreq[i]==0){
-    AllT$MeanFreq[i] = 0.0001
+for (i in 1:length(AllT$Freq)){
+  if (AllT$Freq[i]==0){
+    AllT$Freq[i] = 0.0001
   }
 }
-for (i in 1:length(AllG$MeanFreq)){
-  if (AllG$MeanFreq[i]==0){
-    AllG$MeanFreq[i] = 0.0001
+for (i in 1:length(AllG$Freq)){
+  if (AllG$Freq[i]==0){
+    AllG$Freq[i] = 0.0001
   }
 }
-for (i in 1:length(AllC$MeanFreq)){
-  if (AllC$MeanFreq[i]==0){
-    AllC$MeanFreq[i] = 0.0001
+for (i in 1:length(AllC$Freq)){
+  if (AllC$Freq[i]==0){
+    AllC$Freq[i] = 0.0001
     }
 }
 # the plot
-ggplot(aes(factor(graphit), MeanFreq, color=graphit), data = AllATCG)+
+ggplot(aes(factor(graphit), Freq, color=graphit), data = AllATCG)+
   #log scale to make the data eaisier to see
   scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
                 labels = trans_format("log10", math_format(10^.x))) +
@@ -200,7 +200,7 @@ ggplot(aes(factor(graphit), MeanFreq, color=graphit), data = AllATCG)+
   # error bar is the uper and lower limits
   geom_errorbar(data = AllA,aes(x = graphit, ymin= LCLS, ymax= UCLS, color = graphit),width=.5) +
   #facet_wrap splits graph between a, t, c, g
-  facet_wrap(~ wtnt)+
+  facet_wrap(~ wtnt_consensus)+
   geom_jitter(data= AllT,aes(x = factor(graphit)), position = position_jitter(width = .2), alpha = 0.3) +
   geom_point(data= AllT,mapping = aes (x = graphit, y =mean_value, colour =graphit ),size = 5.0, show.legend = FALSE) +
   geom_errorbar(data = AllT,aes(x = graphit, ymin= LCLS, ymax= UCLS, color = graphit),width=.5) +
@@ -230,14 +230,14 @@ comparing_CpG_Syn_Nonsyn(DF)
 ###################
 #still testing
 # 
-# ggplot(aes(factor(graphit), MeanFreq, color=graphit), data = AllAT)+
+# ggplot(aes(factor(graphit), Freq, color=graphit), data = AllAT)+
 #   #log scale to make the data eaisier to see
 #   scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
 #                 labels = trans_format("log10", math_format(10^.x))) +
 #   scale_x_discrete(labels=c("1" = "CpG ", "5" = "CpG ", "3" = "nonCpG ", "4"= "nonCpG "))+
 #   geom_boxplot(data= AllA,aes(x = factor(graphit))) +
 #   #facet_wrap splits graph between a and t
-#   facet_wrap(~ wtnt)+
+#   facet_wrap(~ wtnt_consensus)+
 #   geom_boxplot(data= AllT,aes(x = factor(graphit))) +
 #   #give points new colors and lables the colors
 #   scale_color_manual(labels = c("CpG (syn)","Cpg (nonsyn)","nonCpG (syn)", "nonCpg (nonsyn)"), values = c("firebrick", "darkolivegreen","goldenrod3", "royalblue3")) +
@@ -248,9 +248,9 @@ comparing_CpG_Syn_Nonsyn(DF)
 # 
 # 
 # 
-# plot(MeanFreq~TypeOfSite, data=AC, log='y',yaxt='n',xaxt='n',xlab="",ylab="",col=c("#601E0033","#FF000033","#0000FF33","#FF5B0033","#00FDFF33"), border=c("#601E0080","#FF000080","#0000FF80","#FF5B00","#00FDFF"))
+# plot(Freq~TypeOfSite, data=AC, log='y',yaxt='n',xaxt='n',xlab="",ylab="",col=c("#601E0033","#FF000033","#0000FF33","#FF5B0033","#00FDFF33"), border=c("#601E0080","#FF000080","#0000FF80","#FF5B00","#00FDFF"))
 # par(new=TRUE)
-# plot(MeanFreq~TypeOfSite, data=ANC, log='y',yaxt='n',xaxt='n',xlab="",ylab="",col=c("#0000FF33","#FF5B0033","#00FDFF33"), border=c("#0000FF80","#FF5B00","#00FDFF"))
+# plot(Freq~TypeOfSite, data=ANC, log='y',yaxt='n',xaxt='n',xlab="",ylab="",col=c("#0000FF33","#FF5B0033","#00FDFF33"), border=c("#0000FF80","#FF5B00","#00FDFF"))
 # 
 # eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1)
 # axis.break(2,0.00012,style="slash") 

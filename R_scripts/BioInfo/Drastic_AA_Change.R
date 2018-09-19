@@ -23,12 +23,12 @@ big_aa_change <- function(df){
   WTAAcategory <- c()
   MUTAAcategory <- c()
   bigAAchange <- c()
-  WTAA<-df$WTAA
+  WTAA_consensus <-df$WTAA_consensus 
   MUTAA<-df$MUTAA
   
   #Assign wild type AA category
   for(j in 1:nrow(df)){
-    WTAAcategory[j]=amCat(WTAA[j])
+    WTAAcategory[j]=amCat(WTAA_consensus[j])
   }
   
   #Assign mutated AA category
