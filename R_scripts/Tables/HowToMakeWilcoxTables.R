@@ -4,7 +4,7 @@ namelist=c("DengueVirus1", "DengueVirus2", "DengueVirus3", "DengueVirus4", "huma
 #This function is going to read the data from the csv files 
 Tables = function(truename){ 
   #setwd("..")
-  truename ="DengueVirus1"
+  #truename ="DengueVirus1"
   truenamecsv= paste(truename, ".csv", sep="")
   print(truenamecsv)
   DF<- read.csv(paste("data/csv/", truenamecsv, sep=""))
@@ -18,21 +18,22 @@ Wilcox_test = function(data, truename){
   
   #set output pdf file name
   library(graphics)
-  library(dplyr)
   library(plyr)
+  library(dplyr)
+ 
   pVals = c()
   shrtval = 0
   options(scipen=999)
   #prevents pvalues from becoming scientific notation. 
   
-  array1 = data$MeanFreq[data$wtnt =="a" & data$TypeOfSite == 'syn' & data$makesCpG == 1]
-  array2 = data$MeanFreq[data$wtnt =="a" & data$TypeOfSite == 'syn' & data$makesCpG == 0]
-  array3 = data$MeanFreq[data$wtnt =="a" & data$TypeOfSite == 'nonsyn' & data$makesCpG == 1]
-  array4 = data$MeanFreq[data$wtnt =="a" & data$TypeOfSite == 'nonsyn' & data$makesCpG == 0]
-  syna = data$MeanFreq[data$wtnt =="a" & data$TypeOfSite == 'syn']
-  nonsyna = data$MeanFreq[data$wtnt =="a" & data$TypeOfSite == 'nonsyn']
-  CpGa = data$MeanFreq[data$wtnt =="a" & data$makesCpG == 1]
-  nonCpGa = data$MeanFreq[data$wtnt =="a" &  data$makesCpG == 0]
+  array1 = data$Freq[data$wtnt_consensus =="a" & data$TypeOfSite == 'syn' & data$makesCpG == 1]
+  array2 = data$Freq[data$wtnt_consensus =="a" & data$TypeOfSite == 'syn' & data$makesCpG == 0]
+  array3 = data$Freq[data$wtnt_consensus =="a" & data$TypeOfSite == 'nonsyn' & data$makesCpG == 1]
+  array4 = data$Freq[data$wtnt_consensus =="a" & data$TypeOfSite == 'nonsyn' & data$makesCpG == 0]
+  syna = data$Freq[data$wtnt_consensus =="a" & data$TypeOfSite == 'syn']
+  nonsyna = data$Freq[data$wtnt_consensus =="a" & data$TypeOfSite == 'nonsyn']
+  CpGa = data$Freq[data$wtnt_consensus =="a" & data$makesCpG == 1]
+  nonCpGa = data$Freq[data$wtnt_consensus =="a" &  data$makesCpG == 0]
   
   print("For a: Comparing makes CpG with noCpG (syn). Wilcox test less: red/blue")
   print(wilcox.test(array1, array2, alternative='less'))
@@ -48,14 +49,14 @@ Wilcox_test = function(data, truename){
   pVals = c(pVals,format(wilcox.test(syna, nonsyna, alternative='greater')$p.value, nsmall = 6))
   print(pVals)
   
-  array5 = data$MeanFreq[data$wtnt =="t" & data$TypeOfSite == 'syn' & data$makesCpG == 1]
-  array6 = data$MeanFreq[data$wtnt =="t" & data$TypeOfSite == 'syn' & data$makesCpG == 0]
-  array7 = data$MeanFreq[data$wtnt =="t" & data$TypeOfSite == 'nonsyn' & data$makesCpG == 1]
-  array8 = data$MeanFreq[data$wtnt =="t" & data$TypeOfSite == 'nonsyn' & data$makesCpG == 0]
-  synt = data$MeanFreq[data$wtnt =="t" & data$TypeOfSite == 'syn']
-  nonsynt = data$MeanFreq[data$wtnt =="t" & data$TypeOfSite == 'nonsyn']
-  CpGt = data$MeanFreq[data$wtnt =="t" & data$makesCpG == 1]
-  nonCpGt = data$MeanFreq[data$wtnt =="t" &  data$makesCpG == 0]
+  array5 = data$Freq[data$wtnt_consensus =="t" & data$TypeOfSite == 'syn' & data$makesCpG == 1]
+  array6 = data$Freq[data$wtnt_consensus =="t" & data$TypeOfSite == 'syn' & data$makesCpG == 0]
+  array7 = data$Freq[data$wtnt_consensus =="t" & data$TypeOfSite == 'nonsyn' & data$makesCpG == 1]
+  array8 = data$Freq[data$wtnt_consensus =="t" & data$TypeOfSite == 'nonsyn' & data$makesCpG == 0]
+  synt = data$Freq[data$wtnt_consensus =="t" & data$TypeOfSite == 'syn']
+  nonsynt = data$Freq[data$wtnt_consensus =="t" & data$TypeOfSite == 'nonsyn']
+  CpGt = data$Freq[data$wtnt_consensus =="t" & data$makesCpG == 1]
+  nonCpGt = data$Freq[data$wtnt_consensus =="t" &  data$makesCpG == 0]
   
   print("For t: Comparing makes CpG with noCpG (syn). Wilcox test less: red/blue")
   print(wilcox.test(array5, array6, alternative='less'))
