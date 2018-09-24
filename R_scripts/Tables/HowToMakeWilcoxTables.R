@@ -4,7 +4,7 @@ namelist=c("DengueVirus1", "DengueVirus2", "DengueVirus3", "DengueVirus4", "huma
 #This function is going to read the data from the csv files 
 Tables = function(truename){ 
   #setwd("..")
-  #truename ="DengueVirus1"
+  #truename ="Humanherpesvirus2_gD"
   truenamecsv= paste(truename, ".csv", sep="")
   print(truenamecsv)
   DF<- read.csv(paste("data/csv/", truenamecsv, sep=""))
@@ -80,6 +80,7 @@ makeTable <- function(Pvalues, truename){
   options(scipen = 999)
   setwd("output/redeploy/")
   truenamepdf= paste(truename, ".pdf", sep="")
+  truenamepng= paste(truename,"tables", ".png", sep="")
   print(truenamepdf)
   #prevents pvalues from becoming scientific notation
   options(warn=-1)
@@ -87,7 +88,8 @@ makeTable <- function(Pvalues, truename){
   
   #setwd("~/Desktop/Something_Cool-CpG_Sites-/Tables")
   #table construct
-  pdf(truenamepdf, width = 7, height= 5)
+  #pdf(truenamepdf, width = 7, height= 5)
+  png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
   col1 <- c("A-G", "T-C")
   col2 <- c("Syn: CpG v NonCpG", "NonSyn: CpG v NonCpG", "Syn v NonSyn")
   ycoor <- c(4*100/5+.7 , 3*100/5 + 5.1, 3*100/5 - 10, 2*100/5 -6.4, 1*100/5-1.3, 100/5-14- 2.9, 100)
@@ -141,10 +143,9 @@ makeTable <- function(Pvalues, truename){
     rect(xleft = 2*100/3, xright = 200, ybottom = ycoorb[num]-7.3, ytop = ycoor[num]+8, col = alpha("deepskyblue1", a), border = col)
     text(x= 6*100/7, y =ycoor[num], labels = i)
     num = num + 1 
-    
   }
   print("end")
-  
+  #dev.copy(pdf, truenamepng)
   dev.off()
   setwd("../..")
 }

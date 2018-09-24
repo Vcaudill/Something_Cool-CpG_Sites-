@@ -4,7 +4,9 @@ for(i in 1:nrow(Virus_info)){
   print(name)
 }
 for(i in 1:nrow(Virus_info)){
-  
+  if (Virus_info$name[i] == "Humanherpesvirus2_gD.fasta_pruned.mu.trim05"){
+    next
+  }
   viruplace = paste('data/fasta/', Virus_info$name[i], sep="")
   name = as.character(Virus_info$name[i])
   splitname<-unlist(strsplit(as.character(Virus_info$name[i]),".fasta"))
@@ -20,7 +22,15 @@ for(i in 1:nrow(Virus_info)){
 }
 
 library(png)
-img<-readPNG("output/redeploy/BKpolyomavirus_VP1.png")
+library(magick)
+img<-image_read("output/redeploy/BKpolyomavirus_VP1.png","output/redeploy/BKpolyomavirus_VP1tables.png")
+isg<-readPNG("output/redeploy/BKpolyomavirus_VP1tables.png")
+ing <- pdf("output/redeploy/BKpolyomavirus_VP1.pdf")
+print(img)
+image_append(image_scale(img, "100"), stack = TRUE)
+layout(matrix(1:2, ncol=1, byrow=TRUE))
+combine(img, isg)
+
 h<-dim(img)[1]
 w<-dim(img)[2]
 
@@ -35,7 +45,7 @@ usr<-par("usr")
 rasterImage(img, usr[1], usr[3], usr[2], usr[4])
 
 #add text
-text(.5,.5, "hello", cex=5, col=rgb(.2,.2,.2,.7))
+
 
 #close image
 dev.off()
