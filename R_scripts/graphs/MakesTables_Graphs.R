@@ -1,4 +1,5 @@
 Virus_info =read.csv("data/CpG_List.csv")
+library(png)
 for(i in 1:nrow(Virus_info)){
   name = as.character(Virus_info$name[i])
   print(name)
@@ -17,14 +18,40 @@ for(i in 1:nrow(Virus_info)){
   makeTable(Pvalues, truename)
   source("R_scripts/graphs/redoplot.R")
   redo<-comparing_CpG_Syn_Nonsyn_new(truename)
-
+  truenameboth= paste(truename, 'both', ".csv", sep="")
+  sarplot= paste('output/redeploy/', truename, ".png", sep="")
+  ryaplot= paste('output/redeploy/', truename,"tables", ".png", sep="")
+  isg<-readPNG(sarplot)
+  isng<-readPNG(ryaplot)
+  
+  png(truenameboth, width=w, height=h)
+  par(mfrow=c(1,2))
+  # par(mar=c(0,0,0,0), xpd=NA, mgp=c(0,0,0), oma=c(0,0,0,0), ann=F)
+  plot.new()
+  plot.window(0:1, 0:1)
+  
+  #fill plot with image
+  usr<-par("usr")    
+  rasterImage(isg, usr[1], usr[3], usr[2], usr[4])
+  
+  plot.new()
+  plot.window(0:1, 0:1)
+  
+  #fill plot with image
+  usr<-par("usr")    
+  rasterImage(isng, usr[1], usr[3], usr[2], usr[4])
+  #add text
+  
+  #close image
+  dev.off()
   
 }
 
 library(png)
 library(magick)
 img<-image_read("output/redeploy/BKpolyomavirus_VP1.png","output/redeploy/BKpolyomavirus_VP1tables.png")
-isg<-readPNG("output/redeploy/BKpolyomavirus_VP1tables.png")
+isg<-readPNG("output/redeploy/BKpolyomavirus_VP1.png")
+isng<-readPNG("output/redeploy/BKpolyomavirus_VP1tables.png")
 ing <- pdf("output/redeploy/BKpolyomavirus_VP1.pdf")
 print(img)
 image_append(image_scale(img, "100"), stack = TRUE)
@@ -36,16 +63,22 @@ w<-dim(img)[2]
 
 #open new file for output
 png("out.png", width=w, height=h)
-par(mar=c(0,0,0,0), xpd=NA, mgp=c(0,0,0), oma=c(0,0,0,0), ann=F)
+par(mfrow=c(1,2))
+# par(mar=c(0,0,0,0), xpd=NA, mgp=c(0,0,0), oma=c(0,0,0,0), ann=F)
 plot.new()
 plot.window(0:1, 0:1)
 
 #fill plot with image
 usr<-par("usr")    
-rasterImage(img, usr[1], usr[3], usr[2], usr[4])
+rasterImage(isg, usr[1], usr[3], usr[2], usr[4])
 
+plot.new()
+plot.window(0:1, 0:1)
+
+#fill plot with image
+usr<-par("usr")    
+rasterImage(isng, usr[1], usr[3], usr[2], usr[4])
 #add text
-
 
 #close image
 dev.off()
