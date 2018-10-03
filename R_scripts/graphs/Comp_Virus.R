@@ -7,54 +7,27 @@ library(sfsmisc)
 
 DengueVirus1 <- read.csv("data/csv/DengueVirus1.CSV")
 BK_polyomavirus_VP1<-read.csv("data/csv/BKpolyomavirus_VP1.CSV")
-
-load("DengueVirus2.Rda")
-DengueVirus2= DF
-load("DengueVirus3.Rda")
-DengueVirus3= DF
-load("DengueVirus4.Rda")
-DengueVirus4= DF
-
-load("EnterovirusA_VP1.Rda")
-EnterovirusA_VP1= DF
-load("EnterovirusA_VP2.Rda")
-EnterovirusA_VP2= DF
-load("EnterovirusB_VP1.Rda")
-EnterovirusB_VP1= DF
-load("EnterovirusB_VP2.Rda")
-EnterovirusB_VP2= DF
-
-load("EnterovirusC_VP1.Rda")
-EnterovirusC_VP1= DF
-load("EnterovirusC_VP2.Rda")
-EnterovirusC_VP2= DF
-load("EnterovirusD_VP1.Rda")
-EnterovirusD_VP1= DF
-load("HumanBocavirus1_NS1.Rda")
-HumanBocavirus1_NS1= DF
-load("HumanBocavirus1_VP1.Rda")
-HumanBocavirus1_VP1= DF
-
-load("humanparainfluenzavirus1_F.Rda")
-humanparainfluenzavirus1_F= DF
-load("humanparainfluenzavirus1_HN.Rda")
-humanparainfluenzavirus1_HN= DF
-load("humanparainfluenzavirus3_HN.Rda")
-humanparainfluenzavirus3_HN= DF
-load("InfluenzaAvirus_HA_H1N1.Rda")
-InfluenzaAvirus_HA_H1N1= DF
-
-load("InfluenzaAvirus_HA_H3N2.Rda")
-InfluenzaAvirus_HA_H3N2= DF
-load("InfluenzaAvirus_NA_H1N1.Rda")
-InfluenzaAvirus_NA_H1N1= DF
-load("InfluenzaAvirus_NA_H3N2.Rda")
-InfluenzaAvirus_NA_H3N2= DF
-load("InfluenzaBvirus_NA.Rda")
-InfluenzaBvirus_NA= DF
-
-load("InfluenzaBvirus_HA.Rda")
-InfluenzaBvirus_HA= DF
+DengueVirus2<- read.csv("data/csv/DengueVirus2.CSV")
+DengueVirus3<-read.csv("data/csv/DengueVirus3.CSV")
+DengueVirus4<-read.csv("data/csv/DengueVirus4.CSV")
+EnterovirusA_VP1<-read.csv("data/csv/EnterovirusA_VP1.CSV")
+EnterovirusA_VP2<-read.csv("data/csv/EnterovirusA_VP2.CSV")
+EnterovirusB_VP1<-read.csv("data/csv/EnterovirusB_VP1.CSV")
+EnterovirusB_VP2<-read.csv("data/csv/EnterovirusB_VP2.CSV")
+EnterovirusC_VP1<-read.csv("data/csv/EnterovirusC_VP1.CSV")
+EnterovirusC_VP2<-read.csv("data/csv/EnterovirusC_VP2.CSV")
+EnterovirusD_VP1<-read.csv("data/csv/EnterovirusD_VP1.CSV")
+HumanBocavirus1_NS1<-read.csv("data/csv/HumanBocavirus1_NS1.CSV")
+HumanBocavirus1_VP1<-read.csv("data/csv/HumanBocavirus1_VP1.CSV")
+humanparainfluenzavirus1_F<-read.csv("data/csv/humanparainfluenzavirus1_F.CSV")
+humanparainfluenzavirus1_HN<-read.csv("data/csv/humanparainfluenzavirus1_HN.CSV")
+humanparainfluenzavirus3_HN<-read.csv("data/csv/humanparainfluenzavirus3_HN.CSV")
+InfluenzaAvirus_HA_H1N1<-read.csv("data/csv/InfluenzaAvirus_HA_H1N1.CSV")
+InfluenzaAvirus_HA_H3N2<-read.csv("data/csv/InfluenzaAvirus_HA_H3N2.CSV")
+InfluenzaAvirus_NA_H1N1<-read.csv("data/csv/InfluenzaAvirus_NA_H1N1.CSV")
+InfluenzaAvirus_NA_H3N2<-read.csv("data/csv/InfluenzaAvirus_NA_H3N2.CSV")
+InfluenzaBvirus_NA<-read.csv("data/csv/InfluenzaBvirus_NA.CSV")
+InfluenzaBvirus_HA<-read.csv("data/csv/InfluenzaBvirus_HA.CSV")
 
 
 
