@@ -1,6 +1,4 @@
 
-setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/Rda_Files")
-
 library(scales)
 library(plotrix)
 library(sfsmisc)
@@ -36,48 +34,20 @@ Humanrespiratorysyncytialvirus<-read.csv("data/csv/Humanrespiratorysyncytialviru
 Humanrespiratorysyncytialvirus_G<-read.csv("data/csv/Humanrespiratorysyncytialvirus_G.csv")
 JCpolyomavirus_VP1<-read.csv("data/csv/JCpolyomavirus_VP1.csv")
 Measles<-read.csv("data/csv/Measles.csv")
-Measles_hemagglutinin_OR_haemagglutinin<-("data/csv/Measles_hemagglutinin_OR_haemagglutinin.csv") 
-ParvovirusB19_NS1<-("data/csv/ParvovirusB19_NS1.csv")
-ParvovirusB19_VP1<-("data/csv/ParvovirusB19_VP1.csv") 
-RhinovirusB<-("data/csv/RhinovirusB.csv") 
-RhinovirusB_polyprotein<-("data/csv/RhinovirusB_polyprotein.csv")
-RhinovirusC<-("data/csv/RhinovirusC.csv")
-RotavirusA_VP6<-("data/csv/RotavirusA_VP6.csv")
-humanparainfluenzavirus1<-("data/csv/humanparainfluenzavirus1.csv")
-humanparainfluenzavirus3<-("data/csv/humanparainfluenzavirus3.csv")
+Measles_hemagglutinin_OR_haemagglutinin<-read.csv("data/csv/Measles_hemagglutinin_OR_haemagglutinin.csv") 
+ParvovirusB19_NS1<-read.csv("data/csv/ParvovirusB19_NS1.csv")
+ParvovirusB19_VP1<-read.csv("data/csv/ParvovirusB19_VP1.csv") 
+RhinovirusB<-read.csv("data/csv/RhinovirusB.csv") 
+RhinovirusB_polyprotein<-read.csv("data/csv/RhinovirusB_polyprotein.csv")
+RhinovirusC<-read.csv("data/csv/RhinovirusC.csv")
+RotavirusA_VP6<-read.csv("data/csv/RotavirusA_VP6.csv")
+humanparainfluenzavirus1<-read.csv("data/csv/humanparainfluenzavirus1.csv")
+humanparainfluenzavirus3<-read.csv("data/csv/humanparainfluenzavirus3.csv")
 
 
 
-DengueVirus1$Virus<-('DengueVirus1')
-BK_polyomavirus_VP1$Virus<-('BK_polyomavirus_VP1')
-DengueVirus3$Virus<-('DengueVirus3')
-DengueVirus4$Virus<-('DengueVirus4')
-DengueVirus2$Virus<-('DengueVirus2')
 
-EnterovirusA_VP1$Virus<-('EnterovirusA_VP1')
-EnterovirusA_VP2$Virus<-('EnterovirusA_VP2')
-EnterovirusB_VP1$Virus<-('EnterovirusB_VP1')
-EnterovirusB_VP2$Virus<-('EnterovirusB_VP2')
-
-EnterovirusC_VP1$Virus<-('EnterovirusC_VP1')
-EnterovirusD_VP1$Virus<-('EnterovirusD_VP1')
-HumanBocavirus1_NS1$Virus<-('HumanBocavirus1_NS1')
-HumanBocavirus1_VP1$Virus<-('HumanBocavirus1_VP1')
-
-humanparainfluenzavirus1_F$Virus<-('humanparainfluenzavirus1_F')
-humanparainfluenzavirus1_HN$Virus<-('humanparainfluenzavirus1_HN')
-humanparainfluenzavirus3_HN$Virus<-('humanparainfluenzavirus3_HN')
-InfluenzaAvirus_HA_H1N1$Virus<-('InfluenzaAvirus_HA_H1N1')
-
-InfluenzaAvirus_HA_H3N2$Virus<-('InfluenzaAvirus_HA_H3N2')
-InfluenzaAvirus_NA_H1N1$Virus<-('InfluenzaAvirus_NA_H1N1')
-InfluenzaAvirus_NA_H3N2$Virus<-('InfluenzaAvirus_NA_H3N2')
-InfluenzaBvirus_HA$Virus<-('InfluenzaBvirus_HA')
-
-InfluenzaBvirus_NA$Virus<-('InfluenzaBvirus_NA')
-
-
-my.list <- list(DengueVirus1, DengueVirus2, DengueVirus3, DengueVirus4, humanparainfluenzavirus1_F, humanparainfluenzavirus1_HN, humanparainfluenzavirus3_HN, InfluenzaAvirus_HA_H1N1,InfluenzaAvirus_HA_H3N2, InfluenzaAvirus_NA_H1N1, InfluenzaAvirus_NA_H3N2,InfluenzaBvirus_HA, InfluenzaBvirus_NA, EnterovirusA_VP1, EnterovirusA_VP2,EnterovirusB_VP1, EnterovirusB_VP2,EnterovirusC_VP1,EnterovirusC_VP2,EnterovirusD_VP1, BK_polyomavirus_VP1, HumanBocavirus1_NS1, HumanBocavirus1_VP1)
+my.list <- list(DengueVirus1, DengueVirus2, DengueVirus3, DengueVirus4, humanparainfluenzavirus1_F, humanparainfluenzavirus1_HN, humanparainfluenzavirus3_HN, InfluenzaAvirus_HA_H1N1,InfluenzaAvirus_HA_H3N2, InfluenzaAvirus_NA_H1N1, InfluenzaAvirus_NA_H3N2,InfluenzaBvirus_HA, InfluenzaBvirus_NA, EnterovirusA_VP1, EnterovirusA_VP2,EnterovirusB_VP1, EnterovirusB_VP2,EnterovirusC_VP1,EnterovirusC_VP2,EnterovirusD_VP1, BK_polyomavirus_VP1, HumanBocavirus1_NS1, HumanBocavirus1_VP1, HepatitisB, Humanherpesvirus2_glycoprotein_G, Humanpapillomavirus16, Humanpapillomavirus16_L1, Humanrespiratorysyncytialvirus, Humanrespiratorysyncytialvirus_G, JCpolyomavirus_VP1, Measles, Measles_hemagglutinin_OR_haemagglutinin, ParvovirusB19_NS1, ParvovirusB19_VP1, RhinovirusB, RhinovirusB_polyprotein, RhinovirusC, RotavirusA_VP6, humanparainfluenzavirus1, humanparainfluenzavirus3)
 data_points = data.frame("Count"= 1:length(my.list), "Virus"= 1:length(my.list))
 count = 1
 
@@ -85,10 +55,10 @@ for (data in my.list){
   cpg.y<-subset(data, makesCpG==1)
   cpg.n<-subset(data, makesCpG==0)
   #subset further into letters nuclotideCpgforming or nucotideNonGpg
-  AC<-subset(cpg.y, wtnt=='a')
-  ANC<-subset(cpg.n, wtnt=='a')
-  TC<-subset(cpg.y, wtnt=='t')
-  TNC<-subset(cpg.n, wtnt=='t')
+  AC<-subset(cpg.y, wtnt_consensus=='a')
+  ANC<-subset(cpg.n, wtnt_consensus=='a')
+  TC<-subset(cpg.y, wtnt_consensus=='t')
+  TNC<-subset(cpg.n, wtnt_consensus=='t')
  
   
   #Function to help create errorbars
@@ -103,39 +73,39 @@ for (data in my.list){
   # for loops to caculate mean ans errorbars
   for (i in 1:length(AllA$makesCpG)) {
     if (AllA$makesCpG[i] == 1 && AllA$TypeOfSite[i] == "syn") {
-      AllA_mean_value_syn_CpG <- mean(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
-      AllA_sem_vals_syn_CpG<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
+      AllA_mean_value_syn_CpG <- mean(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
+      AllA_sem_vals_syn_CpG<-sem(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
     }
     if (AllA$makesCpG[i] == 1 && AllA$TypeOfSite[i] == "nonsyn") {
-      AllA_mean_value_nonsyn_CpG<- mean(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
-      AllA_sem_vals_nonsyn_CpG<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
+      AllA_mean_value_nonsyn_CpG<- mean(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
+      AllA_sem_vals_nonsyn_CpG<-sem(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
     }
     if (AllA$makesCpG[i] == 0 && AllA$TypeOfSite[i] == "syn") {
-      AllA_mean_value_syn_nCpG <- mean(AllA$MeanFreq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
-      AllA_sem_vals_syn_nCpG<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
+      AllA_mean_value_syn_nCpG <- mean(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
+      AllA_sem_vals_syn_nCpG<-sem(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
     }
     if (AllA$makesCpG[i] == 0 && AllA$TypeOfSite[i] == "nonsyn") {
-      AllA_mean_value_nonsyn_nCpG<- mean(AllA$MeanFreq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
-      AllA_sem_vals_nonsyn_nCpG<-sem(AllA$MeanFreq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
+      AllA_mean_value_nonsyn_nCpG<- mean(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
+      AllA_sem_vals_nonsyn_nCpG<-sem(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
     }
   }
   
   for (i in 1:length(AllT$makesCpG)) {
     if (AllT$makesCpG[i] == 1 && AllT$TypeOfSite[i] == "syn") {
-      AllT_mean_value_syn_CpG <- mean(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
-      AllT_sem_vals_syn_CpG<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
+      AllT_mean_value_syn_CpG <- mean(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
+      AllT_sem_vals_syn_CpG<-sem(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
     }
     if (AllT$makesCpG[i] == 1 && AllT$TypeOfSite[i] == "nonsyn") {
-      AllT_mean_value_nonsyn_CpG <- mean(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
-      AllT_sem_vals_nonsyn_CpG<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
+      AllT_mean_value_nonsyn_CpG <- mean(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
+      AllT_sem_vals_nonsyn_CpG<-sem(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
     }
     if (AllT$makesCpG[i] == 0 && AllT$TypeOfSite[i] == "syn") {
-      AllT_mean_value_syn_nCpG<- mean(AllT$MeanFreq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
-      AllT_sem_vals_syn_nCpG<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
+      AllT_mean_value_syn_nCpG<- mean(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
+      AllT_sem_vals_syn_nCpG<-sem(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
     }
     if (AllT$makesCpG[i] == 0 && AllT$TypeOfSite[i] == "nonsyn") {
-      AllT_mean_value_nonsyn_nCpG <- mean(AllT$MeanFreq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
-      AllT_sem_vals_nonsyn_nCpG<-sem(AllT$MeanFreq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
+      AllT_mean_value_nonsyn_nCpG <- mean(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
+      AllT_sem_vals_nonsyn_nCpG<-sem(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
     }
   }
   
