@@ -156,7 +156,7 @@ comparing_CpG_Syn_Nonsyn_new = function(truename){
   #setwd("output/redeploy/")
   truenamepng = paste("output/redeploy/",truename,".png",sep="")
   png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
-  par(mfrow=c(2,2), mar=c(4.1, 4.1, 2.9, 0.8),oma=c(0.1,0.1,1.5,0.1)) 
+  par(mfrow=c(2,2), mar=c(4.1, 4.1, 1.9, 0.8),oma=c(0.1,0.1,1.5,0.1)) 
   palette(alpha(c("#99FF99","#9999FF","#FF9900","#FF3300"),0.3))
   #graph_color = palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
   
