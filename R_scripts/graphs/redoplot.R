@@ -156,11 +156,11 @@ comparing_CpG_Syn_Nonsyn_new = function(truename){
   #setwd("output/redeploy/")
   truenamepng = paste("output/redeploy/",truename,".png",sep="")
   png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
-  par(mfrow=c(2,2), mar=c(3.9, 4.1, 2.1, 0.8)) 
+  par(mfrow=c(2,2), mar=c(4.1, 4.1, 2.9, 0.8),oma=c(0.1,0.1,1.5,0.1)) 
   palette(alpha(c("#99FF99","#9999FF","#FF9900","#FF3300"),0.3))
   #graph_color = palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
   
-  plot(jitter(AllA$graphit),AllA$Freq + 0.0001,log='y',col=factor(AllA$graphit),pch=16, main="A",xlab = " ", ylab = "Mutation Frequency", yaxt="n", xaxt="n", ylim=c(0.0001, .5))
+  plot(jitter(AllA$graphit),AllA$Freq + 0.0001,log='y',col=factor(AllA$graphit),pch=16, main="A",xlab = " ", ylab = "Mutation Frequency", yaxt="n", xaxt="n", ylim=c(0.0001, 0.5))
   #yaxt="n"  aty <- axTicks(8)
   # labels <- sapply(aty,function(i)
   #   as.expression(bquote(10^ .(i)))
@@ -173,7 +173,7 @@ comparing_CpG_Syn_Nonsyn_new = function(truename){
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
   mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
   #mtext(truename, side=3, line=3, adj = 3, at=  c(13.5,0))
-  mtext(truename, outer=TRUE,  cex=1.7, line=-1.5)
+  mtext(truename, outer=TRUE, adj=0.55, cex=1.7, line=0.01)
   # plot(data_points$Count, data_points$AnonsynNC_C,
   #      ylim=range(c(data_points$AnonsynNC_LCLS/data_points$AnonsynC_LCLS, data_points$AnonsynNC_UCLS/data_points$AnonsynC_UCLS)),
   #      pch=19, col= "green", log = 'y'
@@ -206,6 +206,5 @@ comparing_CpG_Syn_Nonsyn_new = function(truename){
   axis(1, at= c(0.9:3.9),labels = c("No CpG \n Syn", " CpG \n Syn", "No CpG \n NonSyn", "CpG \n NonSyn"),mgp=c(3, 1.5, 0))
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
   mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
-  
   dev.off()
 }
