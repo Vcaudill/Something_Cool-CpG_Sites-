@@ -5,8 +5,7 @@ library(scales)
 library(plotrix)
 library(sfsmisc)
 
-load("DengueVirus1.Rda")
-DengueVirus1 = DF
+DengueVirus1 <- read.csv("data/csv/DengueVirus1.CSV")
 load("BKpolyomavirus_VP1.Rda")
 BK_polyomavirus_VP1 = DF
 load("DengueVirus2.Rda")
