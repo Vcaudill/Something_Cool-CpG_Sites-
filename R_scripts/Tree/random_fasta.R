@@ -16,3 +16,12 @@ DS<-sample(DataSet,size=50)
 #View(DS)
 write.fasta(DS, names(DS), file = "Den4")
 ListofFastaFiles<-list.files(pattern = "trim05")  
+
+library('seqinr')
+library('ape')
+library("ggtree")
+NAseqs<-ape::read.dna("~/Desktop/few.txt", format = "fasta") 
+D<-dist.dna(NAseqs) #create a distance matrix
+
+NJ<-nj(D) #create a neighbor joining tree
+ggtree(NJ) 
