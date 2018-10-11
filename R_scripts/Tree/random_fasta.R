@@ -20,7 +20,7 @@ ListofFastaFiles<-list.files(pattern = "trim05")
 library('seqinr')
 library('ape')
 library("ggtree")
-NAseqs<-ape::read.dna("~/Desktop/few.txt", format = "fasta") 
+NAseqs<-ape::read.dna("data/fasta/BKpolyomavirus_VP1.fasta.mu.trim05", format = "fasta") 
 D<-dist.dna(NAseqs) #create a distance matrix
 
 NJ<-nj(D) #create a neighbor joining tree
