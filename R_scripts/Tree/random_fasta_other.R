@@ -18,8 +18,11 @@ for (filename in ListofFastaFiles) {
     NAseqs<-ape::read.dna(file, format = "fasta")
     D<-dist.dna(NAseqs) #create a distance matrix
     # 
-    NJ<-nj(D) #create a neighbor joining tree
+    NJ<-njs(D) #create a neighbor joining tree
+    DSpng = paste("data/sample/",filename,".png",sep="")
+    png(DSpng, width = 6.75, height = 6.75, units = "in", res= 300)
     ggtree(NJ)
+    dev.off()
     # 
   }else{
     DS <- sample(DataSet, size = length(DataSet))
@@ -28,15 +31,17 @@ for (filename in ListofFastaFiles) {
     NAseqs<-ape::read.dna(file, format = "fasta")
     D<-dist.dna(NAseqs) #create a distance matrix
     # 
-    NJ<-nj(D) #create a neighbor joining tree
+    NJ<-njs(D) #create a neighbor joining tree
+    DSpng = paste("data/sample/",filename,".png",sep="")
+    png(DSpng, width = 6.75, height = 6.75, units = "in", res= 300)
     ggtree(NJ)
-    # 
-    
-    
+    dev.off()
+
   }
   
 }
-
+DSpng = paste("output/sample/",filename,".png",sep="")
+png(DSpng, width = 6.75, height = 6.75, units = "in", res= 300)
 
 #DataSet <-read.fasta("InfluenzaAvirus_HA_H1N1.fasta.mu.trim05")
 DataSet <- read.fasta("DengueVirus4.fasta_pruned.mu.trim05")
