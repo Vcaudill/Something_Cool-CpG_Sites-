@@ -145,7 +145,11 @@ for (data in my.list){
   data_points$TnonsynNC_UCLS[count] =AllT_mean_value_nonsyn_nCpG + AllT_sem_vals_nonsyn_nCpG
   count = count +1
 }
-
+# here is where we caculate the fitness aveage
+data_points$averagefit<-0
+for(i in 1:nrow(data_points)){
+data_points$averagefit[i]= mean(c(data_points$AsynNC_C[i], data_points$AnonsynNC_C[i], data_points$TsynNC_C[i], data_points$TnonsynNC_C[i]))
+}
 #making points that are Nah or infint or 0 Not costly on the graph
 for (i in row(data_points))
   for (j in 1:6){
@@ -160,7 +164,7 @@ for (i in row(data_points))
       data_points[i,j] = .0005
 }
 #one of the error bars is too large at 2.47 e13 so we are placing it lower, but noting it high amount  
-data_points[20,12] = data_points[20,14]/300 
+#data_points[20,12] = data_points[20,14]/300 
 
 
 print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
