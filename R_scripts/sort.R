@@ -1,4 +1,5 @@
-library(seqinr) 
+library(seqinr)
+#fasta<-"Measles.fasta_pruned.mu.trim05"
 sort_CSV<-function(fasta){
 fasta_file <-paste("data/fasta/",fasta,sep = "")
   virus_basic <- read.fasta(fasta_file, as.string = TRUE)
@@ -16,6 +17,8 @@ fasta_file <-paste("data/fasta/",fasta,sep = "")
 for(i in 1:number_of_seqs){
   virus_DF$Differences[i]=adist(consensus,virus_basic1[[i]][1])
 }
-  write.csv(virus_DF, file = paste("data/sort_CSV/",fasta,".csv",sep=""))
+  splitname<-unlist(strsplit(fasta,".fasta"))
+  truename<-splitname[1]
+  write.csv(virus_DF, file = paste("data/sort_CSV/",truename,".csv",sep=""))
 }
   
