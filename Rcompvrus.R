@@ -181,9 +181,12 @@ data_points[20,12] = data_points[20,14]/300
 print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
 # graphing 
 png("output/Costly/Costly_Graph_AllR.png", width = 15, height = 8, units = "in", res= 500)
-par(mar=c(5,3,3,1), oma=c(10,4,1,1))
+par(mar=c(5,3,3,1), oma=c(10,4,1,1))#, bg = "darkseagreen1"
+colorPlottingBackground <- function(PlottingBackgroundColor = "darkseagreen1"){
+  rect(par("usr")[1], par("usr")[3],par("usr")[2],par("usr")[4], col= "darkseagreen1")}
 plot(data_points$Count-.3, data_points$AsynNC_C, main="How Costly is A CpG Mutation?", xlab=" ", yaxt = "n",
      ylab="Costly", pch=19, col= "red", log = 'y', xaxt = "n", ylim=c(0.01, 120), xlim=c(1.5, length(my.list) +3.5), las= 1, cex.main=3)
+
 # aty <- axTicks(2)
 # labels <- sapply(aty,function(i)
 #   as.expression(bquote(10^ .(i)))
@@ -216,6 +219,7 @@ abline(h=c(0.002, 0.0005, .01,0.5,1,2,5,10,20,50,100, 300, 700), col="grey", lty
 abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5, 40.5), col="grey", lty=c(1))
 abline(v=c(4.5,8.5,12.5,18.5, 25.5, 37.5), col = "darkgreen", lwd=2)
 abline(h = 1, col ="pink", lwd = 2)
+rect(0,800, 800,800, col = "darkseagreen1")
 # xlab="Virus "
 
 axis(1, at=1:length(my.list), labels=data_points$Virus, las= 2)
