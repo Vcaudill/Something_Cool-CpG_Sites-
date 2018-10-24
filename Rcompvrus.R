@@ -180,18 +180,21 @@ data_points[20,12] = data_points[20,14]/300
 
 print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
 # graphing 
-png("output/Costly/Costly_Graph_AllR.png", width = 15, height = 8, units = "in", res= 500)
+png("output/Costly/Costly_Graph_AllR_new.png", width = 15, height = 8, units = "in", res= 500)
 par(mar=c(5,3,3,1), oma=c(10,4,1,1))#, bg = "darkseagreen1"
-colorPlottingBackground <- function(PlottingBackgroundColor = "darkseagreen1"){
-  rect(par("usr")[1], par("usr")[3],par("usr")[2],par("usr")[4], col= "darkseagreen1")}
-plot(data_points$Count-.3, data_points$AsynNC_C, main="How Costly is A CpG Mutation?", xlab=" ", yaxt = "n",
-     ylab="Costly", pch=19, col= "red", log = 'y', xaxt = "n", ylim=c(0.01, 120), xlim=c(1.5, length(my.list) +3.5), las= 1, cex.main=3)
 
+x <- data_points$Count# test data 
+y <-  data_points$AsynNC_C
+plot(x,y, type = "n", log ='y' ,main="How Costly is A CpG Mutation?", xlab=" ", yaxt = "n", ylab="Costly", xaxt = "n", ylim=c(0.01, 120), xlim=c(1.5, length(my.list) +3.5), las= 1, cex.main=3) 
+u <- par('ylog') 
+rect(-.003, .0069, 42.03, 170, density = NULL, angle = 45,
+     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
 # aty <- axTicks(2)
 # labels <- sapply(aty,function(i)
 #   as.expression(bquote(10^ .(i)))
 # )
 # axis(2,at=aty,labels=labels)
+points(data_points$Count-.3, data_points$AsynNC_C, col='red', pch= 19)
 points(data_points$Count -.1, data_points$AnonsynNC_C, col= "green", pch=19)
 points(data_points$Count+.1, data_points$TsynNC_C, col= "blue", pch=19)
 points(data_points$Count + .3, data_points$TnonsynNC_C, col= "purple", pch=19)
@@ -227,8 +230,3 @@ legend('bottomright', legend=c("A Syn", "A NonSyn", "T Syn", "T NonSyn"),
        col=c("red", "green", "blue", "purple"), lty=1, lwd= 3, cex = 1, pt.cex = 999)
 dev.off()
 # add horsontal gray lines
-
-
-
-##CpG_list nucnum*seqnum <100000 exclude 
-
