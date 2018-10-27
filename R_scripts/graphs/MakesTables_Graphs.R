@@ -2,7 +2,7 @@ Virus_info =read.csv("data/CpG_List.csv")
 library(png)
 for(i in 1:nrow(Virus_info)){
   name = as.character(Virus_info[i,1])
-  print(name)
+  print(name) 
 }
 for(i in 1:nrow(Virus_info)){
   if (Virus_info[i,1] == "Humanherpesvirus2_gD.fasta_pruned.mu.trim05"){
