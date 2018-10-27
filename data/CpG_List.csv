@@ -11,12 +11,12 @@ EnterovirusB_VP2.fasta.mu.trim08,1,0,VP2,RNA,YES,335,285
 EnterovirusC_VP1.fasta_pruned.mu.trim05,13,549,VP1,RNA,YES,2013,348
 EnterovirusC_VP2.fasta_pruned.mu.trim05,265,0,VP1,RNA,YES,306,2172
 EnterovirusD_VP1.fasta_pruned.mu.trim05,442,0,VP1,RNA,YES,128,486
-HepatitisB.fasta_pruned.mu.trim05,421,1590,polymerase,DNA,YES,2706,1203
-HepatitisB.fasta_pruned.mu.trim05,1852,1304,truncated precore/core,DNA,YES,2706,60
-HepatitisB.fasta_pruned.mu.trim05,2446,586,polymerase/truncated precore/core,DNA,YES,2706,183
-HepatitisB.fasta_pruned.mu.trim05,155,2380,middle S,DNA,YES,2706,681
-HepatitisB.fasta_pruned.mu.trim05,2848,0,pulative prepre-S,DNA,YES,2706,366
-HepatitisB.fasta_pruned.mu.trim05,1901,763,core,DNA,YES,2706,552
+HepatitisB_polymerase.fasta_pruned.mu.trim05,421,1590,polymerase,DNA,YES,2706,1203
+HepatitisB_precore.fasta_pruned.mu.trim05,1852,1304,truncated precore/core,DNA,YES,2706,60
+HepatitisB_polymerase_truncated_precore.fasta_pruned.mu.trim05,2446,586,polymerase/truncated precore/core,DNA,YES,2706,183
+HepatitisB_s.fasta_pruned.mu.trim05,155,2380,middle S,DNA,YES,2706,681
+HepatitisB_pre_S.fasta_pruned.mu.trim05,2848,0,pulative prepre-S,DNA,YES,2706,366
+HepatitisB_core.fasta_pruned.mu.trim05,1901,763,core,DNA,YES,2706,552
 HumanBocavirus1_NS1.fasta_pruned.mu.trim05,178,3060,NS1,DNA,YES,31,1920
 HumanBocavirus1_VP1.fasta_pruned.mu.trim05,2981,160,VP1,DNA,YES,31,4821
 Humanherpesvirus2_gD.fasta_pruned.mu.trim05,1,2002,glycoprotein gD,DNA,WEIRD,73,75
