@@ -157,8 +157,12 @@ for(i in 1:nrow(Virus_info)){
   splitname<-unlist(strsplit(as.character(Virus_info$name[i]),".fasta"))
   truename<-splitname[1]
   print(truename)
-  #DF=Tables(truename)
-  #Pvalues=Wilcox_test(DF, truename)
-  #makeTable(Pvalues, truename)
+  if (truename == "Humanherpesvirus2_gD") {
+    next
+    }
+    
+  DF=Tables(truename)
+  Pvalues=Wilcox_test(DF, truename)
+  makeTable(Pvalues, truename)
   }
 
