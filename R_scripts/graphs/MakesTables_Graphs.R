@@ -1,16 +1,16 @@
 Virus_info =read.csv("data/CpG_List.csv")
 library(png)
 for(i in 1:nrow(Virus_info)){
-  name = as.character(Virus_info$name[i])
-  print(name)
+  name = as.character(Virus_info[i,1])
+  print(name) 
 }
 for(i in 1:nrow(Virus_info)){
-  if (Virus_info$name[i] == "Humanherpesvirus2_gD.fasta_pruned.mu.trim05"){
+  if (Virus_info[i,1] == "Humanherpesvirus2_gD.fasta_pruned.mu.trim05"){
     next
   }
-  viruplace = paste('data/fasta/', Virus_info$name[i], sep="")
-  name = as.character(Virus_info$name[i])
-  splitname<-unlist(strsplit(as.character(Virus_info$name[i]),".fasta"))
+  viruplace = paste('data/fasta/', Virus_info[i,1], sep="")
+  name = as.character(Virus_info[i,1])
+  splitname<-unlist(strsplit(as.character(Virus_info[i,1]),".fasta"))
   truename<-splitname[1]
   # source("R_scripts/Tables/HowToMakeWilcoxTables.R")
   # DF=Tables(truename)
@@ -18,7 +18,7 @@ for(i in 1:nrow(Virus_info)){
   # makeTable(Pvalues, truename)
   # source("R_scripts/graphs/redoplot.R")
   # redo<-comparing_CpG_Syn_Nonsyn_new(truename)
-  truenameboth= paste(truename, 'both', ".csv", sep="")
+  truenameboth= paste(truename, 'both', ".png", sep="")
   sarplot= paste('output/redeploy/', truename, ".png", sep="")
   ryaplot= paste('output/redeploy/', truename,"tables", ".png", sep="")
   isg<-readPNG(sarplot)
@@ -96,3 +96,4 @@ dev.off()
 DF=Tables(truename)
 Pvalues=Wilcox_test(DF, truename)
 makeTable(Pvalues, truename)
+

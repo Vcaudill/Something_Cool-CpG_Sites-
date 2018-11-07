@@ -160,7 +160,7 @@ comparing_CpG_Syn_Nonsyn_new = function(truename){
   palette(alpha(c("#99FF99","#9999FF","#FF9900","#FF3300"),0.3))
   #graph_color = palette(c("#99FF99","#9999FF","#FF9900","#FF3300"))
   
-  plot(jitter(AllA$graphit),AllA$Freq + 0.0001,log='y',col=factor(AllA$graphit),pch=16, main="A",xlab = " ", ylab = "Mutation Frequency", yaxt="n", xaxt="n", ylim=c(0.0001, 0.5))
+  plot(jitter(AllA$graphit),AllA$Freq + 0.0001,log='y',col=factor(AllA$graphit),pch=16, main="A->G",xlab = " ", ylab = "Mutation Frequency", yaxt="n", xaxt="n", ylim=c(0.0001, 0.5))
   #yaxt="n"  aty <- axTicks(8)
   # labels <- sapply(aty,function(i)
   #   as.expression(bquote(10^ .(i)))
@@ -179,7 +179,7 @@ comparing_CpG_Syn_Nonsyn_new = function(truename){
   #      pch=19, col= "green", log = 'y'
   # )
   
-  plot(jitter(AllT$graphit),AllT$Freq+ 0.0001,log='y',col=factor(AllT$graphit),pch=16,main="T",xlab = " ", ylab = "Mutation Frequency", yaxt="n", xaxt = "n", ylim=c(0.0001, .5))
+  plot(jitter(AllT$graphit),AllT$Freq+ 0.0001,log='y',col=factor(AllT$graphit),pch=16,main="T->C",xlab = " ", ylab = "Mutation Frequency", yaxt="n", xaxt = "n", ylim=c(0.0001, .5))
   points(AllT$graphit, AllT$mean_val, col= factor(AllT$graphit), pch=19, cex = 3)
   arrows(AllT$graphit, AllT$LCLS, AllT$graphit, AllT$UCLS, length=0.15, lwd = 5, angle=90, code=3, col= "black")
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
@@ -189,7 +189,7 @@ comparing_CpG_Syn_Nonsyn_new = function(truename){
   
   
   palette(alpha(c("#99FF99","#FF9900"),0.3)) 
-  plot(jitter(AllC$graphit, 0.6),AllC$Freq+ 0.0001,log='y',col=factor(AllC$graphit),pch=16,main="C",xlab = "Mutation Type", xlim = c(0.7,4.1), ylab = "Mutation Frequency",yaxt="n", xaxt = "n", ylim=c(0.0001, .5))
+  plot(jitter(AllC$graphit, 0.6),AllC$Freq+ 0.0001,log='y',col=factor(AllC$graphit),pch=16,main="C->T",xlab = "Mutation Type", xlim = c(0.7,4.1), ylab = "Mutation Frequency",yaxt="n", xaxt = "n", ylim=c(0.0001, .5))
   
   points(AllC$graphit, AllC$mean_val, col= factor(AllC$graphit), pch=19, cex = 3)
   arrows(AllC$graphit, AllC$LCLS, AllC$graphit, AllC$UCLS, length=0.15,lwd = 5, angle=90, code=3, col= "black")
@@ -199,7 +199,7 @@ comparing_CpG_Syn_Nonsyn_new = function(truename){
   mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
   
   
-  plot(jitter(AllG$graphit, 0.6),AllG$Freq+ 0.0001,log='y',col=factor(AllG$graphit),pch=16,main="G",xlab = "Mutation Type", xlim = c(0.7,4.1), ylab = "Mutation Frequency", yaxt="n", xaxt = "n", ylim=c(0.0001, .5))
+  plot(jitter(AllG$graphit, 0.6),AllG$Freq+ 0.0001,log='y',col=factor(AllG$graphit),pch=16,main="G->A",xlab = "Mutation Type", xlim = c(0.7,4.1), ylab = "Mutation Frequency", yaxt="n", xaxt = "n", ylim=c(0.0001, .5))
   points(AllG$graphit, AllG$mean_val, col= factor(AllG$graphit), pch=19, cex = 3)
   arrows(AllG$graphit, AllG$LCLS, AllG$graphit, AllG$UCLS, length=0.15, lwd=5,angle=90, code=3, col= "black")
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
