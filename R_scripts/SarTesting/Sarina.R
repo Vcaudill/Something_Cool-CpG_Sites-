@@ -73,8 +73,8 @@ comparing_CpG_Syn_Nonsyn (DF)
 source("RyanWilcox.R")
 Wilcox_test(DF, truename)
 
-source("redoplot.R")
-comparing_CpG_Syn_Nonsyn_new(DF, truename)
+source("R_scripts/graphs/redoplot.R")
+comparing_CpG_Syn_Nonsyn_new(truename)
 
 #########
 ########
@@ -275,4 +275,45 @@ source("stats.R")
 Wilcox_test(DF)
 
 
+ListofFastaFiles <-list.files("data/fasta/", pattern = c("trim05"), all.files = TRUE)
+#my.list <- list('DengueVirus1', 'DengueVirus2', 'DengueVirus3', 'DengueVirus4', 'humanparainfluenzavirus1_F', 'humanparainfluenzavirus1_HN', 'humanparainfluenzavirus3_HN', 'InfluenzaAvirus_HA_H1N1','InfluenzaAvirus_HA_H3N2', 'InfluenzaAvirus_NA_H1N1', 'InfluenzaAvirus_NA_H3N2','InfluenzaBvirus_HA', 'InfluenzaBvirus_NA', 'EnterovirusA_VP1', 'EnterovirusA_VP2','EnterovirusB_VP1', 'EnterovirusB_VP2','EnterovirusC_VP1','EnterovirusC_VP2','EnterovirusD_VP1', 'BKpolyomavirus_VP1', 'HumanBocavirus1_NS1', 'HumanBocavirus1_VP1')
+fasta<-c("BKpolyomavirus_VP1.fasta.mu.trim05","DengueVirus1.fasta_pruned.mu.trim05","DengueVirus2.fasta_pruned.mu.trim05","DengueVirus3.fasta_pruned.mu.trim05","DengueVirus4.fasta_pruned.mu.trim05","EnterovirusA_VP1.fasta_pruned.mu.trim05","EnterovirusA_VP2.fasta.mu.trim08","EnterovirusB_VP1.fasta_pruned.mu.trim05"
+      ,"EnterovirusB_VP2.fasta.mu.trim08","EnterovirusC_VP1.fasta_pruned.mu.trim05","EnterovirusC_VP2.fasta_pruned.mu.trim05","EnterovirusD_VP1.fasta_pruned.mu.trim05","HepatitisB.fasta_pruned.mu.trim05"
+      ,"HumanBocavirus1_NS1.fasta_pruned.mu.trim05","HumanBocavirus1_VP1.fasta_pruned.mu.trim05","Humanherpesvirus2_gD.fasta_pruned.mu.trim05","Humanherpesvirus2_gD.fasta_pruned.mu.trim05","Humanherpesvirus2_glycoprotein_G.fasta_pruned.mu.trim05"
+      ,"Humanpapillomavirus16.fasta_pruned.mu.trim05","Humanpapillomavirus16_L1.fasta_pruned.mu.trim05","humanparainfluenzavirus1.fasta_pruned.mu.trim05","humanparainfluenzavirus1_F.fasta_pruned.mu.trim05","humanparainfluenzavirus1_HN.fasta_pruned.mu.trim05"
+      ,"humanparainfluenzavirus3.fasta_pruned.mu.trim05","humanparainfluenzavirus3_HN.fasta_pruned.mu.trim05","Humanrespiratorysyncytialvirus.fasta.mu.trim05","Humanrespiratorysyncytialvirus_G.fasta.mu.trim05","Humanrespiratorysyncytialvirus_G.fasta_pruned.mu.trim05"
+      ,"InfluenzaAvirus_HA_H1N1.fasta.mu.trim05","InfluenzaAvirus_HA_H3N2.fasta.mu.trim05","InfluenzaAvirus_NA_H1N1.fasta.mu.trim05","InfluenzaAvirus_NA_H3N2.fasta.mu.trim05","InfluenzaBvirus_HA.fasta.mu.trim05","InfluenzaBvirus_NA.fasta.mu.trim05","JCpolyomavirus_VP1.fasta_pruned.mu.trim05"
+      ,"Measles.fasta_pruned.mu.trim05","Measles_hemagglutinin_OR_haemagglutinin.fasta_pruned.mu.trim05","ParvovirusB19_NS1.fasta_pruned.mu.trim05","ParvovirusB19_VP1.fasta_pruned.mu.trim05","RhinovirusB.fasta_pruned.mu.trim05","RhinovirusB_polyprotein.fasta_pruned.mu.trim05"
+      ,"RhinovirusC.fasta_pruned.mu.trim05","RotavirusA_VP6.fasta_pruned.mu.trim05")
+source("R_scripts/sort.R")
+#source("R_scriptssort_CSV.R")
+fasta2<-c("DengueVirus1.fasta_pruned.mu.trim05","DengueVirus2.fasta_pruned.mu.trim05","DengueVirus3.fasta_pruned.mu.trim05","DengueVirus4.fasta_pruned.mu.trim05")
+for (i in fasta2){
+  if (i == "~$fluenzaAvirus_NA_H1N1.fasta.mu.trim05") {
+    next
+   }
+  # if (i == "DengueVirus1.fasta_pruned.mu.trim05") {
+  #   next
+  # }
+  # if (i == "DengueVirus2.fasta_pruned.mu.trim05") {
+  #   next
+  # }
+  # if (i == "DengueVirus3.fasta_pruned.mu.trim05") {
+  #   next
+  # }
+  # if (i == "DengueVirus4.fasta_pruned.mu.trim05") {
+  #   next
+  # }
+  print(i)
+  sort_CSV(i)
+  
+}
+source("R_scripts/graphs/redoplot.R")
+truename <- list('DengueVirus1', 'DengueVirus2', 'DengueVirus3', 'DengueVirus4', 'humanparainfluenzavirus1_F', 'humanparainfluenzavirus1_HN', 'humanparainfluenzavirus3_HN', 'InfluenzaAvirus_HA_H1N1','InfluenzaAvirus_HA_H3N2', 'InfluenzaAvirus_NA_H1N1', 'InfluenzaAvirus_NA_H3N2','InfluenzaBvirus_HA', 'InfluenzaBvirus_NA', 'EnterovirusA_VP1', 'EnterovirusA_VP2','EnterovirusB_VP1', 'EnterovirusB_VP2','EnterovirusC_VP1','EnterovirusC_VP2','EnterovirusD_VP1', 'HumanBocavirus1_NS1', 'HumanBocavirus1_VP1', 'HepatitisB', 'Humanherpesvirus2_glycoprotein_G', 'Humanpapillomavirus16', 'Humanpapillomavirus16_L1', 'Humanrespiratorysyncytialvirus', 'Humanrespiratorysyncytialvirus_G', 'JCpolyomavirus_VP1', 'Measles','Measles_hemagglutinin_OR_haemagglutinin','ParvovirusB19_NS1', 'ParvovirusB19_VP1', 'RhinovirusB', 'RhinovirusB_polyprotein', 'RhinovirusC', 'RotavirusA_VP6', 'humanparainfluenzavirus1', 'humanparainfluenzavirus3','BKpolyomavirus_VP1','HepatitisB_core','HepatitisB_s','HepatitisB_precore','HepatitisB_pre_S','HepatitisB_polymerase_truncated_precore','HepatitisB_polymerase')
+for (i in truename){
+  
+  print(i)
+  comparing_CpG_Syn_Nonsyn_new(i)
+  
+}
 
