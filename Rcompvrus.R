@@ -212,7 +212,7 @@ data_points$Count <- 1:nrow(data_points)
 
 print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
 # graphing 
-png("output/Costly/Costly_Graph_AllR_new111-6.png", width = 15, height = 8, units = "in", res= 500)
+png("output/Costly/Costly_Graph_AllR_new111-6-color.png", width = 15, height = 8, units = "in", res= 500)
 par(mar=c(5,3,3,1), oma=c(10,4,1,1))#, bg = "darkseagreen1"
 
 x <- data_points$Count# test data 
@@ -220,33 +220,37 @@ y <-  data_points$AsynNC_C
 plot(x,y, type = "n", log ='y' ,main="How Costly is A CpG Mutation?", xlab=" ", yaxt = "n", ylab="Costly", xaxt = "n", ylim=c(0.01, 1000), xlim=c(1.5, length(my.list) +3.5), las= 1, cex.main=3) 
 u <- par('ylog') 
 rect(-1.05, .0001, 4.5, 1570, density = NULL, angle = 45,
-     col = rgb(0,1,1, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+     col = rgb(230/250,230/250,250/250, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(4.5, .0001, 7.5, 1570, density = NULL, angle = 45,
-     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+     col = rgb(224/255,255/255,255/255, alpha=.4), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(7.5, .0001, 13.5, 1570, density = NULL, angle = 45,
-     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+     col = rgb(255/255,228/255,225/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(13.5, .0001, 20.5, 1570, density = NULL, angle = 45,
-     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+     col = rgb(240/255,255/255,240/255, alpha=.4), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(20.5, .0001, 21.5, 1570, density = NULL, angle = 45,
-     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+     col = rgb(230/250,230/250,250/250, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(21.5, .0001, 22.5, 1570, density = NULL, angle = 45,
-     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+     col = rgb(224/255,255/255,255/255, alpha=.4), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(22.5, .0001, 28.5, 1570, density = NULL, angle = 45,
-     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+     col = rgb(255/255,228/255,225/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(28.5, .0001, 29.5, 1570, density = NULL, angle = 45,
-     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+     col = rgb(240/255,255/255,240/255, alpha=.4), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(29.5, .0001, 30.5, 1570, density = NULL, angle = 45,
-     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+     col = rgb(230/250,230/250,250/250, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(30.5, .0001, 32.5, 1570, density = NULL, angle = 45,
-     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+     col = rgb(224/255,255/255,255/255, alpha=.4), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(32.5, .0001, 33.5, 1570, density = NULL, angle = 45,
-     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+     col = rgb(255/255,228/255,225/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(33.5, .0001, 34.5, 1570, density = NULL, angle = 45,
-     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+     col = rgb(240/255,255/255,240/255, alpha=.4), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(34.5, .0001, 36.5, 1570, density = NULL, angle = 45,
-     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+     col = rgb(230/250,230/250,250/250, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(36.5, .0001, 38.5, 1570, density = NULL, angle = 45,
-     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+     col = rgb(224/255,255/255,255/255, alpha=.4), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(38.5, .0001, 41.5, 1570, density = NULL, angle = 45,
+     col = rgb(255/255,228/255,225/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(41.5, .0001, 48.5, 1570, density = NULL, angle = 45,
+     col = rgb(240/255,255/255,240/255, alpha=.4), border = NULL, lty = par("lty"), lwd = par("lwd"))
 
 
 
