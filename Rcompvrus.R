@@ -212,15 +212,47 @@ data_points$Count <- 1:nrow(data_points)
 
 print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
 # graphing 
-png("output/Costly/Costly_Graph_AllR_new11-1byprotein.png", width = 15, height = 8, units = "in", res= 500)
+png("output/Costly/Costly_Graph_AllR_new111-6.png", width = 15, height = 8, units = "in", res= 500)
 par(mar=c(5,3,3,1), oma=c(10,4,1,1))#, bg = "darkseagreen1"
 
 x <- data_points$Count# test data 
 y <-  data_points$AsynNC_C
 plot(x,y, type = "n", log ='y' ,main="How Costly is A CpG Mutation?", xlab=" ", yaxt = "n", ylab="Costly", xaxt = "n", ylim=c(0.01, 1000), xlim=c(1.5, length(my.list) +3.5), las= 1, cex.main=3) 
 u <- par('ylog') 
-rect(-1.05, .0001, 48, 1570, density = NULL, angle = 45,
+rect(-1.05, .0001, 4.5, 1570, density = NULL, angle = 45,
+     col = rgb(0,1,1, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(4.5, .0001, 7.5, 1570, density = NULL, angle = 45,
      col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(7.5, .0001, 13.5, 1570, density = NULL, angle = 45,
+     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(13.5, .0001, 20.5, 1570, density = NULL, angle = 45,
+     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(20.5, .0001, 21.5, 1570, density = NULL, angle = 45,
+     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(21.5, .0001, 22.5, 1570, density = NULL, angle = 45,
+     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(22.5, .0001, 28.5, 1570, density = NULL, angle = 45,
+     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(28.5, .0001, 29.5, 1570, density = NULL, angle = 45,
+     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(29.5, .0001, 30.5, 1570, density = NULL, angle = 45,
+     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(30.5, .0001, 32.5, 1570, density = NULL, angle = 45,
+     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(32.5, .0001, 33.5, 1570, density = NULL, angle = 45,
+     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(33.5, .0001, 34.5, 1570, density = NULL, angle = 45,
+     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(34.5, .0001, 36.5, 1570, density = NULL, angle = 45,
+     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(36.5, .0001, 38.5, 1570, density = NULL, angle = 45,
+     col = rgb(117/255,112/255,179/255,.5, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+
+
+
+
+
+# aty <- axTicks(2)
 # aty <- axTicks(2)
 # labels <- sapply(aty,function(i)
 #   as.expression(bquote(10^ .(i)))
@@ -251,14 +283,18 @@ mtext('xTimes as Costly', side=2, line=5, at=.5, las=0, cex = 2)
 #mtext('No CpG \n mutations ', side=2, line=.005, at=700, las=1.1, cex = .7)
 
 abline(h=c(0.002, 0.0005, .01,0.5,1,2,5,10,20,50,100, 300, 700), col="grey", lty=c(2,2))
+
 abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5, 40.5), col="grey", lty=c(1))
-abline(v=c(6.5,10.5,14.5,20.5, 27.5, 41.5), col = "darkgreen", lwd=2)
-abline(h = 1, col ="pink", lwd = 2)
-rect(0,800, 800,800, col = "darkseagreen1")
+#abline(v=c(6.5,10.5,14.5,20.5, 27.5, 41.5), col = "darkgreen", lwd=2)
+abline(v=c(4.5,7.5,13.5,20.5,21.5,22.5, 28.5,29.5,30.5, 32.5,33.5,34.5,36.5,38.5,41.5, 42.5), col = "bisque4", lwd=2)
+
+
+abline(h = 1, col ="darkslategrey", lwd = 2)
+#rect(0,800, 800,800, col = "darkseagreen1")
 # xlab="Virus "
 
 axis(1, at=1:length(my.list), labels=data_points$Virus, las= 2)
-legend('bottomright', legend=c("A Syn", "A NonSyn", "T Syn", "T NonSyn"),
+legend('bottomright', legend=c("A -> G Syn", "A -> G NonSyn", "T -> C Syn", "T-> C NonSyn"),
        col=c("red", "green", "blue", "purple"), lty=1, lwd= 3, cex = 1, pt.cex = 999)
 dev.off()
 # add horsontal gray lines
