@@ -81,7 +81,7 @@ makeTable <- function(Pvalues, truename){
   setwd("output/redeploy/")
   truenamepdf= paste(truename, ".pdf", sep="")
   truenamepng= paste(truename,"tables", ".png", sep="")
-  print(truenamepdf)
+  #print(truenamepdf)
   #prevents pvalues from becoming scientific notation
   options(warn=-1)
   #suppress warnings
@@ -113,9 +113,9 @@ makeTable <- function(Pvalues, truename){
   text(x=3*100/7, y = 5*100/5-3, "Comparison")
   text(x= 6*100/7, y=5*100/5-3, "P-Value")
   rect(xleft = -4, xright = 100/5, ybottom =42, ytop =100-100/7+3 , col = "white")
-  text(x= 100/12, y= 3*100/5+5, "A-G", cex = 1.7, family = "Times")
+  text(x= 100/12, y= 3*100/5+5, "A->G", cex = 1.7, family = "Times")
   rect(xleft = -4, xright = 100/5, ybottom =-4, ytop =42 , col = "white")
-  text(x= 100/12, y = 1*100/5 - 1, "T-C", cex = 1.7, family ='Times')
+  text(x= 100/12, y = 1*100/5 - 1, "T->C", cex = 1.7, family ='Times')
   text(x= 3*100/7, y = ycoor[1], labels= col2[1])
   text(x= 3*100/7, y = ycoor[2], labels= col2[2])
   text(x= 3*100/7, y = ycoor[3], labels= col2[3])
