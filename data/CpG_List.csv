@@ -1,48 +1,48 @@
-﻿name,start,stop,gene,tpye,verified,SeqNumber,NucleotideNumber,
-BKpolyomavirus_VP1.fasta.mu.trim05,1,0,VP1,DNA,YES,116,1089,
-DengueVirus1.fasta_pruned.mu.trim05,73,438,polyprotein,RNA,YES,1311,10182,
-DengueVirus2.fasta_pruned.mu.trim05,75,428,polyprotein,RNA,YES,906,10176,
-DengueVirus3.fasta_pruned.mu.trim05,71,415,polyprotein,RNA,YES,689,10173,
-DengueVirus4.fasta_pruned.mu.trim05,81,361,polyprotein,RNA,YES,124,10164,
-EnterovirusA_VP1.fasta_pruned.mu.trim05,187,0,VP1,RNA,YES,4640,705,
-EnterovirusA_VP2.fasta.mu.trim08,1,30,VP2,RNA,YES,385,387,
-EnterovirusB_VP1.fasta_pruned.mu.trim05,142,0,VP1,RNA,YES,1920,720,
-EnterovirusB_VP2.fasta.mu.trim08,1,0,VP2,RNA,YES,335,285,
-EnterovirusC_VP1.fasta_pruned.mu.trim05,13,549,VP1,RNA,YES,2013,348,
-EnterovirusC_VP2.fasta_pruned.mu.trim05,265,0,VP2,RNA,YES,306,2172,
-EnterovirusD_VP1.fasta_pruned.mu.trim05,442,0,VP1,RNA,YES,128,486,
-HepatitisB_polymerase.fasta_pruned.mu.trim05,421,1590,polymerase,DNA,YES,2706,1203,
-HepatitisB_precore.fasta_pruned.mu.trim05,1852,1304,truncated precore/core,DNA,YES,2706,60,
-HepatitisB_polymerase_truncated_precore.fasta_pruned.mu.trim05,2446,586,polymerase/truncated precore/core,DNA,YES,2706,183,
-HepatitisB_s.fasta_pruned.mu.trim05,155,2380,middle S,DNA,YES,2706,681,
-HepatitisB_pre_S.fasta_pruned.mu.trim05,2848,0,pulative prepre-S,DNA,YES,2706,366,
-HepatitisB_core.fasta_pruned.mu.trim05,1901,763,core,DNA,YES,2706,552,
-HumanBocavirus1_NS1.fasta_pruned.mu.trim05,178,3060,NS1,DNA,YES,31,1920,no
-HumanBocavirus1_VP1.fasta_pruned.mu.trim05,2981,160,VP1,DNA,YES,31,4821,
-Humanherpesvirus2_gD.fasta_pruned.mu.trim05,1,2002,glycoprotein gD,DNA,WEIRD,73,75,no
-Humanherpesvirus2_glycoprotein_G.fasta_pruned.mu.trim05,1,0,glycoprotein G,DNA,YES,89,2097,
-Humanpapillomavirus16_L1.fasta_pruned.mu.trim05,1,0,L1,DNA,YES,82,1596,
-Humanpapillomavirus16.fasta_pruned.mu.trim05,865,5091,E1,DNA,YES,24,1950,no
-humanparainfluenzavirus1_F.fasta_pruned.mu.trim05,5010,8787,F,RNA,YES,63,1668,
-humanparainfluenzavirus1_HN.fasta_pruned.mu.trim05,367,0,HN,RNA,YES,237,867,
-humanparainfluenzavirus1.fasta_pruned.mu.trim05,1,0,Complete genome,RNA,YES,72,15473,
-humanparainfluenzavirus3_HN.fasta_pruned.mu.trim05,163,0,HN,RNA,YES,408,1188,
-humanparainfluenzavirus3.fasta_pruned.mu.trim05,5017,8703,F,RNA,YES,76,1620,
-Humanrespiratorysyncytialvirus_G.fasta_pruned.mu.trim05,1,9,G,RNA,YES,1300,894,no
-Humanrespiratorysyncytialvirus_G.fasta.mu.trim05,1,9,G,RNA,YES,1301,894,
-Humanrespiratorysyncytialvirus.fasta.mu.trim05,1,0,complete genome,RNA,WEIRD,292,15133,
-InfluenzaAvirus_HA_H1N1.fasta.mu.trim05,1,0,HA,RNA,YES,12500,1701,
-InfluenzaAvirus_HA_H3N2.fasta.mu.trim05,9,11,HA,YES,YES,7937,1701,
-InfluenzaAvirus_NA_H3N2.fasta.mu.trim05,1,0,NA,YES,YES,12758,1410,
-InfluenzaAvirus_NA_H1N1.fasta.mu.trim05,1,15,NA,RNA,YES,8173,1410,
-InfluenzaBvirus_HA.fasta.mu.trim05,1,30,HA,RNA,YES,3600,1758,
-InfluenzaBvirus_NA.fasta.mu.trim05,1,0,NA,RNA,YES,2355,1401,
-JCpolyomavirus_VP1.fasta_pruned.mu.trim05,122,218,VP1,DNA,YES,111,282,
-Measles_hemagglutinin_OR_haemagglutinin.fasta_pruned.mu.trim05,1,0,hemagglutinin/haemagglutinin,RNA,YES,335,1854,
-Measles.fasta_pruned.mu.trim05,1,0,,RNA,WEIRD,22,15894,no
-ParvovirusB19_NS1.fasta_pruned.mu.trim05,82,2310,NS1,DNA,YES,94,1887,
-ParvovirusB19_VP1.fasta_pruned.mu.trim05,1961,0,VP1,DNA,YES,95,2319,
-RhinovirusB_polyprotein.fasta_pruned.mu.trim05,385,0,polyprotein,RNA,YES,47,6537,
-RhinovirusB.fasta_pruned.mu.trim05,1,0,complete genome,RNA,YES,45,6950,
-RhinovirusC.fasta_pruned.mu.trim05,1,0,complete genome,RNA,WEIRD,53,6935,
-RotavirusA_VP6.fasta_pruned.mu.trim05,1,18,VP6,RNA,YES,151,1194,
+﻿name,start,stop,gene,tpye,verified,SeqNumber,NucleotideNumber,used,nice_name
+BKpolyomavirus_VP1.fasta.mu.trim05,1,0,VP1,DNA,YES,116,1089,yes,Bk Polyoma VP1
+DengueVirus1.fasta_pruned.mu.trim05,73,438,polyprotein,RNA,YES,1311,10182,yes,Dengue 1
+DengueVirus2.fasta_pruned.mu.trim05,75,428,polyprotein,RNA,YES,906,10176,yes,Dengue 2
+DengueVirus3.fasta_pruned.mu.trim05,71,415,polyprotein,RNA,YES,689,10173,yes,Dengue 3
+DengueVirus4.fasta_pruned.mu.trim05,81,361,polyprotein,RNA,YES,124,10164,yes,Dengue 4
+EnterovirusA_VP1.fasta_pruned.mu.trim05,187,0,VP1,RNA,YES,4640,705,yes,Entero A VP1
+EnterovirusA_VP2.fasta.mu.trim08,1,30,VP2,RNA,YES,385,387,yes,Entero A VP2
+EnterovirusB_VP1.fasta_pruned.mu.trim05,142,0,VP1,RNA,YES,1920,720,yes,Entero B VP1
+EnterovirusB_VP2.fasta.mu.trim08,1,0,VP2,RNA,YES,335,285,yes,Entero B VP2
+EnterovirusC_VP1.fasta_pruned.mu.trim05,13,549,VP1,RNA,YES,2013,348,yes,Entero C VP1
+EnterovirusC_VP2.fasta_pruned.mu.trim05,265,0,VP2,RNA,YES,306,2172,yes,Entero C VP2
+EnterovirusD_VP1.fasta_pruned.mu.trim05,442,0,VP1,RNA,YES,128,486,yes,Entero D VP1
+HepatitisB_polymerase.fasta_pruned.mu.trim05,421,1590,polymerase,DNA,YES,2706,1203,yes,Hepatitis B Polymerase
+HepatitisB_precore.fasta_pruned.mu.trim05,1852,1304,truncated precore/core,DNA,YES,2706,60,yes,Hepatitis B Precore
+HepatitisB_polymerase_truncated_precore.fasta_pruned.mu.trim05,2446,586,polymerase/truncated precore/core,DNA,YES,2706,183,yes,Hepatitis B PTP
+HepatitisB_s.fasta_pruned.mu.trim05,155,2380,middle S,DNA,YES,2706,681,yes,Hepatitis B S
+HepatitisB_pre_S.fasta_pruned.mu.trim05,2848,0,pulative prepre-S,DNA,YES,2706,366,yes,Hepatitis B PreS
+HepatitisB_core.fasta_pruned.mu.trim05,1901,763,core,DNA,YES,2706,552,yes,Hepatitis B Core
+HumanBocavirus1_NS1.fasta_pruned.mu.trim05,178,3060,NS1,DNA,YES,31,1920,no,Human Boca 1 NS1
+HumanBocavirus1_VP1.fasta_pruned.mu.trim05,2981,160,VP1,DNA,YES,31,4821,yes,Human Boca 1 VP1
+Humanherpesvirus2_gD.fasta_pruned.mu.trim05,1,2002,glycoprotein gD,DNA,WEIRD,73,75,no,Human Herpes 2 gD
+Humanherpesvirus2_glycoprotein_G.fasta_pruned.mu.trim05,1,0,glycoprotein G,DNA,YES,89,2097,yes,Human Herpes 2 glycoprotein G
+Humanpapillomavirus16_L1.fasta_pruned.mu.trim05,1,0,L1,DNA,YES,82,1596,yes,Human Papilloma 16 L1
+Humanpapillomavirus16.fasta_pruned.mu.trim05,865,5091,E1,DNA,YES,24,1950,no,Human Papilloma 16
+humanparainfluenzavirus1_F.fasta_pruned.mu.trim05,5010,8787,F,RNA,YES,63,1668,yes,Human Parainfluenza 1 F
+humanparainfluenzavirus1_HN.fasta_pruned.mu.trim05,367,0,HN,RNA,YES,237,867,yes,Human Parainfluenza 1 HN
+humanparainfluenzavirus1.fasta_pruned.mu.trim05,1,0,Complete genome,RNA,YES,72,15473,yes,Human Parainfluenza 1
+humanparainfluenzavirus3_HN.fasta_pruned.mu.trim05,163,0,HN,RNA,YES,408,1188,yes,Human Parainfluenza 3 HN
+humanparainfluenzavirus3.fasta_pruned.mu.trim05,5017,8703,F,RNA,YES,76,1620,yes,Human Parainfluenza 3
+Humanrespiratorysyncytialvirus_G.fasta_pruned.mu.trim05,1,9,G,RNA,YES,1300,894,no,Human Respiratory Syncytial G
+Humanrespiratorysyncytialvirus_G.fasta.mu.trim05,1,9,G,RNA,YES,1301,894,yes,Human Respiratory Syncytial G
+Humanrespiratorysyncytialvirus.fasta.mu.trim05,1,0,complete genome,RNA,WEIRD,292,15133,yes,Human Respiratory Syncytial
+InfluenzaAvirus_HA_H1N1.fasta.mu.trim05,1,0,HA,RNA,YES,12500,1701,yes,Influenza A H1N1 HA
+InfluenzaAvirus_HA_H3N2.fasta.mu.trim05,9,11,HA,YES,YES,7937,1701,yes,Influenza A H3N2 HA
+InfluenzaAvirus_NA_H3N2.fasta.mu.trim05,1,0,NA,YES,YES,12758,1410,yes,Influenza A H3N2 NA
+InfluenzaAvirus_NA_H1N1.fasta.mu.trim05,1,15,NA,RNA,YES,8173,1410,yes,Influenza A H1N1 NA
+InfluenzaBvirus_HA.fasta.mu.trim05,1,30,HA,RNA,YES,3600,1758,yes,Influenza B HA
+InfluenzaBvirus_NA.fasta.mu.trim05,1,0,NA,RNA,YES,2355,1401,yes,Influenza B NA
+JCpolyomavirus_VP1.fasta_pruned.mu.trim05,122,218,VP1,DNA,YES,111,282,yes,Jc Polyoma VP1
+Measles_hemagglutinin_OR_haemagglutinin.fasta_pruned.mu.trim05,1,0,hemagglutinin/haemagglutinin,RNA,YES,335,1854,yes,Measles HH
+Measles.fasta_pruned.mu.trim05,1,0,,RNA,WEIRD,22,15894,no,Measles HH
+ParvovirusB19_NS1.fasta_pruned.mu.trim05,82,2310,NS1,DNA,YES,94,1887,yes,Parvo B19 NS1
+ParvovirusB19_VP1.fasta_pruned.mu.trim05,1961,0,VP1,DNA,YES,95,2319,yes,Parvo B19 VP1
+RhinovirusB_polyprotein.fasta_pruned.mu.trim05,385,0,polyprotein,RNA,YES,47,6537,yes,Rhino B Polyprotein
+RhinovirusB.fasta_pruned.mu.trim05,1,0,complete genome,RNA,YES,45,6950,yes,Rhino B
+RhinovirusC.fasta_pruned.mu.trim05,1,0,complete genome,RNA,WEIRD,53,6935,yes,Rhino C
+RotavirusA_VP6.fasta_pruned.mu.trim05,1,18,VP6,RNA,YES,151,1194,yes,Rota A VP6
