@@ -14,17 +14,15 @@ Short_fasta<-function(fasta){
   virus_DF <- data.frame("num" = 1:number_of_seqs, "Differences" = 0, sequencename= row.names(summary(virus_basic)))
   
   virus_basic1 <- read.fasta(fasta_file, as.string = TRUE)
-  for(i in 1:number_of_seqs){
-    virus_DF$Differences[i]=adist(consensus,virus_basic1[[i]][1])
-  }
+  write.fasta("", open = "w", names = "", file = paste("output/ShortFasta/",truename,"_short.fasta",sep=""))
   splitname<-unlist(strsplit(fasta,".fasta"))
   truename<-splitname[1]
-  for(i in virus_basic){
+  for(i in 1:number_of_seqs){
     virus_DF$Differences[i]=adist(consensus,virus_basic1[[i]][1])
-    if(Virus_DF$Differences[i] > 300){
+    if(virus_DF$Differences[i] > 300){
       next
     }
-    write.fasta(virus_DF, file = paste("output/ShortFasta/",truename0,".fasta",sep=""))
+    write.fasta(virus_basic[i], open = "a", names = names(virus_basic[i]), file = paste("output/ShortFasta/",truename,"_short.fasta",sep=""))
   
     }
   }
