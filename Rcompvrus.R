@@ -54,9 +54,9 @@ RotavirusA_VP6<-read.csv("data/csv/RotavirusA_VP6.csv")
 
 
 
-my.list <- list(DengueVirus1, DengueVirus2, DengueVirus3, DengueVirus4, humanparainfluenzavirus1_F, humanparainfluenzavirus1_HN, humanparainfluenzavirus3_HN, humanparainfluenzavirus1, humanparainfluenzavirus3, InfluenzaAvirus_HA_H1N1,InfluenzaAvirus_HA_H3N2, InfluenzaAvirus_NA_H1N1, InfluenzaAvirus_NA_H3N2,InfluenzaBvirus_HA, InfluenzaBvirus_NA, EnterovirusA_VP1, EnterovirusA_VP2,EnterovirusB_VP1, EnterovirusB_VP2,EnterovirusC_VP1,EnterovirusC_VP2,EnterovirusD_VP1, BKpolyomavirus_VP1, HumanBocavirus1_VP1, HepatitisB_polymerase,HepatitisB_precore,HepatitisB_polymerase_truncated_precore,HepatitisB_s,HepatitisB_pre_S,HepatitisB_core, Humanherpesvirus2_glycoprotein_G, Humanpapillomavirus16_L1, Humanrespiratorysyncytialvirus, Humanrespiratorysyncytialvirus_G, JCpolyomavirus_VP1, Measles_hemagglutinin_OR_haemagglutinin, ParvovirusB19_NS1, ParvovirusB19_VP1, RhinovirusB, RhinovirusB_polyprotein, RhinovirusC, RotavirusA_VP6)
+my.list <- list(DengueVirus1, DengueVirus2, DengueVirus3, DengueVirus4, humanparainfluenzavirus1_F, humanparainfluenzavirus1_HN, humanparainfluenzavirus3_HN, humanparainfluenzavirus1, humanparainfluenzavirus3, InfluenzaAvirus_HA_H1N1,InfluenzaAvirus_HA_H3N2, InfluenzaAvirus_NA_H1N1, InfluenzaAvirus_NA_H3N2,InfluenzaBvirus_HA, InfluenzaBvirus_NA, EnterovirusA_VP1, EnterovirusA_VP2,EnterovirusB_VP1, EnterovirusB_VP2,EnterovirusC_VP1,EnterovirusC_VP2,EnterovirusD_VP1, Humanrespiratorysyncytialvirus, Humanrespiratorysyncytialvirus_G, Measles_hemagglutinin_OR_haemagglutinin, RhinovirusB, RhinovirusB_polyprotein, RhinovirusC, RotavirusA_VP6, BKpolyomavirus_VP1, HumanBocavirus1_VP1, HepatitisB_polymerase,HepatitisB_precore,HepatitisB_polymerase_truncated_precore,HepatitisB_s,HepatitisB_pre_S,HepatitisB_core, Humanherpesvirus2_glycoprotein_G, Humanpapillomavirus16_L1, JCpolyomavirus_VP1, ParvovirusB19_NS1, ParvovirusB19_VP1)
 #name.list <- list('DengueVirus1', 'DengueVirus2', 'DengueVirus3', 'DengueVirus4', 'humanparainfluenzavirus1_F', 'humanparainfluenzavirus1_HN', 'humanparainfluenzavirus3_HN', 'humanparainfluenzavirus1', 'humanparainfluenzavirus3', 'InfluenzaAvirus_HA_H1N1','InfluenzaAvirus_HA_H3N2', 'InfluenzaAvirus_NA_H1N1', 'InfluenzaAvirus_NA_H3N2','InfluenzaBvirus_HA', 'InfluenzaBvirus_NA', 'EnterovirusA_VP1', 'EnterovirusA_VP2','EnterovirusB_VP1', 'EnterovirusB_VP2','EnterovirusC_VP1','EnterovirusC_VP2','EnterovirusD_VP1', 'BKpolyomavirus_VP1', 'HumanBocavirus1_VP1', 'HepatitisB_polymerase','HepatitisB_precore','HepatitisB_ptp', 'HepatitisB_s','HepatitisB_pre_S','HepatitisB_core', 'Humanherpesvirus2_glycoprotein_G', 'Humanpapillomavirus16_L1', 'Humanrespiratorysyncytialvirus', 'Humanrespiratorysyncytialvirus_G', 'JCpolyomavirus_VP1', 'Measles_hemagglutin', 'ParvovirusB19_NS1', 'ParvovirusB19_VP1', 'RhinovirusB', 'RhinovirusB_polyprotein', 'RhinovirusC', 'RotavirusA_VP6')
-name.list <- list('Dengue1', 'Dengue2', 'Dengue3', 'Dengue4', 'humanparainfluenza1_F', 'humanparainfluenza1_HN', 'humanparainfluenza3_HN', 'humanparainfluenza1_HN', 'humanparainfluenza3_HN', 'InfluenzaA_HA_H1N1','InfluenzaA_HA_H3N2', 'InfluenzaA_NA_H1N1', 'InfluenzaA_NA_H3N2','InfluenzaB_HA', 'InfluenzaB_NA', 'EnteroA_VP1', 'EnteroA_VP2','EnteroB_VP1', 'EnteroB_VP2','EnteroC_VP1','EnteroC_VP2','EnteroD_VP1', 'BK_polyoma_VP1', 'HumanBoca1_VP1', 'HepatitisB_polymerase','HepatitisB_precore','HepatitisB_ptp','HepatitisB_s','HepatitisB_pre_S','HepatitisB_core', 'Humanherpes2_glycoprotein_G', 'Humanpapilloma16_L1', 'Humanrespiratorysyncytial', 'Humanrespiratorysyncytial_G', 'JCpolyoma_VP1', 'Measles_hemagglutin', 'ParvoB19_NS1', 'ParvoB19_VP1', 'RhinoB', 'RhinoB_polyprotein', 'RhinoC', 'RotaA_VP6')
+name.list <- list('Dengue 1', 'Dengue 2', 'Dengue 3', 'Dengue 4', 'Human Parainfluenza 1 F', 'Human Parainfluenza 1 HN', 'Human Parainfluenza 3 HN', 'Human Parainfluenza 1 HN', 'humanparainfluenza3_HN', 'InfluenzaA_HA_H1N1','InfluenzaA_HA_H3N2', 'InfluenzaA_NA_H1N1', 'InfluenzaA_NA_H3N2','InfluenzaB_HA', 'InfluenzaB_NA', 'EnteroA_VP1', 'EnteroA_VP2','EnteroB_VP1', 'EnteroB_VP2','EnteroC_VP1','EnteroC_VP2','EnteroD_VP1', 'Humanrespiratorysyncytial', 'Humanrespiratorysyncytial_G', 'Measles_hemagglutin', 'RhinoB', 'RhinoB_polyprotein', 'RhinoC', 'RotaA_VP6', 'BK_polyoma_VP1', 'HumanBoca1_VP1', 'HepatitisB_polymerase','HepatitisB_precore','HepatitisB_ptp','HepatitisB_s','HepatitisB_pre_S','HepatitisB_core', 'Humanherpes2_glycoprotein_G', 'Humanpapilloma16_L1', 'JCpolyoma_VP1', 'ParvoB19_NS1', 'ParvoB19_VP1')
 
 
 data_points = data.frame("Count"= 1:length(my.list), "Virus"= 1:length(my.list))
@@ -178,9 +178,9 @@ for(i in 1:nrow(data_points)){
   data_points$averagefit[i]= mean(avgi)}
 
 #sort average fitness costs to graph viruses in order of decreasing fitness
-data_points <-(data_points[order(data_points$averagefit,decreasing = TRUE),])
+#data_points <-(data_points[order(data_points$averagefit,decreasing = TRUE),])
 #rewrite count column
-data_points$Count <- 1:nrow(data_points)
+#data_points$Count <- 1:nrow(data_points)
 
 #one of the error bars is too large at 2.47 e13 so we are placing it lower, but noting it high amount  
 #data_points[20,12] = data_points[20,14]/300
@@ -211,7 +211,7 @@ for (i in 1:nrow(data_points)) {
 
 print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
 # graphing 
-png("output/Costly/Costly_Graph_AllR_11_12.png", width = 15, height = 8, units = "in", res= 500)
+png("output/Costly/Costly_Graph_AllR_12_11.png", width = 15, height = 8, units = "in", res= 500)
 par(mar=c(5,3,3,1), oma=c(10,4,1,1))#, bg = "darkseagreen1"
 
 x <- data_points$Count# test data 
