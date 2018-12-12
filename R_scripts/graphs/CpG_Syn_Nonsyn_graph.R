@@ -7,7 +7,7 @@ comparing_CpG_Syn_Nonsyn = function(data){
   library(dplyr)
   library(plotrix)
   library(scales)
-  library(grid)
+  library(grid) 
   library(gridExtra)
   # my solution for the error I was getting 
   require(extrafont)
