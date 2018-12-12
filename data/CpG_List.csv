@@ -39,10 +39,12 @@ InfluenzaBvirus_HA.fasta.mu.trim05,1,30,HA,RNA,YES,3600,1758,yes,Influenza B HA
 InfluenzaBvirus_NA.fasta.mu.trim05,1,0,NA,RNA,YES,2355,1401,yes,Influenza B NA
 JCpolyomavirus_VP1.fasta_pruned.mu.trim05,122,218,VP1,DNA,YES,111,282,yes,Jc Polyoma VP1
 Measles_hemagglutinin_OR_haemagglutinin.fasta_pruned.mu.trim05,1,0,hemagglutinin/haemagglutinin,RNA,YES,335,1854,yes,Measles HH
-Measles.fasta_pruned.mu.trim05,1,0,,RNA,WEIRD,22,15894,no,Measles HH
+Measles.fasta_pruned.mu.trim05,1,0,,RNA,WEIRD,22,15894,no,Measles 
 ParvovirusB19_NS1.fasta_pruned.mu.trim05,82,2310,NS1,DNA,YES,94,1887,yes,Parvo B19 NS1
 ParvovirusB19_VP1.fasta_pruned.mu.trim05,1961,0,VP1,DNA,YES,95,2319,yes,Parvo B19 VP1
 RhinovirusB_polyprotein.fasta_pruned.mu.trim05,385,0,polyprotein,RNA,YES,47,6537,yes,Rhino B Polyprotein
 RhinovirusB.fasta_pruned.mu.trim05,1,0,complete genome,RNA,YES,45,6950,yes,Rhino B
 RhinovirusC.fasta_pruned.mu.trim05,1,0,complete genome,RNA,WEIRD,53,6935,yes,Rhino C
 RotavirusA_VP6.fasta_pruned.mu.trim05,1,18,VP6,RNA,YES,151,1194,yes,Rota A VP6
+InfluenzaAvirus_HA_H1N1_short.fasta,1,0,HA,RNA,YES,12500,1701,yes,Influenza A H1N1 HA
+InfluenzaAvirus_NA_H1N1_short.fasta,1,15,NA,RNA,YES,8173,1410,yes,Influenza A H1N1 NA

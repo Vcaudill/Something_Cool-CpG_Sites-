@@ -22,9 +22,9 @@ humanparainfluenzavirus1_HN<-read.csv("data/csv/humanparainfluenzavirus1_HN.CSV"
 humanparainfluenzavirus3_HN<-read.csv("data/csv/humanparainfluenzavirus3_HN.CSV")
 humanparainfluenzavirus1<-read.csv("data/csv/humanparainfluenzavirus1.csv")
 humanparainfluenzavirus3<-read.csv("data/csv/humanparainfluenzavirus3.csv")
-InfluenzaAvirus_HA_H1N1<-read.csv("data/csv/InfluenzaAvirus_HA_H1N1.CSV")
+InfluenzaAvirus_HA_H1N1<-read.csv("data/csv/InfluenzaAvirus_HA_H1N1_short.CSV")
 InfluenzaAvirus_HA_H3N2<-read.csv("data/csv/InfluenzaAvirus_HA_H3N2.CSV")
-InfluenzaAvirus_NA_H1N1<-read.csv("data/csv/InfluenzaAvirus_NA_H1N1.CSV")
+InfluenzaAvirus_NA_H1N1<-read.csv("data/csv/InfluenzaAvirus_NA_H1N1_short.CSV")
 InfluenzaAvirus_NA_H3N2<-read.csv("data/csv/InfluenzaAvirus_NA_H3N2.CSV")
 InfluenzaBvirus_NA<-read.csv("data/csv/InfluenzaBvirus_NA.CSV")
 InfluenzaBvirus_HA<-read.csv("data/csv/InfluenzaBvirus_HA.CSV")
@@ -211,7 +211,7 @@ for (i in 1:nrow(data_points)) {
 
 print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
 # graphing 
-png("output/Costly/Costly_Graph_AllR_12_11.png", width = 15, height = 8, units = "in", res= 500)
+png("output/Costly/Costly_Graph_AllR_12_11_2ndtry.png", width = 15, height = 8, units = "in", res= 500)
 par(mar=c(5,3,3,1), oma=c(10,4,1,1))#, bg = "darkseagreen1"
 
 x <- data_points$Count# test data 
