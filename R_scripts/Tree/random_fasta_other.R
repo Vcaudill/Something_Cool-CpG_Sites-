@@ -1,4 +1,4 @@
-ListofFastaFiles <-list.files("data/fasta/", pattern = "trim05", all.files = TRUE)
+ListofFastaFiles <-list.files("data/fasta/", pattern = "_", all.files = TRUE)
 library(seqinr) #package phylo for making trees
 library(ggtree)
 library(ape)
@@ -25,9 +25,12 @@ Treegraph<- function(DSpng, NJ){
 }
 samplesize = 100
 for (filename in ListofFastaFiles) {
-  
+ 
   print(filename)
-  if (filename == "fluenzaAvirus_NA_H1N1.fasta.mu.trim05") {
+  if (filename == ".DS_Store") {
+    next
+  }
+  if (filename == "IfluenzaAvirus_NA_H1N1.fasta.mu.trim05") {
     next
   }
   if (filename == "EnterovirusC_VP2.fasta_pruned.mu.trim05") {
@@ -38,6 +41,9 @@ for (filename in ListofFastaFiles) {
   }
   
   if (filename == "Humanrespiratorysyncytialvirus_G.fasta.mu.trim05") {
+    next
+  }
+  if (filename == "EnterovirusB_VP2.fasta.mu.trim08") {
     next
   }
   DataSet <- read.fasta(paste("data/fasta/", filename, sep = ""))
