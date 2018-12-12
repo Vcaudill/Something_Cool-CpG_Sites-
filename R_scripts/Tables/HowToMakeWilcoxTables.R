@@ -76,10 +76,10 @@ Wilcox_test = function(data, truename){
   
 }
 
-makeTable <- function(Pvalues, truename){
+makeTable <- function(Pvalues, truename, nice_name){
   options(scipen = 999)
-  setwd("output/redeploy/")
-  truenamepdf= paste(truename, ".pdf", sep="")
+  #setwd("output/redeploy/")
+  truenamepdf= paste("output/Tables/",truename,".pdf",sep="")
   truenamepng= paste(truename,"tables", ".png", sep="")
   #print(truenamepdf)
   #prevents pvalues from becoming scientific notation
@@ -88,8 +88,8 @@ makeTable <- function(Pvalues, truename){
   
   #setwd("~/Desktop/Something_Cool-CpG_Sites-/Tables")
   #table construct
-  #pdf(truenamepdf, width = 7, height= 5)
-  png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
+  pdf(truenamepdf, width = 7, height= 5)
+  #png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
   col1 <- c("A->G", "T->C")
   col2 <- c("Syn: CpG v NonCpG", "NonSyn: CpG v NonCpG", "Syn v NonSyn")
   ycoor <- c(4*100/5+.7 , 3*100/5 + 5.1, 3*100/5 - 10, 2*100/5 -6.4, 1*100/5-1.3, 100/5-14- 2.9, 100)
@@ -98,7 +98,7 @@ makeTable <- function(Pvalues, truename){
   
   par(xpd=F)
   plot(1, 2, xlim=c(0,100),ylim=c(0,100), col=0, xaxt="n", yaxt="n", xlab="", ylab="")
-  title(main = truename, family = "Times", adj = 0.5, cex.main= 2)
+  title(main = nice_name, family = "Times", adj = 0.5, cex.main= 2)
   abline(v = 100/5)
   abline(v = 2*100/3)
   abline(h = 100-100/7 + 3)
@@ -147,22 +147,22 @@ makeTable <- function(Pvalues, truename){
   print("end")
   #dev.copy(pdf, truenamepng)
   dev.off()
-  setwd("../..")
+  
 }
 
 #loop through namelist (all viruses)
-for(i in 1:nrow(Virus_info)){
-  #print(Virus_info$name[i])
-  name = as.character(Virus_info$name[i])
-  splitname<-unlist(strsplit(as.character(Virus_info$name[i]),".fasta"))
-  truename<-splitname[1]
-  print(truename)
-  if (truename == "Humanherpesvirus2_gD") {
-    next
-    }
-    
-  DF=Tables(truename)
-  Pvalues=Wilcox_test(DF, truename)
-  makeTable(Pvalues, truename)
-  }
+# for(i in 1:nrow(Virus_info)){
+#   #print(Virus_info$name[i])
+#   name = as.character(Virus_info$name[i])
+#   splitname<-unlist(strsplit(as.character(Virus_info$name[i]),".fasta"))
+#   truename<-splitname[1]
+#   print(truename)
+#   if (truename == "Humanherpesvirus2_gD") {
+#     next
+#     }
+#     
+#   DF=Tables(truename)
+#   Pvalues=Wilcox_test(DF, truename)
+#   makeTable(Pvalues, truename)
+#   }
 
