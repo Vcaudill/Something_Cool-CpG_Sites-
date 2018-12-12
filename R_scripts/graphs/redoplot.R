@@ -187,7 +187,7 @@ comparing_CpG_Syn_Nonsyn_new = function(truename){
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
   mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
   
-  
+   
   palette(alpha(c("#99FF99","#FF9900"),0.3)) 
   plot(jitter(AllC$graphit, 0.6),AllC$Freq+ 0.0001,log='y',col=factor(AllC$graphit),pch=16,main="C->T",xlab = "Mutation Type", xlim = c(0.7,4.1), ylab = "Mutation Frequency",yaxt="n", xaxt = "n", ylim=c(0.0001, .5))
   
