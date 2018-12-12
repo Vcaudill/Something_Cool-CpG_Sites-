@@ -244,9 +244,9 @@ rect(37.5, .0001, 38.5, 1570, density = NULL, angle = 45,
      col = rgb(240/255,255/255,240/255, alpha=.4), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(38.5, .0001, 39.5, 1570, density = NULL, angle = 45,
      col = rgb(230/250,230/250,250/250, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
-rect(39.5, .0001, 41.5, 1570, density = NULL, angle = 45,
+rect(39.5, .0001, 40.5, 1570, density = NULL, angle = 45,
      col = rgb(224/255,255/255,255/255, alpha=.4), border = NULL, lty = par("lty"), lwd = par("lwd"))
-rect(41.5, .0001, 48.5, 1570, density = NULL, angle = 45,
+rect(40.5, .0001, 48.5, 1570, density = NULL, angle = 45,
      col = rgb(255/255,228/255,225/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
 
 # aty <- axTicks(2)
@@ -283,7 +283,7 @@ abline(h=c(0.002, 0.0005, .01,0.5,1,2,5,10,20,50,100, 300, 700), col="grey", lty
 
 abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5, 40.5), col="grey", lty=c(1))
 #abline(v=c(6.5,10.5,14.5,20.5, 27.5, 41.5), col = "darkgreen", lwd=2)
-abline(v=c(4.5,9.5,15.5,22.5,24.5,25.5, 28.5,29.5,30.5,31.5,36.5,37.5,38.5,39.5,41.5), col = "bisque4", lwd=2)
+abline(v=c(4.5,9.5,15.5,22.5,24.5,25.5, 28.5,29.5,30.5,31.5,36.5,37.5,38.5,39.5,40.5), col = "bisque4", lwd=2)
 
 
 abline(h = 1, col ="darkslategrey", lwd = 2)
