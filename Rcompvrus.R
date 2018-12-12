@@ -202,11 +202,11 @@ for (i in 1:nrow(data_points)) {
   }
   } 
 }
-data_points$Virus<-c('Dengue1', 'Dengue2', 'Dengue3', 'Dengue4', 'humanparainfluenza1_F', 'humanparainfluenza1_HN', 'humanparainfluenza3_HN', 'InfluenzaA_HA_H1N1','InfluenzaA_HA_H3N2', 'InfluenzaA_NA_H1N1', 'InfluenzaA_NA_H3N2','InfluenzaB_HA', 'InfluenzaB_NA', 'EnteroA_VP1', 'EnteroA_VP2','EnteroB_VP1', 'EnteroB_VP2','EnteroC_VP1','EnteroC_VP2','EnteroD_VP1', 'BK_polyoma_VP1', 'HumanBoca1_VP1', 'HepatitisB_polymerase','HepatitisB_precore','HepatitisB_polymerase_truncated_precore','HepatitisB_s','HepatitisB_pre_S','HepatitisB_core', 'Humanherpes2_glycoprotein_G', 'Humanpapilloma16_L1', 'Humanrespiratorysyncytial', 'Humanrespiratorysyncytial_G', 'JCpolyoma_VP1', 'Measles_hemagglutin', 'ParvoB19_NS1', 'ParvoB19_VP1', 'RhinoB', 'RhinoB_polyprotein', 'RhinoC', 'RotaA_VP6', 'humanparainfluenza1', 'humanparainfluenza3')
+#data_points$Virus<-c('Dengue1', 'Dengue2', 'Dengue3', 'Dengue4', 'humanparainfluenza1_F', 'humanparainfluenza1_HN', 'humanparainfluenza3_HN', 'InfluenzaA_HA_H1N1','InfluenzaA_HA_H3N2', 'InfluenzaA_NA_H1N1', 'InfluenzaA_NA_H3N2','InfluenzaB_HA', 'InfluenzaB_NA', 'EnteroA_VP1', 'EnteroA_VP2','EnteroB_VP1', 'EnteroB_VP2','EnteroC_VP1','EnteroC_VP2','EnteroD_VP1', 'BK_polyoma_VP1', 'HumanBoca1_VP1', 'HepatitisB_polymerase','HepatitisB_precore','HepatitisB_polymerase_truncated_precore','HepatitisB_s','HepatitisB_pre_S','HepatitisB_core', 'Humanherpes2_glycoprotein_G', 'Humanpapilloma16_L1', 'Humanrespiratorysyncytial', 'Humanrespiratorysyncytial_G', 'JCpolyoma_VP1', 'Measles_hemagglutin', 'ParvoB19_NS1', 'ParvoB19_VP1', 'RhinoB', 'RhinoB_polyprotein', 'RhinoC', 'RotaA_VP6', 'humanparainfluenza1', 'humanparainfluenza3')
 
-data_points <-(data_points[order(data_points$protein),])
+#data_points <-(data_points[order(data_points$protein),])
 #rewrite count column
-data_points$Count <- 1:nrow(data_points)
+#data_points$Count <- 1:nrow(data_points)
 
 
 print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
