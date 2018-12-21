@@ -37,7 +37,7 @@ InfluenzaAvirus_NA_H3N2.fasta.mu.trim05,1,0,NA,YES,YES,12758,1410,yes,Influenza 
 InfluenzaAvirus_NA_H1N1.fasta.mu.trim05,1,15,NA,RNA,YES,8173,1410,yes,Influenza A H1N1 NA
 InfluenzaBvirus_HA.fasta.mu.trim05,1,30,HA,RNA,YES,3600,1758,yes,Influenza B HA
 InfluenzaBvirus_NA.fasta.mu.trim05,1,0,NA,RNA,YES,2355,1401,yes,Influenza B NA
-JCpolyomavirus_VP1.fasta_pruned.mu.trim05,122,218,VP1,DNA,YES,111,282,yes,Jc Polyoma VP1
+JCpolyomavirus_VP1.fasta_pruned.mu.trim05,122,218,VP1,DNA,YES,111,282,no,Jc Polyoma VP1
 Measles_hemagglutinin_OR_haemagglutinin.fasta_pruned.mu.trim05,1,0,hemagglutinin/haemagglutinin,RNA,YES,335,1854,yes,Measles HH
 Measles.fasta_pruned.mu.trim05,1,0,,RNA,WEIRD,22,15894,no,Measles 
 ParvovirusB19_NS1.fasta_pruned.mu.trim05,82,2310,NS1,DNA,YES,94,1887,yes,Parvo B19 NS1

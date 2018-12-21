@@ -35,6 +35,7 @@ for (i in 1:nrow(data_points_df)) {
   
 
   png("output/amount/Syn.png", width = 6.75, height = 6.75, units = "in", res= 300)
+  #par(mfrow=c(2,2))#, bg = "darkseagreen1"
   palette(alpha(c("red","green","deepskyblue1")))
   plot(data_points_df$seq,data_points_df$nucl,log='y',col=factor(data_points_df$SynCpg),pch=19,cex=1.5, main="Syn CpG vs NonCpG",xlab = "# of Sequences", ylab = "# of Nucletides")
   legend("bottomright",legend=c("Significant","Partially Significant","No Significance"),

@@ -42,8 +42,8 @@ Humanherpesvirus2_glycoprotein_G<-read.csv("data/csv/Humanherpesvirus2_glycoprot
 Humanpapillomavirus16_L1<-read.csv("data/csv/Humanpapillomavirus16_L1.csv")
 Humanrespiratorysyncytialvirus<-read.csv("data/csv/Humanrespiratorysyncytialvirus.csv") 
 Humanrespiratorysyncytialvirus_G<-read.csv("data/csv/Humanrespiratorysyncytialvirus_G.csv")
-JCpolyomavirus_VP1<-read.csv("data/csv/JCpolyomavirus_VP1.csv")
-#Measles<-read.csv("data/csv/Measles.csv")
+# JCpolyomavirus_VP1<-read.csv("data/csv/JCpolyomavirus_VP1.csv")
+# Measles<-read.csv("data/csv/Measles.csv")
 Measles_hemagglutinin_OR_haemagglutinin<-read.csv("data/csv/Measles_hemagglutinin_OR_haemagglutinin.csv") 
 ParvovirusB19_NS1<-read.csv("data/csv/ParvovirusB19_NS1.csv")
 ParvovirusB19_VP1<-read.csv("data/csv/ParvovirusB19_VP1.csv") 
@@ -55,15 +55,15 @@ RotavirusA_VP6<-read.csv("data/csv/RotavirusA_VP6.csv")
 Virus_info<- read.csv("data/CpG_List.csv")
 Virus_info$total=Virus_info$SeqNumber*Virus_info$NucleotideNumber
 
-my.list <- list(DengueVirus1, DengueVirus2, DengueVirus3, DengueVirus4, humanparainfluenzavirus1_F, humanparainfluenzavirus1_HN, humanparainfluenzavirus3_HN, humanparainfluenzavirus1, humanparainfluenzavirus3, InfluenzaAvirus_HA_H1N1,InfluenzaAvirus_HA_H3N2, InfluenzaAvirus_NA_H1N1, InfluenzaAvirus_NA_H3N2,InfluenzaBvirus_HA, InfluenzaBvirus_NA, EnterovirusA_VP1, EnterovirusA_VP2,EnterovirusB_VP1, EnterovirusB_VP2,EnterovirusC_VP1,EnterovirusC_VP2,EnterovirusD_VP1, Humanrespiratorysyncytialvirus, Humanrespiratorysyncytialvirus_G, Measles_hemagglutinin_OR_haemagglutinin, RhinovirusB, RhinovirusB_polyprotein, RhinovirusC, RotavirusA_VP6, BKpolyomavirus_VP1, HumanBocavirus1_VP1, HepatitisB_polymerase,HepatitisB_precore,HepatitisB_polymerase_truncated_precore,HepatitisB_s,HepatitisB_pre_S,HepatitisB_core, Humanherpesvirus2_glycoprotein_G, Humanpapillomavirus16_L1, JCpolyomavirus_VP1, ParvovirusB19_NS1, ParvovirusB19_VP1)
+my.list <- list(DengueVirus1, DengueVirus2, DengueVirus3, DengueVirus4, humanparainfluenzavirus1_F, humanparainfluenzavirus1_HN, humanparainfluenzavirus3_HN, humanparainfluenzavirus1, humanparainfluenzavirus3, InfluenzaAvirus_HA_H1N1,InfluenzaAvirus_HA_H3N2, InfluenzaAvirus_NA_H1N1, InfluenzaAvirus_NA_H3N2,InfluenzaBvirus_HA, InfluenzaBvirus_NA, EnterovirusA_VP1, EnterovirusA_VP2,EnterovirusB_VP1, EnterovirusB_VP2,EnterovirusC_VP1,EnterovirusC_VP2,EnterovirusD_VP1, Humanrespiratorysyncytialvirus, Humanrespiratorysyncytialvirus_G, Measles_hemagglutinin_OR_haemagglutinin, RhinovirusB, RhinovirusB_polyprotein, RhinovirusC, RotavirusA_VP6, BKpolyomavirus_VP1, HumanBocavirus1_VP1, HepatitisB_polymerase,HepatitisB_precore,HepatitisB_polymerase_truncated_precore,HepatitisB_s,HepatitisB_pre_S,HepatitisB_core, Humanherpesvirus2_glycoprotein_G, Humanpapillomavirus16_L1, ParvovirusB19_NS1, ParvovirusB19_VP1)
 #name.list <- list('DengueVirus1', 'DengueVirus2', 'DengueVirus3', 'DengueVirus4', 'humanparainfluenzavirus1_F', 'humanparainfluenzavirus1_HN', 'humanparainfluenzavirus3_HN', 'humanparainfluenzavirus1', 'humanparainfluenzavirus3', 'InfluenzaAvirus_HA_H1N1','InfluenzaAvirus_HA_H3N2', 'InfluenzaAvirus_NA_H1N1', 'InfluenzaAvirus_NA_H3N2','InfluenzaBvirus_HA', 'InfluenzaBvirus_NA', 'EnterovirusA_VP1', 'EnterovirusA_VP2','EnterovirusB_VP1', 'EnterovirusB_VP2','EnterovirusC_VP1','EnterovirusC_VP2','EnterovirusD_VP1', 'BKpolyomavirus_VP1', 'HumanBocavirus1_VP1', 'HepatitisB_polymerase','HepatitisB_precore','HepatitisB_ptp', 'HepatitisB_s','HepatitisB_pre_S','HepatitisB_core', 'Humanherpesvirus2_glycoprotein_G', 'Humanpapillomavirus16_L1', 'Humanrespiratorysyncytialvirus', 'Humanrespiratorysyncytialvirus_G', 'JCpolyomavirus_VP1', 'Measles_hemagglutin', 'ParvovirusB19_NS1', 'ParvovirusB19_VP1', 'RhinovirusB', 'RhinovirusB_polyprotein', 'RhinovirusC', 'RotavirusA_VP6')
-name.list <- list('Dengue 1', 'Dengue 2', 'Dengue 3', 'Dengue 4', 'Human Parainfluenza 1 F', 'Human Parainfluenza 1 HN', 'Human Parainfluenza 3 HN', 'Human Parainfluenza 1', 'Human Parainfluenza 3', 'Influenza A H1N1 HA','Influenza A H3N2 HA', 'Influenza A H1N1 NA', 'Influenza A H3N2 NA','Influenza B HA', 'Influenza B NA', 'Entero A VP1', 'Entero A VP2','Entero B VP1', 'Entero B VP2','Entero C VP1','Entero C VP2','Entero D VP1', 'Human Respiratory Syncytial', 'Human Respiratory Syncytial G', 'Measles HH', 'Rhino B', 'Rhino B Polyprotein', 'Rhino C', 'Rota A VP6', 'Bk Polyoma VP1', 'Human Boca 1 VP1', 'Hepatitis B Polymerase','Hepatitis B Precore','Hepatitis B PTP','Hepatitis B S','Hepatitis B PreS','Hepatitis B Core', 'Human Herpes 2 glycoprotein G', 'Human Papilloma 16 L1', 'Jc Polyoma VP1', 'Parvo B19 NS1', 'Parvo B19 VP1')
+name.list <- list('Dengue 1', 'Dengue 2', 'Dengue 3', 'Dengue 4', 'Human Parainfluenza 1 F', 'Human Parainfluenza 1 HN', 'Human Parainfluenza 3 HN', 'Human Parainfluenza 1', 'Human Parainfluenza 3', 'Influenza A H1N1 HA','Influenza A H3N2 HA', 'Influenza A H1N1 NA', 'Influenza A H3N2 NA','Influenza B HA', 'Influenza B NA', 'Entero A VP1', 'Entero A VP2','Entero B VP1', 'Entero B VP2','Entero C VP1','Entero C VP2','Entero D VP1', 'Human Respiratory Syncytial', 'Human Respiratory Syncytial G', 'Measles HH', 'Rhino B', 'Rhino B Polyprotein', 'Rhino C', 'Rota A VP6', 'Bk Polyoma VP1', 'Human Boca 1 VP1', 'Hepatitis B Polymerase','Hepatitis B Precore','Hepatitis B PTP','Hepatitis B S','Hepatitis B PreS','Hepatitis B Core', 'Human Herpes 2 glycoprotein G', 'Human Papilloma 16 L1', 'Parvo B19 NS1', 'Parvo B19 VP1')
 Virus_info$total[33]=Virus_info$total[48]
 Virus_info$total[36]=Virus_info$total[49]
 reorg<-Virus_info[match(name.list, Virus_info$nice_name),]
 reorg[!reorg$used == "no", ]
 reorg[1:9] <- NULL
-reorg$count=c(1:42)
+reorg$count=c(1:41)
 data_points = data.frame("Count"= 1:length(my.list), "Virus"= 1:length(my.list))
 count = 1
 for (data in my.list){  
@@ -226,13 +226,13 @@ write.csv(df, file = "output/alldatapoints.csv")
 
 #print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
 # graphing 
-png("output/Costly/Costly_Graph_AllR_12_12.png", width = 15, height = 8, units = "in", res= 500)
+png("output/Costly/Costly_Graph_AllR_12_20.png", width = 15, height = 8, units = "in", res= 500)
 par(mar=c(0,2,3,2), oma=c(6,4,1,1), mfrow=c(2,1))#, bg = "darkseagreen1"
 
 x <- data_points$Count# test data 
 y <-  data_points$AsynNC_C
 plot(x,y, type = "n", log ='y' ,main="Cost of CpG Mutations", xlab=" ", yaxt = "n", ylab="Costly", xaxt = "n", ylim=c(0.01, 1000), xlim=c(1.5, length(my.list) +5.5), las= 1, cex.main=3) 
-abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5, 40.5), col="grey", lty=c(1))
+abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5), col="grey", lty=c(1))
 
 
 u <- par('ylog') 
@@ -250,7 +250,7 @@ rect(31.5, .0001, 37.5, 1570, density = NULL, angle = 45,
      col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(38.5, .0001, 39.5, 1570, density = NULL, angle = 45,
      col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
-rect(40.5, .0001, 42.5, 1570, density = NULL, angle = 45,
+rect(41.5, .0001, 48.5, 1570, density = NULL, angle = 45,
      col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
 
 # aty <- axTicks(2)
@@ -285,33 +285,33 @@ mtext('Relative Cost of CpG \n Creating Mutations', side=2, line=3, at=5, las=0,
 
 abline(h=c(0.002, 0.0005, .01,0.5,1,2,5,10,20,50,100, 300, 700), col="grey", lty=c(2,2))
 
-abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5, 40.5,41.5), col="grey", lty=c(1))
+abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5, 40.5), col="grey", lty=c(1))
 #abline(v=c(6.5,10.5,14.5,20.5, 27.5, 41.5), col = "darkgreen", lwd=2)
-abline(v=c(4.5,9.5,15.5,22.5,24.5,25.5, 28.5,29.5,30.5,31.5,37.5,38.5,39.5,40.5,42.5), col = "bisque4", lwd=2)
+abline(v=c(4.5,9.5,15.5,22.5,24.5,25.5, 28.5,29.5,30.5,31.5,37.5,38.5,39.5,41.5), col = "bisque4", lwd=2)
 
 
 abline(h = 1, col ="darkslategrey", lwd = 2)
 #rect(0,800, 800,800, col = "darkseagreen1")
 # xlab="Virus "
-text(46, 3, " CpG Mutation \n More Costly", cex = 1, font = 2)
-text(43.5, 3, "↑", cex = 3, font = 2)
-text(46, .3, " CpG Mutation \n Less Costly", cex = 1, font = 2)
-text(43.5, .3, "↓", cex = 3, font = 2)
+text(45, 3, " CpG Mutation \n More Costly", cex = 1, font = 2)
+text(42.5, 3, "↑", cex = 3, font = 2)
+text(45, .3, " CpG Mutation \n Less Costly", cex = 1, font = 2)
+text(42.5, .3, "↓", cex = 3, font = 2)
 #axis(1, at=1:length(my.list), labels=data_points$Virus, las= 2)
 legend('topright', legend=c("A -> G Syn", "A -> G NonSyn", "T -> C Syn", "T-> C NonSyn"),
        col=c("red", "green", "blue", "purple"), lty=1, lwd= 3, cex = 1, pt.cex = 999)
 
 
 par(mar=c(10,2,0,2))
-plot(reorg$count,reorg$total, ylim=c(31000, 30000000), type = "n", log ='y' , xlab=" ", yaxt = "n",  xaxt = "n", xlim=c(1.5, length(my.list) +5.5), las= 1, cex.main=3) 
+plot(reorg$count,reorg$total, ylim=c(60000, 30000000), type = "n", log ='y' , xlab=" ", yaxt = "n",  xaxt = "n", xlim=c(1.5, length(my.list) +5.5), las= 1, cex.main=3) 
 points(reorg$count,reorg$total, pch = 16)
 mtext('Amount of \n Data', side=2, line=3, at=1100000, las=0, cex = 1.3)
 
-abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5, 40.5, 41.5), col="grey", lty=c(1))
-abline(v=c(4.5,9.5,15.5,22.5,24.5,25.5, 28.5,29.5,30.5,31.5,37.5,38.5,39.5,40.5,42.5), col = "bisque4", lwd=2)
+abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5, 40.5), col="grey", lty=c(1))
+abline(v=c(4.5,9.5,15.5,22.5,24.5,25.5, 28.5,29.5,30.5,31.5,37.5,38.5,39.5,41.5), col = "bisque4", lwd=2)
 abline(h = 30000000, col ="darkslategrey", lwd = 2)
-axis(2, at = c(31000,100000,1000000,5000000,15000000), labels = c("31,000","100k","1 mil","5 mil","1.5 mil"),  las=2)
-abline(h=c(31000,100000,1000000,5000000,15000000), col="grey", lty=c(2,2))
+axis(2, at = c(60000,150000,1000000,5000000,15000000), labels = c("60,000","150k","1 mil","5 mil","1.5 mil"),  las=2)
+abline(h=c(60000,150000,1000000,5000000,15000000), col="grey", lty=c(2,2))
 
 u <- par('ylog') 
 rect(-1.05, .0001, 4.5, 28988780, density = NULL, angle = 45,
@@ -328,7 +328,7 @@ rect(31.5, .0001, 37.5, 28988780, density = NULL, angle = 45,
      col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
 rect(38.5, .0001, 39.5, 28988780, density = NULL, angle = 45,
      col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
-rect(40.5, .0001, 42.5, 28988780, density = NULL, angle = 45,
+rect(41.5, .0001, 48.5, 28988780, density = NULL, angle = 45,
      col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
 
 
