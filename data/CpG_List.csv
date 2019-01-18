@@ -42,7 +42,7 @@ Measles_hemagglutinin_OR_haemagglutinin.fasta_pruned.mu.trim05,1,0,hemagglutinin
 Measles.fasta_pruned.mu.trim05,1,0,,RNA,WEIRD,22,15894,no,Measles 
 ParvovirusB19_NS1.fasta_pruned.mu.trim05,82,2310,NS1,DNA,YES,94,1887,yes,Parvo B19 NS1
 ParvovirusB19_VP1.fasta_pruned.mu.trim05,1961,0,VP1,DNA,YES,95,2319,yes,Parvo B19 VP1
-RhinovirusB_polyprotein.fasta_pruned.mu.trim05,385,0,polyprotein,RNA,YES,47,6537,yes,Rhino B Polyprotein
+RhinovirusB_polyprotein.fasta_pruned.mu.trim05,385,0,polyprotein,RNA,YES,47,6537,no,Rhino B Polyprotein
 RhinovirusB.fasta_pruned.mu.trim05,1,0,complete genome,RNA,YES,45,6950,yes,Rhino B
 RhinovirusC.fasta_pruned.mu.trim05,1,0,complete genome,RNA,WEIRD,53,6935,yes,Rhino C
 RotavirusA_VP6.fasta_pruned.mu.trim05,1,18,VP6,RNA,YES,151,1194,yes,Rota A VP6

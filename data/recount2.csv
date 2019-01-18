@@ -1,43 +1,41 @@
-﻿Virus,A->G Syn: CpG v NonCpG ,A->G NonSyn: CpG v NonCpG,A->G Syn v NonSyn,T->C Syn: CpG v NonCpG ,T->C NonSyn: CpG v NonCpG,T->C Syn v NonSyn,
-Dengue 1,1,1,1,1,1,1,
-Bk Polyoma VP1,1,0,1,1,0,1,
-Dengue 2,1,0,1,1,1,1,
-Dengue 3,1,1,1,1,1,1,
-Dengue 4,1,0,1,1,1,1,
-Entero A VP1,1,0,1,1,0,1,
-Entero A VP2,1,0,1,0,0,1,
-Entero B VP1,1,0,1,0,0,1,
-Entero B VP2,1,0,1,1,0,1,
-Entero C VP1,0,0,0,0,0,0,
-Entero C VP2,1,0,1,1,0,1,
-Entero D VP1,1,0,1,1,0,1,
-Human Boca 1 VP1,1,0,1,0,0,1,
-Human Parainfluenza 1 F,0,0,1,1,0,1,
-Human Parainfluenza 1 HN,0,0,1,1,0,1,
-Human Parainfluenza 3 HN,0,0,1,1,0,1,
-Influenza A H1N1 HA,1,1,1,1,1,1,
-Influenza A H3N2 HA,1,1,1,1,1,1,
-Influenza A H1N1 NA,1,0,1,1,1,1,
-Influenza A H3N2 NA,1,0,1,1,1,1,
-Influenza B NA,1,0,1,1,0,1,
-Influenza B HA,1,1,1,1,1,1,
-Hepatitis B Polymerase,1,0,1,1,0,1,
-Hepatitis B Precore,0,0,0,0,0,0,
-Hepatitis B PTP,0,0,0,0,1,0,
-Hepatitis B S,0,0,0,1,1,0,
-Hepatitis B PreS,0,0,1,0,0,1,
-Hepatitis B Core,0,0,1,0,0,1,
-Human Herpes 2 glycoprotein G,0,0,0,0,0,1,
-Human Papilloma 16 L1,0,0,1,0,0,1,
-Human Respiratory Syncytial,1,1,0,1,1,0,
-Human Respiratory Syncytial G,0,1,0,0,1,1,
-Jc Polyoma VP1,0,0,1,0,0,1,
-Measles HH,1,0,1,1,1,1,
-Parvo B19 NS1,1,0,1,1,0,1,
-Parvo B19 VP1,1,0,1,1,0,1,
-Rhino B Polyprotein,1,1,0,1,1,0,
-Rhino B,1,1,1,1,0,1,
-Rhino C,1,1,0,0,0,0,
-Rota A VP6,1,0,1,1,0,1,
-Human Parainfluenza 1,1,0,1,1,0,1,
-Human Parainfluenza 3,0,0,1,1,0,1,
+﻿Virus,A->G Syn: CpG v NonCpG ,A->G NonSyn: CpG v NonCpG,A->G Syn v NonSyn,T->C Syn: CpG v NonCpG ,T->C NonSyn: CpG v NonCpG,T->C Syn v NonSyn
+Bk Polyoma VP1,1,0,1,1,0,1
+Dengue 1,1,1,1,1,1,1
+Dengue 2,1,0,1,1,1,1
+Dengue 3,1,1,1,1,1,1
+Dengue 4,1,0,1,1,1,1
+Entero A VP1,1,0,1,1,0,1
+Entero A VP2,1,0,1,0,0,1
+Entero B VP1,1,0,1,0,0,1
+Entero B VP2,1,0,1,1,0,1
+Entero C VP1,0,0,0,0,0,0
+Entero C VP2,1,0,1,1,0,1
+Entero D VP1,1,0,1,1,0,1
+Hepatitis B Polymerase,1,0,1,1,0,1
+Hepatitis B Precore,0,0,0,0,0,0
+Hepatitis B PTP,0,0,0,0,1,0
+Hepatitis B S,0,0,0,1,1,0
+Hepatitis B PreS,0,0,1,0,0,1
+Hepatitis B Core,0,0,1,0,0,1
+Human Boca 1 VP1,1,0,1,0,0,1
+Human Herpes 2 glycoprotein G,0,0,0,0,0,1
+Human Papilloma 16 L1,0,0,1,0,0,1
+Human Parainfluenza 1 F,0,0,1,1,0,1
+Human Parainfluenza 1 HN,0,0,1,1,0,1
+Human Parainfluenza 1,1,0,1,1,0,1
+Human Parainfluenza 3 HN,0,0,1,1,0,1
+Human Parainfluenza 3,0,0,1,1,0,1
+Human Respiratory Syncytial G,0,1,0,0,1,1
+Human Respiratory Syncytial,1,1,0,1,1,0
+Influenza A H1N1 HA,1,1,1,1,1,1
+Influenza A H3N2 HA,1,1,1,1,1,1
+Influenza A H3N2 NA,1,0,1,1,1,1
+Influenza A H1N1 NA,1,0,1,1,1,1
+Influenza B HA,1,1,1,1,1,1
+Influenza B NA,1,0,1,1,0,1
+Measles HH,1,0,1,1,1,1
+Parvo B19 NS1,1,0,1,1,0,1
+Parvo B19 VP1,1,0,1,1,0,1
+Rhino B,1,1,0,1,1,0
+Rhino C,1,1,0,0,0,0
+Rota A VP6,1,0,1,1,0,1
