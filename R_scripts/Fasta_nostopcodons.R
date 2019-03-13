@@ -1,4 +1,7 @@
 library(seqinr)
+
+Virus_info<- read.csv("data/CpG_List.csv")
+
 fasta<-"BKpolyomavirus_VP1.fasta.mu.trim05"
 Short_fasta<-function(fasta){
   fasta_file <-paste("data/fasta/",fasta,sep = "")
