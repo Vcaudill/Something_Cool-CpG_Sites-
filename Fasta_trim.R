@@ -39,7 +39,7 @@ write.FASTA(algn.trimmed, file=output_file)
 k=1
 for(k in 1:nrow(Virus_info)){
 file<-Virus_info[j,1]
-path_file<-paste("data/fasta/",file, sep="")
+path_file<-paste("output/NoStopFasta/",file,"_No_Stop.fasta",sep="")
 DataSet <- read.fasta(path_file)
 sample_size= 499
 if (Virus_info$SeqNumber[k] > sample_size) {
@@ -49,7 +49,7 @@ if (Virus_info$SeqNumber[k] > sample_size) {
   DS <- sample(DataSet, size = Virus_info$SeqNumber[k])
   size = Virus_info$SeqNumber[k]
 }
-Fasta_trimmed_sample<-paste("output/FastaSample/",sample_size,Virus_info$name[k],".fasta",sep="")
+Fasta_trimmed_sample<-paste("output/FastaSample/",size,Virus_info$name[k],".fasta",sep="")
 write.fasta(DS,names(DS), file = Fasta_trimmed_sample)
 }
 #call file in
