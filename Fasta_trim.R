@@ -7,12 +7,15 @@ Virus_info <- read.csv("data/CpG_List.csv")
 library(ape)
 library(seqinr)
 
-for(i in 1:length(Virus_info)){
-file<-Virus_info[i,1]
+for(j in 1:nrow(Virus_info)){
+file<-Virus_info[j,1]
 path_file<-paste("data/fasta/",file, sep="")
 al<-read.fasta(path_file,as.string=TRUE)
-end<-as.numeric(Virus_info$NucleotideNumber[i])-as.numeric(Virus_info$stop[i])
-al.trimmed<-al[as.numeric(Virus_info$start[i]):end]
+al2<-read.fasta(path_file,as.string=FALSE)
+number_of_nucs <-length(al2[[1]])
+end<-as.numeric(number_of_nucs)-as.numeric(Virus_info$stop[j])
+al.trimmed<-al[as.numeric(Virus_info$start[j]):end]
+
 
 pos<-c()
 for (i in 1: length(al)){
@@ -32,3 +35,23 @@ algn.trimmed<-algn1[,-pos.remove]
 output_file<-paste("output/NoStopFasta/",file,"_No_Stop.fasta",sep="")
 write.FASTA(algn.trimmed, file=output_file)
 }
+
+k=1
+for(k in 1:nrow(Virus_info)){
+file<-Virus_info[j,1]
+path_file<-paste("data/fasta/",file, sep="")
+DataSet <- read.fasta(path_file)
+sample_size= 499
+if (Virus_info$SeqNumber[k] > sample_size) {
+  DS <- sample(DataSet, size = sample_size)
+  size = sample_size
+}else{
+  DS <- sample(DataSet, size = Virus_info$SeqNumber[k])
+  size = Virus_info$SeqNumber[k]
+}
+Fasta_trimmed_sample<-paste("output/FastaSample/",sample_size,Virus_info$name[k],".fasta",sep="")
+write.fasta(DS,names(DS), file = Fasta_trimmed_sample)
+}
+#call file in
+#find number of sequences 
+
