@@ -3,11 +3,16 @@
 #vp1.trimmed<-vp1[1:113]
 #write.fasta(vp1.trimmed,open="w",names=BKpolyomavirus_VP1,)
 #vp1[1]
-
+Virus_info <- read.csv("data/CpG_List.csv")
 library(ape)
 library(seqinr)
 
-al<-read.fasta("data/fasta/DengueVirus1.fasta_pruned.mu.trim05",as.string=TRUE)
+for(i in 1:length(Virus_info)){
+file<-Virus_info[i,1]
+path_file<-paste("data/fasta/",file, sep="")
+al<-read.fasta(path_file,as.string=TRUE)
+end<-as.numeric(Virus_info$NucleotideNumber[i])-as.numeric(Virus_info$stop[i])
+al.trimmed<-al[as.numeric(Virus_info$start[i]):end]
 
 pos<-c()
 for (i in 1: length(al)){
@@ -22,6 +27,8 @@ for (i in 1: length(al)){
 poss<-unique(pos)
 pos.remove<-c(poss*3-2, poss*3-1,poss*3) 
 
-algn1<-read.dna("data/fasta/DengueVirus1.fasta_pruned.mu.trim05", format = "fasta")
+algn1<-read.dna(path_file, format = "fasta")
 algn.trimmed<-algn1[,-pos.remove]
-write.FASTA(algn.trimmed, file="output/NoStopFasta/DengueVirus1.fasta")
+output_file<-paste("output/NoStopFasta/",file,"_No_Stop.fasta",sep="")
+write.FASTA(algn.trimmed, file=output_file)
+}
