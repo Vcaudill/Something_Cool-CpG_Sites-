@@ -22,13 +22,13 @@ HumanBocavirus1_VP1.fasta_pruned.mu.trim05,2981,160,VP1,DNA,YES,77,2016,yes,Huma
 Humanherpesvirus2_gD.fasta_pruned.mu.trim05,1,2002,glycoprotein gD,DNA,WEIRD,73,75,no,Human Herpes 2 gD,0,73,72,0,http://datamonkey.org/meme/5caae4adb352895daa1c59b0,0
 Humanherpesvirus2_glycoprotein_G.fasta_pruned.mu.trim05,1,0,glycoprotein G,DNA,YES,89,2097,yes,Human Herpes 2 glycoprotein G,0,89,2094,0,http://datamonkey.org/meme/5caae54db352895daa1c5a44,0
 Humanpapillomavirus16_L1.fasta_pruned.mu.trim05,1,0,L1,DNA,YES,82,1596,yes,Human Papilloma 16 L1,0,81,1593,1,http://datamonkey.org/meme/5caae52cb352895daa1c5a0b,1.219512195
-Humanpapillomavirus16.fasta_pruned.mu.trim05,865,5091,E1,DNA,YES,24,1950,no,Human Papilloma 16,0,24,1948,0,don't work,0
-humanparainfluenzavirus1_F.fasta_pruned.mu.trim05,5010,8787,F,RNA,YES,63,1668,yes,Human Parainfluenza 1 F,0,63,1667,0,don't work,0
+Humanpapillomavirus16.fasta_pruned.mu.trim05,865,5091,E1,DNA,YES,24,1950,no,Human Papilloma 16,0,24,1948,0,http://datamonkey.org/meme/5cad7f2a119e4869148b4b53,0
+humanparainfluenzavirus1_F.fasta_pruned.mu.trim05,5010,8787,F,RNA,YES,63,1668,yes,Human Parainfluenza 1 F,0,63,1667,0,http://datamonkey.org/meme/5cad7f4d119e4869148b4b66,0
 humanparainfluenzavirus1_HN.fasta_pruned.mu.trim05,367,0,HN,RNA,YES,237,867,yes,Human Parainfluenza 1 HN,0,236,864,1,http://datamonkey.org/meme/5caae6d8b352895daa1c5bef,0.421940928
 humanparainfluenzavirus1.fasta_pruned.mu.trim05,1,0,Complete genome,RNA,YES,72,15471,yes,Human Parainfluenza 1,0 * 43,0,0,72,,100
-humanparainfluenzavirus3_HN.fasta_pruned.mu.trim05,163,0,HN,RNA,YES,408,1188,yes,Human Parainfluenza 3 HN,0,408,1187,0,not working,0
+humanparainfluenzavirus3_HN.fasta_pruned.mu.trim05,163,0,HN,RNA,YES,408,1188,yes,Human Parainfluenza 3 HN,0,408,1187,0,http://datamonkey.org/meme/5cad7ee4119e4869148b4a27,0
 humanparainfluenzavirus3.fasta_pruned.mu.trim05,5017,8703,F,RNA,YES,76,1620,yes,Human Parainfluenza 3,0,76,1617,0,http://datamonkey.org/meme/5caae4ddb352895daa1c59bc,0
-Humanrespiratorysyncytialvirus_G.fasta_pruned.mu.trim05,1,9,G,RNA,YES,1300,894,no,Human Respiratory Syncytial G,0,860,893,440,not working,33.84615385
+Humanrespiratorysyncytialvirus_G.fasta_pruned.mu.trim05,1,9,G,RNA,YES,1300,894,no,Human Respiratory Syncytial G,0,860,893,440,http://datamonkey.org/meme/5cad747e119e4869148b487e,33.84615385
 Humanrespiratorysyncytialvirus_G.fasta.mu.trim05,1,9,G,RNA,YES,1301,894,yes,Human Respiratory Syncytial G,0,1301,888,0,not working,0
 Humanrespiratorysyncytialvirus.fasta.mu.trim05,1,0,complete genome,RNA,WEIRD,292,15132,yes,Human Respiratory Syncytial,0 *,0,0,292,not working,100
 InfluenzaAvirus_HA_H1N1.fasta.mu.trim05,1,0,HA,RNA,YES,12500,1701,yes,Influenza A H1N1 HA,0,12480,1698,20,http://datamonkey.org/meme/5caaec2ab352895daa1c6d57,0.16
