@@ -23,8 +23,8 @@ al<-read.csv(path_file)
   foldername<-list.files("Hyphy/", pattern = "stuff", all.files = TRUE)
   Virus_info$Hyphy_folders<-c(foldername)
   write.csv(Virus_info, file = "data/MEME_CpG_list1.csv")
-}  #folder EnteroCVP1, InfluenzaBvirus_Ha
-i=3
+}  #folder HepB_s, InfluenzaBvirus_Ha
+i=1
 hyphy_virus<-read.csv("data/MEME_CpG_list1.csv")
 for (i in 1: length(hyphy_virus)){
 if(hyphy_virus$name[i]== "DengueVirus1.fasta_pruned.mu.trim05"){
@@ -39,7 +39,7 @@ if(hyphy_virus$name[i]== "DengueVirus3.fasta_pruned.mu.trim05"){
 if(hyphy_virus$name[i]== ".fasta_pruned.mu.trim05"){
     next
 }
-name = as.character(Virus_info$name[i])
+name = as.character(hyphy_virus$name[i])
 splitname<-unlist(strsplit(as.character(Virus_info$name[i]),".fasta"))
 truename<-splitname[1]  
 path_file<-paste("Hyphy/Consensus_Hyphy/",truename,".csv", sep="")
