@@ -12,7 +12,7 @@ for(i in 1:nrow(Virus_info)){
   source("R_scripts/BioInfo/Freq.R")
   # must place your file as a txt takes a few minutes 
   #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus")
-  viruplace = paste('data/fasta/', Virus_info$name[i], sep="")#trimmed
+  viruplace = paste('data/trimmed_no_stop/', Virus_info$name[i], ".fasta",sep="")#trimmed
   DF<-Freq(viruplace)
   name = as.character(Virus_info$name[i])
   splitname<-unlist(strsplit(as.character(Virus_info$name[i]),".fasta"))

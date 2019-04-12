@@ -1697,6 +1697,3 @@
 "1696",1696,0.00024,"a","InfluenzaAvirus_HA_H1N1","I","V","0",0,"nonsyn"
 "1697",1697,0,"t","InfluenzaAvirus_HA_H1N1","I","T","1",0,"nonsyn"
 "1698",1698,0.16104,"t","InfluenzaAvirus_HA_H1N1","I","I","0",0,"syn"
-"1699",1699,0,"t","InfluenzaAvirus_HA_H1N1","*","Q","1",0,"nonsyn"
-"1700",1700,0.04296,"a","InfluenzaAvirus_HA_H1N1","*","*","0",0,"syn"
-"1701",1701,4e-04,"a","InfluenzaAvirus_HA_H1N1","*","*","0",0,"syn"
