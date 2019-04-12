@@ -1,8 +1,8 @@
 name,start,stop,gene,tpye,verified,SeqNumber,NucleotideNumber,used,nice_name,Geneious,num_seq_nostop,num_nuc_nostop,num_seq_lost,MEME links,percentage lost
 BKpolyomavirus_VP1.fasta.mu.trim05,1,0,VP1,DNA,YES,116,1089,yes,Bk Polyoma VP1,0,115,1086,1,http://datamonkey.org/meme/5caae5cfb352895daa1c5ace,0.862068966
-DengueVirus1.fasta_pruned.mu.trim05,73,438,polyprotein,RNA,YES,1311,10179,yes,Dengue 1,0,1309,10176,2,http://datamonkey.org/meme/5cad68f6119e4869148b2f5e,0.152555301
-DengueVirus2.fasta_pruned.mu.trim05,75,428,polyprotein,RNA,YES,906,10176,yes,Dengue 2,0,904,10173,2,http://datamonkey.org/meme/5cad696d119e4869148b314d,0.220750552
-DengueVirus3.fasta_pruned.mu.trim05,71,415,polyprotein,RNA,YES,689,10173,yes,Dengue 3,0,687,10172,2,http://datamonkey.org/meme/5cad69d7119e4869148b332d,0.290275762
+DengueVirus1.fasta_pruned.mu.trim05,73,438,polyprotein,RNA,YES,1311,10179,yes,Dengue 1,0,1309,10176,2,http://datamonkey.org/meme/5cafdc27119e4869148bce40,0.152555301
+DengueVirus2.fasta_pruned.mu.trim05,75,428,polyprotein,RNA,YES,906,10176,yes,Dengue 2,0,904,10173,2,http://datamonkey.org/meme/5cafdc3d119e4869148bce42,0.220750552
+DengueVirus3.fasta_pruned.mu.trim05,71,415,polyprotein,RNA,YES,689,10173,yes,Dengue 3,0,687,10172,2,http://datamonkey.org/meme/5cafe091119e4869148bd224,0.290275762
 DengueVirus4.fasta_pruned.mu.trim05,81,361,polyprotein,RNA,YES,124,10164,yes,Dengue 4,0,123,10162,1,http://datamonkey.org/meme/5cad6682119e4869148b2eb8,0.806451613
 EnterovirusA_VP1.fasta_pruned.mu.trim05,187,0,VP1,RNA,YES,4640,705,yes,Entero A VP1,0,4616,702,24,http://datamonkey.org/meme/5caae92ab352895daa1c626b,0.517241379
 EnterovirusA_VP2.fasta.mu.trim08,1,30,VP2,RNA,YES,385,387,yes,Entero A VP2,0,369,386,16,http://datamonkey.org/meme/5cad6b68119e4869148b3510,4.155844156
