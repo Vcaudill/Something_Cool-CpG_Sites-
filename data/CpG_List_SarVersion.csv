@@ -32,7 +32,7 @@ Humanrespiratorysyncytialvirus_G.fasta_pruned.mu.trim05,1,9,G,RNA,YES,1300,894,n
 Humanrespiratorysyncytialvirus_G.fasta.mu.trim05,1,9,G,RNA,YES,1301,894,yes,Human Respiratory Syncytial G,0*,1301,888,0,,0
 Humanrespiratorysyncytialvirus.fasta.mu.trim05,1,0,complete genome,RNA,WEIRD,292,15132,yes,Human Respiratory Syncytial,0 *,0,0,292,,100
 InfluenzaAvirus_HA_H1N1.fasta.mu.trim05,1,0,HA,RNA,YES,12500,1701,yes,Influenza A H1N1 HA,0,12480,1698,20,http://datamonkey.org/meme/5caaec2ab352895daa1c6d57,0.16
-InfluenzaAvirus_HA_H3N2.fasta.mu.trim05,9,11,HA,YES,YES,7937,1701,yes,Influenza A H3N2 HA,0,7933,1699,4,http://datamonkey.org/meme/5cad7225119e4869148b3f94,0.050396875
+InfluenzaAvirus_HA_H3N2.fasta.mu.trim05,9,11,HA,YES,YES,7937,1701,yes,Influenza A H3N2 HA,0,7933,1699,4,http://datamonkey.org/meme/5cafe362119e4869148bd683,0.050396875
 InfluenzaAvirus_NA_H3N2.fasta.mu.trim05,1,15,NA,YES,YES,8173,1410,yes,Influenza A H3N2 NA,0*shorten by 15nuc,8144,1408,29,http://datamonkey.org/meme/5cad71e6119e4869148b3dbd,0.354826869
 InfluenzaAvirus_NA_H1N1.fasta.mu.trim05,1,15,NA,RNA,YES,12758,1410,yes,Influenza A H1N1 NA,0,12708,1392,50,http://datamonkey.org/meme/5caaeb11b352895daa1c67f2,0.391910958
 InfluenzaBvirus_HA.fasta.mu.trim05,1,30,HA,RNA,YES,3600,1758,yes,Influenza B HA,0,3596,1756,4,http://datamonkey.org/meme/5cad7072119e4869148b3bcb,0.111111111
@@ -48,4 +48,4 @@ RhinovirusC.fasta_pruned.mu.trim05,1,0,complete genome,RNA,WEIRD,53,6933,yes,Rhi
 RotavirusA_VP6.fasta_pruned.mu.trim05,1,18,VP6,RNA,YES,151,1194,yes,Rota A VP6,0,151,1191,0,http://datamonkey.org/meme/5caae699b352895daa1c5b73,0
 InfluenzaAvirus_HA_H1N1_short.fasta,1,0,HA,RNA,YES,10323,1701,yes,Influenza A H1N1 HA,0,10304,1698,19,http://datamonkey.org/meme/5caaeac4b352895daa1c6632,0.184055023
 InfluenzaAvirus_NA_H1N1_short.fasta,1,15,NA,RNA,YES,8207,1395,yes,Influenza A H1N1 NA,0,8206,1392,1,http://datamonkey.org/meme/5caaeb35b352895daa1c6979,0.01218472
-HIV,,,,,,3030,,,,,,,,,
+HIV1_FLT_2017_pol_DNA.fasta,1,0,pol,RNA,,3030,,,,,,,,,

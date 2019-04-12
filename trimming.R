@@ -1,8 +1,8 @@
 
-Virus_info <- read.csv("data/CpG_List.csv")
+Virus_info <- read.csv("data/CpG_List_SarVersion.csv")
 library(ape)
 library(seqinr)
-k=35
+
 
 for(k in 1:nrow(Virus_info)){
   file<-Virus_info[k,1]
