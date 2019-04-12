@@ -6,11 +6,29 @@
 Virus_info <- read.csv("data/CpG_List.csv")
 library(ape)
 library(seqinr)
+k=5
+for(k in 1:nrow(Virus_info)){
+  file<-Virus_info[k,1]
+  not_same_len=c()
+  path_file<-paste("output/FastaSample/",'123',file,".fasta",sep="")
+  al2<-read.fasta(path_file, as.string = TRUE)
+  number_of_nucs <-nchar(al2[[1]][1])
+  for(i in 1:length(al2)){
+    print(al2[[2]][1])
+    }
+    print(nchar(al2[[2]][1]))
+    if(nchar(al2[[i]][1])!=number_of_nucs)
+      not_same_len<-c(not_same_len,i)}
+  
+}
 
 for(k in 1:nrow(Virus_info)){
 file<-Virus_info[k,1]
 path_file<-paste("data/no_mid_stop/",file,".fasta",sep="")
+# possibly trimmed_no_stop
 DataSet <- read.fasta(path_file)
+
+
 sample_size= 499
 if (Virus_info$SeqNumber[k] > sample_size) {
   DS <- sample(DataSet, size = sample_size)
