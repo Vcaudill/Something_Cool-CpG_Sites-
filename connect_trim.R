@@ -4,7 +4,7 @@
 
 #loop using a csv to find the file name, strating and stoping points, and readign frame
 
-Virus_info<- read.csv("data/CpG_List.csv")
+Virus_info<- read.csv("data/MEME_CpG_list.csv")
 i=1
 # DataSet <-read.fasta("DengueVirus1.fasta_pruned.mu.trim05.txt")
 for(i in 1:nrow(Virus_info)){
@@ -37,9 +37,7 @@ for(i in 1:nrow(Virus_info)){
   DF<-synFunction(DF)
   
   #How to save data
-  truenameRda= paste('data/Rda/', truename, ".Rda", sep="")
-  save("virus" = DF,file= truenameRda)
-  truenameCSV= paste('data/Csv/', truename, ".csv", sep="")
+  truenameCSV= paste('Hyphy/Consensus_Hyphy/', truename, ".csv", sep="")
   write.csv(DF, file = truenameCSV)
 }
 
