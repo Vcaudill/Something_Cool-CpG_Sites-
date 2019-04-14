@@ -36,9 +36,22 @@ path<-paste("Hyphy/",folder,"/datamonkey-table.csv",sep='')
 datamonkey<-read.csv(path)
 file<-al1$wtnt_consensus
 nuc<-splitseq(file, frame = 0, word = 3)
+makesCpG<-al1$makesCpG
+CpG<-splitseq(makesCpG, frame = 0, word = 3)
 
 datamonkey$consensus_codon<-nuc
 datamonkey$consensus_AA<-translate(as.character(file))
+datamonkey$potential_CpG<-"no"
+datamonkey$makesCpG<-0
+for(j in 1:nrow(datamonkey)){
+  letter<-datamonkey$consensus_AA[j]
+  if(letter=="H"||letter=="E"||letter=="Y"||letter=="C"||letter=="F"||letter=="N"||letter=="K"||letter=="Q"||letter=="D"){
+    datamonkey$potential_CpG[j]="yes"
+  }
+  if(sum(as.numeric(CpG[j])) > 0){
+    datamonkey$makesCpG[j] = 1
+  }
+}
 
 write.csv(datamonkey,path)
 
