@@ -37,7 +37,8 @@ datamonkey<-read.csv(path)
 file<-al1$wtnt_consensus
 nuc<-splitseq(file, frame = 0, word = 3)
 
-datamonkey$wtnt_codon<-nuc
+datamonkey$consensus_codon<-nuc
+datamonkey$consensus_AA<-translate(as.character(file))
 
 write.csv(datamonkey,path)
 
