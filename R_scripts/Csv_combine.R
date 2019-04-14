@@ -1,32 +1,9 @@
 library(seqinr)
-Virus_info <- read.csv("data/MEME_CpG_list.csv")
-k=2
-i=1
 
-for(k in 1:nrow(Virus_info)){
-name = as.character(Virus_info$name[k])
-splitname<-unlist(strsplit(as.character(Virus_info$name[k]),".fasta"))
-truename<-splitname[1]  
-path_file<-paste("Hyphy/Consensus_Hyphy/",truename,".csv", sep="")
-al<-read.csv(path_file)
-#for(j in 1:length(Virus_info)){
-  
-  #list.files(path = ".", pattern = NULL, all.files = FALSE,
-  #           full.names = FALSE, recursive = FALSE,
-  #           ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
-  
-  #dir(path = ".", pattern = NULL, all.files = FALSE,
-  #    full.names = FALSE, recursive = FALSE,
-  #    ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
-  
-  #list.dirs(path = ".", full.names = TRUE, recursive = TRUE
-  foldername<-list.files("Hyphy/", pattern = "stuff", all.files = TRUE)
-  Virus_info$Hyphy_folders<-c(foldername)
-  write.csv(Virus_info, file = "data/MEME_CpG_list1.csv")
-}  #folder HepB_s, InfluenzaBvirus_Ha
-i=1
 hyphy_virus<-read.csv("data/MEME_CpG_list1.csv")
-for (i in 1: length(hyphy_virus)){
+
+for (i in 1: nrow(hyphy_virus)){
+#these viruses dont have datamonkey files yet, except humanpap not using
 if(hyphy_virus$name[i]== "DengueVirus1.fasta_pruned.mu.trim05"){
   next
 }
@@ -36,11 +13,21 @@ if(hyphy_virus$name[i]== "DengueVirus2.fasta_pruned.mu.trim05"){
 if(hyphy_virus$name[i]== "DengueVirus3.fasta_pruned.mu.trim05"){
   next
 }
-if(hyphy_virus$name[i]== ".fasta_pruned.mu.trim05"){
+if(hyphy_virus$name[i]== "InfluenzaAvirus_HA_H3N2.fasta.mu.trim05"){
     next
 }
+if(hyphy_virus$name[i]== "Humanpapillomavirus16.fasta_pruned.mu.trim05"){
+    next
+}
+if(hyphy_virus$name[i]== "InfluenzaBvirus_HA.fasta.mu.trim05"){
+    next
+  }
+  
+  
+  
+
 name = as.character(hyphy_virus$name[i])
-splitname<-unlist(strsplit(as.character(Virus_info$name[i]),".fasta"))
+splitname<-unlist(strsplit(as.character(hyphy_virus$name[i]),".fasta"))
 truename<-splitname[1]  
 path_file<-paste("Hyphy/Consensus_Hyphy/",truename,".csv", sep="")
 al1<-read.csv(path_file)
