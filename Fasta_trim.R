@@ -20,12 +20,13 @@ for(k in 1:nrow(Virus_info)){
     if(nchar(al2[[i]][1])!=number_of_nucs)
       not_same_len<-c(not_same_len,i)}
   
-}
+
 
 for(k in 1:nrow(Virus_info)){
 file<-Virus_info[k,1]
 path_file<-paste("data/no_mid_stop/",file,".fasta",sep="")
-# possibly trimmed_no_stop
+#path_file<-paste("data/trimmed_no_stop/",file,".fasta",sep="")
+
 DataSet <- read.fasta(path_file)
 
 
