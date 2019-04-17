@@ -7,7 +7,7 @@ library(plotrix)
 hyphy_virus<-read.csv("data/MEME_CpG_list1.csv")
 i=1
 special_folder<-"meme"
-for (i in 1: nrow(hyphy_virus)){
+for (i in 23: nrow(hyphy_virus)){
   #these viruses dont have datamonkey files yet, except humanpap not using
   if(hyphy_virus$name[i]== "DengueVirus1.fasta_pruned.mu.trim05"){
     next
@@ -33,7 +33,10 @@ for (i in 1: nrow(hyphy_virus)){
   if(hyphy_virus$name[i]== "HepatitisB_pre_S.fasta_pruned.mu.trim05"){
     next
   }#Hep_precore no presence of nonCpG mutation for a last nuc
-
+  if(hyphy_virus$name[i]== "Humanherpesvirus2_gD.fasta_pruned.mu.trim05"){
+    next
+  }#no presence of nonCpG mutation for a last nuc
+  
   name = as.character(hyphy_virus$name[i])
   splitname<-unlist(strsplit(as.character(hyphy_virus$name[i]),".fasta"))
   #making truename for shorter virus name
