@@ -152,7 +152,7 @@ if(special_folder== "meme"){
 if(special_folder== "fubar"){
   graph_title= paste(nice_name,"Alpha Score FUBAR")
 }
-truenamepng = paste("output/alpha_graphs/",nice_name,".png",sep="")
+truenamepng = paste("output/alpha_graphs/",al1$Virus,".png",sep="")
 png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
 ggplot(aes(factor(graphit4),X.alpha., color=factor(graphit4)),data=total)+
   scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
