@@ -7,7 +7,7 @@ library(plotrix)
 hyphy_virus<-read.csv("data/MEME_CpG_list1.csv")
 i=1
 special_folder<-"meme"
-for (i in 23: nrow(hyphy_virus)){
+for (i in 1: nrow(hyphy_virus)){
   #these viruses dont have datamonkey files yet, except humanpap not using
   if(hyphy_virus$name[i]== "DengueVirus1.fasta_pruned.mu.trim05"){
     next
@@ -92,17 +92,57 @@ for (i in 23: nrow(hyphy_virus)){
     }
   
   }
-  
   write.csv(datamonkey,path)
-  
-
+}
 
 ######### graph
 
 nice_name <- as.character(hyphy_virus$nice_name[i])
 #meme&fubar http://datamonkey.org/fubar/5cb3c3463994747a2e471e19 BK fubar
 
-
+for (i in 1: nrow(hyphy_virus)){
+  name = as.character(hyphy_virus$name[i])
+  splitname<-unlist(strsplit(as.character(hyphy_virus$name[i]),".fasta"))
+  #making truename for shorter virus name
+  truename<-splitname[1]  
+  path_file<-paste("Hyphy/Consensus_Hyphy/",truename,".csv", sep="")
+  al1<-read.csv(path_file)
+  sem<-function(x){
+    return(sd(x,na.rm = FALSE)/sqrt(length(x)))
+  }
+  if(hyphy_virus$name[i]== "DengueVirus1.fasta_pruned.mu.trim05"){
+    next
+  }
+  if(hyphy_virus$name[i]== "DengueVirus2.fasta_pruned.mu.trim05"){
+    next
+  }
+  if(hyphy_virus$name[i]== "DengueVirus3.fasta_pruned.mu.trim05"){
+    next
+  }
+  if(hyphy_virus$name[i]== "InfluenzaAvirus_HA_H3N2.fasta.mu.trim05"){
+    next
+  }
+  if(hyphy_virus$name[i]== "Humanpapillomavirus16.fasta_pruned.mu.trim05"){
+    next
+  }
+  if(hyphy_virus$name[i]== "InfluenzaBvirus_HA.fasta.mu.trim05"){
+    next
+  }
+  if(hyphy_virus$name[i]== "HepatitisB_precore.fasta_pruned.mu.trim05"){
+    next
+  }#Hep_precore no presence of nonCpG mutation 
+  if(hyphy_virus$name[i]== "HepatitisB_pre_S.fasta_pruned.mu.trim05"){
+    next
+  }#Hep_precore no presence of nonCpG mutation for a last nuc
+  if(hyphy_virus$name[i]== "Humanherpesvirus2_gD.fasta_pruned.mu.trim05"){
+    next
+  }#no presence of nonCpG mutation for a last nuc
+  
+  nice_name <- as.character(hyphy_virus$nice_name[i])
+  folder<-paste(hyphy_virus$Hyphy_folders[i],sep='')
+  #accessing the meme folders 
+  path<-paste("Hyphy/",folder,"/meme/datamonkey-table.csv",sep='')
+  datamonkey<-read.csv(path)
 cpg.yca<-subset(datamonkey, makesCpG==1 & potential_CpG == "yes" & last_nuc == "a" )
 #makes CpG in genetic code and is 2 fold 
 cpg.ynca<-subset(datamonkey, makesCpG==0 & potential_CpG == "yes" & last_nuc == "a")
@@ -155,6 +195,8 @@ if(special_folder== "meme"){
 if(special_folder== "fubar"){
   graph_title= paste(nice_name,"Alpha Score FUBAR")
 }
+
+
 truenamepng = paste("output/alpha_graphs/",al1$Virus[i],".png",sep="")
 png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
 ggplot(aes(factor(graphit4),X.alpha., color=factor(graphit4)),data=total)+
@@ -172,6 +214,7 @@ ggplot(aes(factor(graphit4),X.alpha., color=factor(graphit4)),data=total)+
   annotation_logticks(sides="l") +
   stat_summary(fun.data = data_summary, geom = "errorbar",width=.4, size = 1.2)+
   stat_summary(fun.data= data_summary, size = 1)
+ggsave(truenamepng)
 dev.off()
 
 }
