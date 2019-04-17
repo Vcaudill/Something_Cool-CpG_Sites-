@@ -1,10 +1,10 @@
-Virus_info =read.csv("data/CpG_List.csv")
+Virus_info =read.csv("data/CpG_List_RyanVersion.csv")
 for(i in 1:nrow(Virus_info)){
   name = as.character(Virus_info[i,1])
   print(name)
 }
-for(i in 1:nrow(Virus_info)){
-  
+for(i in 50:nrow(Virus_info)){
+  i = 51
   viruplace = paste('data/fasta/', Virus_info[i,1], sep="")
   name = as.character(Virus_info[i,1])
   splitname<-unlist(strsplit(as.character(Virus_info[i,1]),".fasta"))
@@ -12,7 +12,7 @@ for(i in 1:nrow(Virus_info)){
   source("R_scripts/Tables/HowToMakeWilcoxTables.R")
   DF=Tables(truename)
   Pvalues=Wilcox_test(DF, truename)#get error x must be numeric
-  makeTable(Pvalues, truename)
+  makeTable(Pvalues, truename, Virus_info$nice_name[i])
   source("R_scripts/graphs/redoplot.R")
   comparing_CpG_Syn_Nonsyn_new(truename)
   dev.off()
