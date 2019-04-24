@@ -11,8 +11,8 @@ for(k in 1:nrow(Virus_info)){
   al2<-read.dna(path_file,format="fasta")
   
   number_of_nucs <-length(as.list(al2)[[1]])
-  end<-as.numeric(number_of_nucs)-as.numeric(Virus_info$stop[k])
-  al.trimmed<-al2[,c(as.numeric(Virus_info$start[k]):(end-3))]
+  end<-as.numeric(Virus_info$start[k])+as.numeric(Virus_info$length[k])
+  al.trimmed<-al2[,c(as.numeric(Virus_info$start[k]):(end))]
   
   Fasta_FF<-paste0("data/trimmed_no_stop/",Virus_info$name[k],".fasta")
   write.FASTA(al.trimmed,file=Fasta_FF )
