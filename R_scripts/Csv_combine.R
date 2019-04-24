@@ -5,9 +5,9 @@ library(grid)
 library(plotrix)
 #reads in MEME.CSV with all the viruses
 hyphy_virus<-read.csv("data/MEME_CpG_list1.csv")
-i=1
+i=39
 special_folder<-"fubar"
-for (i in 1: nrow(hyphy_virus)){
+for (i in 39: nrow(hyphy_virus)){
   #these viruses dont have datamonkey files yet, except humanpap not using
   if(hyphy_virus$name[i]== "DengueVirus1.fasta_pruned.mu.trim05"){
     next
@@ -36,7 +36,18 @@ for (i in 1: nrow(hyphy_virus)){
   if(hyphy_virus$name[i]== "Humanherpesvirus2_gD.fasta_pruned.mu.trim05"){
     next
   }#no presence of nonCpG mutation for a last nuc
-  
+  if(hyphy_virus$name[i]== "InfluenzaAvirus_NA_H3N2.fasta.mu.trim05"){
+    next
+  }#not the right file does not match consensus
+  if(hyphy_virus$name[i]== "ParvovirusB19_NS1.fasta_pruned.mu.trim05"){
+    next
+  }#not the right file does not match consensus
+  if(hyphy_virus$name[i]== "ParvovirusB19_VP1.fasta_pruned.mu.trim05"){
+    next
+  }#not the right file does not match consensus
+  if(hyphy_virus$name[i]== "RotavirusA_VP6.fasta_pruned.mu.trim05"){
+    next
+  }#not the right file does not match consensus
   name = as.character(hyphy_virus$name[i])
   splitname<-unlist(strsplit(as.character(hyphy_virus$name[i]),".fasta"))
   #making truename for shorter virus name
@@ -90,6 +101,8 @@ for (i in 1: nrow(hyphy_virus)){
     if(datamonkey$makesCpG[j]==0 && datamonkey$potential_CpG[j] == "yes"&& datamonkey$last_nuc[j]== 't'){
       datamonkey$graphit4[j]="3"
     }
+   
+    
   
   }
   write.csv(datamonkey,path)
