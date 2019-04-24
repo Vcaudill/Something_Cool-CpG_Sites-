@@ -132,7 +132,7 @@ for (i in 1: nrow(hyphy_virus)){
   if(hyphy_virus$name[i]== "DengueVirus3.fasta_pruned.mu.trim05"){
     next
   }
-  if(hyphy_virus$name[i]== "InfluenzaAvirus_HA_H3N2.fasta.mu.trim05"){
+  if(hyphy_virus$name[i]== "InfluenzaAvirus_HA_H3N2.fasta.mu.trim05"){ 
     next
   }
   if(hyphy_virus$name[i]== "Humanpapillomavirus16.fasta_pruned.mu.trim05"){
