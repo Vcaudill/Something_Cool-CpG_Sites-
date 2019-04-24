@@ -3,24 +3,31 @@ Virus_info <- read.csv("data/CpG_List_SarVersion.csv")
 library(ape)
 library(seqinr)
 
-
+k=9
 for(k in 1:nrow(Virus_info)){
+  #not divisable by 3
+   if(Virus_info$name[k]== "EnterovirusC_VP1.fasta_pruned.mu.trim05"){
+     next
+   }
+  if(Virus_info$name[k]== "HepatitisB_polymerase_truncated_precore.fasta_pruned.mu.trim05"){
+    next
+  }
   file<-Virus_info[k,1]
   print(file)
   path_file<-paste("data/fasta/",file, sep="")
   al2<-read.dna(path_file,format="fasta")
   
-  number_of_nucs <-length(as.list(al2)[[1]])
+  number_of_nucs <-length(as.list(al2)[[10]])
   end<-as.numeric(Virus_info$start[k])+as.numeric(Virus_info$length[k])
-  al.trimmed<-al2[,c(as.numeric(Virus_info$start[k]):(end))]
+  al.trimmed<-al2[,c(as.numeric(Virus_info$start[k]):(end-1))]
   
-  Fasta_FF<-paste0("data/trimmed_no_stop/",Virus_info$name[k],".fasta")
+  Fasta_FF<-paste0("output/length_testing/",Virus_info$name[k],".fasta")
   write.FASTA(al.trimmed,file=Fasta_FF )
   ####
 
   al<-read.fasta(Fasta_FF,as.string=TRUE)
   
-  Fasta_final<-paste("data/no_mid_stop/",Virus_info$name[k],".fasta",sep="")
+  Fasta_final<-paste("output/length_testing/",Virus_info$name[k],".fasta",sep="")
   
   pos<-c()
   stop.seq.no<-c()
