@@ -6,7 +6,7 @@ library(plotrix)
 #reads in MEME.CSV with all the viruses
 hyphy_virus<-read.csv("data/MEME_CpG_list1.csv")
 i=1
-special_folder<-"meme"
+special_folder<-"fubar"
 for (i in 1: nrow(hyphy_virus)){
   #these viruses dont have datamonkey files yet, except humanpap not using
   if(hyphy_virus$name[i]== "DengueVirus1.fasta_pruned.mu.trim05"){
@@ -101,10 +101,10 @@ nice_name <- as.character(hyphy_virus$nice_name[i])
 #meme&fubar http://datamonkey.org/fubar/5cb3c3463994747a2e471e19 BK fubar
 
 i=1
-hyphy_virus$meme_a_cpg_make<-0
-hyphy_virus$meme_a_nocpg_make<-0
-hyphy_virus$meme_t_cpg_make<-0
-hyphy_virus$meme_t_nocpg_make<-0
+hyphy_virus$fubar_a_cpg_make<-0
+hyphy_virus$fubar_a_nocpg_make<-0
+hyphy_virus$fubar_t_cpg_make<-0
+hyphy_virus$fubar_t_nocpg_make<-0
 for (i in 1: nrow(hyphy_virus)){
   name = as.character(hyphy_virus$name[i])
   splitname<-unlist(strsplit(as.character(hyphy_virus$name[i]),".fasta"))
@@ -198,11 +198,11 @@ total <- rbind(cpg.yca,cpg.ynca,cpg.yct,cpg.ynct)
 ###############################################################3
 #adding a subsets together and t subsets together to make new columns
 
-hyphy_virus$meme_a_cpg_make[i]<-length(cpg.yca$X.alpha.)
-hyphy_virus$meme_a_nocpg_make[i]<-length(cpg.ynca$X.alpha.)
-hyphy_virus$meme_t_cpg_make[i]<-length(cpg.yct$X.alpha.)
-hyphy_virus$meme_t_nocpg_make[i]<-length(cpg.ynct$X.alpha.)
-hyphy<-paste("data/MEME_CpG_list1.csv",sep='')
+hyphy_virus$fubar_a_cpg_make[i]<-length(cpg.yca$X.alpha.)
+hyphy_virus$fubar_a_nocpg_make[i]<-length(cpg.ynca$X.alpha.)
+hyphy_virus$fubar_t_cpg_make[i]<-length(cpg.yct$X.alpha.)
+hyphy_virus$fubar_t_nocpg_make[i]<-length(cpg.ynct$X.alpha.)
+hyphy<-paste("data/fubar_CpG_list1.csv",sep='')
 write.csv(hyphy_virus, file = hyphy, append= TRUE)
 
 ########################################################
