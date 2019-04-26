@@ -39,5 +39,6 @@ X,name,start,stop,gene,tpye,verified,SeqNumber,NucleotideNumber,used,nice_name,G
 38,RotavirusA_VP6.fasta_pruned.mu.trim05,1,18,VP6,RNA,YES,151,1194,yes,Rota A VP6,0,151,1191,0,http://datamonkey.org/meme/5caae699b352895daa1c5b73,0,RotavirusA_VP6_stuff,19,19,36,51
 39,InfluenzaAvirus_HA_H1N1_short.fasta,1,0,HA,RNA,YES,10323,1701,yes,Influenza A H1N1 HA,0,10304,1698,19,http://datamonkey.org/meme/5caaeac4b352895daa1c6632,0.184055023,InfluenzaAvirus_HA_H1N1_short_stuff,15,42,53,25
 40,InfluenzaAvirus_NA_H1N1_short.fasta,1,15,NA,RNA,YES,8207,1395,yes,Influenza A H1N1 NA,0,8206,1392,1,http://datamonkey.org/meme/5caaeb35b352895daa1c6979,0.01218472,InfluenzaAvirus_NA_H1N1_short_stuff,12,18,42,21
-41,HIV1_FLT_2017_pol_DNA.fasta,1,0,pol,RNA,,3030,,,,,,,,,,HIV_stuff,,,,
+41,HIV1_FLT_2017_pol_DNA.fasta,1,0,pol,RNA,YES,3030,,,,,,,,,,HIV_stuff,,,,
 42,EnterovirusC_VP1.fasta_pruned.mu.trim05,13,549,VP1,RNA,YES,2013,348,yes,Entero C VP1,0,0,0,2013,,100,EnteroVirusC_VP1_stuff,,,,
+43,HCV1A,,,,,,,,,,,,,,,,HCV1A_stuff,,,,
