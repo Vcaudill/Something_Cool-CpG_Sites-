@@ -106,6 +106,7 @@ hyphy_virus$fubar_a_nocpg_make<-0
 hyphy_virus$fubar_t_cpg_make<-0
 hyphy_virus$fubar_t_nocpg_make<-0
 # i 19,28, 35, 36, 38
+
 for (i in 39: nrow(hyphy_virus)){
   name = as.character(hyphy_virus$name[i])
   splitname<-unlist(strsplit(as.character(hyphy_virus$name[i]),".fasta"))
