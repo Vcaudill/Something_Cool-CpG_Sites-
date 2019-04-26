@@ -123,6 +123,12 @@ for (i in 1: nrow(hyphy_virus)){
     graph_title= paste(nice_name,"Alpha Score FUBAR")
     graph="fubar"
   }
+  if(hyphy_virus$name[i]== "DengueVirus4.fasta_pruned.mu.trim05"){
+    next
+  }#working
+  if(hyphy_virus$name[i]== "EnterovirusC_VP1.fasta_pruned.mu.trim05"){
+    next
+  }
   if(hyphy_virus$name[i]== "HepatitisB_precore.fasta_pruned.mu.trim05"){
     next
   }#Hep_precore no presence of nonCpG mutation 
@@ -149,8 +155,7 @@ cpg.ynct<-subset(datamonkey, makesCpG==0 & potential_CpG == "yes" & last_nuc == 
 #run wilcox tests
 source("R_scripts/Tables/AlphaTables.R")
 Wilcox_test(hyphy_virus = nice_name, datamonkey = datamonkey,cpg.yca, cpg.yct, cpg.ynca, cpg.ynct)
-cpg.yca$mean_value <- .01
-
+#cpg.yca$mean_value <- .01
 # cpg.yca$sem_vals<- 0
 # cpg.ynca$mean_value <- .01
 # cpg.ynca$sem_vals<- 0

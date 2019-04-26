@@ -3,20 +3,20 @@
 #name.list <- list('Dengue 1', 'Dengue 2', 'Dengue 3', 'Dengue 4', "HCV1A", "HCV1B", "HIV pol gene", 'Human Parainfluenza 1 F', 'Human Parainfluenza 1 HN', 'Human Parainfluenza 3 HN', 'Human Parainfluenza 1', 'Human Parainfluenza 3', 'Influenza A H1N1 HA','Influenza A H3N2 HA', 'Influenza A H1N1 NA', 'Influenza A H3N2 NA','Influenza B HA', 'Influenza B NA', 'Entero A VP1', 'Entero A VP2','Entero B VP1', 'Entero B VP2','Entero C VP1','Entero C VP2','Entero D VP1', 'Human Respiratory Syncytial', 'Human Respiratory Syncytial G', 'Measles HH', 'Rhino B', 'Rhino C', 'Rota A VP6', 'Bk Polyoma VP1', 'Human Boca 1 VP1', 'Hepatitis B Polymerase','Hepatitis B Precore','Hepatitis B PTP','Hepatitis B S','Hepatitis B PreS','Hepatitis B Core', 'Human Herpes 2 glycoprotein G', 'Human Papilloma 16 L1', 'Parvo B19 NS1', 'Parvo B19 VP1')
 
 ######test something
+# 
+# path<-paste("Hyphy/","BK_stuff","/", "fubar","/datamonkey-table.csv",sep='')
+# datamonkey<-read.csv(path)
+# cpg.yca<-subset(datamonkey, makesCpG==1 & potential_CpG == "yes" & last_nuc == "a" )
+# #makes CpG in genetic code and is 2 fold 
+# cpg.ynca<-subset(datamonkey, makesCpG==0 & potential_CpG == "yes" & last_nuc == "a")
+# # does not make CpG in genetic code 
+# cpg.yct<-subset(datamonkey, makesCpG==1 & potential_CpG == "yes" & last_nuc == "t" )
+# #makes CpG in genetic code and is 2 fold 
+# cpg.ynct<-subset(datamonkey, makesCpG==0 & potential_CpG == "yes" & last_nuc == "t")
+# 
 
-path<-paste("Hyphy/","BK_stuff","/", "fubar","/datamonkey-table.csv",sep='')
-datamonkey<-read.csv(path)
-cpg.yca<-subset(datamonkey, makesCpG==1 & potential_CpG == "yes" & last_nuc == "a" )
-#makes CpG in genetic code and is 2 fold 
-cpg.ynca<-subset(datamonkey, makesCpG==0 & potential_CpG == "yes" & last_nuc == "a")
-# does not make CpG in genetic code 
-cpg.yct<-subset(datamonkey, makesCpG==1 & potential_CpG == "yes" & last_nuc == "t" )
-#makes CpG in genetic code and is 2 fold 
-cpg.ynct<-subset(datamonkey, makesCpG==0 & potential_CpG == "yes" & last_nuc == "t")
 
-
-
-Wilcox_test = function(hyphy_virus, datamonkey, cpg.yca, cpg.yct, cpg.ynca, cpg.ynct){
+Wilcox_test = function(hyphy_virus_name, datamonkey, cpg.yca, cpg.yct, cpg.ynca, cpg.ynct){
   
   #set output pdf file name
   library(graphics)
@@ -45,18 +45,12 @@ Wilcox_test = function(hyphy_virus, datamonkey, cpg.yca, cpg.yct, cpg.ynca, cpg.
 
   Pvalues= c(pVals)
   #save Pvalues into list
-  
-  return(Pvalues)
-  makeTable(Pvalues)
-  
-}
 
-makeTable <- function(Pvalues, hyphy_virus){
   options(scipen = 999)
   
   #setwd("output/redeploy/")
-  truenamepdf= paste("output/AlphaTables/",hyphy_virus,".pdf",sep="")
-  truenamepng= paste(hyphy_virus,"tables", ".png", sep="")
+  truenamepdf= paste("output/AlphaTables/",hyphy_virus_name,".pdf",sep="")
+  truenamepng= paste(hyphy_virus_name,"tables", ".png", sep="")
   #print(truenamepdf)
   #prevents pvalues from becoming scientific notation
   options(warn=-1)
@@ -121,7 +115,8 @@ makeTable <- function(Pvalues, hyphy_virus){
     num = num + 1 
   }
   print("end")
-  #dev.copy(pdf, truenamepng)
+  # pdf(truenamepdf, width = 7, height= 5)
+  # dev.copy(pdf, truenamepng)
   dev.off()
   
 }
