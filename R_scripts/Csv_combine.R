@@ -123,24 +123,6 @@ for (i in 1: nrow(hyphy_virus)){
     graph_title= paste(nice_name,"Alpha Score FUBAR")
     graph="fubar"
   }
-  if(hyphy_virus$name[i]== "DengueVirus1.fasta_pruned.mu.trim05"){
-    next
-  }
-  if(hyphy_virus$name[i]== "DengueVirus2.fasta_pruned.mu.trim05"){
-    next
-  }
-  if(hyphy_virus$name[i]== "DengueVirus3.fasta_pruned.mu.trim05"){
-    next
-  }
-  if(hyphy_virus$name[i]== "InfluenzaAvirus_HA_H3N2.fasta.mu.trim05"){ 
-    next
-  }
-  if(hyphy_virus$name[i]== "Humanpapillomavirus16.fasta_pruned.mu.trim05"){
-    next
-  }
-  if(hyphy_virus$name[i]== "InfluenzaBvirus_HA.fasta.mu.trim05"){
-    next
-  }
   if(hyphy_virus$name[i]== "HepatitisB_precore.fasta_pruned.mu.trim05"){
     next
   }#Hep_precore no presence of nonCpG mutation 
@@ -168,74 +150,75 @@ cpg.ynct<-subset(datamonkey, makesCpG==0 & potential_CpG == "yes" & last_nuc == 
 source("R_scripts/Tables/AlphaTables.R")
 Wilcox_test(hyphy_virus = nice_name, datamonkey = datamonkey,cpg.yca, cpg.yct, cpg.ynca, cpg.ynct)
 cpg.yca$mean_value <- .01
-cpg.yca$sem_vals<- 0
-cpg.ynca$mean_value <- .01
-cpg.ynca$sem_vals<- 0
-cpg.yct$mean_value <- .01
-cpg.yct$sem_vals<- 0
-cpg.ynct$mean_value <- .01
-cpg.ynct$sem_vals<- 0
 
-cpg.yca$mean_value <- mean(cpg.yca$X.alpha)
-cpg.yca$sem_vals<-sem(cpg.yca$X.alpha)
-cpg.ynca$mean_value <- mean(cpg.ynca$X.alpha)
-cpg.ynca$sem_vals<-sem(cpg.ynca$X.alpha)
-cpg.yct$mean_value <- mean(cpg.yct$X.alpha)
-cpg.yct$sem_vals<-sem(cpg.yct$X.alpha)
-cpg.ynct$mean_value <- mean(cpg.ynct$X.alpha)
-cpg.ynct$sem_vals<-sem(cpg.ynct$X.alpha)
-
-# There are the upper and lower limits of the error bar
-
-cpg.yca$LCLS = cpg.yca$mean_value - cpg.yca$sem_vals
-cpg.yca$UCLS = cpg.yca$mean_value + cpg.yca$sem_vals
-cpg.ynca$LCLS = cpg.ynca$mean_value - cpg.ynca$sem_vals
-cpg.ynca$UCLS = cpg.ynca$mean_value + cpg.ynca$sem_vals
-cpg.yct$LCLS = cpg.yct$mean_value - cpg.yct$sem_vals
-cpg.yct$UCLS = cpg.yct$mean_value + cpg.yct$sem_vals
-cpg.ynct$LCLS = cpg.ynct$mean_value - cpg.ynct$sem_vals
-cpg.ynct$UCLS = cpg.ynct$mean_value + cpg.ynct$sem_vals
-
-#total contains dataframes of subsets 
-total <- rbind(cpg.yca,cpg.ynca,cpg.yct,cpg.ynct)
-###############################################################3
-#adding a subsets together and t subsets together to make new columns
-
-hyphy_virus$fubar_a_cpg_make[i]<-length(cpg.yca$X.alpha.)
-hyphy_virus$fubar_a_nocpg_make[i]<-length(cpg.ynca$X.alpha.)
-hyphy_virus$fubar_t_cpg_make[i]<-length(cpg.yct$X.alpha.)
-hyphy_virus$fubar_t_nocpg_make[i]<-length(cpg.ynct$X.alpha.)
-hyphy<-paste("data/fubar_CpG_list1.csv",sep='')
-write.csv(hyphy_virus, file = hyphy, append= TRUE)
-
-########################################################
-#errorbar function
-data_summary <- function(x) {
-  m <- mean(x)
-  ymin <- m-sem(x)
-  ymax <- m+sem(x)
-  return(c(y=m,ymin=ymin,ymax=ymax))
-}
-
-truenamepng = paste("output/alpha_graphs/",graph,"/",al1$Virus[i],".png",sep="")
-png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
-ggplot(aes(factor(graphit4),X.alpha., color=factor(graphit4)),data=total)+
-  scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
-                labels = trans_format("log10", math_format(10^.x))) +
-  labs(title = graph_title)+
-  geom_jitter(data=cpg.ynca,aes(x=factor(graphit4)),position = position_jitter(width = .2), alpha = 0.8)+
-  geom_jitter(data=cpg.yca,aes(x=factor(graphit4)),position = position_jitter(width = .2), alpha = 0.8)+
-  geom_jitter(data=cpg.ynct,aes(x=factor(graphit4)),position = position_jitter(width = .2), alpha = 0.8)+
-  geom_jitter(data=cpg.yct,aes(x=factor(graphit4)),position = position_jitter(width = .2), alpha = 0.8)+
-  scale_x_discrete(labels = c("a \n No CpG ","a \n CpG ","t \n No CpG ","t \n CpG "))+
-  scale_color_manual(labels = c("No CpG a","CpG a","No CpG t", "CpG t"), values = c("darkmagenta", "forestgreen","darkred", "dodgerblue4")) +
-  #labels X and Y axis
-  labs(x="CpG Type", y="Alpha Value",col=" ")+
-  annotation_logticks(sides="l") +
-  stat_summary(fun.data = data_summary, geom = "errorbar",width=.4, size = 1.2)+
-  stat_summary(fun.data= data_summary, size = 1)
-ggsave(truenamepng)
-dev.off()
+# cpg.yca$sem_vals<- 0
+# cpg.ynca$mean_value <- .01
+# cpg.ynca$sem_vals<- 0
+# cpg.yct$mean_value <- .01
+# cpg.yct$sem_vals<- 0
+# cpg.ynct$mean_value <- .01
+# cpg.ynct$sem_vals<- 0
+# 
+# cpg.yca$mean_value <- mean(cpg.yca$X.alpha)
+# cpg.yca$sem_vals<-sem(cpg.yca$X.alpha)
+# cpg.ynca$mean_value <- mean(cpg.ynca$X.alpha)
+# cpg.ynca$sem_vals<-sem(cpg.ynca$X.alpha)
+# cpg.yct$mean_value <- mean(cpg.yct$X.alpha)
+# cpg.yct$sem_vals<-sem(cpg.yct$X.alpha)
+# cpg.ynct$mean_value <- mean(cpg.ynct$X.alpha)
+# cpg.ynct$sem_vals<-sem(cpg.ynct$X.alpha)
+# 
+# # There are the upper and lower limits of the error bar
+# 
+# cpg.yca$LCLS = cpg.yca$mean_value - cpg.yca$sem_vals
+# cpg.yca$UCLS = cpg.yca$mean_value + cpg.yca$sem_vals
+# cpg.ynca$LCLS = cpg.ynca$mean_value - cpg.ynca$sem_vals
+# cpg.ynca$UCLS = cpg.ynca$mean_value + cpg.ynca$sem_vals
+# cpg.yct$LCLS = cpg.yct$mean_value - cpg.yct$sem_vals
+# cpg.yct$UCLS = cpg.yct$mean_value + cpg.yct$sem_vals
+# cpg.ynct$LCLS = cpg.ynct$mean_value - cpg.ynct$sem_vals
+# cpg.ynct$UCLS = cpg.ynct$mean_value + cpg.ynct$sem_vals
+# 
+# #total contains dataframes of subsets 
+# total <- rbind(cpg.yca,cpg.ynca,cpg.yct,cpg.ynct)
+# ###############################################################3
+# #adding a subsets together and t subsets together to make new columns
+# 
+# hyphy_virus$fubar_a_cpg_make[i]<-length(cpg.yca$X.alpha.)
+# hyphy_virus$fubar_a_nocpg_make[i]<-length(cpg.ynca$X.alpha.)
+# hyphy_virus$fubar_t_cpg_make[i]<-length(cpg.yct$X.alpha.)
+# hyphy_virus$fubar_t_nocpg_make[i]<-length(cpg.ynct$X.alpha.)
+# hyphy<-paste("data/fubar_CpG_list1.csv",sep='')
+# write.csv(hyphy_virus, file = hyphy, append= TRUE)
+# 
+# ########################################################
+# #errorbar function
+# data_summary <- function(x) {
+#   m <- mean(x)
+#   ymin <- m-sem(x)
+#   ymax <- m+sem(x)
+#   return(c(y=m,ymin=ymin,ymax=ymax))
+# }
+# 
+# truenamepng = paste("output/alpha_graphs/",graph,"/",al1$Virus[i],".png",sep="")
+# png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
+# ggplot(aes(factor(graphit4),X.alpha., color=factor(graphit4)),data=total)+
+#   scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
+#                 labels = trans_format("log10", math_format(10^.x))) +
+#   labs(title = graph_title)+
+#   geom_jitter(data=cpg.ynca,aes(x=factor(graphit4)),position = position_jitter(width = .2), alpha = 0.8)+
+#   geom_jitter(data=cpg.yca,aes(x=factor(graphit4)),position = position_jitter(width = .2), alpha = 0.8)+
+#   geom_jitter(data=cpg.ynct,aes(x=factor(graphit4)),position = position_jitter(width = .2), alpha = 0.8)+
+#   geom_jitter(data=cpg.yct,aes(x=factor(graphit4)),position = position_jitter(width = .2), alpha = 0.8)+
+#   scale_x_discrete(labels = c("a \n No CpG ","a \n CpG ","t \n No CpG ","t \n CpG "))+
+#   scale_color_manual(labels = c("No CpG a","CpG a","No CpG t", "CpG t"), values = c("darkmagenta", "forestgreen","darkred", "dodgerblue4")) +
+#   #labels X and Y axis
+#   labs(x="CpG Type", y="Alpha Value",col=" ")+
+#   annotation_logticks(sides="l") +
+#   stat_summary(fun.data = data_summary, geom = "errorbar",width=.4, size = 1.2)+
+#   stat_summary(fun.data= data_summary, size = 1)
+# ggsave(truenamepng)
+# dev.off()
 
 }
 
