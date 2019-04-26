@@ -49,5 +49,5 @@ RotavirusA_VP6.fasta_pruned.mu.trim05,1,18,VP6,RNA,YES,151,1194,yes,Rota A VP6,0
 InfluenzaAvirus_HA_H1N1_short.fasta,1,0,HA,RNA,YES,10323,1701,yes,Influenza A H1N1 HA,0,10304,1698,19,http://datamonkey.org/meme/5caaeac4b352895daa1c6632,0.184055023,http://datamonkey.org/fubar/5cb511363994747a2e477ab2,,1698,new,,
 InfluenzaAvirus_NA_H1N1_short.fasta,1,15,NA,RNA,YES,8207,1395,yes,Influenza A H1N1 NA,0,8206,1392,1,http://datamonkey.org/meme/5caaeb35b352895daa1c6979,0.01218472,http://datamonkey.org/fubar/5cb511143994747a2e4778fa,,1392,new/hasstop,,
 HIV1_FLT_2017_pol_DNA.fasta,1,0,pol,RNA,,3030,,,,,,,,,,http://datamonkey.org/fubar/5cc2591c92c55735f18b8f70,,0,,,
-HCV1A,,,,,,,,,,,,,,,,http://datamonkey.org/fubar/5cc25d1892c55735f18b909a ,,,,,
-HCV1B,,,,,,,,,,,,,,,,http://datamonkey.org/fubar/5cc25da292c55735f18b923f,,,,,
+HCV1A_CDS_Alignment.fasta,1,0,complete genome,RNA,,423,,,,,,,,,,http://datamonkey.org/fubar/5cc25d1892c55735f18b909a ,,,,,
+HCV1B_CDS_alignment.fasta,1,0,complete genome,RNA,,245,,,,,,,,,,http://datamonkey.org/fubar/5cc25da292c55735f18b923f,,,,,
