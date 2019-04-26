@@ -1,50 +1,53 @@
-﻿name,start,stop,gene,tpye,verified,SeqNumber,NucleotideNumber,used,nice_name,genius_notes
-BKpolyomavirus_VP1.fasta.mu.trim05,1,0,VP1,DNA,YES,116,1089,yes,Bk Polyoma VP1,sequence.gb-3.txt
-DengueVirus1.fasta_pruned.mu.trim05,73,438,polyprotein,RNA,YES,1311,10182,yes,Dengue 1,1
-DengueVirus2.fasta_pruned.mu.trim05,75,428,polyprotein,RNA,YES,906,10176,yes,Dengue 2,2
-DengueVirus3.fasta_pruned.mu.trim05,71,415,polyprotein,RNA,YES,689,10173,yes,Dengue 3,3
-DengueVirus4.fasta_pruned.mu.trim05,81,361,polyprotein,RNA,YES,124,10164,yes,Dengue 4,4
-EnterovirusA_VP1.fasta_pruned.mu.trim05,187,0,VP1,RNA,YES,4640,705,yes,Entero A VP1,5
-EnterovirusA_VP2.fasta.mu.trim08,1,30,VP2,RNA,YES,385,387,yes,Entero A VP2, 
-EnterovirusB_VP1.fasta_pruned.mu.trim05,142,0,VP1,RNA,YES,1920,720,yes,Entero B VP1, 
-EnterovirusB_VP2.fasta.mu.trim08,1,0,VP2,RNA,YES,335,285,yes,Entero B VP2, 
-EnterovirusC_VP1.fasta_pruned.mu.trim05,13,549,VP1,RNA,YES,2013,348,yes,Entero C VP1, 
-EnterovirusC_VP2.fasta_pruned.mu.trim05,265,0,VP2,RNA,YES,306,2172,yes,Entero C VP2, 
-EnterovirusD_VP1.fasta_pruned.mu.trim05,442,0,VP1,RNA,YES,128,486,yes,Entero D VP1, 
-HepatitisB_polymerase.fasta_pruned.mu.trim05,421,1590,polymerase,DNA,YES,2706,1203,yes,Hepatitis B Polymerase,6
-HepatitisB_precore.fasta_pruned.mu.trim05,1852,1304,truncated precore/core,DNA,YES,2706,60,yes,Hepatitis B Precore,6
-HepatitisB_polymerase_truncated_precore.fasta_pruned.mu.trim05,2446,586,polymerase/truncated precore/core,DNA,YES,2706,183,yes,Hepatitis B PTP,6
-HepatitisB_s.fasta_pruned.mu.trim05,155,2380,middle S,DNA,YES,2706,681,yes,Hepatitis B S,6
-HepatitisB_pre_S.fasta_pruned.mu.trim05,2848,0,pulative prepre-S,DNA,YES,2706,366,yes,Hepatitis B PreS,6
-HepatitisB_core.fasta_pruned.mu.trim05,1901,763,core,DNA,YES,2706,552,yes,Hepatitis B Core,6
-HumanBocavirus1_NS1.fasta_pruned.mu.trim05,178,3060,NS1,DNA,YES,31,1920,no,Human Boca 1 NS1,0
-HumanBocavirus1_VP1.fasta_pruned.mu.trim05,2981,160,VP1,DNA,YES,31,4821,yes,Human Boca 1 VP1, 
-Humanherpesvirus2_gD.fasta_pruned.mu.trim05,1,2002,glycoprotein gD,DNA,WEIRD,73,75,no,Human Herpes 2 gD,0
-Humanherpesvirus2_glycoprotein_G.fasta_pruned.mu.trim05,1,0,glycoprotein G,DNA,YES,89,2097,yes,Human Herpes 2 glycoprotein G, 
-Humanpapillomavirus16_L1.fasta_pruned.mu.trim05,1,0,L1,DNA,YES,82,1596,yes,Human Papilloma 16 L1,7
-Humanpapillomavirus16.fasta_pruned.mu.trim05,865,5091,E1,DNA,YES,24,1950,no,Human Papilloma 16,0
-humanparainfluenzavirus1_F.fasta_pruned.mu.trim05,5010,8787,F,RNA,YES,63,1668,yes,Human Parainfluenza 1 F,8
-humanparainfluenzavirus1_HN.fasta_pruned.mu.trim05,367,0,HN,RNA,YES,237,867,yes,Human Parainfluenza 1 HN,9
-humanparainfluenzavirus1.fasta_pruned.mu.trim05,1,0,Complete genome,RNA,YES,72,15473,yes,Human Parainfluenza 1,kaho cut
-humanparainfluenzavirus3_HN.fasta_pruned.mu.trim05,163,0,HN,RNA,YES,408,1188,yes,Human Parainfluenza 3 HN,9
-humanparainfluenzavirus3.fasta_pruned.mu.trim05,5017,8703,F,RNA,YES,76,1620,yes,Human Parainfluenza 3,kaho cut
-Humanrespiratorysyncytialvirus_G.fasta_pruned.mu.trim05,1,9,G,RNA,YES,1300,894,no,Human Respiratory Syncytial G,0
-Humanrespiratorysyncytialvirus_G.fasta.mu.trim05,1,9,G,RNA,YES,1301,894,yes,Human Respiratory Syncytial G,10
-Humanrespiratorysyncytialvirus.fasta.mu.trim05,1,0,complete genome,RNA,WEIRD,292,15133,yes,Human Respiratory Syncytial,11
-InfluenzaAvirus_HA_H1N1.fasta.mu.trim05,1,0,HA,RNA,YES,12500,1701,yes,Influenza A H1N1 HA,12
-InfluenzaAvirus_HA_H3N2.fasta.mu.trim05,9,11,HA,RNA,YES,7937,1701,yes,Influenza A H3N2 HA,13
-InfluenzaAvirus_NA_H3N2.fasta.mu.trim05,1,15,NA,RNA,YES,12758,1410,yes,Influenza A H3N2 NA,14
-InfluenzaAvirus_NA_H1N1.fasta.mu.trim05,1,15,NA,RNA,YES,8173,1410,yes,Influenza A H1N1 NA,15
-InfluenzaBvirus_HA.fasta.mu.trim05,1,30,HA,RNA,YES,3600,1758,yes,Influenza B HA,16
-InfluenzaBvirus_NA.fasta.mu.trim05,1,0,NA,RNA,YES,2355,1401,yes,Influenza B NA,17
-JCpolyomavirus_VP1.fasta_pruned.mu.trim05,122,218,VP1,DNA,YES,111,282,no,Jc Polyoma VP1,0
-Measles_hemagglutinin_OR_haemagglutinin.fasta_pruned.mu.trim05,1,0,hemagglutinin/haemagglutinin,RNA,YES,335,1854,yes,Measles HH,18
-Measles.fasta_pruned.mu.trim05,1,0,,RNA,WEIRD,22,15894,no,Measles ,0
-ParvovirusB19_NS1.fasta_pruned.mu.trim05,82,2310,NS1,DNA,YES,94,1887,yes,Parvo B19 NS1,19
-ParvovirusB19_VP1.fasta_pruned.mu.trim05,1961,0,VP1,DNA,YES,95,2319,yes,Parvo B19 VP1,19
-RhinovirusB_polyprotein.fasta_pruned.mu.trim05,385,0,polyprotein,RNA,YES,47,6537,no,Rhino B Polyprotein,0
-RhinovirusB.fasta_pruned.mu.trim05,1,0,complete genome,RNA,YES,45,6950,yes,Rhino B,20
-RhinovirusC.fasta_pruned.mu.trim05,1,0,complete genome,RNA,WEIRD,53,6935,yes,Rhino C,21
-RotavirusA_VP6.fasta_pruned.mu.trim05,1,18,VP6,RNA,YES,151,1194,yes,Rota A VP6,22
-InfluenzaAvirus_HA_H1N1_short.fasta,1,0,HA,RNA,YES,10323,1701,yes,Influenza A H1N1 HA,12
-InfluenzaAvirus_NA_H1N1_short.fasta,1,15,NA,RNA,YES,8207,1410,yes,Influenza A H1N1 NA,15
+﻿name,start,stop,gene,tpye,verified,SeqNumber,NucleotideNumber,used,nice_name,genius_notes,num_seq_nostop,num_nuc_nostop,num_seq_lost,MEME links,percentage lost,FUBAR links,,length
+BKpolyomavirus_VP1.fasta.mu.trim05,1,0,VP1,DNA,YES,116,1089,yes,Bk Polyoma VP1,sequence.gb-3.txt,115,1086,1,http://datamonkey.org/meme/5caae5cfb352895daa1c5ace,0.862068966,http://datamonkey.org/fubar/5cb509313994747a2e475339,,1086
+DengueVirus1.fasta_pruned.mu.trim05,73,438,polyprotein,RNA,YES,1311,10182,yes,Dengue 1,1,1309,10176,2,http://datamonkey.org/meme/5cafdc27119e4869148bce40,0.152555301,http://datamonkey.org/fubar/5cb509853994747a2e475375,,10176
+DengueVirus2.fasta_pruned.mu.trim05,75,428,polyprotein,RNA,YES,906,10176,yes,Dengue 2,2,904,10173,2,http://datamonkey.org/meme/5cafdc3d119e4869148bce42,0.220750552,http://datamonkey.org/fubar/5cb509b63994747a2e47574e,,10173
+DengueVirus3.fasta_pruned.mu.trim05,71,415,polyprotein,RNA,YES,689,10173,yes,Dengue 3,3,687,10172,2,http://datamonkey.org/meme/5cafe091119e4869148bd224,0.290275762,http://datamonkey.org/fubar/5cb50c203994747a2e476206,,10170
+DengueVirus4.fasta_pruned.mu.trim05,81,361,polyprotein,RNA,YES,124,10164,yes,Dengue 4,4,123,10162,1,http://datamonkey.org/meme/5cad6682119e4869148b2eb8,0.806451613,http://datamonkey.org/fubar/5cc21efd92c55735f18b8c31,,10161
+EnterovirusA_VP1.fasta_pruned.mu.trim05,187,0,VP1,RNA,YES,4640,705,yes,Entero A VP1,5,4616,702,24,http://datamonkey.org/meme/5caae92ab352895daa1c626b,0.517241379,http://datamonkey.org/fubar/5cb50a3c3994747a2e475ce2,,705
+EnterovirusA_VP2.fasta.mu.trim08,1,30,VP2,RNA,YES,385,387,yes,Entero A VP2, ,369,386,16,http://datamonkey.org/meme/5cad6b68119e4869148b3510,4.155844156,http://datamonkey.org/fubar/5cb50c863994747a2e4763f8,,384
+EnterovirusB_VP1.fasta_pruned.mu.trim05,142,0,VP1,RNA,YES,1920,720,yes,Entero B VP1, ,1727,719,193,http://datamonkey.org/meme/5cad6b9e119e4869148b3649,10.05208333,http://datamonkey.org/fubar/5cb50cd43994747a2e47653b,,720
+EnterovirusB_VP2.fasta.mu.trim08,1,0,VP2,RNA,YES,335,285,yes,Entero B VP2, ,214,283,121,http://datamonkey.org/meme/5cad6c99119e4869148b3880,36.11940299,http://datamonkey.org/fubar/5cb50d123994747a2e476795,,285
+EnterovirusC_VP1.fasta_pruned.mu.trim05,13,549,VP1,RNA,YES,2013,348,yes,Entero C VP1, ,0,0,2013,,100,http://datamonkey.org/fubar/5cc1ec9c92c55735f18b85e3,,0
+EnterovirusC_VP2.fasta_pruned.mu.trim05,265,0,VP2,RNA,YES,306,2172,yes,Entero C VP2, ,292,2169,14,http://datamonkey.org/meme/5caae72db352895daa1c5c65,4.575163399,http://datamonkey.org/fubar/5cb50abb3994747a2e475ecf,,2169
+EnterovirusD_VP1.fasta_pruned.mu.trim05,442,0,VP1,RNA,YES,128,486,yes,Entero D VP1, ,127,483,0,http://datamonkey.org/meme/5caae61cb352895daa1c5b0e,0,http://datamonkey.org/fubar/5cb50ad83994747a2e475fc1,,486
+HepatitisB_polymerase.fasta_pruned.mu.trim05,421,1590,polymerase,DNA,YES,2706,1203,yes,Hepatitis B Polymerase,6,2688,1202,18,datamonkey.org/meme/5cad72d5119e4869148b4520,0.66518847,http://datamonkey.org/fubar/5cb50d633994747a2e4768cb,,1200
+HepatitisB_precore.fasta_pruned.mu.trim05,1852,1304,truncated precore/core,DNA,YES,2706,60,yes,Hepatitis B Precore,6,2691,57,15,http://datamonkey.org/meme/5caae9f4b352895daa1c6451,0.554323725,http://datamonkey.org/fubar/5cb50b183994747a2e476016,,57
+HepatitisB_polymerase_truncated_precore.fasta_pruned.mu.trim05,2446,586,polymerase/truncated precore/core,DNA,YES,2706,183,yes,Hepatitis B PTP,6,1111,181,1595,,58.94308943,not found,,0
+HepatitisB_s.fasta_pruned.mu.trim05,155,2380,middle S,DNA,YES,2706,681,yes,Hepatitis B S,6,2624,678,82,http://datamonkey.org/meme/5caaea30b352895daa1c6482,3.03030303,http://datamonkey.org/fubar/5cb50b463994747a2e47604f,,678
+HepatitisB_pre_S.fasta_pruned.mu.trim05,2848,0,pulative prepre-S,DNA,YES,2706,366,yes,Hepatitis B PreS,6,2682,365,24,datamonkey.org/meme/5cad732a119e4869148b46fd,0.88691796,http://datamonkey.org/fubar/5cb50dda3994747a2e476aa5,,366
+HepatitisB_core.fasta_pruned.mu.trim05,1901,763,core,DNA,YES,2706,552,yes,Hepatitis B Core,6,2706,546,0,,0,http://datamonkey.org/fubar/5cb50dda3994747a2e476aa5,,0
+HumanBocavirus1_NS1.fasta_pruned.mu.trim05,178,3060,NS1,DNA,YES,31,1920,no,Human Boca 1 NS1,0,31,1917,0,http://datamonkey.org/meme/5caae42db352895daa1c5963,0,http://datamonkey.org/fubar/5cb50c2c3994747a2e476208,,1917
+HumanBocavirus1_VP1.fasta_pruned.mu.trim05,2981,160,VP1,DNA,YES,31,4821,yes,Human Boca 1 VP1, ,77,2014,0,http://datamonkey.org/meme/5cad8193119e4869148b4d3c,0,http://datamonkey.org/fubar/5cb510233994747a2e4775de,,0
+Humanherpesvirus2_gD.fasta_pruned.mu.trim05,1,2002,glycoprotein gD,DNA,WEIRD,73,75,no,Human Herpes 2 gD,0,73,72,0,http://datamonkey.org/meme/5caae4adb352895daa1c59b0,0,http://datamonkey.org/fubar/5cb50ca73994747a2e47652f,,72
+Humanherpesvirus2_glycoprotein_G.fasta_pruned.mu.trim05,1,0,glycoprotein G,DNA,YES,89,2097,yes,Human Herpes 2 glycoprotein G, ,89,2094,0,http://datamonkey.org/meme/5caae54db352895daa1c5a44,0,http://datamonkey.org/fubar/5cb50cde3994747a2e476716,,2094
+Humanpapillomavirus16_L1.fasta_pruned.mu.trim05,1,0,L1,DNA,YES,82,1596,yes,Human Papilloma 16 L1,7,81,1593,1,http://datamonkey.org/meme/5caae52cb352895daa1c5a0b,1.219512195,http://datamonkey.org/fubar/5cb50cf23994747a2e47675c,,1593
+Humanpapillomavirus16.fasta_pruned.mu.trim05,865,5091,E1,DNA,YES,24,1950,no,Human Papilloma 16,0,24,1948,0,http://datamonkey.org/meme/5cad7f2a119e4869148b4b53,0,http://datamonkey.org/fubar/5cb510663994747a2e477648,,1947
+humanparainfluenzavirus1_F.fasta_pruned.mu.trim05,5010,8787,F,RNA,YES,63,1668,yes,Human Parainfluenza 1 F,8,63,1667,0,http://datamonkey.org/meme/5cad7f4d119e4869148b4b66,0,http://datamonkey.org/fubar/5cb510923994747a2e47768b,,1665
+humanparainfluenzavirus1_HN.fasta_pruned.mu.trim05,367,0,HN,RNA,YES,237,867,yes,Human Parainfluenza 1 HN,9,236,864,1,http://datamonkey.org/meme/5caae6d8b352895daa1c5bef,0.421940928,http://datamonkey.org/fubar/5cb50d5e3994747a2e476855,,867
+humanparainfluenzavirus1.fasta_pruned.mu.trim05,1,0,Complete genome,RNA,YES,72,15473,yes,Human Parainfluenza 1,kaho cut,0,0,72,,100,http://datamonkey.org/fubar/5cb5112e3994747a2e477a72,,0
+humanparainfluenzavirus3_HN.fasta_pruned.mu.trim05,163,0,HN,RNA,YES,408,1188,yes,Human Parainfluenza 3 HN,9,408,1187,0,http://datamonkey.org/meme/5cad7ee4119e4869148b4a27,0,http://datamonkey.org/fubar/5cb511663994747a2e477c73,,1188
+humanparainfluenzavirus3.fasta_pruned.mu.trim05,5017,8703,F,RNA,YES,76,1620,yes,Human Parainfluenza 3,kaho cut,76,1617,0,http://datamonkey.org/meme/5caae4ddb352895daa1c59bc,0,http://datamonkey.org/fubar/5cb50df73994747a2e476c16,,1617
+Humanrespiratorysyncytialvirus_G.fasta_pruned.mu.trim05,1,9,G,RNA,YES,1300,894,no,Human Respiratory Syncytial G,0,860,893,440,http://datamonkey.org/meme/5cad747e119e4869148b487e,33.84615385,http://datamonkey.org/fubar/5cb511b53994747a2e477f85,,891
+Humanrespiratorysyncytialvirus_G.fasta.mu.trim05,1,9,G,RNA,YES,1301,894,yes,Human Respiratory Syncytial G,10,1301,888,0,,0,no work,,0
+Humanrespiratorysyncytialvirus.fasta.mu.trim05,1,0,complete genome,RNA,WEIRD,292,15133,yes,Human Respiratory Syncytial,11,0,0,292,,100,http://datamonkey.org/fubar/5cb50ea93994747a2e476ca5,,0
+InfluenzaAvirus_HA_H1N1.fasta.mu.trim05,1,0,HA,RNA,YES,12500,1701,yes,Influenza A H1N1 HA,12,12480,1698,20,http://datamonkey.org/meme/5caaec2ab352895daa1c6d57,0.16,http://datamonkey.org/fubar/5cb50ecc3994747a2e476d83,,1698
+InfluenzaAvirus_HA_H3N2.fasta.mu.trim05,9,11,HA,RNA,YES,7937,1701,yes,Influenza A H3N2 HA,13,7933,1699,4,http://datamonkey.org/meme/5cafe362119e4869148bd683,0.050396875,http://datamonkey.org/fubar/5cb5126d3994747a2e4782eb,,1698
+InfluenzaAvirus_NA_H3N2.fasta.mu.trim05,1,15,NA,RNA,YES,12758,1410,yes,Influenza A H3N2 NA,14,8144,1408,29,http://datamonkey.org/meme/5cad71e6119e4869148b3dbd,0.354826869,http://datamonkey.org/fubar/5cbff9765c909723605d2e4a,,1407
+InfluenzaAvirus_NA_H1N1.fasta.mu.trim05,1,15,NA,RNA,YES,8173,1410,yes,Influenza A H1N1 NA,15,12708,1392,50,http://datamonkey.org/meme/5caaeb11b352895daa1c67f2,0.391910958,http://datamonkey.org/fubar/5cb50f1b3994747a2e476f4b,,1392
+InfluenzaBvirus_HA.fasta.mu.trim05,1,30,HA,RNA,YES,3600,1758,yes,Influenza B HA,16,3596,1756,4,http://datamonkey.org/meme/5cad7072119e4869148b3bcb,0.111111111,http://datamonkey.org/fubar/5cb512b83994747a2e478705,,1755
+InfluenzaBvirus_NA.fasta.mu.trim05,1,0,NA,RNA,YES,2355,1401,yes,Influenza B NA,17,2354,1398,1,http://datamonkey.org/meme/5caaebb7b352895daa1c6af4,0.042462845,http://datamonkey.org/fubar/5cb50f423994747a2e4770d4,,1398
+JCpolyomavirus_VP1.fasta_pruned.mu.trim05,122,218,VP1,DNA,YES,111,282,no,Jc Polyoma VP1,0,111,279,0,http://datamonkey.org/meme/5caae5b0b352895daa1c5a91,0,http://datamonkey.org/fubar/5cb50f6c3994747a2e47726a,,279
+Measles_hemagglutinin_OR_haemagglutinin.fasta_pruned.mu.trim05,1,0,hemagglutinin/haemagglutinin,RNA,YES,335,1854,yes,Measles HH,18,335,1851,0,http://datamonkey.org/meme/5caae753b352895daa1c5d5a,0,http://datamonkey.org/fubar/5cb50f843994747a2e4772a7,,1851
+Measles.fasta_pruned.mu.trim05,1,0,,RNA,WEIRD,22,15894,no,Measles ,0,0,0,22,,100,http://datamonkey.org/fubar/5cb50fca3994747a2e4774f6,,1407
+ParvovirusB19_NS1.fasta_pruned.mu.trim05,82,2310,NS1,DNA,YES,94,1887,yes,Parvo B19 NS1,19,94,1886,0,http://datamonkey.org/meme/5cad6ee3119e4869148b394b,0,http://datamonkey.org/fubar/5cbffb415c909723605d3029,,1884
+ParvovirusB19_VP1.fasta_pruned.mu.trim05,1961,0,VP1,DNA,YES,95,2319,yes,Parvo B19 VP1,19,95,2317,0,http://datamonkey.org/meme/5cad6f89119e4869148b39a7,0,http://datamonkey.org/fubar/5cb50fff3994747a2e47755c,,2319
+RhinovirusB_polyprotein.fasta_pruned.mu.trim05,385,0,polyprotein,RNA,YES,47,6537,no,Rhino B Polyprotein,0,45,6534,2,http://datamonkey.org/meme/5caae462b352895daa1c597a,4.255319149,http://datamonkey.org/fubar/5cb510193994747a2e4775ae,,6534
+RhinovirusB.fasta_pruned.mu.trim05,1,0,complete genome,RNA,YES,45,6950,yes,Rhino B,20,0,0,45,,100,http://datamonkey.org/fubar/5cb510593994747a2e47761b,,1404
+RhinovirusC.fasta_pruned.mu.trim05,1,0,complete genome,RNA,WEIRD,53,6935,yes,Rhino C,21,0,0,53,,100,http://datamonkey.org/fubar/5cb510793994747a2e47765c,,1407
+RotavirusA_VP6.fasta_pruned.mu.trim05,1,18,VP6,RNA,YES,151,1194,yes,Rota A VP6,22,151,1191,0,http://datamonkey.org/meme/5caae699b352895daa1c5b73,0,http://datamonkey.org/fubar/5cbffc065c909723605d308a,,1191
+InfluenzaAvirus_HA_H1N1_short.fasta,1,0,HA,RNA,YES,10323,1701,yes,Influenza A H1N1 HA,12,10304,1698,19,http://datamonkey.org/meme/5caaeac4b352895daa1c6632,0.184055023,http://datamonkey.org/fubar/5cb511363994747a2e477ab2,,1698
+InfluenzaAvirus_NA_H1N1_short.fasta,1,15,NA,RNA,YES,8207,1410,yes,Influenza A H1N1 NA,15,8206,1392,1,http://datamonkey.org/meme/5caaeb35b352895daa1c6979,0.01218472,http://datamonkey.org/fubar/5cb511143994747a2e4778fa,,1392
+HIV1_FLT_2017_pol_DNA.fasta,1,0,pol,RNA,,3030,,,,,,,,,,http://datamonkey.org/fubar/5cc2591c92c55735f18b8f70,,0
+HCV1A_CDS_Alignment.fasta,1,0,complete genome,RNA,,423,,,,,,,,,,http://datamonkey.org/fubar/5cc25d1892c55735f18b909a ,,
+HCV1B_CDS_alignment.fasta,1,0,complete genome,RNA,,245,,,,,,,,,,http://datamonkey.org/fubar/5cc25da292c55735f18b923f,,
