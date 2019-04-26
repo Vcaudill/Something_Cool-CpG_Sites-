@@ -1,0 +1,340 @@
+
+library(scales)
+library(plotrix)
+library(sfsmisc)
+
+DengueVirus1 <- read.csv("data/csv/DengueVirus1.CSV")
+BKpolyomavirus_VP1<-read.csv("data/csv/BKpolyomavirus_VP1.CSV")
+DengueVirus2<- read.csv("data/csv/DengueVirus2.CSV")
+DengueVirus3<-read.csv("data/csv/DengueVirus3.CSV")
+DengueVirus4<-read.csv("data/csv/DengueVirus4.CSV")
+EnterovirusA_VP1<-read.csv("data/csv/EnterovirusA_VP1.CSV")
+EnterovirusA_VP2<-read.csv("data/csv/EnterovirusA_VP2.CSV")
+EnterovirusB_VP1<-read.csv("data/csv/EnterovirusB_VP1.CSV")
+EnterovirusB_VP2<-read.csv("data/csv/EnterovirusB_VP2.CSV")
+EnterovirusC_VP1<-read.csv("data/csv/EnterovirusC_VP1.CSV")
+EnterovirusC_VP2<-read.csv("data/csv/EnterovirusC_VP2.CSV")
+EnterovirusD_VP1<-read.csv("data/csv/EnterovirusD_VP1.CSV")
+#HumanBocavirus1_NS1<-read.csv("data/csv/HumanBocavirus1_NS1.CSV")
+HumanBocavirus1_VP1<-read.csv("data/csv/HumanBocavirus1_VP1.CSV")
+humanparainfluenzavirus1_F<-read.csv("data/csv/humanparainfluenzavirus1_F.CSV")
+humanparainfluenzavirus1_HN<-read.csv("data/csv/humanparainfluenzavirus1_HN.CSV")
+humanparainfluenzavirus3_HN<-read.csv("data/csv/humanparainfluenzavirus3_HN.CSV")
+humanparainfluenzavirus1<-read.csv("data/csv/humanparainfluenzavirus1.csv")
+humanparainfluenzavirus3<-read.csv("data/csv/humanparainfluenzavirus3.csv")
+InfluenzaAvirus_HA_H1N1<-read.csv("data/csv/InfluenzaAvirus_HA_H1N1_short.CSV")
+InfluenzaAvirus_HA_H3N2<-read.csv("data/csv/InfluenzaAvirus_HA_H3N2.CSV")
+InfluenzaAvirus_NA_H1N1<-read.csv("data/csv/InfluenzaAvirus_NA_H1N1_short.CSV")
+InfluenzaAvirus_NA_H3N2<-read.csv("data/csv/InfluenzaAvirus_NA_H3N2.CSV")
+InfluenzaBvirus_NA<-read.csv("data/csv/InfluenzaBvirus_NA.CSV")
+InfluenzaBvirus_HA<-read.csv("data/csv/InfluenzaBvirus_HA.CSV")
+
+
+HepatitisB_polymerase<-read.csv('data/csv/HepatitisB_polymerase.csv')
+HepatitisB_precore<-read.csv("data/csv/HepatitisB_precore.csv")
+HepatitisB_polymerase_truncated_precore<- read.csv("data/csv/HepatitisB_polymerase_truncated_precore.csv")
+HepatitisB_s<-read.csv('data/csv/HepatitisB_s.csv')
+HepatitisB_pre_S<-read.csv('data/csv/HepatitisB_pre_S.csv')
+HepatitisB_core<-read.csv("data/csv/HepatitisB_core.csv")
+
+Humanherpesvirus2_glycoprotein_G<-read.csv("data/csv/Humanherpesvirus2_glycoprotein_G.csv")
+#Humanpapillomavirus16<-read.csv("data/csv/Humanpapillomavirus16.csv")
+Humanpapillomavirus16_L1<-read.csv("data/csv/Humanpapillomavirus16_L1.csv")
+Humanrespiratorysyncytialvirus<-read.csv("data/csv/Humanrespiratorysyncytialvirus.csv") 
+Humanrespiratorysyncytialvirus_G<-read.csv("data/csv/Humanrespiratorysyncytialvirus_G.csv")
+# JCpolyomavirus_VP1<-read.csv("data/csv/JCpolyomavirus_VP1.csv")
+# Measles<-read.csv("data/csv/Measles.csv")
+Measles_hemagglutinin_OR_haemagglutinin<-read.csv("data/csv/Measles_hemagglutinin_OR_haemagglutinin.csv") 
+ParvovirusB19_NS1<-read.csv("data/csv/ParvovirusB19_NS1.csv")
+ParvovirusB19_VP1<-read.csv("data/csv/ParvovirusB19_VP1.csv") 
+RhinovirusB<-read.csv("data/csv/RhinovirusB.csv") 
+#RhinovirusB_polyprotein<-read.csv("data/csv/RhinovirusB_polyprotein.csv")
+RhinovirusC<-read.csv("data/csv/RhinovirusC.csv")
+RotavirusA_VP6<-read.csv("data/csv/RotavirusA_VP6.csv")
+
+Virus_info<- read.csv("data/CpG_List.csv")
+Virus_info$total=Virus_info$SeqNumber*Virus_info$NucleotideNumber
+
+my.list <- list(DengueVirus1, DengueVirus2, DengueVirus3, DengueVirus4, humanparainfluenzavirus1_F, humanparainfluenzavirus1_HN, humanparainfluenzavirus3_HN, humanparainfluenzavirus1, humanparainfluenzavirus3, InfluenzaAvirus_HA_H1N1,InfluenzaAvirus_HA_H3N2, InfluenzaAvirus_NA_H1N1, InfluenzaAvirus_NA_H3N2,InfluenzaBvirus_HA, InfluenzaBvirus_NA, EnterovirusA_VP1, EnterovirusA_VP2,EnterovirusB_VP1, EnterovirusB_VP2,EnterovirusC_VP1,EnterovirusC_VP2,EnterovirusD_VP1, Humanrespiratorysyncytialvirus, Humanrespiratorysyncytialvirus_G, Measles_hemagglutinin_OR_haemagglutinin, RhinovirusB, RhinovirusC, RotavirusA_VP6, BKpolyomavirus_VP1, HumanBocavirus1_VP1, HepatitisB_polymerase,HepatitisB_precore,HepatitisB_polymerase_truncated_precore,HepatitisB_s,HepatitisB_pre_S,HepatitisB_core, Humanherpesvirus2_glycoprotein_G, Humanpapillomavirus16_L1, ParvovirusB19_NS1, ParvovirusB19_VP1)
+#name.list <- list('DengueVirus1', 'DengueVirus2', 'DengueVirus3', 'DengueVirus4', 'humanparainfluenzavirus1_F', 'humanparainfluenzavirus1_HN', 'humanparainfluenzavirus3_HN', 'humanparainfluenzavirus1', 'humanparainfluenzavirus3', 'InfluenzaAvirus_HA_H1N1','InfluenzaAvirus_HA_H3N2', 'InfluenzaAvirus_NA_H1N1', 'InfluenzaAvirus_NA_H3N2','InfluenzaBvirus_HA', 'InfluenzaBvirus_NA', 'EnterovirusA_VP1', 'EnterovirusA_VP2','EnterovirusB_VP1', 'EnterovirusB_VP2','EnterovirusC_VP1','EnterovirusC_VP2','EnterovirusD_VP1', 'BKpolyomavirus_VP1', 'HumanBocavirus1_VP1', 'HepatitisB_polymerase','HepatitisB_precore','HepatitisB_ptp', 'HepatitisB_s','HepatitisB_pre_S','HepatitisB_core', 'Humanherpesvirus2_glycoprotein_G', 'Humanpapillomavirus16_L1', 'Humanrespiratorysyncytialvirus', 'Humanrespiratorysyncytialvirus_G', 'JCpolyomavirus_VP1', 'Measles_hemagglutin', 'ParvovirusB19_NS1', 'ParvovirusB19_VP1', 'RhinovirusB', 'RhinovirusB_polyprotein', 'RhinovirusC', 'RotavirusA_VP6')
+name.list <- list('Dengue 1', 'Dengue 2', 'Dengue 3', 'Dengue 4', 'Human Parainfluenza 1 F', 'Human Parainfluenza 1 HN', 'Human Parainfluenza 3 HN', 'Human Parainfluenza 1', 'Human Parainfluenza 3', 'Influenza A H1N1 HA','Influenza A H3N2 HA', 'Influenza A H1N1 NA', 'Influenza A H3N2 NA','Influenza B HA', 'Influenza B NA', 'Entero A VP1', 'Entero A VP2','Entero B VP1', 'Entero B VP2','Entero C VP1','Entero C VP2','Entero D VP1', 'Human Respiratory Syncytial', 'Human Respiratory Syncytial G', 'Measles HH', 'Rhino B', 'Rhino C', 'Rota A VP6', 'Bk Polyoma VP1', 'Human Boca 1 VP1', 'Hepatitis B Polymerase','Hepatitis B Precore','Hepatitis B PTP','Hepatitis B S','Hepatitis B PreS','Hepatitis B Core', 'Human Herpes 2 glycoprotein G', 'Human Papilloma 16 L1', 'Parvo B19 NS1', 'Parvo B19 VP1')
+Virus_info$total[33]=Virus_info$total[48]
+Virus_info$total[36]=Virus_info$total[49]
+reorg<-Virus_info[match(name.list, Virus_info$nice_name),]
+reorg[!reorg$used == "no", ]
+reorg[1:9] <- NULL
+reorg$count=c(1:40)
+data_points = data.frame("Count"= 1:length(my.list), "Virus"= 1:length(my.list))
+count = 1
+for (data in my.list){  
+  cpg.y<-subset(data, makesCpG==1)
+  cpg.n<-subset(data, makesCpG==0)
+  #subset further into letters nuclotideCpgforming or nucotideNonGpg
+  AC<-subset(cpg.y, wtnt_consensus=='a')
+  ANC<-subset(cpg.n, wtnt_consensus=='a')
+  TC<-subset(cpg.y, wtnt_consensus=='t')
+  TNC<-subset(cpg.n, wtnt_consensus=='t')
+  
+  
+  #Function to help create errorbars
+  sem<-function(x){
+    return(sd(x,na.rm = FALSE)/sqrt(length(x)))
+  }
+  
+  #making the data frames with all information about a, t, c, g 
+  AllA = rbind(AC, ANC)
+  AllT = rbind(TC, TNC)
+  
+  # for loops to caculate mean ans errorbars
+  for (i in 1:length(AllA$makesCpG)) {
+    if (AllA$makesCpG[i] == 1 && AllA$TypeOfSite[i] == "syn") {
+      AllA_mean_value_syn_CpG <- mean(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
+      AllA_sem_vals_syn_CpG<-sem(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
+    }
+    if (AllA$makesCpG[i] == 1 && AllA$TypeOfSite[i] == "nonsyn") {
+      AllA_mean_value_nonsyn_CpG<- mean(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
+      AllA_sem_vals_nonsyn_CpG<-sem(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
+    }
+    if (AllA$makesCpG[i] == 0 && AllA$TypeOfSite[i] == "syn") {
+      AllA_mean_value_syn_nCpG <- mean(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
+      AllA_sem_vals_syn_nCpG<-sem(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
+    }
+    if (AllA$makesCpG[i] == 0 && AllA$TypeOfSite[i] == "nonsyn") {
+      AllA_mean_value_nonsyn_nCpG<- mean(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
+      AllA_sem_vals_nonsyn_nCpG<-sem(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
+    }
+  }
+  
+  for (i in 1:length(AllT$makesCpG)) {
+    if (AllT$makesCpG[i] == 1 && AllT$TypeOfSite[i] == "syn") {
+      AllT_mean_value_syn_CpG <- mean(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
+      AllT_sem_vals_syn_CpG<-sem(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
+    }
+    if (AllT$makesCpG[i] == 1 && AllT$TypeOfSite[i] == "nonsyn") {
+      AllT_mean_value_nonsyn_CpG <- mean(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
+      AllT_sem_vals_nonsyn_CpG<-sem(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
+    }
+    if (AllT$makesCpG[i] == 0 && AllT$TypeOfSite[i] == "syn") {
+      AllT_mean_value_syn_nCpG<- mean(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
+      AllT_sem_vals_syn_nCpG<-sem(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
+    }
+    if (AllT$makesCpG[i] == 0 && AllT$TypeOfSite[i] == "nonsyn") {
+      AllT_mean_value_nonsyn_nCpG <- mean(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
+      AllT_sem_vals_nonsyn_nCpG<-sem(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
+    }
+  }
+  
+  # There are the upper and lower limits of the error bar
+  # AllA_LCLS = AllA$mean_value - AllA$sem_vals
+  # AllA_UCLS = AllA$mean_value + AllA$sem_vals
+  # 
+  # AllT_LCLS = AllT$mean_value - AllT$sem_vals
+  # AllT_UCLS = AllT$mean_value + AllT$sem_vals
+  # 
+  
+  data_points$Virus[count]= name.list[count]
+  data_points$AsynNC_C[count]= AllA_mean_value_syn_nCpG/AllA_mean_value_syn_CpG
+  data_points$AnonsynNC_C[count]= AllA_mean_value_nonsyn_nCpG/AllA_mean_value_nonsyn_CpG
+  
+  data_points$TsynNC_C[count] = AllT_mean_value_syn_nCpG/AllT_mean_value_syn_CpG
+  data_points$TnonsynNC_C[count] = AllT_mean_value_nonsyn_nCpG/AllT_mean_value_nonsyn_CpG
+  
+  
+  data_points$AsynC_LCLS[count]= AllA_mean_value_syn_CpG - AllA_sem_vals_syn_CpG
+  data_points$AnonsynC_LCLS[count]= AllA_mean_value_nonsyn_CpG - AllA_sem_vals_nonsyn_CpG
+  data_points$AsynNC_LCLS[count]= AllA_mean_value_syn_nCpG - AllA_sem_vals_syn_nCpG
+  data_points$AnonsynNC_LCLS[count]= AllA_mean_value_nonsyn_nCpG - AllA_sem_vals_nonsyn_nCpG
+  data_points$TsynC_LCLS[count] = AllT_mean_value_syn_CpG - AllT_sem_vals_syn_CpG
+  data_points$TnonsynC_LCLS[count] =AllT_mean_value_nonsyn_CpG - AllT_sem_vals_nonsyn_CpG
+  data_points$TsynNC_LCLS[count] = AllT_mean_value_syn_nCpG - AllT_sem_vals_syn_nCpG 
+  data_points$TnonsynNC_LCLS[count] =AllT_mean_value_nonsyn_nCpG - AllT_sem_vals_nonsyn_nCpG
+  
+  data_points$AsynC_UCLS[count]= AllA_mean_value_syn_CpG + AllA_sem_vals_syn_CpG
+  data_points$AnonsynC_UCLS[count]= AllA_mean_value_nonsyn_CpG + AllA_sem_vals_nonsyn_CpG
+  data_points$AsynNC_UCLS[count]= AllA_mean_value_syn_nCpG + AllA_sem_vals_syn_nCpG
+  data_points$AnonsynNC_UCLS[count]= AllA_mean_value_nonsyn_nCpG + AllA_sem_vals_nonsyn_nCpG
+  data_points$TsynC_UCLS[count] = AllT_mean_value_syn_CpG + AllT_sem_vals_syn_CpG
+  data_points$TnonsynC_UCLS[count] =AllT_mean_value_nonsyn_CpG + AllT_sem_vals_nonsyn_CpG
+  data_points$TsynNC_UCLS[count] = AllT_mean_value_syn_nCpG + AllT_sem_vals_syn_nCpG 
+  data_points$TnonsynNC_UCLS[count] =AllT_mean_value_nonsyn_nCpG + AllT_sem_vals_nonsyn_nCpG
+  count = count +1
+}
+
+#making new column of average fitness costs
+data_points$averagefit<-0
+for(i in 1:nrow(data_points)){
+  avg <-c(data_points$AsynNC_C[i], data_points$AnonsynNC_C[i], data_points$TsynNC_C[i], data_points$TnonsynNC_C[i])
+  for(inf in avg){
+  }
+  if(data_points$AsynNC_C[i] != "Inf" & data_points$AsynNC_C[i] !='NaN'){
+    avgi<- c(data_points$AsynNC_C[i])
+    #avg <-c(data_points$AnonsynNC_C[i], data_points$TsynNC_C[i], data_points$TnonsynNC_C[i])
+  }
+  if(data_points$AnonsynNC_C[i] != "Inf" & data_points$AnonsynNC_C[i] !='NaN'){
+    avgi<-append(avgi, data_points$AnonsynNC_C[i])
+  }
+  if(data_points$TsynNC_C[i] != "Inf" & data_points$TsynNC_C[i] !='NaN'){
+    avgi<- append(avgi,data_points$TsynNC_C[i])
+  }
+  if(data_points$TnonsynNC_C[i] != "Inf" & data_points$TnonsynNC_C[i] !='NaN'){
+    avgi<- append(avgi,data_points$TnonsynNC_C[i])
+  }
+  
+  data_points$averagefit[i]= mean(avgi)}
+
+#sort average fitness costs to graph viruses in order of decreasing fitness
+#data_points <-(data_points[order(data_points$averagefit,decreasing = TRUE),])
+#rewrite count column
+#data_points$Count <- 1:nrow(data_points)
+
+#one of the error bars is too large at 2.47 e13 so we are placing it lower, but noting it high amount  
+#data_points[20,12] = data_points[20,14]/300
+#order by protein
+data_points$protein<-"missing"
+data_points$multNS = 0
+data_points$nucl = 0
+data_points$seq = 0
+Virus_info<- read.csv("data/CpG_List.csv",na.strings = "NNN")
+for (i in 1:nrow(data_points)) {
+  treat=unlist(data_points[i,2])
+  
+  for (j in 1:nrow(Virus_info)){
+  # splitnameAll<-unlist(strsplit(as.character(Virus_info$name[j]),".fasta"))
+  # splitname<-unlist(strsplit(as.character(splitnameAll[1]),"_"))
+  truename<-Virus_info$nice_name[j]
+  #print(truename)
+  
+  if(treat==truename){
+    data_points$protein[i]<-as.character(Virus_info$gene[j])
+    data_points$nucl[i] = Virus_info$NucleotideNumber[j]
+    data_points$seq[i] = Virus_info$SeqNumber[j]
+    data_points$multNS[i]<-reorg$total[i]
+    data_points$multNS[i]<-reorg$total[i]
+   
+  }
+  } 
+}
+df <- apply(data_points,2,as.character)
+write.csv(df, file = "output/alldatapoints.csv")
+
+#data_points$Virus<-c('Dengue1', 'Dengue2', 'Dengue3', 'Dengue4', 'humanparainfluenza1_F', 'humanparainfluenza1_HN', 'humanparainfluenza3_HN', 'InfluenzaA_HA_H1N1','InfluenzaA_HA_H3N2', 'InfluenzaA_NA_H1N1', 'InfluenzaA_NA_H3N2','InfluenzaB_HA', 'InfluenzaB_NA', 'EnteroA_VP1', 'EnteroA_VP2','EnteroB_VP1', 'EnteroB_VP2','EnteroC_VP1','EnteroC_VP2','EnteroD_VP1', 'BK_polyoma_VP1', 'HumanBoca1_VP1', 'HepatitisB_polymerase','HepatitisB_precore','HepatitisB_polymerase_truncated_precore','HepatitisB_s','HepatitisB_pre_S','HepatitisB_core', 'Humanherpes2_glycoprotein_G', 'Humanpapilloma16_L1', 'Humanrespiratorysyncytial', 'Humanrespiratorysyncytial_G', 'JCpolyoma_VP1', 'Measles_hemagglutin', 'ParvoB19_NS1', 'ParvoB19_VP1', 'RhinoB', 'RhinoB_polyprotein', 'RhinoC', 'RotaA_VP6', 'humanparainfluenza1', 'humanparainfluenza3')
+
+#data_points <-(data_points[order(data_points$protein),])
+#rewrite count column
+#data_points$Count <- 1:nrow(data_points)
+
+
+#print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
+# graphing 
+png("output/Costly/Costly_Graph_AllR_1_17_19.png", width = 15, height = 8, units = "in", res= 500)
+par(mar=c(0,2,3,2), oma=c(6,4,1,1), mfrow=c(2,1))#, bg = "darkseagreen1"
+
+x <- data_points$Count# test data 
+y <-  data_points$AsynNC_C
+plot(x,y, type = "n", log ='y' ,main="Cost of CpG Mutations", xlab=" ", yaxt = "n", ylab="Costly", xaxt = "n", ylim=c(0.01, 500), xlim=c(1.5, length(my.list) +5.5), las= 1, cex.main=3) 
+abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5), col="grey", lty=c(1))
+
+
+u <- par('ylog') 
+rect(-1.05, .0001, 4.5, 1570, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(9.5, .0001, 15.5, 1570, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(22.5, .0001, 24.5, 1570, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(25.5, .0001, 27.5, 1570, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(28.5, .0001, 29.5, 1570, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(30.5, .0001, 36.5, 1570, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(37.5, .0001, 38.5, 1570, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(40.5, .0001, 47.5, 1570, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+
+# aty <- axTicks(2)
+# aty <- axTicks(2)
+# labels <- sapply(aty,function(i)
+#   as.expression(bquote(10^ .(i)))
+# )
+# axis(2,at=aty,labels=labels)
+points(data_points$Count-.3, data_points$AsynNC_C, col='red', pch= 19)
+points(data_points$Count -.1, data_points$AnonsynNC_C, col= "green", pch=19)
+points(data_points$Count+.1, data_points$TsynNC_C, col= "blue", pch=19)
+points(data_points$Count + .3, data_points$TnonsynNC_C, col= "purple", pch=19)
+# par(new=TRUE)
+
+# hack: we draw arrows but with very special "arrowheads"
+arrows(data_points$Count-.3, data_points$AsynNC_LCLS/data_points$AsynC_LCLS, data_points$Count -.3, data_points$AsynNC_UCLS/data_points$AsynC_UCLS, length=0.05, angle=90, code=3, col= "red")
+arrows(data_points$Count-.1, data_points$AnonsynNC_LCLS/data_points$AnonsynC_LCLS, data_points$Count -.1, data_points$AnonsynNC_UCLS/data_points$AnonsynC_UCLS, length=0.05, angle=90, code=3, col= "green")
+arrows(data_points$Count+.1, data_points$TsynNC_LCLS/data_points$TsynC_LCLS, data_points$Count+.1, data_points$TsynNC_UCLS/data_points$TsynC_UCLS, length=0.05, angle=90, code=3, col= "blue")
+arrows(data_points$Count+.3, data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS, data_points$Count +.3, data_points$TnonsynNC_UCLS/data_points$TnonsynC_UCLS, length=0.05, angle=90, code=3, col= "purple")
+
+axis(2, at = c(.01, 0.5,1,2,5,10,20,50,100,300), labels = c(0.01, 0.5,1,2,5,10,20,50,100,300),  las=2)
+#axis.break(2, 0.007,breakcol="black",style="slash")
+#mtext('No nonCpG \n  or  CpG     \n    mutations  ', side=2, line=.005, at=0.002, las=1.1, cex = .7)
+#mtext('No nonCpG \n   mutations   ', side=2, line=.005, at=0.0005, las=1.1, cex = .7)
+
+#axis.break(2, 200,breakcol="black",style="slash")
+#mtext('2.47e+13', side=2, line=.005, at=300, las=1.1, cex = .9)
+
+mtext('Relative Cost of CpG \n Creating Mutations', side=2, line=3, at=5, las=0, cex = 1.3)
+
+#mtext('No CpG \n mutations ', side=2, line=.005, at=700, las=1.1, cex = .7)
+
+abline(h=c(0.002, 0.0005, .01,0.5,1,2,5,10,20,50,100, 300), col="grey", lty=c(2,2))
+
+abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5), col="grey", lty=c(1))
+#abline(v=c(6.5,10.5,14.5,20.5, 27.5, 41.5), col = "darkgreen", lwd=2)
+abline(v=c(4.5,9.5,15.5,22.5,24.5,25.5, 27.5,28.5,29.5,30.5,36.5,37.5,38.5,40.5), col = "bisque4", lwd=2)
+
+
+abline(h = 1, col ="darkslategrey", lwd = 2)
+#rect(0,800, 800,800, col = "darkseagreen1")
+# xlab="Virus "
+text(44, 3, " CpG Mutation \n More Costly", cex = 1, font = 2)
+text(41.5, 3, "↑", cex = 3, font = 2)
+text(44, .3, " CpG Mutation \n Less Costly", cex = 1, font = 2)
+text(41.5, .3, "↓", cex = 3, font = 2)
+#axis(1, at=1:length(my.list), labels=data_points$Virus, las= 2)
+legend('topright', legend=c("A -> G Syn", "A -> G NonSyn", "T -> C Syn", "T-> C NonSyn"),
+       col=c("red", "green", "blue", "purple"), lty=1, lwd= 3, cex = 1, pt.cex = 999)
+
+
+par(mar=c(10,2,0,2))
+plot(reorg$count,reorg$total, ylim=c(60000, 30000000), type = "n", log ='y' , xlab=" ", yaxt = "n",  xaxt = "n", xlim=c(1.5, length(my.list) +5.5), las= 1, cex.main=3) 
+points(reorg$count,reorg$total, pch = 16)
+mtext('Amount of \n Data', side=2, line=3, at=1100000, las=0, cex = 1.3)
+
+abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5), col="grey", lty=c(1))
+abline(v=c(4.5,9.5,15.5,22.5,24.5,25.5, 27.5,28.5,29.5,30.5,36.5,37.5,38.5,40.5), col = "bisque4", lwd=2)
+
+abline(h = 30000000, col ="darkslategrey", lwd = 2)
+axis(2, at = c(60000,150000,1000000,5000000,15000000), labels = c("60,000","150k","1 mil","5 mil","1.5 mil"),  las=2)
+abline(h=c(60000,150000,1000000,5000000,15000000), col="grey", lty=c(2,2))
+
+u <- par('ylog') 
+rect(-1.05, .0001, 4.5, 28988780, density = NULL, angle = 45,
+      col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(9.5, .0001, 15.5, 28988780, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(22.5, .0001, 24.5, 28988780, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(25.5, .0001, 27.5, 28988780, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(28.5, .0001, 29.5, 28988780, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(30.5, .0001, 36.5, 28988780, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(37.5, .0001, 38.5, 28988780, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+rect(40.5, .0001, 47.5, 28988780, density = NULL, angle = 45,
+     col = rgb(211/255,211/255,211/255, alpha=.3), border = NULL, lty = par("lty"), lwd = par("lwd"))
+
+
+axis(1, at=1:length(my.list), labels=data_points$Virus, las= 2)
+
+dev.off()
+# add horsontal gray lines
+

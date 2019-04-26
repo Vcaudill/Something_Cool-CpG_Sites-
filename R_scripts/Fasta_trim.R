@@ -20,17 +20,17 @@ for(k in 1:nrow(Virus_info)){
     if(nchar(al2[[i]][1])!=number_of_nucs)
       not_same_len<-c(not_same_len,i)}
   
-
-
-for(k in 1:nrow(Virus_info)){
+Virus_info<- read.csv("data/CpG_List_SarVersion.csv")
+# k 31 Humanrespiratorysyncytialvirus_G.fasta.mu.trim05, 32 Humanrespiratorysyncytialvirus.fasta.mu.trim05
+# 41 Measles.fasta_pruned.mu.trim05.fasta no data, 45 RhinovirusB.fasta_pruned.mu.trim05.fasta"
+for(k in 51:52){
 file<-Virus_info[k,1]
-path_file<-paste("data/no_mid_stop/",file,".fasta",sep="")
+path_file<-paste("output/length_testing/",file,".fasta",sep="")
 #path_file<-paste("data/trimmed_no_stop/",file,".fasta",sep="")
-
 DataSet <- read.fasta(path_file)
 
 
-sample_size= 499
+sample_size= 200
 if (Virus_info$SeqNumber[k] > sample_size) {
   DS <- sample(DataSet, size = sample_size)
   size = sample_size
@@ -38,7 +38,7 @@ if (Virus_info$SeqNumber[k] > sample_size) {
     DS <- sample(DataSet, size = length(DataSet))
     size = length(DataSet)
 }
-Fasta_trimmed_sample<-paste("output/FastaSample/",size,Virus_info$name[k],".fasta",sep="")
+Fasta_trimmed_sample<-paste("output/Length_Sample/",Virus_info$name[k],size,".fasta",sep="")
 write.fasta(DS,names(DS), file = Fasta_trimmed_sample)
 }
 #call file in

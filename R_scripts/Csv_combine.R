@@ -7,7 +7,7 @@ library(plotrix)
 hyphy_virus<-read.csv("data/MEME_CpG_list1.csv")
 i=1
 special_folder<-"fubar"
-for (i in 39: nrow(hyphy_virus)){
+for (i in 1: nrow(hyphy_virus)){
   #these viruses dont have datamonkey files yet, except humanpap not using
   if(hyphy_virus$name[i]== "DengueVirus1.fasta_pruned.mu.trim05"){
     next
@@ -18,9 +18,9 @@ for (i in 39: nrow(hyphy_virus)){
   if(hyphy_virus$name[i]== "DengueVirus3.fasta_pruned.mu.trim05"){
     next
   }
-  # if(hyphy_virus$name[i]== "InfluenzaAvirus_HA_H3N2.fasta.mu.trim05"){
-  #   next
-  # }
+  if(hyphy_virus$name[i]== "InfluenzaAvirus_HA_H3N2.fasta.mu.trim05"){
+    next
+  }
   if(hyphy_virus$name[i]== "Humanpapillomavirus16.fasta_pruned.mu.trim05"){
     next
   }
@@ -36,19 +36,6 @@ for (i in 39: nrow(hyphy_virus)){
   if(hyphy_virus$name[i]== "Humanherpesvirus2_gD.fasta_pruned.mu.trim05"){
     next
   }#no presence of nonCpG mutation for a last nuc
-  if(hyphy_virus$name[i]== "InfluenzaAvirus_NA_H3N2.fasta.mu.trim05"){
-    next
-  }#not the right file does not match consensus
-  if(hyphy_virus$name[i]== "ParvovirusB19_NS1.fasta_pruned.mu.trim05"){
-    next
-  }#not the right file does not match consensus
-  if(hyphy_virus$name[i]== "ParvovirusB19_VP1.fasta_pruned.mu.trim05"){
-    next
-  }#not the right file does not match consensus
-  if(hyphy_virus$name[i]== "RotavirusA_VP6.fasta_pruned.mu.trim05"){
-    next
-  }#not the right file does not match consensus
-
   
   name = as.character(hyphy_virus$name[i])
   splitname<-unlist(strsplit(as.character(hyphy_virus$name[i]),".fasta"))
@@ -103,24 +90,22 @@ for (i in 39: nrow(hyphy_virus)){
     if(datamonkey$makesCpG[j]==0 && datamonkey$potential_CpG[j] == "yes"&& datamonkey$last_nuc[j]== 't'){
       datamonkey$graphit4[j]="3"
     }
-   
-    
   
   }
   write.csv(datamonkey,path)
 }
 
 ######### graph
-i=1
-#nice_name <- as.character(hyphy_virus$nice_name[i])
+
+nice_name <- as.character(hyphy_virus$nice_name[i])
 #meme&fubar http://datamonkey.org/fubar/5cb3c3463994747a2e471e19 BK fubar
 
+i=1
 hyphy_virus$fubar_a_cpg_make<-0
 hyphy_virus$fubar_a_nocpg_make<-0
 hyphy_virus$fubar_t_cpg_make<-0
 hyphy_virus$fubar_t_nocpg_make<-0
 for (i in 1: nrow(hyphy_virus)){
-
   name = as.character(hyphy_virus$name[i])
   splitname<-unlist(strsplit(as.character(hyphy_virus$name[i]),".fasta"))
   #making truename for shorter virus name
@@ -131,11 +116,11 @@ for (i in 1: nrow(hyphy_virus)){
     return(sd(x,na.rm = FALSE)/sqrt(length(x)))
   }
   if(special_folder== "meme"){
-    graph_title= paste(al1$Virus[i],"Alpha Score MEME")
+    graph_title= paste(nice_name,"Alpha Score MEME")
     graph="meme"
   }
   if(special_folder== "fubar"){
-    graph_title= paste(al1$Virus[i],"Alpha Score FUBAR")
+    graph_title= paste(nice_name,"Alpha Score FUBAR")
     graph="fubar"
   }
   if(hyphy_virus$name[i]== "DengueVirus1.fasta_pruned.mu.trim05"){
@@ -147,9 +132,9 @@ for (i in 1: nrow(hyphy_virus)){
   if(hyphy_virus$name[i]== "DengueVirus3.fasta_pruned.mu.trim05"){
     next
   }
-  # if(hyphy_virus$name[i]== "InfluenzaAvirus_HA_H3N2.fasta.mu.trim05"){ 
-  #   next
-  # }
+  if(hyphy_virus$name[i]== "InfluenzaAvirus_HA_H3N2.fasta.mu.trim05"){ 
+    next
+  }
   if(hyphy_virus$name[i]== "Humanpapillomavirus16.fasta_pruned.mu.trim05"){
     next
   }
@@ -165,29 +150,6 @@ for (i in 1: nrow(hyphy_virus)){
   if(hyphy_virus$name[i]== "Humanherpesvirus2_gD.fasta_pruned.mu.trim05"){
     next
   }#no presence of nonCpG mutation for a last nuc
-  if(hyphy_virus$name[i]== "ParvovirusB19_NS1.fasta_pruned.mu.trim05"){
-    next
-  }#not the right file does not match consensus
-  if(hyphy_virus$name[i]== "ParvovirusB19_VP1.fasta_pruned.mu.trim05"){
-    next
-  }#not the right file does not match consensus
-  if(hyphy_virus$name[i]== "RotavirusA_VP6.fasta_pruned.mu.trim05"){
-    next
-  }  #not the right file does not match consensus human#19 #29 #35 #36 #38 #40 #41 doesn't exist
-  #run dengue 4
-  if(hyphy_virus$name[i]== "Humanherpesvirus2_glycoprotein_G.fasta_pruned.mu.trim05"){
-    next
-  } 
-  if(hyphy_virus$name[i]== "InfluenzaAvirus_NA_H3N2.fasta.mu.trim05"){
-    next
-  } 
-  if(hyphy_virus$name[i]== "InfluenzaAvirus_NA_H1N1_short.fasta"){
-    next
-  }
-  if(hyphy_virus$name[i]== "DengueVirus4.fasta_pruned.mu.trim05"){
-    next
-  }
-
   
   nice_name <- as.character(hyphy_virus$nice_name[i])
   folder<-paste(hyphy_virus$Hyphy_folders[i],sep='')
@@ -241,7 +203,7 @@ hyphy_virus$fubar_a_nocpg_make[i]<-length(cpg.ynca$X.alpha.)
 hyphy_virus$fubar_t_cpg_make[i]<-length(cpg.yct$X.alpha.)
 hyphy_virus$fubar_t_nocpg_make[i]<-length(cpg.ynct$X.alpha.)
 hyphy<-paste("data/fubar_CpG_list1.csv",sep='')
-write.csv(hyphy_virus, file = hyphy)
+write.csv(hyphy_virus, file = hyphy, append= TRUE)
 
 ########################################################
 #errorbar function
@@ -253,8 +215,6 @@ data_summary <- function(x) {
 }
 
 truenamepng = paste("output/alpha_graphs/",graph,"/",al1$Virus[i],".png",sep="")
-print(truenamepng)
-print(folder)
 png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
 ggplot(aes(factor(graphit4),X.alpha., color=factor(graphit4)),data=total)+
   scale_y_log10(breaks = trans_breaks("log10", function(x) 10^x),
