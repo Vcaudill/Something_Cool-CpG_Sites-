@@ -163,7 +163,10 @@ cpg.ynca<-subset(datamonkey, makesCpG==0 & potential_CpG == "yes" & last_nuc == 
 cpg.yct<-subset(datamonkey, makesCpG==1 & potential_CpG == "yes" & last_nuc == "t" )
 #makes CpG in genetic code and is 2 fold 
 cpg.ynct<-subset(datamonkey, makesCpG==0 & potential_CpG == "yes" & last_nuc == "t")
-
+#
+#run wilcox tests
+source("R_scripts/Tables/AlphaTables.R")
+Wilcox_test(hyphy_virus = nice_name, datamonkey = datamonkey,cpg.yca, cpg.yct, cpg.ynca, cpg.ynct)
 cpg.yca$mean_value <- .01
 cpg.yca$sem_vals<- 0
 cpg.ynca$mean_value <- .01
@@ -235,47 +238,6 @@ ggsave(truenamepng)
 dev.off()
 
 }
-Wilcox_test = function(hyphy_virus, datamonkey, cpg.yca, cpg.yct, cpg.ynca, cpg.ynct){
-  
-  #set output pdf file name
-  library(graphics)
-  library(plyr)
-  library(dplyr)
-  
-  pVals = c()
-  shrtval = 0
-  options(scipen=999)
-  #prevents pvalues from becoming scientific notation. 
-  
-  array1 = cpg.yca$X.alpha.
-  array2 = cpg.ynca$X.alpha.
-  array3 = cpg.yct$X.alpha.
-  array4 = cpg.ynct$X.alpha.
-  #testing array1 vs array2; array3 vs array4
-  
-  print("For a: Comparing makes CpG with noCpG. Wilcox test less: red/blue")
-  print(wilcox.test(array1, array2, alternative='less'))
-  pVals = c(pVals,format(wilcox.test(array1, array2, alternative='less')$p.value, nsmall = 6))
-  print(pVals)
-  print("For t: Comparing CpG with noCpG. Wilcox test less: yellow/green")
-  print(wilcox.test(array3, array4, alternative='less'))
-  pVals = c(pVals,format(wilcox.test(array3, array4, alternative='less')$p.value, nsmall = 6))
-  print(pVals)
-  
-  Pvalues= c(pVals)
-  #save Pvalues into list
-  #****
-  return(Pvalues)
-  makeTable(Pvalues)
-  #*****
-}
 
-print(wilcox.test(cpg.yc$X.alpha., cpg.ync$X.alpha., alternative='less'))
-
-
-array1 = datamonkey$X.alpha.[datamonkey$potential_CpG == "yes" & datamonkey$makesCpG == 0]
-array2 = datamonkey$X.alpha.[datamonkey$potential_CpG == "yes" & datamonkey$makesCpG == 1]
-
-print(wilcox.test(array1, array2, alternative='greater'))
 
 ############
