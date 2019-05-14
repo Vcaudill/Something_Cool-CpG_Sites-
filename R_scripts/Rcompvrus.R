@@ -77,6 +77,8 @@ reorg[2:8] <- NULL
 reorg$count=c(1:nrow(reorg))
 data_points = data.frame("Count"= 1:length(my.list), "Virus"= 1:length(my.list))
 count = 1
+
+mean_or_median<- "median"
 for (data in my.list){  
   cpg.y<-subset(data, makesCpG==1)
   cpg.n<-subset(data, makesCpG==0)
@@ -86,7 +88,14 @@ for (data in my.list){
   TC<-subset(cpg.y, wtnt_consensus=='t')
   TNC<-subset(cpg.n, wtnt_consensus=='t')
   
-  
+  if(mean_or_median == "mean"){
+    stats= mean
+    error_bar= sem
+  }
+  if(mean_or_median== "median"){
+    stats= median
+    error_bar= sd
+  }
   #Function to help create errorbars
   sem<-function(x){
     return(sd(x,na.rm = FALSE)/sqrt(length(x)))
@@ -99,39 +108,39 @@ for (data in my.list){
   # for loops to caculate mean ans errorbars
   for (i in 1:length(AllA$makesCpG)) {
     if (AllA$makesCpG[i] == 1 && AllA$TypeOfSite[i] == "syn") {
-      AllA_mean_value_syn_CpG <- mean(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
-      AllA_sem_vals_syn_CpG<-sem(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
+      AllA_mean_value_syn_CpG <- stats(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
+      AllA_sem_vals_syn_CpG<-error_bar(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "syn") )])
     }
     if (AllA$makesCpG[i] == 1 && AllA$TypeOfSite[i] == "nonsyn") {
-      AllA_mean_value_nonsyn_CpG<- mean(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
-      AllA_sem_vals_nonsyn_CpG<-sem(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
+      AllA_mean_value_nonsyn_CpG<- stats(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
+      AllA_sem_vals_nonsyn_CpG<-error_bar(AllA$Freq[(which(AllA$makesCpG == 1 & AllA$TypeOfSite == "nonsyn") )])
     }
     if (AllA$makesCpG[i] == 0 && AllA$TypeOfSite[i] == "syn") {
-      AllA_mean_value_syn_nCpG <- mean(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
-      AllA_sem_vals_syn_nCpG<-sem(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
+      AllA_mean_value_syn_nCpG <- stats(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
+      AllA_sem_vals_syn_nCpG<-error_bar(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "syn") )])
     }
     if (AllA$makesCpG[i] == 0 && AllA$TypeOfSite[i] == "nonsyn") {
-      AllA_mean_value_nonsyn_nCpG<- mean(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
-      AllA_sem_vals_nonsyn_nCpG<-sem(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
+      AllA_mean_value_nonsyn_nCpG<- stats(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
+      AllA_sem_vals_nonsyn_nCpG<-error_bar(AllA$Freq[(which(AllA$makesCpG == 0 & AllA$TypeOfSite == "nonsyn") )])
     }
   }
   
   for (i in 1:length(AllT$makesCpG)) {
     if (AllT$makesCpG[i] == 1 && AllT$TypeOfSite[i] == "syn") {
-      AllT_mean_value_syn_CpG <- mean(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
-      AllT_sem_vals_syn_CpG<-sem(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
+      AllT_mean_value_syn_CpG <- stats(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
+      AllT_sem_vals_syn_CpG<-error_bar(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "syn") )])
     }
     if (AllT$makesCpG[i] == 1 && AllT$TypeOfSite[i] == "nonsyn") {
-      AllT_mean_value_nonsyn_CpG <- mean(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
-      AllT_sem_vals_nonsyn_CpG<-sem(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
+      AllT_mean_value_nonsyn_CpG <- stats(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
+      AllT_sem_vals_nonsyn_CpG<-error_bar(AllT$Freq[(which(AllT$makesCpG == 1 & AllT$TypeOfSite == "nonsyn") )])
     }
     if (AllT$makesCpG[i] == 0 && AllT$TypeOfSite[i] == "syn") {
-      AllT_mean_value_syn_nCpG<- mean(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
-      AllT_sem_vals_syn_nCpG<-sem(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
+      AllT_mean_value_syn_nCpG<- stats(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
+      AllT_sem_vals_syn_nCpG<-error_bar(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "syn") )])
     }
     if (AllT$makesCpG[i] == 0 && AllT$TypeOfSite[i] == "nonsyn") {
-      AllT_mean_value_nonsyn_nCpG <- mean(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
-      AllT_sem_vals_nonsyn_nCpG<-sem(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
+      AllT_mean_value_nonsyn_nCpG <- stats(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
+      AllT_sem_vals_nonsyn_nCpG<-error_bar(AllT$Freq[(which(AllT$makesCpG == 0 & AllT$TypeOfSite == "nonsyn") )])
     }
   }
   
@@ -237,7 +246,7 @@ write.csv(df, file = "output/alldatapoints.csv")
 
 #print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
 # graphing 
-png("output/Costly/Costly_Graph_AllR_4_22_19.png", width = 15, height = 8, units = "in", res= 500)
+png("output/Costly/Costly_Graph_AllR_5_13_19.png", width = 15, height = 8, units = "in", res= 500)
 #--------------------
 par(mar=c(0,2,3,2), oma=c(6,4,1,1), mfrow=c(2,1))#, bg = "darkseagreen1"
 #changed mar(0,2,3,2) oma(6,4,1,1)
