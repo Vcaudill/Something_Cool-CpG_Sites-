@@ -157,6 +157,7 @@ makeTable <- function(Pvalues, truename, nice_name){
 }
 
 #loop through namelist (all viruses)
+hyphy_virus<-read.csv("data/CpG_List_RyanVersion.csv")
 for(i in 1:nrow(hyphy_virus)){
   nice_name <- as.character(hyphy_virus$nice_name[i])
   print(hyphy_virus$name[i])
