@@ -4,15 +4,15 @@
 
 ######test something
 # 
-# path<-paste("Hyphy/","BK_stuff","/", "fubar","/datamonkey-table.csv",sep='')
-# datamonkey<-read.csv(path)
-# cpg.yca<-subset(datamonkey, makesCpG==1 & potential_CpG == "yes" & last_nuc == "a" )
+#path<-paste("Hyphy/","BK_stuff","/", "fubar","/datamonkey-table.csv",sep='')
+#datamonkey<-read.csv(path)
+#cpg.yca<-subset(datamonkey, makesCpG==1 & potential_CpG == "yes" & last_nuc == "a" )
+#makes CpG in genetic code and is 2 fold 
+#cpg.ynca<-subset(datamonkey, makesCpG==0 & potential_CpG == "yes" & last_nuc == "a")
+#does not make CpG in genetic code 
+#cpg.yct<-subset(datamonkey, makesCpG==1 & potential_CpG == "yes" & last_nuc == "t" )
 # #makes CpG in genetic code and is 2 fold 
-# cpg.ynca<-subset(datamonkey, makesCpG==0 & potential_CpG == "yes" & last_nuc == "a")
-# # does not make CpG in genetic code 
-# cpg.yct<-subset(datamonkey, makesCpG==1 & potential_CpG == "yes" & last_nuc == "t" )
-# #makes CpG in genetic code and is 2 fold 
-# cpg.ynct<-subset(datamonkey, makesCpG==0 & potential_CpG == "yes" & last_nuc == "t")
+#cpg.ynct<-subset(datamonkey, makesCpG==0 & potential_CpG == "yes" & last_nuc == "t")
 # 
 
 
@@ -97,9 +97,14 @@ Wilcox_test = function(hyphy_virus_name, datamonkey, cpg.yca, cpg.yct, cpg.ynca,
     }
     else if(i <0.05){
       a = 0.25
+      i = as.numeric(i)
+      i = signif(i, digits = 4)
     }
     else if(i >0.05){
       a = 0.1
+      i = as.numeric(i)
+      i = signif(i, digits = 4)
+      print(i)
     }
     
     rect(xleft = 120, xright = -20, ybottom = ycoorb[num]-7.3, ytop = ycoor[num]+8, col = alpha("deepskyblue1", a), border = col)
