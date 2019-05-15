@@ -275,7 +275,7 @@ source("stats.R")
 Wilcox_test(DF)
 
 
-ListofFastaFiles <-list.files("data/fasta/", pattern = c("trim05"), all.files = TRUE)
+ListofFastaFiles <-list.files("output/length_testing/", pattern = c("trim0"), all.files = TRUE)
 #my.list <- list('DengueVirus1', 'DengueVirus2', 'DengueVirus3', 'DengueVirus4', 'humanparainfluenzavirus1_F', 'humanparainfluenzavirus1_HN', 'humanparainfluenzavirus3_HN', 'InfluenzaAvirus_HA_H1N1','InfluenzaAvirus_HA_H3N2', 'InfluenzaAvirus_NA_H1N1', 'InfluenzaAvirus_NA_H3N2','InfluenzaBvirus_HA', 'InfluenzaBvirus_NA', 'EnterovirusA_VP1', 'EnterovirusA_VP2','EnterovirusB_VP1', 'EnterovirusB_VP2','EnterovirusC_VP1','EnterovirusC_VP2','EnterovirusD_VP1', 'BKpolyomavirus_VP1', 'HumanBocavirus1_NS1', 'HumanBocavirus1_VP1')
 fasta<-c("BKpolyomavirus_VP1.fasta.mu.trim05","DengueVirus1.fasta_pruned.mu.trim05","DengueVirus2.fasta_pruned.mu.trim05","DengueVirus3.fasta_pruned.mu.trim05","DengueVirus4.fasta_pruned.mu.trim05","EnterovirusA_VP1.fasta_pruned.mu.trim05","EnterovirusA_VP2.fasta.mu.trim08","EnterovirusB_VP1.fasta_pruned.mu.trim05"
       ,"EnterovirusB_VP2.fasta.mu.trim08","EnterovirusC_VP1.fasta_pruned.mu.trim05","EnterovirusC_VP2.fasta_pruned.mu.trim05","EnterovirusD_VP1.fasta_pruned.mu.trim05","HepatitisB.fasta_pruned.mu.trim05"
@@ -308,12 +308,34 @@ for (i in fasta2){
   sort_CSV(i)
   
 }
+virus<-read.csv("data/CpG_List_SarVersion.csv")
+ListofFastaFiles <-list.files("output/length_testing/", pattern = c("trim0"), all.files = TRUE)
+files<-c(ListofFastaFiles)
 source("R_scripts/graphs/redoplot.R")
-truename <- list('DengueVirus1', 'DengueVirus2', 'DengueVirus3', 'DengueVirus4', 'humanparainfluenzavirus1_F', 'humanparainfluenzavirus1_HN', 'humanparainfluenzavirus3_HN', 'InfluenzaAvirus_HA_H1N1','InfluenzaAvirus_HA_H3N2', 'InfluenzaAvirus_NA_H1N1', 'InfluenzaAvirus_NA_H3N2','InfluenzaBvirus_HA', 'InfluenzaBvirus_NA', 'EnterovirusA_VP1', 'EnterovirusA_VP2','EnterovirusB_VP1', 'EnterovirusB_VP2','EnterovirusC_VP1','EnterovirusC_VP2','EnterovirusD_VP1', 'HumanBocavirus1_NS1', 'HumanBocavirus1_VP1', 'HepatitisB', 'Humanherpesvirus2_glycoprotein_G', 'Humanpapillomavirus16', 'Humanpapillomavirus16_L1', 'Humanrespiratorysyncytialvirus', 'Humanrespiratorysyncytialvirus_G', 'JCpolyomavirus_VP1', 'Measles','Measles_hemagglutinin_OR_haemagglutinin','ParvovirusB19_NS1', 'ParvovirusB19_VP1', 'RhinovirusB', 'RhinovirusB_polyprotein', 'RhinovirusC', 'RotavirusA_VP6', 'humanparainfluenzavirus1', 'humanparainfluenzavirus3','BKpolyomavirus_VP1','HepatitisB_core','HepatitisB_s','HepatitisB_precore','HepatitisB_pre_S','HepatitisB_polymerase_truncated_precore','HepatitisB_polymerase')
-for (i in truename){
-  
-  print(i)
-  comparing_CpG_Syn_Nonsyn_new(i)
-  
+splitname<-unlist(strsplit(ListofFastaFiles,".fasta"))
+truename<-splitname[1]
+i=5
+# for (i in 1:length(ListofFastaFiles)){
+for (i in 50:length(ListofFastaFiles)){
+  splitname<-unlist(strsplit(ListofFastaFiles[i],".fasta"))
+  truename<-splitname[1]
+  print(truename)
+  name<-virus$nice_name[i]
+  print(name)
+  comparing_CpG_Syn_Nonsyn_new(truename,name)
+}
+for (i in 50:length(ListofFastaFiles)){
+  truename<-"HIV1_FLT_2017_pol_DNA"
+  print(truename)
+  name<-virus$nice_name[i]
+  print(name)
+  comparing_CpG_Syn_Nonsyn_new(truename,name)
+}
+for (i in 50:length(ListofFastaFiles)){
+  truename<-"HCV1A"
+  print(truename)
+  name<-virus$nice_name[i]
+  print(name)
+  comparing_CpG_Syn_Nonsyn_new(truename,name)
 }
 

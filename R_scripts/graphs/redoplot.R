@@ -352,4 +352,4 @@ comparing_CpG_Syn_Nonsyn_new = function(truename,nice_name){
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
   mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
   dev.off()
-}
+} 
