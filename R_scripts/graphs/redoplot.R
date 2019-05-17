@@ -2,9 +2,9 @@
 #data<-read.csv("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus/DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 #data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
 #data<-HumanBocavirus1_NS1
-comparing_CpG_Syn_Nonsyn_new = function(truename,nice_name,place){
+comparing_CpG_Syn_Nonsyn_new = function(truename,nice_name,data_place,data_output){
   # place is srting of text like where file should be /new_data/folder
-  data<- read.csv(paste(place, truename,".csv", sep=""))
+  data<- read.csv(paste(data_place, truename,".csv", sep=""))
   #data<- read.csv(paste("data/csv/", truename,".csv", sep=""))
   #subset into two groups yes makes cpg and no cpg
   cpg.y<-subset(data, makesCpG==1)
@@ -299,7 +299,7 @@ comparing_CpG_Syn_Nonsyn_new = function(truename,nice_name,place){
   # mtext('0', side=2, line=1.5, at=0.0001, las=1.1)
   # dev.off()
   
-  truenamepng = paste("output/Redeploy/new_median_graphs/",truename,".png",sep="")
+  truenamepng = paste(data_output,truename,".png",sep="")
   png(truenamepng, width = 6.75, height = 6.75, units = "in", res= 300)
   par(mfrow=c(2,2), mar=c(4.1, 4.1, 1.9, 0.8),oma=c(0.1,0.1,1.5,0.1)) 
   palette(alpha(c("#99FF99","#9999FF","#FF9900","#FF3300"),0.3))
