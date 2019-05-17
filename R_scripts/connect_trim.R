@@ -37,9 +37,11 @@ for(i in 1:nrow(Virus_info)){
   DF<-synFunction(DF)
   
   #How to save data
-  truenameCSV= paste('Hyphy/Consensus_Hyphy/', truename, ".csv", sep="")
+  truenameCSV= paste('new_data/Consensus/', truename, ".csv", sep="")
   write.csv(DF, file = truenameCSV)
-}
+
+  #add in the graphs/tables
+  }
 
 source("R_scripts/BioInfo/SynNonSyn.R")
 DF<-synFunction(DF)

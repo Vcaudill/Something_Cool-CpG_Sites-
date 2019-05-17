@@ -2,9 +2,9 @@
 #data<-read.csv("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus/DengueVirus1.fasta_pruned.mu.trim05_DF.csv", header = T)
 #data<-read.csv("DengueVirus1.fasta_pruned.mu.trim05_DF.csv")
 #data<-HumanBocavirus1_NS1
-comparing_CpG_Syn_Nonsyn_new = function(truename,nice_name){
-  
-  data<- read.csv(paste("Hyphy/Consensus_Hyphy/", truename,".csv", sep=""))
+comparing_CpG_Syn_Nonsyn_new = function(truename,nice_name,place){
+  # place is srting of text like where file should be /new_data/folder
+  data<- read.csv(paste(place, truename,".csv", sep=""))
   #data<- read.csv(paste("data/csv/", truename,".csv", sep=""))
   #subset into two groups yes makes cpg and no cpg
   cpg.y<-subset(data, makesCpG==1)
@@ -311,8 +311,8 @@ comparing_CpG_Syn_Nonsyn_new = function(truename,nice_name){
   #   as.expression(bquote(10^ .(i)))
   # )
   # axis(2,at=aty,labels=labels)
-  points(AllA$graphit, AllA$median_val, col= factor(AllA$graphit), pch=19, cex = 3)
-  arrows(AllA$graphit, AllA$LCLS, AllA$graphit, AllA$UCLS, length=0.15,lwd=5, angle=90, code=3, col= "black")
+  points(AllA$graphit, AllA$median_val+ 0.0001, col= factor(AllA$graphit), pch=19, cex = 3)
+  arrows(AllA$graphit, 0.0001, AllA$graphit, AllA$UCLS, length=0.15,lwd=5, angle=90, code=3, col= "black")
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
   axis(1, at= c(1:4),labels = c("No CpG \n Syn", " CpG \n Syn", "No CpG \n NonSyn", "CpG \n NonSyn"), mgp=c(3, 1.5, 0))
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
@@ -325,8 +325,8 @@ comparing_CpG_Syn_Nonsyn_new = function(truename,nice_name){
   # )
   
   plot(jitter(AllT$graphit),AllT$Freq+ 0.0001,log='y',col=factor(AllT$graphit),pch=16,main="T->C",xlab = " ", ylab = "Mutation Frequency", yaxt="n", xaxt = "n", ylim=c(0.0001, .5))
-  points(AllT$graphit, AllT$median_val, col= factor(AllT$graphit), pch=19, cex = 3)
-  arrows(AllT$graphit, AllT$LCLS, AllT$graphit, AllT$UCLS, length=0.15, lwd = 5, angle=90, code=3, col= "black")
+  points(AllT$graphit, AllT$median_val+ 0.0001, col= factor(AllT$graphit), pch=19, cex = 3)
+  arrows(AllT$graphit, + 0.0001, AllT$graphit, AllT$UCLS, length=0.15, lwd = 5, angle=90, code=3, col= "black")
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
   axis(1, at= c(1:4),labels = c("No CpG \n Syn", " CpG \n Syn", "No CpG \n NonSyn", "CpG \n NonSyn"),mgp=c(3, 1.5, 0))
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
