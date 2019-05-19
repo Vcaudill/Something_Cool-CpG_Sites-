@@ -1,0 +1,44 @@
+﻿name,nice_name,SeqNumber,NucleotideNumber,Total,A->G Syn: CpG v NonCpG ,A->G NonSyn: CpG v NonCpG,A->G Syn v NonSyn,T->C Syn: CpG v NonCpG ,T->C NonSyn: CpG v NonCpG,T->C Syn v NonSyn,,syn vs nonsyn
+Denguevirus1,Dengue 1,1785,10176,18164160,1,1,1,1,1,1,,2
+Denguevirus2,Dengue 2,1597,10173,16246281,1,1,1,1,0,1,,2
+Denguevirus3,Dengue 3,970,10170,9864900,1,1,1,1,1,1,,2
+Denguevirus4,Dengue 4,257,10206,2622942,1,0,1,1,1,1,,2
+EnteroD68_VP1,Entero D68 VP1,528,528,278784,1,0,1,1,0,1,,2
+Enterovirus_C_VP2_Polio2,Entero C VP2 Polio2,574,813,466662,1,0,1,1,0,1,,2
+EnterovirusA_VP1_EVA71,Entero A VP1 EVA71,3868,894,3457992,1,0,1,1,0,1,,2
+EnterovirusA_VP2_EVA71,Entero A VP2 EVA71,575,294,169050,0,0,1,0,0,1,,2
+EnterovirusB_VP1_Echovirus30,Entero B VP1 Echovirus30,2429,876,2127804,1,0,1,0,0,1,,2
+EnterovirusB_VP2_Echovirus30,Entero B VP2 Echovirus30,214,283,60562,1,0,1,1,0,1,,2
+EnterovirusC_VP1_Polio2,Entero C VP1 Polio2,1346,906,1219476,1,0,1,1,0,1,,2
+HepatitisB_core,Hepatitis B Core,630,264,166320,0,0,1,0,0,1,,2
+HepatitisB_polymerase,Hepatitis B Polymerase,6406,1620,10377720,1,0,1,1,1,1,,2
+HepatitisB_precore,Hepatitis B Precore,1347,251,338097,0,0,0,1,0,0,,0
+HepatitisB_preS,Hepatitis B PreS,902,462,416724,0,0,0,0,0,0,,0
+HepatitisB_S,Hepatitis B S,212,678,143736,0,0,0,0,0,0,,0
+HumanBoca_VP1,Human Boca 1 VP1,302,2013,607926,0,0,1,0,0,1,,2
+HumanHerpesvirus2_G,Herpes 2 Glycoprotein G,244,1317,321348,0,0,0,0,0,0,,0
+HumanPapilloma16_L1,Human Papilloma 16 L1,112,1458,163296,0,1,0,0,1,0,,0
+HumanParainfluenza1_F,Human Parainfluenza 1 F,94,1782,167508,1,1,0,0,0,0,,0
+Humanparainfluenza3_HN,Human Parainfluenza 3 HN,1760,1716,3020160,0,0,1,0,0,1,,2
+Humanrespiratorysyncytialvirus_G,Human Respiratory Syncytial G,1760,900,1584000,1,0,1,0,1,1,,2
+InfluenzaA_NA_H3N2,Influenza A NA H3N2,2428,1407,3416196,1,0,1,1,0,1,,2
+InfluenzaAvirus_HA_H1N1_alignment,Influenza A HA H1N1,19095,1710,32652450,1,0,1,1,1,1,,2
+InfluenzaAvirus_HA_H3N2_alignment,Influenza A HA H3N2,24005,1701,40832505,1,0,1,1,1,1,,2
+InfluenzaAvirus_NA_H1N1_alignment,Influenza A NA H1N1,19226,1410,27108660,1,0,1,1,1,1,,2
+InfluenzaB_HA,Influenza B HA,1054,1755,1849770,1,0,1,1,0,1,,2
+InfluenzaB_NA,Influenza B NA,3914,1398,5471772,1,1,1,1,0,1,,2
+Measles_hemagglutinin_alignment,Measles HH,876,1851,1621476,1,0,1,1,1,1,,2
+ParovirusB19_NS1_alignment,Parvo B19 NS1,175,2016,352800,1,0,1,1,0,1,,2
+Parovovirus_B19_VP1_alignment,Parvo B19 VP1,268,2343,627924,1,0,1,1,0,1,,2
+RhinovirusB alignment,Rhino B,41,6579,269739,1,1,1,1,1,1,,2
+RotavirusA_VP6_alignment,Rota A VP6,4350,1197,5206950,1,1,1,1,0,1,,2
+BKpolyomavirus_VP1.fasta.mu.trim05,Bk Polyoma VP1,115,1086,124890,1,0,1,1,0,1,,2
+HepatitisB_polymerase_truncated_precore.fasta_pruned.mu.trim05,Hepatitis B PTP,1111,181,201091,1,0,1,1,0,1,,2
+humanparainfluenzavirus1_HN.fasta_pruned.mu.trim05,Human Parainfluenza 1 HN,236,864,203904,0,0,1,1,0,1,,2
+humanparainfluenzavirus1.fasta_pruned.mu.trim05,Human Parainfluenza 1,72,15471,1113912,1,0,1,1,0,1,,2
+humanparainfluenzavirus3.fasta_pruned.mu.trim05,Human Parainfluenza 3,76,1617,122892,0,0,1,1,0,1,,2
+Humanrespiratorysyncytialvirus.fasta.mu.trim05,Human Respiratory Syncytial,292,15132,4418544,1,1,0,1,1,0,,0
+RhinovirusC.fasta_pruned.mu.trim05,Rhino C,53,6933,367449,1,1,0,0,0,0,,0
+HIV1_FLT_2017_pol_DNA.fasta,HIV pol gene,3030,3264,9889920,1,1,1,1,0,1,,2
+HCV1A_CDS_Alignment.fasta,HCV 1 A,3011,9036,27207396,1,0,1,1,0,1,,2
+HCV1B_CDS_alignment.fasta,HCV 1 B,3010,9036,27198360,1,0,1,1,1,1,,2
