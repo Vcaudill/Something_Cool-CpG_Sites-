@@ -1,7 +1,4 @@
-truename<-paste("Denguevirus1",sep="") 
-nice_name<-"Dengue 1"
-data_place<-paste("new_data/Consensus/",sep="")
-data_output<-"new_data/"
+
 comparing_CpG_Syn_Nonsyn_new = function(truename,nice_name,data_place,data_output){
   # place is srting of text like where file should be /new_data/folder
   data<- read.csv(paste(data_place, truename,".csv", sep=""))
