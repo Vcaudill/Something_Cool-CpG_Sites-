@@ -249,7 +249,7 @@ write.csv(df, file = "output/alldatapoints.csv")
 
 #print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
 # graphing 
-png("output/Costly/Costly_Graph_AllR_5_18_19.png", width = 15, height = 8, units = "in", res= 500)
+png("output/Costly/Costly_Graph_AllR_5_19_19.png", width = 15, height = 8, units = "in", res= 500)
 #--------------------
 par(mar=c(0,2,3,2), oma=c(6,4,1,1), mfrow=c(2,1))#, bg = "darkseagreen1"
 #changed mar(0,2,3,2) oma(6,4,1,1)
@@ -338,8 +338,8 @@ abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,
 abline(v=c(4.5,6.5,7.5,12.5,18.5,25.5,27.5,28.5,30.5,31.5,32.5,33.5,39.5,40.5,41.5,43.5), col = "bisque4", lwd=2)
 
 abline(h = 55988780, col ="darkslategrey", lwd = 2)
-axis(2, at = c(60000,150000,1000000,5000000,15000000), labels = c("60,000","150k","1 mil","5 mil","1.5 mil"),  las=2)
-abline(h=c(60000,150000,1000000,5000000,15000000), col="grey", lty=c(2,2))
+axis(2, at = c(60000,150000,1000000,5000000,25000000), labels = c("60,000","150k","1 mil","5 mil","25 mil"),  las=2)
+abline(h=c(60000,150000,1000000,5000000,25000000), col="grey", lty=c(2,2))
 
 u <- par('ylog') 
 rect(-1.05, .0001, 4.5, 558988780, density = NULL, angle = 45,
