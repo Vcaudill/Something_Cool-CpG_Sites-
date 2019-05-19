@@ -97,7 +97,7 @@ for (i in 1: nrow(hyphy_virus)){
 
 ######### graph
 
-nice_name <- as.character(hyphy_virus$nice_name[i])
+  nice_name <- as.character(hyphy_virus$nice_name[i])
 #meme&fubar http://datamonkey.org/fubar/5cb3c3463994747a2e471e19 BK fubar
 
 i=1

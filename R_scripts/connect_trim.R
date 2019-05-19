@@ -1,19 +1,23 @@
 # your floder where all pages are saved
 #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
-
+setwd("~ryanwinstead/Something_Cool-CpG_Sites-")
 
 #loop using a csv to find the file name, strating and stoping points, and readign frame
 
-Virus_info<- read.csv("data/MEME_CpG_list.csv")
+Virus_info<- read.csv("new_data/CpG_list_Newdata.csv")
+#RW changed file from MEME_CpG_list.csv to Newdata.csv
 i=1
 # DataSet <-read.fasta("DengueVirus1.fasta_pruned.mu.trim05.txt")
 for(i in 1:nrow(Virus_info)){
-  print(i)
+  print(i, Virus_info$name[i])
+  setwd("~ryanwinstead/Something_Cool-CpG_Sites-")
   source("R_scripts/BioInfo/Freq.R")
   # must place your file as a txt takes a few minutes 
   #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus")
-  viruplace = paste('data/trimmed_no_stop/', Virus_info$name[i], ".fasta",sep="")#trimmed
-  DF<-Freq(viruplace)
+  fasta_file = paste('new_data/good_to_go/', Virus_info$name[i], ".fasta",sep="")#trimmed
+  DF<-Freq(fasta_file)
+  nucleotideNumber <- nrow(DF)
+  print(nucleotideNumber)
   name = as.character(Virus_info$name[i])
   splitname<-unlist(strsplit(as.character(Virus_info$name[i]),".fasta"))
   truename<-splitname[1]
@@ -53,8 +57,8 @@ virusname = 'EnterovirusB_VP2.fasta_pruned.mu.trim05.txt'
 splitname<-unlist(strsplit(virusname,".fasta"))
 truename<-splitname[1]
 
-truenameRda= paste('data/Rda/', truename, ".Rda", sep="")
-truenameCSV= paste('data/Csv/', truename, ".csv", sep="")
+truenameRda= paste('new_data/Rda/', truename, ".Rda", sep="")
+truenameCSV= paste('new_data/Csv/', truename, ".csv", sep="")
 write.csv(DF, file = "MyData.csv")
 
 #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/Rda_Files")
