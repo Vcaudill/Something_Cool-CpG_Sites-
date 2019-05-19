@@ -8,12 +8,14 @@ Tables = function(truename){
   #truename ="Humanherpesvirus2_gD"
   truenamecsv= paste(truename, ".csv", sep="")
   print(truenamecsv)
-  DF<- read.csv(paste("new_data/Consensus/", truenamecsv, sep=""))
+  if(DF<- read.csv(paste("new_data/Consensus/", truenamecsv, sep="")) = FALSE){
+    DF<- read.csv(paste("new_data/Consensus/new_for_costly", truenamecsv, sep=""))}
   #load data as DF
   # Wilcox test
-  return(DF)
   #Wilcox_test(DF, truename)
-}
+  return(DF)
+  }
+
 
 Wilcox_test = function(data, truename){
   
@@ -157,24 +159,42 @@ makeTable <- function(Pvalues, truename, nice_name){
 }
 
 #loop through namelist (all viruses)
-hyphy_virus<-read.csv("new_data/CpG_List_Newdata.csv")
+hyphy_virus<-read.csv("new_data/CpG_List_NewdataRW.csv")
 for(i in 1:nrow(hyphy_virus)){
   nice_name <- as.character(hyphy_virus$nice_name[i])
   print(hyphy_virus$name[i])
   name = as.character(hyphy_virus$name[i])
-  #splitname<-unlist(strsplit(as.character(hyphy_virus$name[i]),".fasta"))
-  truename<-name
+  #if(grep(".fasta",hyphy_virus$name[i])){
+  #  splitname<-unlist(strsplit(as.character(hyphy_virus$name[i]),".fasta"))
+  truename<- name
+   # }
+ # else{(truename<-name)}
   print(truename)
   if (truename == "Humanherpesvirus2_gD") {
     next
     }
 #     
-  #DF=Tables(truename)
-  #Pvalues=Wilcox_test(DF, truename)
-  #makeTable(Pvalues, truename, nice_name)
-  data_place = "new_data/Consensus/"
-  data_output = "output/new_Redoplot/"
-  source(("R_scripts/graphs/redoplot.R"))
-  comparing_CpG_Syn_Nonsyn_new(truename,nice_name,data_place,data_output)
+  DF=Tables(truename)
+  Pvalues=Wilcox_test(DF, truename)
+  makeTable(Pvalues, truename, nice_name)
+  #data_place = "new_data/Consensus/"
+  #data_output = "output/new_Redoplot/"
+  #source(("R_scripts/graphs/redoplot.R"))
+  #comparing_CpG_Syn_Nonsyn_new(truename,nice_name,data_place,data_output)
   }
+# readfile <- function(truenamecsv){
+#   tryCatch(
+#     # This is what I want to do...
+#     {
+#       DF<- read.csv(paste("new_data/Consensus/", truenamecsv, sep=""))
+#       return(DF)
+#     },
+#     # ... but if an error occurs, tell me what happened: 
+#     error=function(error_message) {
+#       message("This is my custom message.")
+#       message("Error in file(file, "rt") : cannot open the connection")
+#       message(error_message)
+#       return(NA)
+#     }
+#   )
 
