@@ -170,8 +170,8 @@ comparing_CpG_Syn_Nonsyn_new = function(truename,nice_name,data_place,data_outpu
   
   plot(jitter(AllA$graphit),AllA$Freq + 0.0001,log='y',col=factor(AllA$graphit),pch=16, main="A->G",xlab = " ", ylab = "Mutation Frequency", yaxt="n", xaxt="n", ylim=c(0.0001, 0.5))
 
-  points(AllA$graphit, AllA$mean_val+ 0.0001, col= factor(AllA$graphit), pch=19, cex = 3)
-  arrows(AllA$graphit, 0.0001, AllA$graphit, AllA$UCLS, length=0.15,lwd=5, angle=90, code=3, col= "black")
+  points(AllA$graphit, AllA$mean_val, col= factor(AllA$graphit), pch=19, cex = 3)
+  arrows(AllA$graphit, AllA$LCLS, AllA$graphit, AllA$UCLS, length=0.15,lwd=5, angle=90, code=3, col= "black")
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
   axis(1, at= c(1:4),labels = c("No CpG \n Syn", " CpG \n Syn", "No CpG \n NonSyn", "CpG \n NonSyn"), mgp=c(3, 1.5, 0))
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
@@ -181,8 +181,8 @@ comparing_CpG_Syn_Nonsyn_new = function(truename,nice_name,data_place,data_outpu
  
   
   plot(jitter(AllT$graphit),AllT$Freq+ 0.0001,log='y',col=factor(AllT$graphit),pch=16,main="T->C",xlab = " ", ylab = "Mutation Frequency", yaxt="n", xaxt = "n", ylim=c(0.0001, .5))
-  points(AllT$graphit, AllT$mean_val+ 0.0001, col= factor(AllT$graphit), pch=19, cex = 3)
-  arrows(AllT$graphit, + 0.0001, AllT$graphit, AllT$UCLS, length=0.15, lwd = 5, angle=90, code=3, col= "black")
+  points(AllT$graphit, AllT$mean_val, col= factor(AllT$graphit), pch=19, cex = 3)
+  arrows(AllT$graphit, AllT$LCLS, AllT$graphit, AllT$UCLS, length=0.15, lwd = 5, angle=90, code=3, col= "black")
   eaxis(2,at=c(10^-3,10^-2,10^-1,10^0),cex.axis=1.1)
   axis(1, at= c(1:4),labels = c("No CpG \n Syn", " CpG \n Syn", "No CpG \n NonSyn", "CpG \n NonSyn"),mgp=c(3, 1.5, 0))
   axis.break(2,0.0002*(1+0.02),breakcol="black",style="slash")
