@@ -89,7 +89,7 @@ legend("bottomright",legend=c("Significant","Partially Significant","No Signific
        cex=1, pch = c(16,16,16))
 dev.off()
 
-png("output/amount/alllogxy_5_18.png", width = 6.75, height = 6.75, units = "in", res= 300)
+png("output/amount/alllogxy_6_1.png", width = 6.75, height = 6.75, units = "in", res= 300)
 par(mfrow=c(2,2))#, bg = "darkseagreen1"
 
 plot(tally$SeqNumber,tally$NucleotideNumber,log='xy',col=c("red","green","deepskyblue1")[as.factor(tally$SynCpg)],pch=c(19,15,17)[as.factor(tally$SynCpg)],cex=1.5, main="Syn CpG vs NonCpG",xlab = "# of Sequences", ylab = "# of Nucletides")
