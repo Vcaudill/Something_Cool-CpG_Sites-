@@ -34,7 +34,7 @@ humanparainfluenzavirus3<-read.csv("data/csv/humanparainfluenzavirus3.csv")
 InfluenzaAvirus_HA_H1N1<-read.csv("new_data/Consensus/InfluenzaAvirus_HA_H1N1_alignment.CSV")
 InfluenzaAvirus_HA_H3N2<-read.csv("new_data/Consensus/InfluenzaAvirus_HA_H3N2_alignment.CSV")
 InfluenzaAvirus_NA_H1N1<-read.csv("new_data/Consensus/InfluenzaAvirus_NA_H1N1_alignment.CSV")
-InfluenzaAvirus_NA_H3N2<-read.csv("new_data/Consensus/InfluenzaAvirus_HA_H3N2_alignment.CSV")
+InfluenzaAvirus_NA_H3N2<-read.csv("new_data/Consensus/InfluenzaAvirus_NA_H3N2_alignment.CSV")
 InfluenzaBvirus_NA<-read.csv("new_data/Consensus/InfluenzaB_NA.CSV")
 InfluenzaBvirus_HA<-read.csv("new_data/Consensus/InfluenzaB_HA.CSV")
 
