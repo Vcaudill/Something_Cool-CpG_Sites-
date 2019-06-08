@@ -8,7 +8,7 @@ Enterovirus_C_VP2_Polio2.fasta,new_data/good_to_go/Enterovirus_C_VP2_Polio2.fast
 EnterovirusA_VP1_EVA71.fasta,new_data/good_to_go/EnterovirusA_VP1_EVA71.fasta,3868,894,new_data/Consensus/EnterovirusA_VP1_EVA71.CSV
 EnterovirusA_VP2_EVA71.fasta,new_data/good_to_go/EnterovirusA_VP2_EVA71.fasta,575,294,new_data/Consensus/EnterovirusA_VP2_EVA71.CSV
 EnterovirusB_VP1_Echovirus30.fasta,new_data/good_to_go/EnterovirusB_VP1_Echovirus30.fasta,2429,876,new_data/Consensus/EnterovirusB_VP1_Echovirus30.CSV
-EnterovirusB_VP2_Echovirus30.fasta,new_data/good_to_go/EnterovirusB_VP2_Echovirus30.fasta,214,283,new_data/Consensus/new_for_costly/EnterovirusB_VP2.CSV
+EnterovirusB_VP2.fasta.mu.trim08,data/fasta/EnterovirusB_VP2.fasta.mu.trim08,214,283,new_data/Consensus/new_for_costly/EnterovirusB_VP2.CSV
 EnterovirusC_VP1_Polio2.fasta,new_data/good_to_go/EnterovirusC_VP1_Polio2.fasta,1346,906,new_data/Consensus/EnterovirusC_VP1_Polio2.CSV
 HepatitisB_core.fasta,new_data/good_to_go/HepatitisB_core.fasta,630,264,new_data/Consensus/HepatitisB_core.csv
 HepatitisB_polymerase.fasta,new_data/good_to_go/HepatitisB_polymerase.fasta,6406,1620,new_data/Consensus/HepatitisB_polymerase.csv
