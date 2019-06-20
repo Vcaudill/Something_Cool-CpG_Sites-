@@ -1,0 +1,44 @@
+﻿name,nice_name,SeqNumber,NucleotideNumber,place
+Denguevirus1,Dengue 1,1785,10176,data/data_2019/Csv/
+Denguevirus2,Dengue 2,1597,10173,data/data_2019/Csv/
+Denguevirus3,Dengue 3,970,10170,data/data_2019/Csv/
+Denguevirus4,Dengue 4,257,10206,data/data_2019/Csv/
+EnteroD68_VP1,Entero D68 VP1,528,528,data/data_2019/Csv/
+Enterovirus_C_VP2_Polio2,Entero C VP2 Polio2,574,813,data/data_2019/Csv/
+EnterovirusA_VP1_EVA71,Entero A VP1 EVA71,3868,894,data/data_2019/Csv/
+EnterovirusA_VP2_EVA71,Entero A VP2 EVA71,575,294,data/data_2019/Csv/
+EnterovirusB_VP1_Echovirus30,Entero B VP1 Echovirus30,2429,876,data/data_2019/Csv/
+EnterovirusB_VP2,Entero B VP2,214,283,data/data_2019/Csv/new_for_costly/
+EnterovirusC_VP1_Polio2,Entero C VP1 Polio2,1346,906,data/data_2019/Csv/
+HepatitisB_core,Hepatitis B Core,630,264,data/data_2019/Csv/
+HepatitisB_polymerase,Hepatitis B Polymerase,6406,1620,data/data_2019/Csv/
+HepatitisB_precore,Hepatitis B Precore,1347,251,data/data_2019/Csv/
+HepatitisB_preS,Hepatitis B PreS,902,462,data/data_2019/Csv/
+HepatitisB_S,Hepatitis B S,212,678,data/data_2019/Csv/
+HumanBoca_VP1,Human Boca 1 VP1,302,2013,data/data_2019/Csv/
+HumanHerpesvirus2_G,Herpes 2 Glycoprotein G,244,1317,data/data_2019/Csv/
+HumanPapilloma16_L1,Human Papilloma 16 L1,112,1458,data/data_2019/Csv/
+HumanParainfluenza1_F,Human Parainfluenza 1 F,94,1782,data/data_2019/Csv/
+Humanparainfluenza3_HN,Human Parainfluenza 3 HN,1760,1716,data/data_2019/Csv/
+Humanrespiratorysyncytialvirus_G,Human Respiratory Syncytial G,1760,900,data/data_2019/Csv/
+InfluenzaA_NA_H3N2,Influenza A NA H3N2,2428,1407,data/data_2019/Csv/
+InfluenzaAvirus_HA_H1N1_alignment,Influenza A HA H1N1,19095,1710,data/data_2019/Csv/
+InfluenzaAvirus_HA_H3N2_alignment,Influenza A HA H3N2,24005,1701,data/data_2019/Csv/
+InfluenzaAvirus_NA_H1N1_alignment,Influenza A NA H1N1,19226,1410,data/data_2019/Csv/
+InfluenzaB_HA,Influenza B HA,1054,1755,data/data_2019/Csv/
+InfluenzaB_NA,Influenza B NA,3914,1398,data/data_2019/Csv/
+Measles_hemagglutinin_alignment,Measles HH,876,1851,data/data_2019/Csv/
+ParovirusB19_NS1_alignment,Parvo B19 NS1,175,2016,data/data_2019/Csv/
+Parovovirus_B19_VP1_alignment,Parvo B19 VP1,268,2343,data/data_2019/Csv/
+RhinovirusB alignment,Rhino B,41,6579,data/data_2019/Csv/
+RotavirusA_VP6_alignment,Rota A VP6,4350,1197,data/data_2019/Csv/
+BKpolyomavirus_VP1,Bk Polyoma VP1,115,1086,data/data_2019/Csv/new_for_costly/
+HepatitisB_polymerase_truncated_precore,Hepatitis B PTP,1111,181,data/NESCENT_data/csv/
+humanparainfluenzavirus1_HN,Human Parainfluenza 1 HN,236,864,data/data_2019/Csv/new_for_costly/
+humanparainfluenzavirus1,Human Parainfluenza 1,72,15471,data/NESCENT_data/csv/
+humanparainfluenzavirus3,Human Parainfluenza 3,76,1617,data/NESCENT_data/csv/
+Humanrespiratorysyncytialvirus,Human Respiratory Syncytial,292,15132,data/NESCENT_data/csv/
+RhinovirusC,Rhino C,53,6933,data/NESCENT_data/csv/
+HIV1_FLT_2017_pol_DNA,HIV pol gene,3030,3264,data/data_2019/Csv/new_for_costly/
+HCV1A,HCV 1 A,3011,9036,data/data_2019/Csv/new_for_costly/
+HCV1B_CDS_alignment,HCV 1 B,3010,9036,data/data_2019/Csv/
