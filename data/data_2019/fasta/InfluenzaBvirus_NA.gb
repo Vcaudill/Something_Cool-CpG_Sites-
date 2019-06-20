@@ -1,0 +1,85 @@
+LOCUS       S61093                  1408 bp    cRNA    linear   VRL 15-DEC-2015
+DEFINITION  Influenza B virus (B/Kanagawa/73) integral membrane glycoprotein
+            (NB) and neuraminidase (NA) genes, complete cds.
+ACCESSION   S61093
+VERSION     S61093.1
+KEYWORDS    .
+SOURCE      Influenza B virus (B/Kanagawa/73)
+  ORGANISM  Influenza B virus (B/Kanagawa/73)
+            Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+            Orthomyxoviridae; Influenzavirus B.
+REFERENCE   1  (bases 1 to 1408)
+  AUTHORS   Shibata,S., Yamamoto-Goshima,F., Maeno,K., Hanaichi,T., Fujita,Y.,
+            Nakajima,K., Imai,M., Komatsu,T. and Sugiura,S.
+  TITLE     Characterization of a temperature-sensitive influenza B virus
+            mutant defective in neuraminidase
+  JOURNAL   J. Virol. 67 (6), 3264-3273 (1993)
+   PUBMED   8497050
+  REMARK    GenBank staff at the National Library of Medicine created this
+            entry [NCBI gibbsq 132431] from the original journal article.
+REFERENCE   2  (bases 1 to 1408)
+  AUTHORS   Shibata,S.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (23-JUL-1993) Nagoya University School of Medicine, and
+            Virus Division, Nagoya City Public Health Research Institute,
+            Nagoya, Japan
+  REMARK    GenBank staff at the National Library of Medicine created this
+            entry [NCBI gibbsq 132431] from the original journal article.
+FEATURES             Location/Qualifiers
+     source          1..1408
+                     /organism="Influenza B virus (B/Kanagawa/73)"
+                     /mol_type="viral cRNA"
+                     /db_xref="taxon:224199"
+                     /segment="6"
+     gene            1..303
+                     /gene="NB"
+     CDS             1..303
+                     /gene="NB"
+                     /codon_start=1
+                     /product="integral membrane glycoprotein"
+                     /protein_id="AAB26738.1"
+                     /translation="MNNATFNYTNVNPISHIRGSVIITICVSFTVILTVFGYIAKIFT
+                     NKNNCTNNVIGLRERIKCSGCEPFCNKRDDISSPRAGVDIPSFILPGLNLSESAPN"
+     gene            8..1408
+                     /gene="NA"
+     CDS             8..1408
+                     /gene="NA"
+                     /codon_start=1
+                     /product="neuraminidase"
+                     /protein_id="AAB26739.1"
+                     /translation="MLPSTIQTLTLFLTSGGVLLSLYVSASLSYLLYSDILLKFSPTK
+                     ITAPTMSLDCANVSNVQAVNRSATKEMTFLLPEPEWTYPRLSCQGSTFQKALLISPHR
+                     FGETRGNSAPLIIREPFVACGPKECRHFALTHYAAQPGGYYNGTRNDRNKLRHLISVK
+                     LGKIPTVENSIFHMAAWSGSACHDGREWTYIGVDGPDSNALIKIKYGEAYTDTYHSYA
+                     NNILRTQESACNCIGGDCYLMITDGSASGISKCRFLKIREGRIIKEIFPTGRVDHTEE
+                     CTCGFASNKTIECACRDNSYTAKRPFVKLNVETDTAEIRLMCTETYLDTPRPDDGSIT
+                     GPCESNGDKGLGGIKGGFVHQRMASKTGRWYSRTMSKTERMGMELYVRYDGDPWTDSD
+                     ALAPSGVMVSMKEPGWYSFGFEIKDKKCDVPCIGIEMVHDGGKETWHSAATAIYCLMG
+                     SGQLLWDIVTGVAMAL"
+ORIGIN      
+        1 atgaacaatg ctaccttcaa ctatacaaac gttaacccta tttctcacat cagggggagt
+       61 gttattatca ctatatgtgt cagcttcact gtcatactta ctgtattcgg atatattgct
+      121 aaaattttca ccaacaaaaa taactgcacc aacaatgtca ttggattgcg cgaacgtatc
+      181 aaatgttcag gctgtgaacc gttctgcaac aaaagagatg acatttcttc tcccagagcc
+      241 ggagtggaca taccctcgtt tatcttgcca gggctcaacc tttcagaaag cgctcctaat
+      301 tagccctcat aggttcggag aaaccagagg aaactcagct cccttgataa taagggaacc
+      361 ctttgttgct tgtggaccaa aggaatgcag acactttgct ctaacccatt atgcagctca
+      421 accaggggga tactacaatg gaacaagaaa tgacagaaac aagctgaggc atctgatttc
+      481 agtcaaatta ggcaaaatcc caactgtaga aaactccatt ttccacatgg cagcttggag
+      541 tgggtccgca tgccatgatg gtagagaatg gacatatatc ggagttgatg gccctgacag
+      601 taatgcactg atcaaaataa aatatggaga agcatatact gacacatacc attcctatgc
+      661 aaacaacatc ctaagaacac aagaaagtgc ctgcaattgc atcgggggag attgttatct
+      721 tatgataact gatggttcag cttcaggaat tagtaaatgc agatttctta aaattcgaga
+      781 gggtcgaata ataaaagaaa tatttccaac aggaagagta gatcatactg aagaatgcac
+      841 atgcgggttc gccagcaata aaaccataga atgtgcctgt agagataaca gttacacagc
+      901 aaaaagaccc tttgtcaaat taaatgtgga gactgataca gctgaaataa gattgatgtg
+      961 cacagaaact tatttggaca cccccagacc agatgatgga agcataacag ggccttgcga
+     1021 atcaaatggg gacaaagggc ttggaggcat caaaggagga tttgtccatc aaagaatggc
+     1081 atctaagact ggaagatggt actcccgaac gatgtctaaa actgaaagaa tggggatgga
+     1141 actgtatgtc aggtatgatg gagacccatg gactgacagt gacgcccttg ctcctagtgg
+     1201 agtaatggtt tcaatgaaag aacctggttg gtattctttt ggcttcgaaa taaaagataa
+     1261 gaaatgtgat gtcccctgta ttgggataga aatggtacac gatggtggaa aagagacttg
+     1321 gcactcagca gcaacagcca tttactgttt gatgggctca ggacaattgc tatgggacat
+     1381 tgtcacaggc gttgctatgg ctctgtaa
+//
+
