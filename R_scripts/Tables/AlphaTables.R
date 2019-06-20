@@ -49,7 +49,7 @@ Wilcox_test = function(hyphy_virus_name, datamonkey, cpg.yca, cpg.yct, cpg.ynca,
   options(scipen = 999)
   
   #setwd("output/redeploy/")
-  truenamepdf= paste("output/AlphaTables/",hyphy_virus_name,".pdf",sep="")
+  truenamepdf= paste("output/Datamonkey/AlphaTables/",hyphy_virus_name,".pdf",sep="")
   truenamepng= paste(hyphy_virus_name,"tables", ".png", sep="")
   #print(truenamepdf)
   #prevents pvalues from becoming scientific notation
