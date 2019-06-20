@@ -1,15 +1,16 @@
 # your floder where all pages are saved
 #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
+#setwd("~ryanwinstead/Something_Cool-CpG_Sites-")
 
 #loop using a csv to find the file name, strating and stoping points, and readign frame
 
-Virus_info<- read.csv("data/list_tally/CpG_list_Newdata.csv")
+Virus_info<- read.csv("data/list_tally/CpG_List_Newdata.csv")
 #RW changed file from MEME_CpG_list.csv to Newdata.csv
 i=1
 # DataSet <-read.fasta("DengueVirus1.fasta_pruned.mu.trim05.txt")
 for(i in 1:nrow(Virus_info)){
   print(i, Virus_info$name[i])
-  setwd("~ryanwinstead/Something_Cool-CpG_Sites-")
+  #setwd("~ryanwinstead/Something_Cool-CpG_Sites-")
   source("R_scripts/BioInfo/Freq.R")
   # must place your file as a txt takes a few minutes 
   #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/virus")
@@ -40,25 +41,37 @@ for(i in 1:nrow(Virus_info)){
   DF<-synFunction(DF)
   
   #How to save data
-  truenameCSV= paste('data/data_2019/Csv/', truename, ".csv", sep="")
+  truenameCSV= paste('new_data/Consensus/', truename, ".csv", sep="")
   write.csv(DF, file = truenameCSV)
 
   #add in the graphs/tables
   }
-# 
-# source("R_scripts/BioInfo/SynNonSyn.R")
-# DF<-synFunction(DF)
-# 
-# source("R_scripts/BioInfo/CPG_Function.R")
-# DF<-CPG_site(DF)
-# #How to load data
-# virusname = 'EnterovirusB_VP2.fasta_pruned.mu.trim05.txt'
-# splitname<-unlist(strsplit(virusname,".fasta"))
-# truename<-splitname[1]
-# 
-# truenameRda= paste('new_data/Rda/', truename, ".Rda", sep="")
-# truenameCSV= paste('new_data/Csv/', truename, ".csv", sep="")
-# write.csv(DF, file = "MyData.csv")
+j=1
+for(j in 1:nrow(Virus_info)){
+  nice_name <- Virus_info$nice_name[j]
+  truename <- Virus_info$name[j]
+  source("R_scripts/Tables/HowToMakeWilcoxTables.R")
+  DF=Tables(truename)
+  Pvalues=Wilcox_test(DF, truename)
+  makeTable(Pvalues, truename,nice_name)
+  data_place = "data/data_2019/Csv/"
+  data_output = "output/data_2019_graphs/new_Redoplot/"
+  source(("R_scripts/graphs/redoplot.R"))
+  comparing_CpG_Syn_Nonsyn_new(truename,Virus_info$nice_name[i],data_place,data_output)
+}
+source("R_scripts/BioInfo/SynNonSyn.R")
+DF<-synFunction(DF)
+
+source("R_scripts/BioInfo/CPG_Function.R")
+DF<-CPG_site(DF)
+#How to load data
+virusname = 'EnterovirusB_VP2.fasta_pruned.mu.trim05.txt'
+splitname<-unlist(strsplit(virusname,".fasta"))
+truename<-splitname[1]
+
+truenameRda= paste('new_data/Rda/', truename, ".Rda", sep="")
+truenameCSV= paste('new_data/Csv/', truename, ".csv", sep="")
+write.csv(DF, file = "MyData.csv")
 
 #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/Rda_Files")
 # load(truenameRda)
