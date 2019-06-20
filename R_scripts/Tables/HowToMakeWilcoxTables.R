@@ -8,7 +8,7 @@ Tables = function(truename){
   #truename ="Humanherpesvirus2_gD"
   truenamecsv= paste(truename, ".csv", sep="")
   print(truenamecsv)
-  if(DF<- read.csv(paste("new_data/Consensus/", truenamecsv, sep="")) = FALSE){
+  if(DF<- read.csv(paste("new_data/Consensus/", truenamecsv, sep="")) == FALSE) {
     DF<- read.csv(paste("new_data/Consensus/new_for_costly", truenamecsv, sep=""))}
   #load data as DF
   # Wilcox test
