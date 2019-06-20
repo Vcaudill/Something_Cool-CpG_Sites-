@@ -1,10 +1,9 @@
 # your floder where all pages are saved
 #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-")
-setwd("~ryanwinstead/Something_Cool-CpG_Sites-")
 
 #loop using a csv to find the file name, strating and stoping points, and readign frame
 
-Virus_info<- read.csv("new_data/CpG_list_Newdata.csv")
+Virus_info<- read.csv("data/list_tally/CpG_list_Newdata.csv")
 #RW changed file from MEME_CpG_list.csv to Newdata.csv
 i=1
 # DataSet <-read.fasta("DengueVirus1.fasta_pruned.mu.trim05.txt")
@@ -41,25 +40,25 @@ for(i in 1:nrow(Virus_info)){
   DF<-synFunction(DF)
   
   #How to save data
-  truenameCSV= paste('new_data/Consensus/', truename, ".csv", sep="")
+  truenameCSV= paste('data/data_2019/Csv/', truename, ".csv", sep="")
   write.csv(DF, file = truenameCSV)
 
   #add in the graphs/tables
   }
-
-source("R_scripts/BioInfo/SynNonSyn.R")
-DF<-synFunction(DF)
-
-source("R_scripts/BioInfo/CPG_Function.R")
-DF<-CPG_site(DF)
-#How to load data
-virusname = 'EnterovirusB_VP2.fasta_pruned.mu.trim05.txt'
-splitname<-unlist(strsplit(virusname,".fasta"))
-truename<-splitname[1]
-
-truenameRda= paste('new_data/Rda/', truename, ".Rda", sep="")
-truenameCSV= paste('new_data/Csv/', truename, ".csv", sep="")
-write.csv(DF, file = "MyData.csv")
+# 
+# source("R_scripts/BioInfo/SynNonSyn.R")
+# DF<-synFunction(DF)
+# 
+# source("R_scripts/BioInfo/CPG_Function.R")
+# DF<-CPG_site(DF)
+# #How to load data
+# virusname = 'EnterovirusB_VP2.fasta_pruned.mu.trim05.txt'
+# splitname<-unlist(strsplit(virusname,".fasta"))
+# truename<-splitname[1]
+# 
+# truenameRda= paste('new_data/Rda/', truename, ".Rda", sep="")
+# truenameCSV= paste('new_data/Csv/', truename, ".csv", sep="")
+# write.csv(DF, file = "MyData.csv")
 
 #setwd("~/Desktop/Git/CpG/Something_Cool-CpG_Sites-/Rda_Files")
 # load(truenameRda)
