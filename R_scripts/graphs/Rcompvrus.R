@@ -249,13 +249,13 @@ write.csv(df, file = "output/alldatapoints.csv")
 
 #print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
 # graphing 
-png("output/Costly/Costly_Graph_AllR_6_19.png", width = 15, height = 8, units = "in", res= 500)
+png("output/Costly/Costly_Graph_AllR_6_27.png", width = 15, height = 8, units = "in", res= 500)
 #--------------------
 par(mar=c(0,2,3,2), oma=c(6,4,1,1), mfrow=c(2,1))#, bg = "darkseagreen1"
 #changed mar(0,2,3,2) oma(6,4,1,1)
 x <- data_points$Count# test data 
 y <-  data_points$AsynNC_C
-plot(x,y, type = "n", log ='y' ,main="Cost of CpG-Creating Mutations", xlab=" ", yaxt = "n", ylab="Costly", xaxt = "n", ylim=c(0.1, 500), xlim=c(1.5, length(my.list) +5.5), las= 1, cex.main=3) 
+plot(x,y, type = "n", log ='y' ,main="Cost of CpG-Creating Mutations", xlab=" ", yaxt = "n", ylab="Costly", xaxt = "n", ylim=c(0.3, 200), xlim=c(1.5, length(my.list) +5.5), las= 1, cex.main=3) 
 
 abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5, 40.5, 41.5, 42.5), col="grey", lty=c(1))
 
@@ -298,7 +298,7 @@ arrows(data_points$Count-.3, data_points$AsynNC_LCLS/data_points$AsynC_LCLS, dat
 arrows(data_points$Count+.1, data_points$TsynNC_LCLS/data_points$TsynC_LCLS, data_points$Count+.1, data_points$TsynNC_UCLS/data_points$TsynC_UCLS, length=0.05, angle=90, code=3, col= "blue")
 #arrows(data_points$Count+.3, data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS, data_points$Count +.3, data_points$TnonsynNC_UCLS/data_points$TnonsynC_UCLS, length=0.05, angle=90, code=3, col= "purple")
 
-axis(2, at = c(.01, 0.5,1,2,5,10,20,50,100,300), labels = c(0.01, 0.5,1,2,5,10,20,50,100,300),  las=2)
+axis(2, at = c(.01, 0.5,1,2,5,10,20,50,100,200), labels = c(0.01, 0.5,1,2,5,10,20,50,100,200),  las=2)
 #axis.break(2, 0.007,breakcol="black",style="slash")
 #mtext('No nonCpG \n  or  CpG     \n    mutations  ', side=2, line=.005, at=0.002, las=1.1, cex = .7)
 #mtext('No nonCpG \n   mutations   ', side=2, line=.005, at=0.0005, las=1.1, cex = .7)
@@ -310,20 +310,20 @@ mtext('Relative Cost of CpG \n Creating Mutations', side=2, line=3, at=5, las=0,
 
 #mtext('No CpG \n mutations ', side=2, line=.005, at=700, las=1.1, cex = .7)
 
-abline(h=c(0.002, 0.0005, .01,0.5,1,2,5,10,20,50,100, 300), col="grey", lty=c(2,2))
+abline(h=c(0.002, 0.0005, .01,0.5,1,2,5,10,20,50,100, 200), col="grey", lty=c(2,2))
 
 abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5, 40.5), col="grey", lty=c(1))
 #abline(v=c(6.5,10.5,14.5,20.5, 27.5, 41.5), col = "darkgreen", lwd=2)
 abline(v=c(4.5,6.5,7.5,12.5,18.5,25.5,27.5,28.5,30.5,31.5,32.5,33.5,39.5,40.5,41.5,43.5), col = "bisque4", lwd=2)
 
 
-abline(h = 1, col ="darkslategrey", lwd = 2)
+abline(h = 1, col ="darkslategrey", lwd = 2, lty =2)
 #rect(0,800, 800,800, col = "darkseagreen1")
 # xlab="Virus "
-text(47, 3, " CpG Mutation \n More Costly", cex = 1, font = 2)
-text(44.5, 3, "↑", cex = 3, font = 2)
-text(47, .3, " CpG Mutation \n Less Costly", cex = 1, font = 2)
-text(44.5, .3, "↓", cex = 3, font = 2)
+text(47, 2, " CpG Mutation \n More Costly", cex = 1, font = 2)
+text(44.5, 2, "↑", cex = 3, font = 2)
+text(47, .5, " CpG Mutation \n Less Costly", cex = 1, font = 2)
+text(44.5, .5, "↓", cex = 3, font = 2)
 #axis(1, at=1:length(my.list), labels=data_points$Virus, las= 2)
 legend('topright', legend=c("A -> G Syn", "A -> G NonSyn", "T -> C Syn", "T-> C NonSyn"),
        col=c("red", "green", "blue", "purple"), lty=1, lwd= 3, cex = 1, pt.cex = 999)
@@ -337,7 +337,7 @@ mtext('Amount of \n Data', side=2, line=3, at=1100000, las=0, cex = 1.3)
 abline(v=c(1.5,2.5,3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5, 10.5, 11.5,12.5,13.5,14.5,16.5,17.5,18.5,19.5,15.5, 20.5, 21.5, 22.5, 23.5, 24.5, 25.5, 26.5, 27.5, 28.5, 29.5, 30.5, 31.5, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5, 38.5, 39.5, 40.5, 41.5, 42.5), col="grey", lty=c(1))
 abline(v=c(4.5,6.5,7.5,12.5,18.5,25.5,27.5,28.5,30.5,31.5,32.5,33.5,39.5,40.5,41.5,43.5), col = "bisque4", lwd=2)
 
-abline(h = 55988780, col ="darkslategrey", lwd = 2)
+abline(h = 55988780, col ="darkslategrey", lwd = 2, lwy = 2)
 axis(2, at = c(60000,150000,1000000,5000000,25000000), labels = c("60,000","150k","1 mil","5 mil","25 mil"),  las=2)
 abline(h=c(60000,150000,1000000,5000000,25000000), col="grey", lty=c(2,2))
 
