@@ -3,12 +3,12 @@ name.list <- c('Dengue 1', 'Dengue 2', 'Dengue 3', 'Dengue 4', "HCV1A", "HCV1B",
 #List of all virus names (name + .csv/Rda)
 #Virus_info<- read.csv("data/CpG_List.csv")
 #This function is going to read the data from the csv files 
-Tables = function(truename){ 
+Tables = function(truename, place){ 
   #setwd("..")
   #truename ="Humanherpesvirus2_gD"
   truenamecsv= paste(truename, ".csv", sep="")
   print(truenamecsv)
-  if(DF<- read.csv(paste("data/data_2019/data_used/Csv/", truenamecsv, sep="")) == FALSE) {
+  if(DF<- read.csv(paste(place, truenamecsv, sep="")) == FALSE) {
     #DF<- read.csv(paste("data/data_2019/Csv/new_for_costly", truenamecsv, sep=""))}
   }
   #load data as DF
@@ -80,10 +80,10 @@ Wilcox_test = function(data, truename){
   
 }
 
-makeTable <- function(Pvalues, truename, nice_name){
+makeTable <- function(Pvalues, truename, nice_name,output){
   options(scipen = 999)
   #setwd("output/redeploy/")
-  truenamepdf= paste("output/data_2019_graphs/",truename,".pdf",sep="")
+  truenamepdf= paste(output,truename,".pdf",sep="")
   truenamepng= paste(truename,"tables", ".png", sep="")
   #print(truenamepdf)
   #prevents pvalues from becoming scientific notation
@@ -160,7 +160,7 @@ makeTable <- function(Pvalues, truename, nice_name){
 }
 
 #loop through namelist (all viruses)
-hyphy_virus<-read.csv("data/list/Final_CpG_List.csv")
+hyphy_virus<-read.csv("data/list/old_lists/CpG_List_NewdataRW.csv")
 for(i in 1:nrow(hyphy_virus)){
   nice_name <- as.character(hyphy_virus$nice_name[i])
   print(hyphy_virus$name[i])
@@ -175,11 +175,13 @@ for(i in 1:nrow(hyphy_virus)){
     next
     }
 #     
-  DF=Tables(truename)
+  place= hyphy_virus$place[i]
+  DF=Tables(truename, place)
   Pvalues=Wilcox_test(DF, truename)
-  makeTable(Pvalues, truename, nice_name)
-  data_place = "data/data_2019/data_used/Csv/"
-  data_output = "output/data_2019_graphs/M_frequency_graphs/"
+  output = hyphy_virus$output_path[i]
+  makeTable(Pvalues, truename, nice_name, output)
+  data_place = hyphy_virus$place[i]
+  data_output = paste(output, "M_frequency_graphs/", sep="")
   source(("R_scripts/graphs/M_frequency_graph.R"))
   comparing_CpG_Syn_Nonsyn_new(truename,nice_name,data_place,data_output)
   }
