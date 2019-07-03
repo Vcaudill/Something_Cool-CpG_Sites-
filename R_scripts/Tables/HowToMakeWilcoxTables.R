@@ -8,8 +8,9 @@ Tables = function(truename){
   #truename ="Humanherpesvirus2_gD"
   truenamecsv= paste(truename, ".csv", sep="")
   print(truenamecsv)
-  if(DF<- read.csv(paste("data/data_2019/Csv/", truenamecsv, sep="")) == FALSE) {
-    DF<- read.csv(paste("data/data_2019/Csv/new_for_costly", truenamecsv, sep=""))}
+  if(DF<- read.csv(paste("data/data_2019/data_used/Csv/", truenamecsv, sep="")) == FALSE) {
+    #DF<- read.csv(paste("data/data_2019/Csv/new_for_costly", truenamecsv, sep=""))}
+  }
   #load data as DF
   # Wilcox test
   #Wilcox_test(DF, truename)
@@ -159,7 +160,7 @@ makeTable <- function(Pvalues, truename, nice_name){
 }
 
 #loop through namelist (all viruses)
-hyphy_virus<-read.csv("data/list_tally/CpG_List_NewdataRW.csv")
+hyphy_virus<-read.csv("data/list/Final_CpG_List.csv")
 for(i in 1:nrow(hyphy_virus)){
   nice_name <- as.character(hyphy_virus$nice_name[i])
   print(hyphy_virus$name[i])
@@ -177,10 +178,10 @@ for(i in 1:nrow(hyphy_virus)){
   DF=Tables(truename)
   Pvalues=Wilcox_test(DF, truename)
   makeTable(Pvalues, truename, nice_name)
-  #data_place = "data/data_2019/Csv/"
-  #data_output = "output/data_2019_graphs/new_Redoplot/"
-  #source(("R_scripts/graphs/redoplot.R"))
-  #comparing_CpG_Syn_Nonsyn_new(truename,nice_name,data_place,data_output)
+  data_place = "data/data_2019/data_used/Csv/"
+  data_output = "output/data_2019_graphs/M_frequency_graphs/"
+  source(("R_scripts/graphs/M_frequency_graph.R"))
+  comparing_CpG_Syn_Nonsyn_new(truename,nice_name,data_place,data_output)
   }
 # readfile <- function(truenamecsv){
 #   tryCatch(
