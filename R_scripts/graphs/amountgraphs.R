@@ -10,7 +10,7 @@ library(gdata)
 # #data_points_df=data_points_df[-(27), ] 
 # data_points_df <- drop.levels(data_points_df[-(27), ]) 
 # tally<- read.csv("data/recount2.csv")
-tally<- read.csv("data/CpG_Newdata_tally.csv")
+tally<- read.csv("output/All_Data/Data_wilcox_tally_results/CpG_Newdata_tally.csv")
 
 # data_points_df$SynCpg=0
 # data_points_df$NonSynCpg=0
