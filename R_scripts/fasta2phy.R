@@ -1,6 +1,6 @@
 library(ape)
 library(seqinr) 
-install.packages("phylotools")
+#install.packages("phylotools")
 library(phylotools) 
 
 Virus_info<- read.csv("data/list/Final_CpG_list.csv")
@@ -15,3 +15,4 @@ for(i in 1:nrow(Virus_info)){
 
   dat2phylip(read.fasta(viruplace), outfile= output)
 }
+

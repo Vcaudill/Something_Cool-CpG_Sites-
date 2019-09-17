@@ -8,7 +8,7 @@ Enterovirus_C_VP2_Polio2.fasta,data/data_2019/data_used,574,813
 EnterovirusA_VP1_EVA71.fasta,data/data_2019/data_used,3868,894
 EnterovirusA_VP2_EVA71.fasta,data/data_2019/data_used,575,294
 EnterovirusB_VP1_Echovirus30.fasta,data/data_2019/data_used,2429,876
-EnterovirusB_VP2.fasta.mu.trim08.fasta,data/data_2019/data_used,414,750
+EnterovirusB_VP2.fasta,data/data_2019/data_used,414,750
 EnterovirusC_VP1_Polio2.fasta,data/data_2019/data_used,1346,906
 HepatitisB_core.fasta,data/data_2019/data_used,630,264
 HepatitisB_polymerase.fasta,data/data_2019/data_used,6406,1494
