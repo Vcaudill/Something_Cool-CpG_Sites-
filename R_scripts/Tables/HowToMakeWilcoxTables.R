@@ -1,4 +1,4 @@
-my.list <- list(DengueVirus1, DengueVirus2, DengueVirus3, DengueVirus4, HepatitisCvirus_1A, HepatitisCvirus_1B, HIV_1, humanparainfluenzavirus1_F, humanparainfluenzavirus1_HN, humanparainfluenzavirus3_HN, humanparainfluenzavirus1, humanparainfluenzavirus3, InfluenzaAvirus_HA_H1N1,InfluenzaAvirus_HA_H3N2, InfluenzaAvirus_NA_H1N1, InfluenzaAvirus_NA_H3N2,InfluenzaBvirus_HA, InfluenzaBvirus_NA, EnterovirusA_VP1, EnterovirusA_VP2,EnterovirusB_VP1, EnterovirusB_VP2,EnterovirusC_VP1,EnterovirusC_VP2,EnterovirusD_VP1, Humanrespiratorysyncytialvirus, Humanrespiratorysyncytialvirus_G, Measles_hemagglutinin_OR_haemagglutinin, RhinovirusB, RhinovirusC, RotavirusA_VP6, BKpolyomavirus_VP1, HumanBocavirus1_VP1, HepatitisB_polymerase,HepatitisB_precore,HepatitisB_polymerase_truncated_precore,HepatitisB_s,HepatitisB_pre_S,HepatitisB_core, Humanherpesvirus2_glycoprotein_G, Humanpapillomavirus16_L1, ParvovirusB19_NS1, ParvovirusB19_VP1)
+# my.list <- list(DengueVirus1, DengueVirus2, DengueVirus3, DengueVirus4, HepatitisCvirus_1A, HepatitisCvirus_1B, HIV_1, humanparainfluenzavirus1_F, humanparainfluenzavirus1_HN, humanparainfluenzavirus3_HN, humanparainfluenzavirus1, humanparainfluenzavirus3, InfluenzaAvirus_HA_H1N1,InfluenzaAvirus_HA_H3N2, InfluenzaAvirus_NA_H1N1, InfluenzaAvirus_NA_H3N2,InfluenzaBvirus_HA, InfluenzaBvirus_NA, EnterovirusA_VP1, EnterovirusA_VP2,EnterovirusB_VP1, EnterovirusB_VP2,EnterovirusC_VP1,EnterovirusC_VP2,EnterovirusD_VP1, Humanrespiratorysyncytialvirus, Humanrespiratorysyncytialvirus_G, Measles_hemagglutinin_OR_haemagglutinin, RhinovirusB, RhinovirusC, RotavirusA_VP6, BKpolyomavirus_VP1, HumanBocavirus1_VP1, HepatitisB_polymerase,HepatitisB_precore,HepatitisB_polymerase_truncated_precore,HepatitisB_s,HepatitisB_pre_S,HepatitisB_core, Humanherpesvirus2_glycoprotein_G, Humanpapillomavirus16_L1, ParvovirusB19_NS1, ParvovirusB19_VP1)
 name.list <- c('Dengue 1', 'Dengue 2', 'Dengue 3', 'Dengue 4', "HCV1A", "HCV1B", "HIV pol gene", 'Human Parainfluenza 1 F', 'Human Parainfluenza 1 HN', 'Human Parainfluenza 3 HN', 'Human Parainfluenza 1', 'Human Parainfluenza 3', 'Influenza A H1N1 HA','Influenza A H3N2 HA', 'Influenza A H1N1 NA', 'Influenza A H3N2 NA','Influenza B HA', 'Influenza B NA', 'Entero A VP1', 'Entero A VP2','Entero B VP1', 'Entero B VP2','Entero C VP1','Entero C VP2','Entero D VP1', 'Human Respiratory Syncytial', 'Human Respiratory Syncytial G', 'Measles HH', 'Rhino B', 'Rhino C', 'Rota A VP6', 'Bk Polyoma VP1', 'Human Boca 1 VP1', 'Hepatitis B Polymerase','Hepatitis B Precore','Hepatitis B PTP','Hepatitis B S','Hepatitis B PreS','Hepatitis B Core', 'Human Herpes 2 glycoprotein G', 'Human Papilloma 16 L1', 'Parvo B19 NS1', 'Parvo B19 VP1')
 #List of all virus names (name + .csv/Rda)
 #Virus_info<- read.csv("data/CpG_List.csv")
@@ -8,9 +8,10 @@ Tables = function(truename, place){
   #truename ="Humanherpesvirus2_gD"
   truenamecsv= paste(truename, ".csv", sep="")
   print(truenamecsv)
-  if(DF<- read.csv(paste(place, truenamecsv, sep="")) == FALSE) {
+  DF<- read.csv(paste(place, truenamecsv, sep=""))
+  #if(DF<- read.csv(paste(place, truenamecsv, sep="")) == FALSE) {
     #DF<- read.csv(paste("data/data_2019/Csv/new_for_costly", truenamecsv, sep=""))}
-  }
+  #}
   #load data as DF
   # Wilcox test
   #Wilcox_test(DF, truename)
@@ -160,31 +161,32 @@ makeTable <- function(Pvalues, truename, nice_name,output){
 }
 
 #loop through namelist (all viruses)
-hyphy_virus<-read.csv("data/list/old_lists/CpG_List_NewdataRW.csv")
-for(i in 1:nrow(hyphy_virus)){
-  nice_name <- as.character(hyphy_virus$nice_name[i])
-  print(hyphy_virus$name[i])
-  name = as.character(hyphy_virus$name[i])
-  #if(grep(".fasta",hyphy_virus$name[i])){
-  #  splitname<-unlist(strsplit(as.character(hyphy_virus$name[i]),".fasta"))
-  truename<- name
-   # }
- # else{(truename<-name)}
-  print(truename)
-  if (truename == "Humanherpesvirus2_gD") {
-    next
-    }
-#     
-  place= hyphy_virus$place[i]
-  DF=Tables(truename, place)
-  Pvalues=Wilcox_test(DF, truename)
-  output = hyphy_virus$output_path[i]
-  makeTable(Pvalues, truename, nice_name, output)
-  data_place = hyphy_virus$place[i]
-  data_output = paste(output, "M_frequency_graphs/", sep="")
-  source(("R_scripts/graphs/M_frequency_graph.R"))
-  comparing_CpG_Syn_Nonsyn_new(truename,nice_name,data_place,data_output)
-  }
+# 
+# hyphy_virus<-read.csv("data/list/old_lists/CpG_List_NewdataRW.csv")
+# for(i in 1:nrow(hyphy_virus)){
+#   nice_name <- as.character(hyphy_virus$nice_name[i])
+#   print(hyphy_virus$name[i])
+#   name = as.character(hyphy_virus$name[i])
+#   #if(grep(".fasta",hyphy_virus$name[i])){
+#   #  splitname<-unlist(strsplit(as.character(hyphy_virus$name[i]),".fasta"))
+#   truename<- name
+#    # }
+#  # else{(truename<-name)}
+#   print(truename)
+#   if (truename == "Humanherpesvirus2_gD") {
+#     next
+#     }
+# #     
+#   place= hyphy_virus$place[i]
+#   DF=Tables(truename, place)
+#   Pvalues=Wilcox_test(DF, truename)
+#   output = hyphy_virus$output_path[i]
+#   makeTable(Pvalues, truename, nice_name, output)
+#   data_place = hyphy_virus$place[i]
+#   data_output = paste(output, "M_frequency_graphs/", sep="")
+#   source(("R_scripts/graphs/M_frequency_graph.R"))
+#   comparing_CpG_Syn_Nonsyn_new(truename,nice_name,data_place,data_output)
+#   }
 # readfile <- function(truenamecsv){
 #   tryCatch(
 #     # This is what I want to do...
