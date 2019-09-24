@@ -62,8 +62,24 @@ legend("bottomright",legend=c("Significant","Partially Significant","No Signific
        cex=1, pch = c(17,15,19))
 dev.off()
 
+#### simple stats
+
+sum(tally$SynCpg)/(2*nrow(tally)) #% both Syn A&T Costly
+sum(tally$NonSynCpg)/(2*nrow(tally)) #% both NonSyn A&T Costly
+sum(tally$SynNonSyn)/(2*nrow(tally)) #% of Syn more Costly then NonSyn
+
+sum(tally$A..G.Syn..CpG.v.NonCpG.)/nrow(tally) #% Syn A Costly
+sum(tally$A..G.NonSyn..CpG.v.NonCpG)/nrow(tally)#% NonSyn A Costly
+sum(tally$A..G.Syn.v.NonSyn)/nrow(tally) #% A Syn more Costly then NonSyn
+
+sum(tally$T..C.Syn..CpG.v.NonCpG.)/nrow(tally)#% Syn T Costly
+sum(tally$T..C.NonSyn..CpG.v.NonCpG)/nrow(tally) #% NonSyn T Costly
+sum(tally$T..C.Syn.v.NonSyn)/nrow(tally) #% T Syn more Costly then NonSyn
 
 
+
+
+##### other types of logged graphs
 
 
  png("output/amount/Syn_5_18.png", width = 6.75, height = 6.75, units = "in", res= 300)
