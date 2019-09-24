@@ -1,27 +1,34 @@
-Virus_info =read.csv("data/CpG_List_RyanVersion.csv")
+Virus_info =read.csv("data/list/Final_CpG_list.csv")
 for(i in 1:nrow(Virus_info)){
   name = as.character(Virus_info[i,1])
   print(name)
 }
-for(i in 50:nrow(Virus_info)){
-  i = 51
-  viruplace = paste('data/fasta/', Virus_info[i,1], sep="")
+
+for(i in 1:nrow(Virus_info)){
+  #i = 51
+  
+  viruplace = paste(Virus_info$Fasta_File_Path[i],"/", Virus_info[i,1], sep="")
   name = as.character(Virus_info[i,1])
   splitname<-unlist(strsplit(as.character(Virus_info[i,1]),".fasta"))
   truename<-splitname[1]
   source("R_scripts/Tables/HowToMakeWilcoxTables.R")
-  DF=Tables(truename)
+  path2csv<- paste(Virus_info$Fasta_File_Path[i],"/Csv/", sep="")
+  DF=Tables(truename, path2csv)
   Pvalues=Wilcox_test(DF, truename)#get error x must be numeric
-  makeTable(Pvalues, truename, Virus_info$nice_name[i])
-  source("R_scripts/graphs/redoplot.R")
-  comparing_CpG_Syn_Nonsyn_new(truename)
-  dev.off()
+  
+  table_output<- "output/data_2019_graphs/WilcoxTables/"
+  makeTable(Pvalues, truename, Virus_info$nice_name[i], table_output)
+  source("R_scripts/graphs/M_frequency_graph.R")
+  nice_name<-as.character(Virus_info$name[i])
+  graph_output<-"output/data_2019_graphs/M_frequency_graphs/"
+  comparing_CpG_Syn_Nonsyn_new(truename, nice_name, path2csv, graph_output)
+  #dev.off()
   library(png)
   library(grid)
   library(gridExtra)
-  img1 <-  rasterGrob(as.raster(readPNG("output/Redoplot/BkpolyomaVirus_VP1.png")), interpolate = FALSE)
-  img2 <-  rasterGrob(as.raster(readPNG("output/tables_blue/BKpolyomaVirusVP1.pdf")), interpolate = FALSE)
-  grid.arrange(img1, img2, ncol = 2)
+  #img1 <-  rasterGrob(as.raster(readPNG("output/Redoplot/BkpolyomaVirus_VP1.png")), interpolate = FALSE)
+  #img2 <-  rasterGrob(as.raster(readPNG("output/tables_blue/BKpolyomaVirusVP1.pdf")), interpolate = FALSE)
+  #grid.arrange(img1, img2, ncol = 2)
   
 }
 
