@@ -1,42 +1,42 @@
 ﻿File,Fasta_File_Path,Number_of_Sequences,Number_of_Nucleotides,name
+BKPolyomavirus_VP1.fasta,data/data_2019/data_used,222,1197,Bk Polyoma VP1
 Denguevirus1.fasta,data/data_2019/data_used,1785,10176,Dengue 1
 Denguevirus2.fasta,data/data_2019/data_used,1597,10173,Dengue 2
 Denguevirus3.fasta,data/data_2019/data_used,970,10170,Dengue 3
 Denguevirus4.fasta,data/data_2019/data_used,257,10206,Dengue 4
 EnteroD68_VP1.fasta,data/data_2019/data_used,528,528,Entero D VP1
-Enterovirus_C_VP2_Polio2.fasta,data/data_2019/data_used,575,813,Entero C VP2
+Enterovirus_C_VP2_Polio2.fasta,data/data_2019/data_used,574,813,Entero C VP2
 EnterovirusA_VP1_EVA71.fasta,data/data_2019/data_used,3868,894,Entero A VP1
 EnterovirusA_VP2_EVA71.fasta,data/data_2019/data_used,575,294,Entero A VP2
 EnterovirusB_VP1_Echovirus30.fasta,data/data_2019/data_used,2429,876,Entero B VP1
 EnterovirusB_VP2.fasta,data/data_2019/data_used,414,750,Entero B VP2
 EnterovirusC_VP1_Polio2.fasta,data/data_2019/data_used,1346,906,Entero C VP1
+HCV1A_CDS_Alignment.fasta,data/data_2019/data_used,415,9036,HCV 1A
+HCV1B_CDS_alignment.fasta,data/data_2019/data_used,243,9036,HCV 1B
 HepatitisB_core.fasta,data/data_2019/data_used,630,264,Hepatitis B Core
-HepatitisB_polymerase.fasta,data/data_2019/data_used,6406,1494,Hepatitis B Polymerase
+HepatitisB_polymerase_truncated_precore.fasta_pruned.mu.trim05.fasta,data/NESCENT_data/data_used,676,181,Hepatitis B PTP
+HBV_Polymerase.fasta,data/data_2019/data_used,6406,1494,Hepatitis B Polymerase
 HepatitisB_precore.fasta,data/data_2019/data_used,1347,251,Hepatitis B Precore
 HepatitisB_preS.fasta,data/data_2019/data_used,1347,462,Hepatitis B Pre S
 HepatitisB_S.fasta,data/data_2019/data_used,902,678,Hepatitis B S
+HIV1_FLT_2017_pol_DNA.fasta,data/data_2019/data_used,2956,3264,HIV 1 pol
 HumanBoca_VP1.fasta,data/data_2019/data_used,212,2013,Human Boca 1 VP1
-HumanHerpesvirus2_G.fasta,data/data_2019/data_used,392,2109,Human Herpes 2 glycoprotein G
+HumanHerpesvirus2_G.fasta,data/data_2019/data_used,302,2109,Human Herpes 2 glycoprotein G
 HumanPapilloma16_L1.fasta,data/data_2019/data_used,1105,1518,Human Papilloma 16 L1
 Humanparainfluenza3_HN.fasta,data/data_2019/data_used,94,1716,Human Parainfluenza 3 HN
-InfluenzaAvirus_NA_H3N2_alignment.fasta,data/data_2019/data_used,2428,1407,Influenza A H3N2 NA
+HumanParainfluenzavirus1_CDS_only.fasta,data/data_2019/data_used,99,14397,Human Parainfluenza 1 
+HumanRespiratorySyncytial_CDS.fasta,data/data_2019/data_used,1071,13437,Human Respiratory Syncytial
 InfluenzaAvirus_HA_H1N1_alignment.fasta,data/data_2019/data_used,19095,1710,Influenza A H1N1 HA
 InfluenzaAvirus_HA_H3N2_alignment.fasta,data/data_2019/data_used,24005,1701,Influenza A H3N2 HA
 InfluenzaAvirus_NA_H1N1_alignment.fasta,data/data_2019/data_used,19226,1410,Influenza A H1N1 NA
+InfluenzaAvirus_NA_H3N2_alignment.fasta,data/data_2019/data_used,2428,1407,Influenza A H3N2 NA
 InfluenzaB_HA.fasta,data/data_2019/data_used,1054,1755,Influenza B HA
 InfluenzaB_NA.fasta,data/data_2019/data_used,3914,1398,Influenza B NA
 Measles_hemagglutinin_alignment.fasta,data/data_2019/data_used,876,1851,Measles HH
+Parainfluenza1_HN.fasta,data/data_2019/data_used,340,1728,Human Parainfluenza 1 HN
+Parainfulenza3_CDS.fasta,data/data_2019/data_used,461,14469,Human Parainfluenza 3 HN
 ParovirusB19_NS1_alignment.fasta,data/data_2019/data_used,175,2016,Parvo B19 NS1
 Parovovirus_B19_VP1_alignment.fasta,data/data_2019/data_used,268,2343,Parvo B19 VP1
 RhinovirusB alignment.fasta,data/data_2019/data_used,41,6579,Rhino B
-RotavirusA_VP6_alignment.fasta,data/data_2019/data_used,4350,1197,Rota A VP6
-BKPolyomavirus_VP1.fasta,data/data_2019/data_used,222,1197,Bk Polyoma VP1
-HepatitisB_polymerase.fasta,data/data_2019/data_used,6406,1620,Hepatitis B Polymerase
-Parainfluenza1_HN.fasta,data/data_2019/data_used,340,1728,Human Parainfluenza 1 HN
-HumanParainfluenzavirus1_CDS_only.fasta,data/data_2019/data_used,99,14397,Human Parainfluenza 1 
-Parainfulenza3_CDS.fasta,data/data_2019/data_used,461,14469,Human Parainfluenza 3 HN
-HumanRespiratorySyncytial_CDS.fasta,data/data_2019/data_used,1071,13437,Human Respiratory Syncytial
 RhinovirusC.fasta,data/data_2019/data_used,120,6531,Rhino C
-HIV1_FLT_2017_pol_DNA.fasta,data/data_2019/data_used,2956,3264,HIV 1 pol
-HCV1A_CDS_Alignment.fasta,data/data_2019/data_used,415,9036,HCV 1A
-HCV1B_CDS_alignment.fasta,data/data_2019/data_used,243,9036,HCV 1B
+RotavirusA_VP6_alignment.fasta,data/data_2019/data_used,4350,1197,Rota A VP6

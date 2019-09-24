@@ -6,12 +6,13 @@ for(i in 1:nrow(Virus_info)){
 
 for(i in 1:nrow(Virus_info)){
   #i = 51
-  viruplace = paste('data/data_2019/data_used', Virus_info[i,1], sep="")
+  
+  viruplace = paste(Virus_info$Fasta_File_Path[i],"/", Virus_info[i,1], sep="")
   name = as.character(Virus_info[i,1])
   splitname<-unlist(strsplit(as.character(Virus_info[i,1]),".fasta"))
   truename<-splitname[1]
   source("R_scripts/Tables/HowToMakeWilcoxTables.R")
-  path2csv<- "data/data_2019/data_used/Csv/"
+  path2csv<- paste(Virus_info$Fasta_File_Path[i],"/Csv/", sep="")
   DF=Tables(truename, path2csv)
   Pvalues=Wilcox_test(DF, truename)#get error x must be numeric
   
