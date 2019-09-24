@@ -5,7 +5,6 @@
 #loop using a csv to find the file name, strating and stoping points, and readign frame
 
 Virus_info<- read.csv("data/list/Final_CpG_list.csv")
-
 # DataSet <-read.fasta("DengueVirus1.fasta_pruned.mu.trim05.txt")
 for(i in 1:nrow(Virus_info)){
   print(i)
