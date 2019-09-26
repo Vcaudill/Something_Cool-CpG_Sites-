@@ -27,7 +27,7 @@ HIV_1<- read.csv("data/data_2019/data_used/Csv/HIV1_FLT_2017_pol_DNA.csv")
 HumanBocavirus1_VP1<-read.csv("data/data_2019/data_used/Csv/HumanBoca_VP1.CSV")
 
 humanparainfluenzavirus1_HN<-read.csv("data/data_2019/data_used/Csv/Parainfluenza1_HN.csv")
-humanparainfluenzavirus3_HN<-read.csv("data/data_2019/data_used/Csv/Humanparainfluenza3_HN.csv")
+humanparainfluenzavirus3_HN<-read.csv("data/data_2019/data_used/Csv/Human_Parainfluenza3_HN.csv")
 humanparainfluenzavirus1<-read.csv("data/data_2019/data_used/Csv/HumanParainfluenzavirus1_CDS_only.csv")
 humanparainfluenzavirus3<-read.csv("data/data_2019/data_used/Csv/Parainfulenza3_CDS.csv")
 
@@ -247,7 +247,7 @@ write.csv(df, file = "output/All_Data/Costly/alldatapoints.csv")
 
 #print(data_points$TnonsynNC_LCLS/data_points$TnonsynC_LCLS)
 # graphing 
-png("output/All_data/Costly/Costly_Graph_AllR_9_23.png", width = 15, height = 8, units = "in", res= 500)
+png("output/All_data/Costly/Costly_Graph_AllR_9_25.png", width = 15, height = 8, units = "in", res= 500)
 #--------------------
 par(mar=c(0,2,3,2), oma=c(6,4,1,1), mfrow=c(2,1))#, bg = "darkseagreen1"
 #changed mar(0,2,3,2) oma(6,4,1,1)
