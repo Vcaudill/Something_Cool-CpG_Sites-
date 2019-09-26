@@ -23,7 +23,7 @@ HIV1_FLT_2017_pol_DNA.fasta,data/data_2019/data_used,2956,3231,HIV pol Gene,1,1,
 HumanBoca_VP1.fasta,data/data_2019/data_used,212,2013,Human Boca 1 VP1,0,0,1,0,0,0,2
 HumanHerpesvirus2_G.fasta,data/data_2019/data_used,302,1317,Herpes 2 Glycoprotein G,0,0,0,0,0,0,0
 HumanPapilloma16_L1.fasta,data/data_2019/data_used,1105,1518,Human Papilloma 16 L1,0,0,1,0,0,1,2
-Humanparainfluenza3_HN.fasta,data/data_2019/data_used,94,1716,Human Parainfluenza 3 HN,0,0,1,0,0,1,2
+Human_Parainfluenza3_HN.fasta,data/data_2019/data_used,94,1716,Human Parainfluenza 3 HN,0,0,1,1,0,1,2
 HumanParainfluenzavirus1_CDS_only.fasta,data/data_2019/data_used,99,14397,Human Parainfluenza 1,1,0,1,1,1,1,2
 HumanRespiratorySyncytial_CDS.fasta,data/data_2019/data_used,1071,13437,Human Respiratory Syncytial,1,0,1,1,1,1,2
 InfluenzaAvirus_HA_H1N1_alignment.fasta,data/data_2019/data_used,19095,1710,Influenza A HA H1N1,1,0,1,1,1,1,2

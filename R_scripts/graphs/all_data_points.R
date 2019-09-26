@@ -45,7 +45,7 @@ tally$SynNonSyn<-tally$A..G.Syn.v.NonSyn+tally$T..C.Syn.v.NonSyn
 palette(alpha(c("red","deepskyblue1","green")))
 
  
-png("output/All_Data/Num_of_data_points/alllogxy_9_23.png", width = 6.75, height = 6.75, units = "in", res= 300)
+png("output/All_Data/Num_of_data_points/alllogxy_9_25.png", width = 6.75, height = 6.75, units = "in", res= 300)
 par(mfrow=c(2,2))#, bg = "darkseagreen1"
 
 plot(tally$Number_of_Sequences,tally$Number_of_Nucleotides,log='xy',col=c("red","green","deepskyblue1")[as.factor(tally$SynCpg)],pch=c(19,15,17)[as.factor(tally$SynCpg)],cex=1.5, main="Syn CpG vs NonCpG",xlab = "# of Sequences", ylab = "# of Nucletides")
