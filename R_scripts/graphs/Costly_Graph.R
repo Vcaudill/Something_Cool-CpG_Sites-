@@ -211,30 +211,32 @@ for(i in 1:nrow(data_points)){
 #one of the error bars is too large at 2.47 e13 so we are placing it lower, but noting it high amount  
 #data_points[20,12] = data_points[20,14]/300
 #order by protein
-data_points$protein<-"missing"
-data_points$multNS = 0
-data_points$nucl = 0
-data_points$seq = 0
-#Virus_info<- read.csv("data/CpG_List.csv",na.strings = "NNN")
-for (i in 1:nrow(data_points)) {
-  treat=unlist(data_points[i,2])
-  
-  for (j in 1:nrow(Virus_info)){
-  # splitnameAll<-unlist(strsplit(as.character(Virus_info$name[j]),".fasta"))
-  # splitname<-unlist(strsplit(as.character(splitnameAll[1]),"_"))
-  truename<-Virus_info$nice_name[j]
-  #print(truename)
-  
-  if(treat==truename){
-    data_points$protein[i]<-as.character(Virus_info$gene[j])
-    data_points$nucl[i] = Virus_info$NucleotideNumber[j]
-    data_points$seq[i] = Virus_info$SeqNumber[j]
-    data_points$multNS[i]<-reorg$total[i]
-    data_points$multNS[i]<-reorg$total[i]
-   
-  }
-  } 
-}
+
+##### protein test not used
+# data_points$protein<-"missing"
+# data_points$multNS = 0
+# data_points$nucl = 0
+# data_points$seq = 0
+# #Virus_info<- read.csv("data/CpG_List.csv",na.strings = "NNN")
+# for (i in 1:nrow(data_points)) {
+#   treat=unlist(data_points[i,2])
+#   
+#   for (j in 1:nrow(Virus_info)){
+#   # splitnameAll<-unlist(strsplit(as.character(Virus_info$name[j]),".fasta"))
+#   # splitname<-unlist(strsplit(as.character(splitnameAll[1]),"_"))
+#   truename<-Virus_info$nice_name[j]
+#   #print(truename)
+#   
+#   if(treat==truename){
+#     data_points$protein[i]<-as.character(Virus_info$gene[j])
+#     data_points$nucl[i] = Virus_info$NucleotideNumber[j]
+#     data_points$seq[i] = Virus_info$SeqNumber[j]
+#     data_points$multNS[i]<-reorg$total[i]
+#     data_points$multNS[i]<-reorg$total[i]
+#    
+#   }
+#   } 
+# }
 df <- apply(data_points,2,as.character)
 write.csv(df, file = "output/All_Data/Costly/alldatapoints.csv")
 
