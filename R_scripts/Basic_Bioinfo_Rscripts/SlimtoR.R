@@ -1,17 +1,19 @@
-slimdir <- "/Users/ryanwinstead/Something_Cool-CpG_Sites-/data/Slim"
-setwd(slimdir)
+#slimdir <- "/Users/ryanwinstead/Something_Cool-CpG_Sites-"
+simdata <-list.files(paste (getwd(),"/data/Slim", sep = ""))
 options(warn=-1)
 options(scipen=999)
-simdata <-list.files(slimdir)
+simdata <-list.files(paste (getwd(),"/data/Slim", sep = ""))
 POSITIONS <- 1000
 TRIALS <- 100
 
 
-getSlimData <- function(simdata){
+getSlimData <- function(simdata, TRIALS, POSITIONS){
+  DF = data.frame(matrix(NA, nrow = POSITIONS, ncol = TRIALS))
   #reads data into a string of 0's and 1's and creates DF 
   #Each DF colomn = 1 file. 
   col <- 1
   for (file in simdata){
+    file<- paste (getwd(),"/data/Slim/", file, sep = "")
     bigstring <-readChar(file, file.info(file)$size)
     bigstrings <- gsub("\n", "", bigstring)
     
@@ -21,48 +23,36 @@ getSlimData <- function(simdata){
     }
     seqvec<-c()
     #1000 mutations in vector seqvec of 0's and 1's
-    for (i in 0:1000){
+    for (i in 0:POSITIONS){
       seqvec<- c(seqvec, positions[i])
     }
-    print(length(seqvec))
+    print(file)
     #append data to DF **Not working**
     DF[,col]<- seqvec
     
     col <- col + 1
   }
   
-  #return(DF)
+  return(DF)
 }
 #making new column of frequencies
-interpret <- function(DF){
-  freqs<-c()
-  col<-0
+interpret <- function(DF, TRIALS){
   row<-0
+  DF$Freq<-0
   for (row in 1:nrow(DF)){
-    ones<-0
-    for (col in 1:ncol(DF)){
-      print(DF[row, col])
-      print(row)
-      print(col)
-      print("______")
-      if (col=="1"){
-        ones <- ones + 1
-      }
-      freqs<- c(freqs, (ones/TRIALS))
+    DF$Freq[row]<-sum(as.numeric(DF[row,]))/TRIALS
+    #DF$Freq[row]<-DF$Freq[row]/ncol(DF)
     }
-    break
-  }
-  DF$Freq <- freqs
   return(DF)
 }
 
 
 #Defined Dataframe Shape. 100 trials. 1000 positions
-DF = data.frame(matrix(NA, nrow = POSITIONS, ncol = TRIALS))
+
 #d[,i+3] = seqvector
 
-getSlimData(simdata)
-interpret(DF)
+DF = getSlimData(simdata, TRIALS, POSITIONS)
+interpretedDF = interpret(DF, TRIALS)
 
 
 
